@@ -4,5 +4,7 @@
 !.gitconfig
 !.config/fish/
 !.config/nvim/
+!.config/privateinternetaccess/
 !.config/privateinternetaccess/*
+!.config/privateinternetaccess/clientsettings.json
 !.config/omf/
