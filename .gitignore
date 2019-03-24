@@ -1,4 +1,8 @@
-# Ignore everything
-*
-
+/*
 !.gitignore
+!.vim/
+!.gitconfig
+!.config/fish/
+!.config/nvim/
+!.config/privateinternetaccess/*
+!.config/omf/
