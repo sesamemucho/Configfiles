@@ -1,9 +1,4 @@
-set shell=bash
-syntax enable
-colorscheme darcula
-set path +=**
-set wildmenu
-
+" Vundle  {{{
 filetype off                  " required
 
 let g:netrw_banner=0        " disable annoying banner
@@ -17,8 +12,42 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
-
+Plugin 'sjl/gundo.vim'
 call vundle#end()            " required
+" }}}
+" Misc {{{
 filetype plugin indent on  
+set shell=bash
+syntax enable
+colorscheme darcula
+set path +=**
+set wildmenu
+set tabstop=4       " number of visual spaces per TAB
+set hlsearch            " highlight matches
+" }}}
+" UI {{{
+set number              " show line numbers
+set cursorline          " highlight current line
+set showmatch           " highlight matching [{()}]
+set incsearch           " search as characters are entered
+" }}}
+" Folding {{{
+set foldenable          " enable folding
+set foldlevelstart=10   " open most folds by default
+set foldnestmax=10      " 10 nested fold max
+" space open/closes folds
+nnoremap <space> za
+set foldmethod=indent   " fold based on indent level
+set foldmethod=marker
+set foldlevel=0
+set modelines=1
+" }}}
+" Mappings {{{
+" jk is escape
+inoremap jk <esc>
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
+"}}}
 
-
+" Most stuff from here: https://dougblack.io/words/a-good-vimrc.html
+" vim:foldmethod=marker:foldlevel=0
