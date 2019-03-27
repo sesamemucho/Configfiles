@@ -22,7 +22,8 @@ Plugin 'tpope/vim-surround' " change/append sourroundings of sommething, e.g. qo
 Plugin 'tpope/vim-commentary' " comment/uncomment lines
 Plugin 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
 Plugin 'ctrlpvim/ctrlp.vim'
-
+Plugin 'scrooloose/nerdtree'
+Plugin 'xuyuanp/nerdtree-git-plugin'
 " Stuff to check out {{{
 " Airline - shows buffers for files
 " ReplaceWithRegister - make replacing repeatable
