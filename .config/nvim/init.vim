@@ -13,6 +13,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'sjl/gundo.vim'
+Plugin 'autozimu/languageclient-neovim'
+Plugin 'junegunn/fzf'
+Plugin 'shougo/deoplete.nvim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'matcatc/vim-asciidoc-folding'
 call vundle#end()            " required
 " }}}
 " Misc {{{
@@ -37,7 +42,7 @@ set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 " space open/closes folds
 nnoremap <space> za
-set foldmethod=indent   " fold based on indent level
+set foldmethod=expr   " fold based on specified expression
 set foldmethod=marker
 set foldlevel=0
 set modelines=1
