@@ -18,18 +18,29 @@ Plugin 'junegunn/fzf'
 Plugin 'shougo/deoplete.nvim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'matcatc/vim-asciidoc-folding'
-Plugin 'tpope/vim-surround' " change/append sourroundings of sommething, e.g. qoutes, tags
+Plugin 'tpope/vim-surround' " change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
 Plugin 'tpope/vim-commentary' " comment/uncomment lines
 Plugin 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
+Plugin 'tpope/vim-endwise'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'valloric/youcompleteme'
+" Snippets {{{
+Plugin 'SirVer/ultisnips' " snippets
+
+Plugin 'honza/vim-snippets' " default snippets
+" }}}
 " Stuff to check out {{{
 " Airline - shows buffers for files
 " ReplaceWithRegister - make replacing repeatable
 " Titlecase - change casing of a line/ a word
 " Sortmotion sort stuff alphabetically
 " Textobjects - https://github.com/kana/vim-textobj-user/wiki
+" twig highlight - syntax highlighting
+" Color preview
 " }}}
 call vundle#end()
 " }}}
@@ -56,6 +67,11 @@ set cursorline          " highlight current line
 set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered
 " }}}
+" Formatting {{{
+" Rust {{{
+let g:rustfmt_autosave = 1 " format rust on saving a buffer
+" }}}
+" }}}
 " Folding {{{
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
@@ -78,6 +94,14 @@ let mapleader="\<SPACE>"
 nnoremap ; :
 " Use Q to execute default register.
 nnoremap Q @q
+" Open Nerdtree
+nmap <leader>t :NERDTreeToggle<CR>
+
+" Snippets {{{
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+" }}}
 "}}}
 " Scrolling {{{
 if !&scrolloff
