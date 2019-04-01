@@ -72,6 +72,18 @@ set incsearch           " search as characters are entered
 let g:rustfmt_autosave = 1 " format rust on saving a buffer
 " }}}
 " }}}
+" Syntax Checking {{{
+" Syntastic {{{
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" }}}
+" }}}
 " Folding {{{
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
@@ -82,6 +94,8 @@ set foldmethod=expr   " fold based on specified expression
 set foldmethod=marker
 set foldlevel=0
 set modelines=1
+" }}}
+" Autocompletion {{{
 " }}}
 " Mappings {{{
 " jk is escape
@@ -97,7 +111,13 @@ nnoremap Q @q
 " Open Nerdtree
 nmap <leader>t :NERDTreeToggle<CR>
 
+nnoremap <Leader>] :YcmCompleter GoTo<CR>
 " Snippets {{{
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
