@@ -161,13 +161,11 @@ file						install
 file-roller					install
 finalrd						install
 findutils					install
-firefox						install
+firefox						deinstall
 firefox-locale-ar				install
 firefox-locale-de				install
 firefox-locale-en				install
 firefox-locale-pt				install
-firefox-locale-ru				install
-firefox-locale-zh-hans				install
 firefox-locale-zh-hant				install
 fish						install
 fish-common					install
