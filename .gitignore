@@ -2,10 +2,14 @@
 !/.gitignore
 !/.gitconfig
 
-!/.config/
-/.config/**
-!/.config/fish/
-/.config/fish/**
-!/.config/fish/functions/
-!/.config/fish/functions/*
-!/.config/nvim/
+!.config/
+.config/**
+!.config/fish/
+.config/fish/**
+!.config/fish/functions/
+!.config/fish/functions/*
+!.config/coc/
+.config/coc/**
+!.config/coc/ultisnips/
+!.config/coc/ultisnips/*
+!.config/nvim/
