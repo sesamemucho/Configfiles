@@ -165,10 +165,6 @@ firefox						install
 firefox-locale-ar				install
 firefox-locale-de				install
 firefox-locale-en				install
-firefox-locale-es				install
-firefox-locale-fr				install
-firefox-locale-it				install
-firefox-locale-ja				install
 firefox-locale-pt				install
 firefox-locale-ru				install
 firefox-locale-zh-hans				install
