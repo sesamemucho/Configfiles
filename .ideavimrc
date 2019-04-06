@@ -1,0 +1,7 @@
+source ~/.config/nvim/init.vim
+set surround
+set multiple-cursors
+set commentary
+nnoremap <C-,> :action CollapseRegionRecursively<CR>
+nnoremap , :action ExpandRegionRecursively<CR>
+
