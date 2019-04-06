@@ -139,7 +139,6 @@ ecryptfs-utils					install
 ed						install
 efibootmgr					install
 eject						install
-emacs						install
 emacs-bin-common				install
 emacs-common					install
 emacs-el					install
@@ -162,11 +161,6 @@ file-roller					install
 finalrd						install
 findutils					install
 firefox						deinstall
-firefox-locale-ar				install
-firefox-locale-de				install
-firefox-locale-en				install
-firefox-locale-pt				install
-firefox-locale-zh-hant				install
 fish						install
 fish-common					install
 flatpak						install
@@ -469,7 +463,7 @@ iucode-tool					install
 iw						install
 java-common					install
 javascript-common				install
-kaku						install
+kaku						deinstall
 kbd						install
 kernelstub					install
 keyboard-configuration				install
@@ -2569,7 +2563,7 @@ sound-theme-freedesktop				install
 speech-dispatcher				install
 speech-dispatcher-audio-plugins:amd64		install
 speech-dispatcher-espeak-ng			install
-sqlectron					install
+sqlectron					deinstall
 squashfs-tools					install
 ssl-cert					install
 steam-launcher					install
