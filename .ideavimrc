@@ -2,6 +2,9 @@ source ~/.config/nvim/init.vim
 set surround
 set multiple-cursors
 set commentary
+let mapleader = " "
+map <leader>p :action ParameterInfo<CR>
+map <leader>b :action GotoDeclaration<CR>
+map <leader>f :action Find<CR>
 nnoremap <C-,> :action CollapseRegionRecursively<CR>
 nnoremap , :action ExpandRegionRecursively<CR>
-
