@@ -35,7 +35,7 @@ bindsym $mod+Return exec terminology
 #vivaldi
 bindsym $mod+b exec vivaldi
 # zathura
-bindsym $mod+b exec zathura
+bindsym $mod+p exec zathura
 # kill focused window
 bindsym $mod+Shift+q kill
 
