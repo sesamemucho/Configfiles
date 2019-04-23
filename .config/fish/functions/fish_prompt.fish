@@ -1,1 +1,1 @@
-/home/julius/.local/share/omf/themes/agnoster/fish_prompt.fish
+/home/julius/.local/share/omf/themes/bobthefish/fish_prompt.fish
