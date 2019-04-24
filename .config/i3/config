@@ -34,14 +34,15 @@ bindsym $mod+Return exec terminology
 
 #shutddown
 bindsym $mod+Delete exec sudo shutdown -h now
-#vivaldi
-bindsym $mod+b exec vivaldi-stable
 #steam
 bindsym $mod+g exec steam
-
+bindsym $mod+b exec "vivaldi-stable --ignore-certificate-errors"
+# zathura
+bindsym $mod+p exec zathura
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# start dmenu (a program launcher)
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
