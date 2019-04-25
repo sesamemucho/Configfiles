@@ -31,6 +31,7 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Textobjects - https://github.com/kana/vim-textobj-user/wiki
 " twig highlight - syntax highlighting
 " Color preview
+" sideways.vim
 " }}}
 call plug#end()
 " }}}
