@@ -9,8 +9,8 @@ function bobthefish_colors -S -d 'Define a custom bobthefish color scheme'
   set -x color_initial_segment_su       a9b7c6 5e8759 --bold
   set -x color_initial_segment_jobs     a9b7c6 cc7832 --bold
 
-  set -x color_path                     black a9b7c6
-  set -x color_path_basename            black a9b7c6 --bold
+  set -x color_path                     6897BB black
+  set -x color_path_basename            6897BB black --bold
   set -x color_path_nowrite             magenta black
   set -x color_path_nowrite_basename    magenta black --bold
 
