@@ -9,8 +9,6 @@ Plug 'tpope/vim-surround' " change/append sourroundings of sommething - cs'} = c
 Plug 'tpope/vim-commentary' " comment/uncomment lines
 Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-endwise'
 Plug 'vim-syntastic/syntastic'
 Plug 'majutsushi/tagbar'
@@ -19,6 +17,12 @@ Plug 'vim-airline/vim-airline' " shows buffers for files
 Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
 Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
 Plug 'tpope/vim-eunuch' " https://github.com/tpope/vim-eunuch
+Plug 'francoiscabrol/ranger.vim'
+Plug 'stephpy/vim-yaml'
+Plug 'mrk21/yaml-vim'
+Plug 'ekalinin/dockerfile.vim'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'yuttie/comfortable-motion.vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -36,6 +40,8 @@ set shell=bash
 syntax enable
 colorscheme darcula
 set tabstop=4       " number of visual spaces per TAB
+set softtabstop=4   " number of spaces in tab when editing
+set expandtab       " tabs are spaces
 " Also highlight all tabs and trailing whitespace characters.
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\|\t/
@@ -117,9 +123,8 @@ nnoremap <leader>u :GundoToggle<CR>
 let mapleader="\<SPACE>"
 " Use Q to execute default register.
 nnoremap Q @q
-" Open Nerdtree
-nmap <leader>t :NERDTreeToggle<CR>
-
+" Ranger
+nnoremap <leader>f :RangerNewTab<CR>
 " Snippets {{{
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
