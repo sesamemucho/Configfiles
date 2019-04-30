@@ -34,6 +34,7 @@ bindsym $mod+Return exec kitty
 
 #shutddown
 bindsym $mod+Delete exec sudo shutdown -h now
+bindsym $mod+Control+Delete exec sudo reboot
 #steam
 bindsym $mod+g exec steam
 bindsym $mod+b exec "vivaldi-stable --ignore-certificate-errors"
@@ -174,11 +175,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-}
+exec_always --no-startup-id ~/.config/i3/polybar.sh &
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
