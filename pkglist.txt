@@ -44,6 +44,7 @@ kitty
 krita
 less
 lib32-nvidia-utils
+libreoffice-still
 libtool
 licenses
 linux
@@ -57,6 +58,7 @@ man-db
 man-pages
 mdadm
 nano
+nautilus
 neovim
 netctl
 networkmanager
@@ -104,3 +106,5 @@ xfsprogs
 xorg-server
 xorg-xinit
 yarn
+zathura
+zathura-pdf-mupdf
