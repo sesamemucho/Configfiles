@@ -23,6 +23,8 @@ Plug 'mrk21/yaml-vim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'majutsushi/tagbar'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -126,6 +128,9 @@ let mapleader="\<SPACE>"
 nnoremap Q @q
 " Ranger
 nnoremap <leader>f :RangerNewTab<CR>
+" commands {{{
+command! Install :w | :source % | :PlugInstall
+" }}}
 " Snippets {{{
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
