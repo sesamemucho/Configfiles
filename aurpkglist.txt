@@ -1,0 +1,5 @@
+polybar
+powerline-fonts-git
+pycharm-professional
+siji-git
+vivaldi

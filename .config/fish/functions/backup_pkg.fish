@@ -1,3 +1,4 @@
 function backup_pkg
-	sudo dpkg --get-selections > ~/packagelist.txt
+	pacman -Qqen > ~/pkglist.txt
+    pacman -Qqem > ~/aurpkglist.txt
 end
