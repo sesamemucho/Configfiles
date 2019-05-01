@@ -1,5 +1,10 @@
+ocs-url
+pass-import
 polybar
 powerline-fonts-git
 pycharm-professional
 siji-git
+sublime-text-dev
 vivaldi
+webstorm
+webstorm-jre
