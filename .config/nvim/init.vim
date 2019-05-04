@@ -6,25 +6,23 @@ Plug 'junegunn/fzf'
 Plug 'rust-lang/rust.vim'
 Plug 'matcatc/vim-asciidoc-folding'
 Plug 'tpope/vim-surround' " change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
-Plug 'tpope/vim-commentary' " comment/uncomment lines
+Plug 'tpope/vim-commentary' " gc-motion to comment/uncomment lines
 Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-endwise'
-Plug 'vim-syntastic/syntastic'
-Plug 'majutsushi/tagbar'
-Plug 'rking/ag.vim' " Search through files
+Plug 'tpope/vim-endwise' " Add ending structures in some languages
+Plug 'vim-syntastic/syntastic' " syntax highlighting, but need to install linters: https://github.com/vim-syntastic/syntastic
+Plug 'majutsushi/tagbar' " show tags from ctags file
 Plug 'vim-airline/vim-airline' " shows buffers for files
 Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
 Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
-Plug 'tpope/vim-eunuch' " https://github.com/tpope/vim-eunuch
+Plug 'tpope/vim-eunuch' " use unix commands in vim: https://github.com/tpope/vim-eunuch
 Plug 'francoiscabrol/ranger.vim'
-Plug 'stephpy/vim-yaml'
-Plug 'mrk21/yaml-vim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
+Plug 'rhysd/git-messenger.vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -128,6 +126,7 @@ let mapleader="\<SPACE>"
 nnoremap Q @q
 " Ranger
 nnoremap <leader>f :RangerNewTab<CR>
+nmap <F8> :TagbarToggle<CR>
 " commands {{{
 command! Install :w | :source % | :PlugInstall
 " }}}
