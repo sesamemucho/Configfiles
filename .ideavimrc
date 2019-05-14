@@ -2,6 +2,7 @@ source ~/.config/nvim/init.vim
 set surround
 set multiple-cursors
 set commentary
+set clipboard+=unnamedplus
 let mapleader = " "
 nmap <leader>p :action ParameterInfo<CR>
 nmap <leader>b :action GotoDeclaration<CR>
