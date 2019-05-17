@@ -1,0 +1,54 @@
+{
+  "workbench.editor.showTabs": false,
+  "files.autoSave": "afterDelay",
+  "workbench.colorTheme": "Darcula",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.iconTheme": "vscode-icons",
+  "terminal.integrated.shell.linux": "/bin/fish",
+  "terminal.integrated.fontFamily": "DejaVu Sans Mono for Powerline",
+  "zenMode.centerLayout": false,
+  "editor.lineNumbers": "relative",
+  "zenMode.hideStatusBar": false,
+  "python.jediEnabled": false,
+  "python.formatting.autopep8Args": ["--max-line-length=200"],
+  "python.linting.pep8Args": ["--max-line-length=120"],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vim.useSystemClipboard": true,
+  "vim.easymotion": true,
+  "vim.sneak": true,
+  "vim.incsearch": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "h"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.showHover",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.formatSelection",
+          "args": []
+        }
+      ]
+    }
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.minimap.enabled": false,
+  "zenMode.hideLineNumbers": false,
+"git.autofetch": true,
+"sync.gist": "b80febedbc1fd972123cfb115d12dd8f"
+}
