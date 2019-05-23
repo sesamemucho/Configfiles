@@ -49,6 +49,7 @@
   },
   "editor.minimap.enabled": false,
   "zenMode.hideLineNumbers": false,
-"git.autofetch": true,
-"sync.gist": "b80febedbc1fd972123cfb115d12dd8f"
+  "git.autofetch": true,
+  "licenser.license": "MIT"
+
 }

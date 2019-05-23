@@ -22,6 +22,7 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
+Plug 'lilydjwg/colorizer'
 Plug 'rhysd/git-messenger.vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
