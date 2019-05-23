@@ -58,5 +58,9 @@
   },
   "prettier.tabWidth": 4,
   "vim.camelCaseMotion.enable": true,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "vim.neovimPath": "/usr/bin/nvim",
+  "vim.enableNeovim": true,
 
 }

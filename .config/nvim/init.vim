@@ -41,6 +41,7 @@ call plug#end()
 " Misc {{{
 filetype plugin indent on
 set shell=bash
+let $PAGER=''
 syntax enable
 colorscheme darcula
 set tabstop=4       " number of visual spaces per TAB
