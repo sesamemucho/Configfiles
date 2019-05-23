@@ -24,6 +24,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'lilydjwg/colorizer'
 Plug 'rhysd/git-messenger.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'jreybert/vimagit'
+Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -39,6 +42,7 @@ call plug#end()
 " Misc {{{
 filetype plugin indent on
 set shell=bash
+let $PAGER=''
 syntax enable
 colorscheme darcula
 set tabstop=4       " number of visual spaces per TAB
@@ -48,6 +52,19 @@ set expandtab       " tabs are spaces
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\|\t/
 let g:deoplete#enable_at_startup = 1
+" GitGutter{{{
+" Use fontawesome icons as signs
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '<'
+let g:gitgutter_override_sign_column_highlight = 1
+highlight SignColumn guibg=bg
+highlight SignColumn ctermbg=bg
+" Update sign column every quarter second
+set updatetime=250
+" }}}
 " }}}
 " NetRW{{{
 let g:netrw_banner=0        " disable annoying banner
@@ -128,6 +145,22 @@ nnoremap Q @q
 " Ranger
 nnoremap <leader>f :RangerNewTab<CR>
 nmap <F8> :TagbarToggle<CR>
+" GitGutter {{{
+" Jump between hunks
+nmap <Leader>gn <Plug>GitGutterNextHunk  " git next
+nmap <Leader>gp <Plug>GitGutterPrevHunk  " git previous
+" Hunk-add and hunk-revert for chunk staging
+nmap <Leader>ga <Plug>GitGutterStageHunk  " git add (chunk)
+nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
+" Vimagit {{{
+" Open vimagit pane
+nnoremap <leader>gs :Magit<CR>       " git status
+" Push to remote
+nnoremap <leader>gP :! git push<CR>  " git Push
+" Enable deletion of untracked files in Magit
+let g:magit_discard_untracked_do_delete=1
+" }}}
+" }}}
 " commands {{{
 command! Install :w | :source % | :PlugInstall
 " }}}

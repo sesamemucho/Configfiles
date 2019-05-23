@@ -50,6 +50,18 @@
   "editor.minimap.enabled": false,
   "zenMode.hideLineNumbers": false,
   "git.autofetch": true,
-  "licenser.license": "MIT"
+  "licenser.license": "MIT",
+  "sync.gist": "b80febedbc1fd972123cfb115d12dd8f",
+  "prettier.printWidth": 120,
+  "window.zoomLevel": 0,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "prettier.tabWidth": 4,
+  "vim.camelCaseMotion.enable": true,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "vim.neovimPath": "/usr/bin/nvim",
+  "vim.enableNeovim": true
 
 }
