@@ -3,7 +3,6 @@
   "files.autoSave": "afterDelay",
   "workbench.colorTheme": "Darcula",
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.iconTheme": "vscode-icons",
   "terminal.integrated.shell.linux": "/bin/fish",
   "terminal.integrated.fontFamily": "DejaVu Sans Mono for Powerline",
   "zenMode.centerLayout": false,
@@ -62,6 +61,7 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "vim.neovimPath": "/usr/bin/nvim",
-  "vim.enableNeovim": true
+  "vim.enableNeovim": true,
+  "git.enableSmartCommit": true
 
 }
