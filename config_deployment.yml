@@ -1,0 +1,32 @@
+---
+- hosts: all
+  tasks:
+    - name: Make sure we have a 'wheel' group
+      group:
+        name: wheel
+        state: present
+
+
+    - user: 
+        name: julius
+        group: wheel
+        state: present
+
+    - name: Add sudoers users to wheel group
+      user: name=julius groups=wheel append=yes state=present createhome=yes
+
+    - name: Install git
+      pacman:
+        name: git
+        state: present
+
+    - name: Install yadm
+      aur: 
+        name: yadm-git
+        user: julius
+
+    - name: Clone dotfiles
+      git:
+        repo: https://github.com/juligreen/Configfiles
+        dest: ~
+        version: master
