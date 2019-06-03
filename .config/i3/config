@@ -14,6 +14,10 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
+gaps inner 5
+gaps outer 3
+
+new_window 1pixel
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -37,13 +41,13 @@ bindsym $mod+Delete exec sudo shutdown -h now
 bindsym $mod+Control+Delete exec sudo reboot
 #steam
 bindsym $mod+g exec steam
+bindsym $mod+v exec discord-canary
 bindsym $mod+b exec "vivaldi-stable --ignore-certificate-errors"
-# zathura
-bindsym $mod+p exec zathura
+bindsym $mod+p exec code
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
+bindsym $mod+n exec for_window [class="discord-canary"] move to workspace $ws2
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -79,10 +83,6 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+u move workspace to output left
 bindsym $mod+i move workspace to output right
 # split in horizontal orientation
-bindsym $mod+n split h
-
-# split in vertical orientation
-bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -156,10 +156,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -177,10 +177,43 @@ bindsym $mod+r mode "resize"
 
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Colors
+set $bg-color 	         #7a3601
+set $inactive-bg-color   #111316
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          $bg-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
+
+exec_always compton
+exec_always xbanish &
+
+#Xresources
+exec_always xrdb ~/.Xresources
+exec mpDris2 --port 8008
+exec mpd
+exec dunst
+#exec feh --bg-fill --no-xinerama Pictures/wallpaper3.jpg
+exec feh --bg-fill --no-xinerama Pictures/wallpaper23.jpg
+
+#WINDOW CLASSES
+assign [class="kitty"] $ws4
+assign [class="vivaldi-stable"] $ws3
+assign [class="code"] $ws1
+assign [class="discord-canary"] $ws2
+for_window [class="discord-canary"] move to workspace $ws2
+
 

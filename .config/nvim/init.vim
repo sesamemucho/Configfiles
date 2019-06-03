@@ -16,16 +16,18 @@ Plug 'vim-airline/vim-airline' " shows buffers for files
 Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
 Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
 Plug 'tpope/vim-eunuch' " use unix commands in vim: https://github.com/tpope/vim-eunuch
-Plug 'francoiscabrol/ranger.vim'
+Plug 'lokaltog/neoranger'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
+Plug 'lilydjwg/colorizer'
 Plug 'rhysd/git-messenger.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
 Plug 'mattn/emmet-vim'
+Plug 'cespare/vim-toml'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -135,6 +137,9 @@ set modelines=1
 " Autocompletion {{{
 " }}}
 " Mappings {{{
+" Tabs
+nnoremap <C-u> :-tabnext
+nnoremap <C-i> :+tabnext
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 " Map the leader key to SPACE
@@ -142,7 +147,7 @@ let mapleader="\<SPACE>"
 " Use Q to execute default register.
 nnoremap Q @q
 " Ranger
-nnoremap <leader>f :RangerNewTab<CR>
+nnoremap <leader>f :Ranger<CR>
 nmap <F8> :TagbarToggle<CR>
 " GitGutter {{{
 " Jump between hunks

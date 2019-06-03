@@ -49,6 +49,7 @@
   "editor.minimap.enabled": false,
   "zenMode.hideLineNumbers": false,
   "git.autofetch": true,
+  "licenser.license": "MIT",
   "sync.gist": "b80febedbc1fd972123cfb115d12dd8f",
   "prettier.printWidth": 120,
   "window.zoomLevel": 0,
@@ -63,5 +64,6 @@
   "vim.enableNeovim": true,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
+  "git.enableSmartCommit": true
 
 }
