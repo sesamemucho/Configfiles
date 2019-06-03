@@ -1,6 +1,9 @@
 ---
 - hosts: all
+  become: true
+  become_user: root
   tasks:
+
     - name: Make sure we have a 'wheel' group
       group:
         name: wheel
@@ -9,15 +12,16 @@
 
     - user: 
         name: julius
-        group: wheel
         state: present
-
-    - name: Add sudoers users to wheel group
-      user: name=julius groups=wheel append=yes state=present createhome=yes
 
     - name: Install git
       pacman:
         name: git
+        state: present
+
+    - name: Install base-devel
+      pacman:
+        name: base-devel
         state: present
 
     - name: Install yadm
@@ -26,7 +30,18 @@
         user: julius
 
     - name: Clone dotfiles
-      git:
-        repo: https://github.com/juligreen/Configfiles
-        dest: ~
-        version: master
+      command: yadm clone https://github.com/juligreen/Configfiles.git
+      become: yes
+      become_user: julius
+      ignore_errors: yes
+
+    - name: Enable multilip repos
+      replace:
+        path: /etc/pacman.conf
+        regexp: '#\[multilib\]\n#.*'
+        replace: "[multilib]\nInclude = /etc/pacman.d/mirrorlist"
+
+
+    - name: Install important programs
+      command: pacman -S --noconfirm - < /home/julius/pkglist.txt
+      become: yes
