@@ -1,0 +1,112 @@
+---
+- hosts: localhost
+  become: true
+  become_user: julius
+  tasks:
+
+    - name: Make sure we have a 'wheel' group
+      group:
+        name: wheel
+        state: present
+
+    - user: 
+        name: julius
+        state: present
+
+    - name: Install base packages
+      pacman:
+        name: 
+          - git
+          - xorg-server
+          - xorg-xinit
+          - xorg-xinput
+          - xorg-xrandr
+          - base-devel
+          - adobe-source-han-sans-jp-fonts
+          - dmenu
+          - i3-gaps
+        state: present
+      become: true
+      become_user: root
+
+    - name: Install ease of use packages
+      pacman:
+        name: 
+          - fish
+          - flatpak
+          - code
+          - gnome-system-monitor
+          - kitty
+          - htop
+          - lsd
+          - nautilus
+          - nodejs
+          - openssh
+          - p7zip
+          - pulseaudio
+          - pavucontrol-qt
+          - python-pillow
+          - python-pip
+          - ranger
+          - ttf-dejavu
+          - ttf-liberation
+          - unclutter
+          - vim
+          - xclip
+          - yarn
+          - zathura
+          - zathura-pdf-mupdf
+          - ansible
+          - cronie
+          - hub
+          - make
+          - maven
+          - neofetch
+          - tldr
+      become: true
+      become_user: root
+
+
+    - name: Install yay
+      aur: 
+        name: 
+          - yay
+
+    - name: Install aur-packages
+      aur: 
+        name: 
+          - yadm-git
+          - polybar
+          - powerline-fonts-git
+          - siji-git
+          - vivaldi
+          - neovim-nightly
+          - nerd-fonts-complete
+          - nvm
+
+    - name: Clone dotfiles
+      command: yadm clone https://github.com/juligreen/Configfiles.git
+      become: yes
+      become_user: julius
+      ignore_errors: yes
+
+    - name: install vim-plug
+      command: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      become: yes
+      become_user: julius
+
+    - name: install vim plugins
+      command: PlugInstall +qall > /dev/null
+
+    - name: install coc extensions
+      command: nvim +CocUpdateSync +qall > /dev/null
+
+    - name: Enable multilib repos
+      replace:
+        path: /etc/pacman.conf
+        regexp: '#\[multilib\]\n#.*'
+        replace: "[multilib]\nInclude = /etc/pacman.d/mirrorlist"
+      become: yes
+      become_user: root
+
+
