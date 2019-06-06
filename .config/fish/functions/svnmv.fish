@@ -1,11 +1,6 @@
 function svnmv
-	cd ~/Projects/mv/Kundennavigator-2/veraneo/trunk
 
-svn update
-cd ~/Projects/mv/Kundennavigator-2/veraneo-druckservice/trunk
-
-svn update
-cd ~/Projects/mv/Kundennavigator-2/veraneo-dummyservice/trunk
-svn update
-cd
+svn update ~/Projects/mv/Kundennavigator-2/veraneo/trunk
+svn update ~/Projects/mv/Kundennavigator-2/veraneo-druckservice/trunk
+svn update ~/Projects/mv/Kundennavigator-2/veraneo-dummyservice/trunk
 end

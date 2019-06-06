@@ -64,6 +64,7 @@
   "vim.enableNeovim": true,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
-  "git.enableSmartCommit": true
+  "git.enableSmartCommit": true,
+  "diffEditor.ignoreTrimWhitespace": true
 
 }
