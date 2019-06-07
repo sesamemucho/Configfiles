@@ -22,7 +22,6 @@
           - xorg-xinput
           - xorg-xrandr
           - base-devel
-          - adobe-source-han-sans-jp-fonts
           - dmenu
           - i3-gaps
         state: present
@@ -50,6 +49,8 @@
           - ranger
           - ttf-dejavu
           - ttf-liberation
+          - adobe-source-han-sans-jp-fonts
+          - adobe-source-han-sans-kr-fonts
           - unclutter
           - vim
           - xclip
