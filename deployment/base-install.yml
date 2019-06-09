@@ -36,6 +36,7 @@
         name: 
           - fish
           - flatpak
+          - compton
           - code
           - gnome-system-monitor
           - kitty
@@ -52,6 +53,7 @@
           - ranger
           - ttf-dejavu
           - ttf-liberation
+          - libreoffice-fresh
           - unclutter
           - vim
           - xclip
@@ -102,6 +104,8 @@
           - neovim-nightly
           - nerd-fonts-complete
           - nvm
+          - xbanish
+          - xfce-theme-greybird
 
     - name: Clone dotfiles
       command: yadm clone https://github.com/juligreen/Configfiles.git
