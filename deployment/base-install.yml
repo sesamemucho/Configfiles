@@ -115,7 +115,7 @@
       become_user: julius
 
     - name: install vim plugins
-      command: PlugInstall +qall > /dev/null
+      command: nvim PlugInstall +qall > /dev/null
 
     - name: install coc extensions
       command: nvim +CocUpdateSync +qall > /dev/null
