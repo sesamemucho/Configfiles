@@ -53,11 +53,14 @@
           - ranger
           - ttf-dejavu
           - ttf-liberation
+          - ttf-font-awesome
           - libreoffice-fresh
           - unclutter
           - vim
           - xclip
           - xsel
+          - xorg-fonts-misc
+          - bdf-unifont
           - yarn
           - zathura
           - zathura-pdf-mupdf
