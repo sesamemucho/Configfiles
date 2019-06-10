@@ -7,6 +7,7 @@
 
     - name: pacman packages
       pacman:
+        update_cache: yes
         name:
           - steam
           - lutris
@@ -19,13 +20,16 @@
           - vagrant
           - ppsspp
           - picard
+      become: yes
+      become_user: root
 
     - name: aur packages
       aur:
-        - discord-canary
-        - huestacean
-        - plex-media-player
-        - steam-fonts
-        - vivaldi-widevine 
+        name:
+          - discord-canary
+          - huestacean
+          - plex-media-player
+          - steam-fonts
+          - vivaldi-widevine 
 
     

@@ -57,6 +57,7 @@
           - unclutter
           - vim
           - xclip
+          - xsel
           - yarn
           - zathura
           - zathura-pdf-mupdf
@@ -112,6 +113,11 @@
       become: yes
       become_user: julius
       ignore_errors: yes
+    
+    - name: set keymap
+      command: localectl --no-convert set-x11-keymap us "" altgr-intl caps:ctrl_modifier 
+      become: yes
+      become_user: root
 
     - name: install vim-plug
       command: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
