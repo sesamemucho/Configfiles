@@ -38,6 +38,7 @@
           - flatpak
           - compton
           - code
+          - feh
           - gnome-system-monitor
           - kitty
           - htop
