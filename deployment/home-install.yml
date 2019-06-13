@@ -1,0 +1,35 @@
+---
+- hosts: localhost
+  become: true
+  become_user: julius
+
+  tasks:
+
+    - name: pacman packages
+      pacman:
+        update_cache: yes
+        name:
+          - steam
+          - lutris
+          - wine
+          - xboxdrv
+          - nvidia
+          - nvidia-utils
+          - nvidia-settings
+          - lib32-nvidia-utils
+          - vagrant
+          - ppsspp
+          - picard
+      become: yes
+      become_user: root
+
+    - name: aur packages
+      aur:
+        name:
+          - discord-canary
+          - huestacean
+          - plex-media-player
+          - steam-fonts
+          - vivaldi-widevine 
+
+    

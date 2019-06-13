@@ -36,6 +36,7 @@
         name: 
           - fish
           - flatpak
+          - compton
           - code
           - gnome-system-monitor
           - kitty
@@ -52,9 +53,14 @@
           - ranger
           - ttf-dejavu
           - ttf-liberation
+          - ttf-font-awesome
+          - libreoffice-fresh
           - unclutter
           - vim
           - xclip
+          - xsel
+          - xorg-fonts-misc
+          - bdf-unifont
           - yarn
           - zathura
           - zathura-pdf-mupdf
@@ -102,6 +108,8 @@
           - neovim-nightly
           - nerd-fonts-complete
           - nvm
+          - xbanish
+          - xfce-theme-greybird
     
     - name: proprietary media vivaldi
       command: curl https://launchpadlibrarian.net/414953672/chromium-codecs-ffmpeg-extra_73.0.3683.75-0ubuntu0.16.04.1_amd64.deb | tail -c+1077 | tar JxC ~ --wildcards \*libffmpeg.so --xform 's,.*/,.local/lib/vivaldi/,'
@@ -111,6 +119,11 @@
       become: yes
       become_user: julius
       ignore_errors: yes
+    
+    - name: set keymap
+      command: localectl --no-convert set-x11-keymap us "" altgr-intl caps:ctrl_modifier 
+      become: yes
+      become_user: root
 
     - name: install vim-plug
       command: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -118,7 +131,7 @@
       become_user: julius
 
     - name: install vim plugins
-      command: PlugInstall +qall > /dev/null
+      command: nvim PlugInstall +qall > /dev/null
 
     - name: install coc extensions
       command: nvim +CocUpdateSync +qall > /dev/null

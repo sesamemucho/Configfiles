@@ -1,1 +1,0 @@
-/home/julius/.xinitrc##Linux.workarch
