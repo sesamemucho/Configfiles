@@ -1,1 +1,1 @@
-exec i3
+/home/julius/.xinitrc##Linux.workarch
