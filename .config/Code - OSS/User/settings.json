@@ -65,6 +65,10 @@
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
   "git.enableSmartCommit": true,
-  "diffEditor.ignoreTrimWhitespace": true
+  "diffEditor.ignoreTrimWhitespace": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always"
 
 }

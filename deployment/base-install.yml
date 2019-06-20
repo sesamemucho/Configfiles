@@ -33,11 +33,12 @@
 
     - name: Install ease of use packages
       pacman:
-        name: 
+        name:
           - fish
           - flatpak
           - compton
           - code
+          - docker
           - gnome-system-monitor
           - kitty
           - htop
@@ -73,6 +74,18 @@
           - tldr
       become: true
       become_user: root
+
+    - name: install asciidoctor
+      gem:
+        name: asciidoctor-pdf
+        state: present
+        pre_release: yes
+
+    - name: install rouge - asciidoc synstax highlighter
+      gem:
+        name: rouge
+        state: present
+        pre_release: yes
 
     - name: check for omf
       stat:

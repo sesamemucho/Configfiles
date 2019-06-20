@@ -1,5 +1,3 @@
-# chips
-if [ -e ~/.config/chips/build.fish ] ; . ~/.config/chips/build.fish ; end
 fish_vi_key_bindings
 
 set fish_color_normal a9b7c6
