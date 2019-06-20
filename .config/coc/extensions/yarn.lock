@@ -26,15 +26,6 @@ coc-json@^1.0.17:
     vscode-languageserver "^5.3.0-next.6"
     vscode-uri "^1.0.6"
 
-coc-lists@^1.1.12:
-  version "1.1.12"
-  resolved "https://registry.yarnpkg.com/coc-lists/-/coc-lists-1.1.12.tgz#2247de859230034790bfba91f2c3cb3618fc6c3a"
-  integrity sha512-0F8lnfUkkuxGf2fEFYyKsr72Jrg2aXJymrqInKoNFqPgoC/27f35fwJLrrJEIpmvin9cvUF/xBMGlCDUzsWkDw==
-
-coc-snippets@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/coc-snippets/-/coc-snippets-2.1.0.tgz#b2892cce3ef6ad685182aafeb941d7c261c2bf72"
-  integrity sha512-gITTouHs78GpPND+mgOB8HEs50alZ321XZTcbBSHg4DW5Es/feKOL7taftvgNcfTVZKJAtcDeVZXWOJtAdg+Jw==
 
 debug@3.1.0:
   version "3.1.0"
@@ -146,6 +137,14 @@ tslib@^1.9.3:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
 
+<<<<<<< HEAD
+=======
+uuid@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+  integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
+
+>>>>>>> 3489a772a585519f97eabb7ffddccfba4036f0bc
 vscode-json-languageservice@^3.3.0-next.7:
   version "3.3.0-next.7"
   resolved "https://registry.yarnpkg.com/vscode-json-languageservice/-/vscode-json-languageservice-3.3.0-next.7.tgz#3ad4bf31f37fa110676b2c0db69b5f4810bdd4b9"
@@ -161,7 +160,11 @@ vscode-jsonrpc@^4.1.0-next.2:
   resolved "https://registry.yarnpkg.com/vscode-jsonrpc/-/vscode-jsonrpc-4.1.0-next.2.tgz#3bd318910a48e631742b290975386e3dae685be3"
   integrity sha512-GsBLjP9DxQ42yl1mW9GEIlnSc0+R8mfzhaebwmmTPEJjezD5SPoAo3DFrIAFZha9yvQ1nzZfZlhtVpGQmgxtXg==
 
+<<<<<<< HEAD
 vscode-languageserver-protocol@3.15.0-next.5:
+=======
+vscode-languageserver-protocol@3.15.0-next.5, vscode-languageserver-protocol@^3.15.0-next.1:
+>>>>>>> 3489a772a585519f97eabb7ffddccfba4036f0bc
   version "3.15.0-next.5"
   resolved "https://registry.yarnpkg.com/vscode-languageserver-protocol/-/vscode-languageserver-protocol-3.15.0-next.5.tgz#23afad3d28795f2235eda7a167e2fe0825b7c151"
   integrity sha512-rR7Zo5WZTGSsE9lq7pPSgO+VMhVV8UVq6emrDoQ3x5dUyhLKB2/gbMkGKucQpsKGLtF/NuccCa+3jMsO788HjQ==

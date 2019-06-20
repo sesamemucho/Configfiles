@@ -208,4 +208,4 @@ exec mpd
 exec dunst
 #exec feh --bg-fill --no-xinerama Pictures/wallpaper3.jpg
 exec feh --bg-fill --no-xinerama Pictures/wallpaper23.jpg
-
+exec --no-startup-id ~/.config/i3/startup.sh
