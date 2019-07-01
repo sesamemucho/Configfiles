@@ -42,6 +42,7 @@ call plug#end()
 " }}}
 " Misc {{{
 filetype plugin indent on
+set mouse =
 set shell=bash
 let $PAGER=''
 syntax enable
@@ -149,6 +150,33 @@ nnoremap Q @q
 " Ranger
 nnoremap <leader>f :Ranger<CR>
 nmap <F8> :TagbarToggle<CR>
+" Disable Scrolling{{{
+:nmap <ScrollWheelUp> <nop>
+:nmap <S-ScrollWheelUp> <nop>
+:nmap <C-ScrollWheelUp> <nop>
+:nmap <ScrollWheelDown> <nop>
+:nmap <S-ScrollWheelDown> <nop>
+:nmap <C-ScrollWheelDown> <nop>
+:nmap <ScrollWheelLeft> <nop>
+:nmap <S-ScrollWheelLeft> <nop>
+:nmap <C-ScrollWheelLeft> <nop>
+:nmap <ScrollWheelRight> <nop>
+:nmap <S-ScrollWheelRight> <nop>
+:nmap <C-ScrollWheelRight> <nop>
+
+:imap <ScrollWheelUp> <nop>
+:imap <S-ScrollWheelUp> <nop>
+:imap <C-ScrollWheelUp> <nop>
+:imap <ScrollWheelDown> <nop>
+:imap <S-ScrollWheelDown> <nop>
+:imap <C-ScrollWheelDown> <nop>
+:imap <ScrollWheelLeft> <nop>
+:imap <S-ScrollWheelLeft> <nop>
+:imap <C-ScrollWheelLeft> <nop>
+:imap <ScrollWheelRight> <nop>
+:imap <S-ScrollWheelRight> <nop>
+:imap <C-ScrollWheelRight> <nop>
+" }}}
 " GitGutter {{{
 " Jump between hunks
 nmap <Leader>gn <Plug>GitGutterNextHunk  " git next
