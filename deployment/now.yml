@@ -4,12 +4,7 @@
   become_user: julius
   tasks:
 
-    - name: Enable multilib repos
-      replace:
-        path: /etc/pacman.conf
-        regexp: '#\[multilib\]\n#.*'
-        replace: "[multilib]\nInclude = /etc/pacman.d/mirrorlist"
+    - name: set keymap
+      command: localectl --no-convert set-x11-keymap us "" altgr-intl caps:ctrl_modifier 
       become: yes
       become_user: root
-
-
