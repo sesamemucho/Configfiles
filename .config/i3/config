@@ -41,13 +41,14 @@ bindsym $mod+Delete exec sudo shutdown -h now
 bindsym $mod+Control+Delete exec sudo reboot
 #steam
 bindsym $mod+g exec steam
-bindsym $mod+v exec discord-canary
+bindsym $mod+a exec anki
+bindsym $mod+v exec discord
 bindsym $mod+b exec "vivaldi-stable --ignore-certificate-errors"
 bindsym $mod+p exec code
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+n exec for_window [class="discord-canary"] move to workspace $ws2
+bindsym $mod+n exec lutris
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -99,7 +100,6 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
