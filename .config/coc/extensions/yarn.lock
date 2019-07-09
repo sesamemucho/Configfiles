@@ -7,17 +7,17 @@ coc-css@^1.2.2:
   resolved "https://registry.yarnpkg.com/coc-css/-/coc-css-1.2.2.tgz#9b62ac96a9db8c687396ab4648c0c67dc3897a2f"
   integrity sha512-JvZnKZZJZemS70o972OEjfnMGGO2sLpJA3iX1OT3CXmaymPb8CmufboyCVnzGMDMbFL/qHgfjbdw9kOg5ZtzzQ==
 
-coc-json@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/coc-json/-/coc-json-1.2.2.tgz#f499f583a4831e1a362d8c37e547245605ccd32e"
-  integrity sha512-H3Xk1D4Y40VMkwM4UDjedFMelRZWGzEBuU4r2iYE07gepYPVGzqzTlqCSWqOLeH4CXY52gF/QkWrOn7AY6CFaw==
+coc-json@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/coc-json/-/coc-json-1.2.3.tgz#74fd20ce91387086fdc864011e28348b90063c2b"
+  integrity sha512-JlM2CqVuDcxHAxVRcCTd2PsEzAU6jCwJ3N8jaszD3m2HSjq5I796Y7zFmoW6TK/7IOqAiYWCq1l+1yqjTSBedQ==
 
-coc-lists@^1.1.13:
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/coc-lists/-/coc-lists-1.1.13.tgz#167c260c8f1d2415966c0d6d3c6e5f642c02adea"
-  integrity sha512-biT/iJHUaNBkL1IuktiJxL/v0JaWPSNRtZU0eFZwZK5PN6RDtJ8bmaNfxUA6BnKwupC4nuMnSKmcsXb3Mw6cnA==
+coc-lists@^1.1.16:
+  version "1.1.16"
+  resolved "https://registry.yarnpkg.com/coc-lists/-/coc-lists-1.1.16.tgz#f36a462b47fb144453f470822cb44e11fa997dfa"
+  integrity sha512-5RuyHc+iG6sruh6JXfGoSiFQBGjTeysYWHotyuonsxvijWIMDIg+ZaUrnX+IvUq1Z/BFWKBjSpMHL1kKZKIO9Q==
 
-coc-snippets@^2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/coc-snippets/-/coc-snippets-2.1.4.tgz#597831c536efa2fe8b211e9b77977194a922d2e2"
-  integrity sha512-830ck/Tt8V5TYbDPKlsueHHu0KFV7e56FhukimtwToida6TpOWwN4yvXsC/ySsoGnmvH7yTWNPgVJvorJUVkWQ==
+coc-snippets@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/coc-snippets/-/coc-snippets-2.1.5.tgz#1b9cedc8ed9985d3e3cc292ca317df28468135ce"
+  integrity sha512-tHi6z9dTPP7lFPztJFpZ42qUydGJznCqhVj2RSHetvCd5uL/r/dIGnPIc2Cs0LYHA1v6o3pwMeBoJ8tgHn1gvA==
