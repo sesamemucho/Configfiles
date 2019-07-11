@@ -72,5 +72,8 @@
     "svn.enableProposedApi": "argument",
     "sonarlint.ls.javaHome": "/usr/lib/jvm/java-8-openjdk",
     "terminal.integrated.rendererType": "dom",
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    }
 }
