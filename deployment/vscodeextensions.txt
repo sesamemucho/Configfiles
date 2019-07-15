@@ -1,41 +1,41 @@
-aaron-bond.better-comments
-beaugust.blamer-vs
-danields761.dracula-theme-from-intellij-pythoned
-eamodio.gitlens
-eliean.vscode-svn
-esbenp.prettier-vscode
-etmoffat.pip-packages
-formulahendry.auto-close-tag
-steoates.autoimport
-
-in4margaret.compareit
-johnstoncode.svn-scm
-jonwolfe.language-polymer
-ms-vscode.Go
-magicstack.MagicPython
-mlisook.polymertsprops
-redhat.vscode-xml
-redhat.vscode-yaml
-ms-python.python
-njpwerner.autodocstring
-PeterJausovec.vscode-docker
-polymer.polymer-ide
-pushqrdx.inline-html
-rokoroku.vscode-theme-darcula
-Shan.code-settings-sync
-shardulm94.trailing-spaces
-SonarSource.sonarlint-vscode
-vscode-icons-team.vscode-icons
-vscodevim.vim
-vscoss.vscode-ansible
-CoenraadS.bracket-pair-colorizer
-shinnn.stylelint
-wix.vscode-import-cost
-vincaslt.highlight-matching-tag
-oderwat.indent-rainbow
-naumovs.color-highlight
-humao.rest-client
-Gruntfuggly.todo-tree
-Zignd.html-css-class-completion
-christian-kohler.path-intellisense
-wayou.vscode-todo-highlight
+code --install-extension aaron-bond.better-comments
+code --install-extension beaugust.blamer-vs
+code --install-extension danields761.dracula-theme-from-intellij-pythoned
+code --install-extension eamodio.gitlens
+code --install-extension eliean.vscode-svn
+code --install-extension esbenp.prettier-vscode
+code --install-extension etmoffat.pip-packages
+code --install-extension formulahendry.auto-close-tag
+code --install-extension steoates.autoimport
+code --install-extension in4margaret.compareit
+code --install-extension johnstoncode.svn-scm
+code --install-extension jonwolfe.language-polymer
+code --install-extension ms-vscode.Go
+code --install-extension magicstack.MagicPython
+code --install-extension mlisook.polymertsprops
+code --install-extension redhat.vscode-xml
+code --install-extension redhat.vscode-yaml
+code --install-extension ms-python.python
+code --install-extension njpwerner.autodocstring
+code --install-extension PeterJausovec.vscode-docker
+code --install-extension polymer.polymer-ide
+code --install-extension pushqrdx.inline-html
+code --install-extension rokoroku.vscode-theme-darcula
+code --install-extension Shan.code-settings-sync
+code --install-extension shardulm94.trailing-spaces
+code --install-extension SonarSource.sonarlint-vscode
+code --install-extension vscode-icons-team.vscode-icons
+code --install-extension vscodevim.vim
+code --install-extension vscoss.vscode-ansible
+code --install-extension CoenraadS.bracket-pair-colorizer
+code --install-extension shinnn.stylelint
+code --install-extension wix.vscode-import-cost
+code --install-extension vincaslt.highlight-matching-tag
+code --install-extension oderwat.indent-rainbow
+code --install-extension naumovs.color-highlight
+code --install-extension humao.rest-client
+code --install-extension Gruntfuggly.todo-tree
+code --install-extension Zignd.html-css-class-completion
+code --install-extension christian-kohler.path-intellisense
+code --install-extension wayou.vscode-todo-highlight
+code --install-extension evgeniypeshkov.syntax-highlighter
