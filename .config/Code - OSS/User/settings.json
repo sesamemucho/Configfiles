@@ -1,7 +1,7 @@
 {
     "workbench.editor.showTabs": false,
     "files.autoSave": "afterDelay",
-    "workbench.colorTheme": "Darcula",
+    "files.autoSaveDelay": 500,
     "workbench.startupEditor": "newUntitledFile",
     "terminal.integrated.shell.linux": "/bin/fish",
     "terminal.integrated.fontFamily": "DejaVu Sans Mono for Powerline",
@@ -60,8 +60,6 @@
     "vim.camelCaseMotion.enable": true,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "vim.neovimPath": "/usr/bin/nvim",
-    "vim.enableNeovim": true,
     "prettier.singleQuote": true,
     "prettier.trailingComma": "es5",
     "git.enableSmartCommit": true,
@@ -72,5 +70,10 @@
     "svn.enableProposedApi": "argument",
     "sonarlint.ls.javaHome": "/usr/lib/jvm/java-8-openjdk",
     "terminal.integrated.rendererType": "dom",
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "vsicons.projectDetection.autoReload": true,
+    "workbench.colorTheme": "Darcula Extra"
 }
