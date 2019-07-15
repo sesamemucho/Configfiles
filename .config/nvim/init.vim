@@ -28,6 +28,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
 Plug 'mattn/emmet-vim'
 Plug 'cespare/vim-toml'
+Plug 'alfredodeza/jacinto.vim' " format json: :Jacinto format
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -47,9 +48,10 @@ set shell=bash
 let $PAGER=''
 syntax enable
 colorscheme darcula
-set tabstop=4       " number of visual spaces per TAB
-set softtabstop=4   " number of spaces in tab when editing
-set expandtab       " tabs are spaces
+set splitbelow
+set splitright
+set tabstop=2       " number of visual spaces per TAB
+set softtabstop=2   " number of spaces in tab when editing
 " Also highlight all tabs and trailing whitespace characters.
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\|\t/
@@ -68,13 +70,19 @@ highlight SignColumn ctermbg=bg
 set updatetime=250
 " }}}
 " }}}
-" NetRW{{{
+"  NetRW{{{
 let g:netrw_banner=0        " disable annoying banner
 let g:netrw_browse_split=4  " open in prior window
 let g:netrw_altv=1          " open splits to the right
 let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+" }}}
+" Undo Settings {{{
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000
+set undoreload=10000
 " }}}
 " Search {{{
 set ignorecase          " Make searching case insensitive
@@ -109,6 +117,9 @@ let g:rustfmt_autosave = 1 " format rust on saving a buffer
 autocmd FileType html
 \ setlocal formatprg=tidy\ -indent\ -quiet\ --show-errors\ 0\ --tidy-mark\ no\ --show-body-only\ auto
 " }}}
+" JSON {{{
+
+" }}}
 " }}}
 " Syntax Checking {{{
 " json syntax highlighting
@@ -138,8 +149,14 @@ set modelines=1
 " Autocompletion {{{
 " }}}
 " Mappings {{{
+" split navigations {{{
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+" }}}
 " Tabs
-nnoremap <C-u> :-tabnext
+noremap <C-u> :-tabnext
 nnoremap <C-i> :+tabnext
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
