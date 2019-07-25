@@ -1,7 +1,6 @@
 {
     "workbench.editor.showTabs": false,
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 500,
+    "files.autoSaveDelay": 200,
     "workbench.startupEditor": "newUntitledFile",
     "terminal.integrated.shell.linux": "/bin/fish",
     "terminal.integrated.fontFamily": "DejaVu Sans Mono for Powerline",
@@ -75,5 +74,7 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "vsicons.projectDetection.autoReload": true,
-    "workbench.colorTheme": "Darcula Extra"
+    "workbench.colorTheme": "Visual Studio Light",
+    "explorer.confirmDragAndDrop": false,
+    "files.autoSave": "afterDelay"
 }

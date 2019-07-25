@@ -1,7 +1,7 @@
 " vim-plug  {{{
 call plug#begin('~/.vim/plugged')
 Plug 'Chiel92/vim-autoformat'
-Plug 'sjl/gundo.vim'
+Plug 'mbbill/undotree'
 Plug 'junegunn/fzf'
 Plug 'rust-lang/rust.vim'
 Plug 'matcatc/vim-asciidoc-folding'
@@ -29,6 +29,8 @@ Plug 'jreybert/vimagit'
 Plug 'mattn/emmet-vim'
 Plug 'cespare/vim-toml'
 Plug 'alfredodeza/jacinto.vim' " format json: :Jacinto format
+Plug 'tmhedberg/simpylfold' " fold python easily
+Plug 'konfekt/fastfold' " faster folds
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -158,10 +160,10 @@ nnoremap <C-H> <C-W><C-H>
 " Tabs
 noremap <C-u> :-tabnext
 nnoremap <C-i> :+tabnext
-" toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
 " Map the leader key to SPACE
 let mapleader="\<SPACE>"
+" toggle undotree
+nnoremap <leader>u :UndotreeToggle<CR>
 " Use Q to execute default register.
 nnoremap Q @q
 " Ranger
