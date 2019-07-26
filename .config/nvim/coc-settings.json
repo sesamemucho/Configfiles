@@ -68,5 +68,13 @@
       "trace.server": "verbose"
     }
   },
-  "suggest.triggerAfterInsertEnter": true
+	"suggest.echodocSupport": true,
+	"suggest.maxCompleteItemCount": 20,
+	"coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact"],
+	"eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
+	"diagnostic.errorSign": "•",
+	"diagnostic.warningSign": "•",
+	"diagnostic.infoSign": "•",
+	"eslint.nodePath": "/home/julius/.nvm/versions/node/v12.7.0/lib/node_modules/eslint" ,
+	"suggest.triggerAfterInsertEnter": true
 }

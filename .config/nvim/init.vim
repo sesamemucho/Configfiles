@@ -80,6 +80,21 @@ let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 " }}}
+" coc.nvim {{{
+let g:coc_global_extensions = [
+            \'coc-yank',
+            \'coc-highlight',
+            \'coc-prettier',
+            \'coc-pairs',
+            \'coc-json',
+            \'coc-css',
+            \'coc-html',
+            \'coc-eslint',
+            \'coc-tsserver',
+            \'coc-yaml',
+            \'coc-ccls'
+            \]
+" }}}
 " Undo Settings {{{
 set undodir=~/.vim/undodir
 set undofile
