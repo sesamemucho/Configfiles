@@ -74,7 +74,7 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "vsicons.projectDetection.autoReload": true,
-    "workbench.colorTheme": "Visual Studio Light",
+    "workbench.colorTheme": "Darcula",
     "explorer.confirmDragAndDrop": false,
     "files.autoSave": "afterDelay"
 }
