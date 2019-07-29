@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'Chiel92/vim-autoformat'
 Plug 'mbbill/undotree'
 Plug 'junegunn/fzf'
-Plug 'rust-lang/rust.vim'
 Plug 'matcatc/vim-asciidoc-folding'
 Plug 'tpope/vim-surround' " change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
 Plug 'tpope/vim-commentary' " gc-motion to comment/uncomment lines
@@ -92,6 +91,7 @@ let g:coc_global_extensions = [
             \'coc-html',
             \'coc-eslint',
             \'coc-tsserver',
+				    \'coc-angular',
             \'coc-yaml',
             \'coc-ccls'
             \]
@@ -130,9 +130,6 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
