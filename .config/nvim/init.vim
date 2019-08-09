@@ -1,3 +1,9 @@
+"     __  ____                      _          _    ___
+"    /  |/  (_)___  ____ ___  ____ ( )_____   | |  / (_)___ ___  __________
+"   / /|_/ / / __ \/ __ `__ \/ __ \|// ___/   | | / / / __ `__ \/ ___/ ___/
+"  / /  / / / / / / / / / / / /_/ / (__  )    | |/ / / / / / / / /  / /__
+" /_/  /_/_/_/ /_/_/ /_/ /_/\____/ /____/     |___/_/_/ /_/ /_/_/   \___/
+
 " vim-plug  {{{
 call plug#begin('~/.vim/plugged')
 Plug 'Chiel92/vim-autoformat'
@@ -15,7 +21,6 @@ Plug 'vim-airline/vim-airline' " shows buffers for files
 Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
 Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
 Plug 'tpope/vim-eunuch' " use unix commands in vim: https://github.com/tpope/vim-eunuch
-Plug 'lokaltog/neoranger'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'yuttie/comfortable-motion.vim'
@@ -136,7 +141,7 @@ nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)

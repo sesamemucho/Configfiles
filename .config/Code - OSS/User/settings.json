@@ -71,10 +71,17 @@
     "terminal.integrated.rendererType": "dom",
     "explorer.confirmDelete": false,
     "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "vsicons.projectDetection.autoReload": true,
     "workbench.colorTheme": "Darcula",
     "explorer.confirmDragAndDrop": false,
-    "files.autoSave": "afterDelay"
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true,
+    "search.exclude": {
+        "**dist": true
+    },
+    "files.exclude": {
+        "**/dist": true
+    }
 }
