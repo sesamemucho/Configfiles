@@ -6,36 +6,27 @@
 
 " vim-plug  {{{
 call plug#begin('~/.vim/plugged')
-Plug 'Chiel92/vim-autoformat'
 Plug 'mbbill/undotree'
-Plug 'junegunn/fzf'
 Plug 'matcatc/vim-asciidoc-folding'
 Plug 'tpope/vim-surround' " change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
 Plug 'tpope/vim-commentary' " gc-motion to comment/uncomment lines
 Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-endwise' " Add ending structures in some languages
-Plug 'vim-syntastic/syntastic' " syntax highlighting, but need to install linters: https://github.com/vim-syntastic/syntastic
-Plug 'majutsushi/tagbar' " show tags from ctags file
 Plug 'vim-airline/vim-airline' " shows buffers for files
 Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
 Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
 Plug 'tpope/vim-eunuch' " use unix commands in vim: https://github.com/tpope/vim-eunuch
 Plug 'ekalinin/dockerfile.vim'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'yuttie/comfortable-motion.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'majutsushi/tagbar'
-Plug 'lilydjwg/colorizer'
+Plug 'yuttie/comfortable-motion.vim' " Smooth scrolling
+Plug 'easymotion/vim-easymotion' " like clicking links in the browser: <leader><leader>W
+Plug 'lilydjwg/colorizer' " Colorize colors inline
 Plug 'rhysd/git-messenger.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
-Plug 'mattn/emmet-vim'
 Plug 'cespare/vim-toml'
-Plug 'alfredodeza/jacinto.vim' " format json: :Jacinto format
 Plug 'tmhedberg/simpylfold' " fold python easily
 Plug 'konfekt/fastfold' " faster folds
-Plug 'shougo/denite.nvim' " fuzzy search
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -57,8 +48,10 @@ syntax enable
 colorscheme darcula
 set splitbelow
 set splitright
-set tabstop=2       " number of visual spaces per TAB
-set softtabstop=2   " number of spaces in tab when editing
+set expandtab
+set tabstop=4       " number of visual spaces per TAB
+set shiftwidth=4
+set softtabstop=4   " number of spaces in tab when editing
 " Also highlight all tabs and trailing whitespace characters.
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\|\t/
@@ -135,13 +128,16 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
-" nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -170,7 +166,7 @@ nmap <leader>f  <Plug>(coc-format-selected)
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  "" autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
@@ -219,20 +215,9 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " }}}
-" denite{{{
-call denite#custom#option('default', {
-      \ 'prompt': '❯'
-      \ })
-nnoremap <C-p> :<C-u>Denite file/rec -start-filter<CR>
-nnoremap <leader>s :<C-u>Denite buffer<CR>
-nnoremap <leader>8 :<C-u>DeniteCursorWord grep:.<CR>
-nnoremap <leader>/ :<C-u>Denite grep:.<CR>
-nnoremap <leader><Space>/ :<C-u>DeniteBufferDir grep:.<CR>
-nnoremap <leader>d :<C-u>DeniteBufferDir file/rec -start-filter<CR>
-nnoremap <leader>r :<C-u>Denite -resume -cursor-pos=+1<CR>
-nnoremap <leader><C-r> :<C-u>Denite register:.<CR>
-
-
+" CtrlP{{{
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 " }}}
 " Undo Settings {{{
 set undodir=~/.vim/undodir
@@ -280,16 +265,6 @@ autocmd FileType html
 " Syntax Checking {{{
 " json syntax highlighting
 autocmd FileType json syntax match Comment +\/\/.\+$+
-" Syntastic {{{
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" }}}
 " }}}
 " Folding {{{
 set foldenable          " enable folding
@@ -312,16 +287,16 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " }}}
 " Tabs
-noremap <C-u> :-tabnext
-nnoremap <C-i> :+tabnext
+" noremap <C-u> :-tabnext
+" nnoremap <C-i> :+tabnext
 " Map the leader key to SPACE
 let mapleader="\<SPACE>"
 " toggle undotree
 nnoremap <leader>u :UndotreeToggle<CR>
 " Use Q to execute default register.
 nnoremap Q @q
-" Ranger
-nnoremap <leader>f :Ranger<CR>
+" Nerdtree
+nnoremap <leader>f :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 " Disable Scrolling{{{
 :nmap <ScrollWheelUp> <nop>

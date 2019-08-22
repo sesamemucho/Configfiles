@@ -4,19 +4,18 @@
   become_user: julius
 
   tasks:
-
     - name: Make sure we have a 'wheel' group
       group:
         name: wheel
         state: present
 
-    - user: 
+    - user:
         name: julius
         state: present
 
     - name: Install base packages
       pacman:
-        name: 
+        name:
           - git
           - xorg-server
           - xorg-xinit
@@ -29,7 +28,6 @@
         state: present
       become: true
       become_user: root
-
 
     - name: Install ease of use packages
       pacman:
@@ -91,13 +89,13 @@
 
     - name: check for omf
       stat:
-        path: '/home/julius/.local/share/omf'
+        path: "/home/julius/.local/share/omf"
       register: omf
 
     - name: clone omf
       git:
-        repo: 'https://github.com/oh-my-fish/oh-my-fish'
-        dest: '/tmp/omf'
+        repo: "https://github.com/oh-my-fish/oh-my-fish"
+        dest: "/tmp/omf"
         clone: yes
       when: not omf.stat.exists
 
@@ -108,13 +106,13 @@
       when: not omf.stat.exists
 
     - name: Install yay
-      aur: 
-        name: 
+      aur:
+        name:
           - yay
 
     - name: Install aur-packages
-      aur: 
-        name: 
+      aur:
+        name:
           - yadm-git
           - polybar
           - powerline-fonts-git
@@ -127,14 +125,20 @@
           - xfce-theme-greybird
           - lightscreen
 
+    - name: Install pip-packages
+      pip:
+        name:
+          - neovim
+        extra_args: --user
+
     - name: Clone dotfiles
       command: yadm clone https://github.com/juligreen/Configfiles.git
       become: yes
       become_user: julius
       ignore_errors: yes
-    
+
     - name: set keymap
-      command: localectl --no-convert set-x11-keymap us "" altgr-intl caps:ctrl_modifier 
+      command: localectl --no-convert set-x11-keymap us "" altgr-intl caps:ctrl_modifier
       become: yes
       become_user: root
 
@@ -156,5 +160,3 @@
         replace: "[multilib]\nInclude = /etc/pacman.d/mirrorlist"
       become: yes
       become_user: root
-
-
