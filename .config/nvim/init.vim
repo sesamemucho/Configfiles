@@ -180,11 +180,6 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-" Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
-
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
 
@@ -198,26 +193,14 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Using CocList
-" Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols
 nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " }}}
 " CtrlP{{{
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=100
 " }}}
 " Undo Settings {{{
 set undodir=~/.vim/undodir
@@ -282,9 +265,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " }}}
-" Tabs
-" noremap <C-u> :-tabnext
-" nnoremap <C-i> :+tabnext
 " Map the leader key to SPACE
 let mapleader="\<SPACE>"
 " toggle undotree
@@ -359,7 +339,7 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 "}}}
 " Scrolling {{{
 if !&scrolloff
-        set scrolloff=3       " Show next 3 lines while scrolling.
+        set scrolloff=5       " Show next 5 lines while scrolling.
     endif
     if !&sidescrolloff
         set sidescrolloff=5   " Show next 5 columns while side-scrolling.
