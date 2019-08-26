@@ -27,6 +27,7 @@ Plug 'tmhedberg/simpylfold' " fold python easily
 Plug 'konfekt/fastfold' " faster folds
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'chaoren/vim-wordmotion'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -48,7 +49,6 @@ syntax enable
 colorscheme darcula
 set splitbelow
 set splitright
-set expandtab
 set tabstop=4       " number of visual spaces per TAB
 set shiftwidth=4
 set softtabstop=4   " number of spaces in tab when editing
@@ -253,10 +253,6 @@ endif
 " Formatting {{{
 " Rust {{{
 let g:rustfmt_autosave = 1 " format rust on saving a buffer
-" }}}
-" HTML (depends on tidy){{{
-autocmd FileType html
-\ setlocal formatprg=tidy\ -indent\ -quiet\ --show-errors\ 0\ --tidy-mark\ no\ --show-body-only\ auto
 " }}}
 " JSON {{{
 
