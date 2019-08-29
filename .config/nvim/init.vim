@@ -27,7 +27,8 @@ Plug 'tmhedberg/simpylfold' " fold python easily
 Plug 'konfekt/fastfold' " faster folds
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'chaoren/vim-wordmotion'
+Plug 'tpope/vim-obsession'
+Plug 'bkad/camelcasemotion'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -55,7 +56,7 @@ set softtabstop=4   " number of spaces in tab when editing
 " Also highlight all tabs and trailing whitespace characters.
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\|\t/
-let g:deoplete#enable_at_startup = 1
+let g:camelcasemotion_key = '<leader>'
 " GitGutter{{{
 " Use fontawesome icons as signs
 let g:gitgutter_sign_added = '+'
