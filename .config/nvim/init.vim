@@ -27,7 +27,7 @@ Plug 'tmhedberg/simpylfold' " fold python easily
 Plug 'konfekt/fastfold' " faster folds
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-obsession' " make sessions smarter
 Plug 'bkad/camelcasemotion'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
@@ -192,10 +192,6 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Using CocList
-" Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 " }}}
 " CtrlP{{{
 let g:ctrlp_map = '<c-p>'

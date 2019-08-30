@@ -10,3 +10,5 @@
     interactive = auto
 	ui = auto
     pager = true
+[credential]
+	helper = store
