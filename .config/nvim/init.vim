@@ -22,6 +22,8 @@ Plug 'lilydjwg/colorizer' " Colorize colors inline
 Plug 'rhysd/git-messenger.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'cespare/vim-toml'
 Plug 'tmhedberg/simpylfold' " fold python easily
 Plug 'konfekt/fastfold' " faster folds
@@ -50,9 +52,9 @@ syntax enable
 colorscheme darcula
 set splitbelow
 set splitright
-set tabstop=4       " number of visual spaces per TAB
-set shiftwidth=4
-set softtabstop=4   " number of spaces in tab when editing
+set tabstop=2       " number of visual spaces per TAB
+set shiftwidth=2
+set softtabstop=2   " number of spaces in tab when editing
 " Also highlight all tabs and trailing whitespace characters.
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\|\t/
@@ -75,13 +77,27 @@ highlight SignColumn ctermbg=bg
 set updatetime=250
 " }}}
 " }}}
-"  NetRW{{{
-let g:netrw_banner=0        " disable annoying banner
-let g:netrw_browse_split=4  " open in prior window
-let g:netrw_altv=1          " open splits to the right
-let g:netrw_liststyle=3     " tree view
-let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+" Git {{{
+highlight GitGutterAdd    guifg=#009900 guibg=<X> ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1
+" Use fontawesome icons as signs
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '<'
+" Jump between hunks
+nmap <Leader>gn <Plug>GitGutterNextHunk  " git next
+nmap <Leader>gp <Plug>GitGutterPrevHunk  " git previous
+" Hunk-add and hunk-revert for chunk staging
+nmap <Leader>ga <Plug>GitGutterStageHunk  " git add (chunk)
+nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
+
+" Open vimagit pane
+nnoremap <leader>gs :Magit<CR>       " git status
+" Push to remote
+nnoremap <leader>gP :! git push<CR>  " git Push
 " }}}
 " coc.nvim {{{
 let g:coc_global_extensions = [

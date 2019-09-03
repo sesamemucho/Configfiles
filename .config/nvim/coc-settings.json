@@ -75,6 +75,5 @@
 	"diagnostic.errorSign": "•",
 	"diagnostic.warningSign": "•",
 	"diagnostic.infoSign": "•",
-	"eslint.nodePath": "/home/julius/.nvm/versions/node/v12.7.0/lib/node_modules/eslint" ,
 	"suggest.triggerAfterInsertEnter": true
 }
