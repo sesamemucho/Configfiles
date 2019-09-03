@@ -57,6 +57,10 @@ set softtabstop=4   " number of spaces in tab when editing
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\|\t/
 let g:camelcasemotion_key = '<leader>'
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#enabled = 1
+
+
 " GitGutter{{{
 " Use fontawesome icons as signs
 let g:gitgutter_sign_added = '+'
@@ -191,7 +195,7 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " }}}
 " CtrlP{{{
 let g:ctrlp_map = '<c-p>'
