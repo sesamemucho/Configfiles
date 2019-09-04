@@ -290,7 +290,9 @@ nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap Q @q
 " Nerdtree
 nnoremap <leader>f :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
+" List buffers and select by number
+nnoremap gb :ls<CR>:b<Space>
+
 " Disable Scrolling{{{
 :nmap <ScrollWheelUp> <nop>
 :nmap <S-ScrollWheelUp> <nop>
