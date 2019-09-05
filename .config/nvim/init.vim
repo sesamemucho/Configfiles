@@ -31,6 +31,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-obsession' " make sessions smarter
 Plug 'bkad/camelcasemotion'
+Plug 'stephpy/vim-yaml'
+Plug 'chase/vim-ansible-yaml'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -365,6 +367,12 @@ if !&scrolloff
     endif
 " }}}
 " Snippets {{{
+" }}}
+" Language specific {{{
+" YAML{{{
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+" }}}
 " }}}
 " Most stuff from here: https://dougblack.io/words/a-good-vimrc.html
 " vim:foldmethod=marker:foldlevel=0
