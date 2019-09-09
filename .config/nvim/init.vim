@@ -52,9 +52,9 @@ syntax enable
 colorscheme darcula
 set splitbelow
 set splitright
-set tabstop=2       " number of visual spaces per TAB
-set shiftwidth=2
-set softtabstop=2   " number of spaces in tab when editing
+set tabstop=4       " number of visual spaces per TAB
+set shiftwidth=4
+set softtabstop=4   " number of spaces in tab when editing
 " Also highlight all tabs and trailing whitespace characters.
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\|\t/
