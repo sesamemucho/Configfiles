@@ -29,6 +29,7 @@ Plug 'tmhedberg/simpylfold' " fold python easily
 Plug 'konfekt/fastfold' " faster folds
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jremmen/vim-ripgrep' " use ripgrep
 Plug 'tpope/vim-obsession' " make sessions smarter
 Plug 'bkad/camelcasemotion'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -40,6 +41,7 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " twig highlight - syntax highlighting
 " Color preview
 " sideways.vim
+" Plug 'idanarye/vim-merginal': use fugitive for branches
 " }}}
 call plug#end()
 " }}}
@@ -98,6 +100,8 @@ nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
 nnoremap <leader>gs :Magit<CR>       " git status
 " Push to remote
 nnoremap <leader>gP :! git push<CR>  " git Push
+" Enable deletion of untracked files in Magit
+let g:magit_discard_untracked_do_delete=1
 " }}}
 " coc.nvim {{{
 let g:coc_global_extensions = [
@@ -319,21 +323,6 @@ nnoremap gb :ls<CR>:b<Space>
 :imap <ScrollWheelRight> <nop>
 :imap <S-ScrollWheelRight> <nop>
 :imap <C-ScrollWheelRight> <nop>
-" }}}
-" GitGutter {{{
-" Jump between hunks
-nmap <Leader>gn <Plug>GitGutterNextHunk  " git next
-nmap <Leader>gp <Plug>GitGutterPrevHunk  " git previous
-" Hunk-add and hunk-revert for chunk staging
-nmap <Leader>ga <Plug>GitGutterStageHunk  " git add (chunk)
-nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
-" Vimagit {{{
-" Open vimagit pane
-nnoremap <leader>gs :Magit<CR>       " git status
-" Push to remote
-nnoremap <leader>gP :! git push<CR>  " git Push
-" Enable deletion of untracked files in Magit
-let g:magit_discard_untracked_do_delete=1
 " }}}
 " }}}
 " commands {{{
