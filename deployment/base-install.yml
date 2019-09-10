@@ -22,6 +22,7 @@
           - xorg-xinput
           - xorg-xrandr
           - base-devel
+          - ripgrep
           - adobe-source-han-sans-jp-fonts
           - dmenu
           - i3-gaps
