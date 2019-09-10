@@ -34,6 +34,8 @@
       pacman:
         name:
           - ruby
+          - dunst
+          - light
           - fish
           - flatpak
           - compton
