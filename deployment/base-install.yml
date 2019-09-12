@@ -34,6 +34,7 @@
       pacman:
         name:
           - ruby
+          - neomutt
           - dunst
           - light
           - fish
