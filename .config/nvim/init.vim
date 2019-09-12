@@ -32,6 +32,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jremmen/vim-ripgrep' " use ripgrep
 Plug 'tpope/vim-obsession' " make sessions smarter
 Plug 'bkad/camelcasemotion'
+Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
