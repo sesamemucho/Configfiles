@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "coc-angular": "^0.3.0-beta2",
+    "coc-angular": ">=0.3.1",
     "coc-ccls": ">=0.0.4",
     "coc-css": ">=1.2.2",
     "coc-eslint": ">=1.2.2",
