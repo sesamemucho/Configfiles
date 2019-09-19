@@ -254,6 +254,8 @@ nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap Q @q
 " Nerdtree
 nnoremap <leader>f :NERDTreeToggle<CR>
+nnoremap <leader>r :NERDTreeFind<cr>
+
 " List buffers and select by number
 nnoremap gb :ls<CR>:b<Space>
 
