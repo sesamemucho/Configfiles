@@ -28,10 +28,13 @@ Plug 'cespare/vim-toml'
 Plug 'tmhedberg/simpylfold' " fold python easily
 Plug 'konfekt/fastfold' " faster folds
 Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep' " use ripgrep
 Plug 'tpope/vim-obsession' " make sessions smarter
 Plug 'bkad/camelcasemotion'
+Plug 'stephpy/vim-yaml'
+Plug 'chase/vim-ansible-yaml'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
@@ -181,11 +184,8 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
  set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " }}}
-" CtrlP{{{
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=100
+" FZF{{{
+nmap <C-p> : Files <CR>
 " }}}
 " Undo Settings {{{
 set undodir=~/.vim/undodir
@@ -199,10 +199,6 @@ set smartcase           " ... unless the query has capital letters.
 set hlsearch            " highlight matches
 set path +=**
 set wildmenu
-" CtrlP settings
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
 " }}}
 " UI {{{
 set number relativenumber " show hybrid line numbers
@@ -258,6 +254,8 @@ nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap Q @q
 " Nerdtree
 nnoremap <leader>f :NERDTreeToggle<CR>
+nnoremap <leader>r :NERDTreeFind<cr>
+
 " List buffers and select by number
 nnoremap gb :ls<CR>:b<Space>
 
@@ -354,6 +352,12 @@ if !&scrolloff
     endif
 " }}}
 " Snippets {{{
+" }}}
+" Language specific {{{
+" YAML{{{
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+" }}}
 " }}}
 " Most stuff from here: https://dougblack.io/words/a-good-vimrc.html
 " vim:foldmethod=marker:foldlevel=0
