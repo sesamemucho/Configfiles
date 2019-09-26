@@ -1,2 +1,2 @@
-exec i3
 exec VBoxClient-all
+exec i3
