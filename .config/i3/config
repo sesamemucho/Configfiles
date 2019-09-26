@@ -180,12 +180,14 @@ bindsym $mod+r mode "resize"
 
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec "sudo light -A 5; notify-send 'brightness up'"; # increase screen brightness with notification
-bindsym XF86MonBrightnessDown exec "sudo light -U 5; notify-send 'brightness down'"; # decrease screen brightness with notification
+# increase screen brightness with notification
+bindsym XF86MonBrightnessUp exec "sudo light -A 5; notify-send 'brightness up'"
+# decrease screen brightness with notification
+bindsym XF86MonBrightnessDown exec "sudo light -U 5; notify-send 'brightness down'"
 
 # Colors
 set $bg-color 	         #7a3601
