@@ -1,5 +1,10 @@
 fish_vi_key_bindings
 
+# environment variables
+set -gx PATH /home/julius/.gem/ruby/2.6.0/bin  $PATH
+
+
+# Colors
 set fish_color_normal a9b7c6
 set fish_color_command cc7832
 set fish_color_quote 5e8759

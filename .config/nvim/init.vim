@@ -28,7 +28,7 @@ Plug 'cespare/vim-toml'
 Plug 'tmhedberg/simpylfold' " fold python easily
 Plug 'konfekt/fastfold' " faster folds
 Plug 'scrooloose/nerdtree'
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep' " use ripgrep
 Plug 'tpope/vim-obsession' " make sessions smarter
@@ -36,6 +36,7 @@ Plug 'bkad/camelcasemotion'
 Plug 'stephpy/vim-yaml'
 Plug 'chase/vim-ansible-yaml'
 Plug 'mattn/emmet-vim'
+Plug 'troydm/zoomwintab.vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -258,6 +259,10 @@ nnoremap <leader>r :NERDTreeFind<cr>
 
 " List buffers and select by number
 nnoremap gb :ls<CR>:b<Space>
+
+" ZoomWinTab
+nnoremap <C-w>o :ZoomWinTabToggle<CR>
+
 
 " Disable Scrolling{{{
 :nmap <ScrollWheelUp> <nop>
