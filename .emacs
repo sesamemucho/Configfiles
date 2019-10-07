@@ -1,8 +1,24 @@
+(package-initialize)
 (require 'package)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+
+(dolist (package '(use-package))
+   (unless (package-installed-p package)
+     (package-install package)))
+ (use-package paredit
+	      :ensure t)
+
+(use-package darcula-theme
+  :ensure t
+  :config
+  
+(dolist (package '(evil))
+ (unless (package-installed-p package)
+   (package-install package))
+   (require package))))
 
 (setq package-enable-at-startup nil)
 (package-initialize)
