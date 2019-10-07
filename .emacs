@@ -19,7 +19,7 @@
 (dolist (package '(evil))
  (unless (package-installed-p package)
    (package-install package))
-   (require package))))
+   (require package))
 
 (setq package-enable-at-startup nil)
 (package-initialize)
