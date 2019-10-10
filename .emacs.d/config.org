@@ -1,0 +1,16 @@
+* Terminal
+** Setting default shell to fish
+#+BEGIN_SRC emacs-lisp
+  (defvar my-term-shell "/bin/fish")
+  (defadvice ansi-term (before force-bash)
+    (interactive (list my-term-shell)))
+  (ad-activate 'ansi-term)
+#+END_SRC
+* Org
+** Org Bullets
+#+BEGIN_SRC emacs-lisp
+  (use-package org-bullets
+    :ensure t
+    :config
+    (add-hook 'org-mode-hook (lambda () (org-bullets-mode))))
+#+END_SRC

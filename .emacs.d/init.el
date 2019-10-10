@@ -1,25 +1,46 @@
 (require 'package)
 (setq package-enable-at-startup nil)
-(package-initialize)
-
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(package-initialize)
 
-(dolist (package '(use-package))
-   (unless (package-installed-p package)
-     (package-install package)))
- (use-package paredit
-	      :ensure t)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
-(use-package darcula-theme
+(unless (package-installed-p 'darcula-theme)
+  (package-refresh-contents)
+  (package-install 'darcula-theme))
+
+(org-babel-load-file (expand-file-name "~/.emacs.d/config.org"))
+(use-package which-key
   :ensure t
-  :config)
+  :init
+  (which-key-mode))
 
+(use-package beacon
+  :ensure t
+  :init
+  (beacon-mode 1))
+(setq auto-save-default nil)
+
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+(setq ring-bell-function 'ignore)
+
+(when window-system (global-hl-line-mode t))
+(when window-system (global-prettify-symbols-mode t)) 
 (use-package powerline
   :ensure t
-  :config)
-(setq powerline-arrow-shape 'arrow)   ;; the default
+  :init
+  (powerline-default-theme))
+
+(use-package diff-hl
+  :ensure t
+  :init
+  (diff-hl-flydiff-mode))
+
 
 (set-frame-font "DejaVu Sans Mono 12" nil t)
 
@@ -43,6 +64,7 @@
 (define-key evil-normal-state-map (kbd "C-d") 'inertias-up)
 
 (require 'ispell)
+(setq ispell-program-name "aspell")
 (add-to-list 'ispell-local-dictionary-alist '("deutsch-hunspell"
                                               "[[:alpha:]]"
                                               "[^[:alpha:]]"
@@ -51,12 +73,10 @@
                                               ("-d" "de_DE"); Dictionary file name
                                               nil
                                               iso-8859-1))
- (setq ispell-program-name "hunspell")
-(setq ispell-local-dictionary "de_DE")
-(setq ispell-local-dictionary-alist
-      '(("de_DE" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil nil nil utf-8)))
+(setq ispell-dictionary "de_DE")
+(setq ispell-extra-args '("--sug-mode=ultra" "--lang=de_DE"))
+(setq flyspell-issue-welcome-flag nil)
 
-(setq package-enable-at-startup nil)
 (package-initialize)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -70,13 +90,13 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (evil-magit git-gutter evil-leader magit deferred company org-evil powerline-evil adoc-mode smart-hungry-delete dashboard all-the-icons page-break-lines ranger darcula-theme evil))))
+    (diff-hl org-bullets which-key evil-magit evil-leader magit deferred company org-evil powerline-evil adoc-mode smart-hungry-delete dashboard all-the-icons page-break-lines ranger darcula-theme evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#2B2B2B" :foreground "#a9b7c6" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal :foundry nil)))))
+ )
 (add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
 (use-package smart-hungry-delete
   :ensure t
@@ -100,7 +120,7 @@
 
 (menu-bar-mode 0)
 (tool-bar-mode 0)
-(display-line-numbers-mode 0)
-;;(setq display-line-numbers 'relative)
+(display-line-numbers-mode)
+(setq display-line-numbers 'relative)
 (scroll-bar-mode 0)
 (setq initial-buffer-choice t)
