@@ -1,5 +1,6 @@
-(package-initialize)
 (require 'package)
+(setq package-enable-at-startup nil)
+(package-initialize)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -35,7 +36,7 @@
 (require 'helm)
   (helm-mode 1)
 (require 'company)
-  (company-mode 1)
+  (global-company-mode)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (load "inertial-scroll")
 (define-key evil-normal-state-map (kbd "C-u") 'inertias-down)
@@ -99,7 +100,7 @@
 
 (menu-bar-mode 0)
 (tool-bar-mode 0)
-(display-line-numbers-mode 1)
-(setq display-line-numbers 'relative)
+(display-line-numbers-mode 0)
+;;(setq display-line-numbers 'relative)
 (scroll-bar-mode 0)
 (setq initial-buffer-choice t)
