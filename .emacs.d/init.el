@@ -45,6 +45,8 @@
 
 (set-frame-font "DejaVu Sans Mono 12" nil t)
 
+(use-package deferred
+  :ensure t)
 (use-package evil-leader
   :ensure t
   :init
@@ -63,6 +65,8 @@
   (evil-mode 1))
 (setq evil-search-module 'evil-search
       evil-want-C-w-in-emacs-state t)
+(use-package all-the-icons
+  :ensure t)
 (use-package helm
   :ensure t
   :init
@@ -76,8 +80,6 @@
 (define-key evil-normal-state-map (kbd "C-u") 'inertias-down)
 (define-key evil-normal-state-map (kbd "C-d") 'inertias-up)
 
-(use-package deferred
-  :ensure t)
 (use-package ispell
   :ensure t)
 (setq ispell-program-name "aspell")
