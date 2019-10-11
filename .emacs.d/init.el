@@ -48,8 +48,10 @@
 (global-evil-leader-mode)
 (require 'magit)
 (require 'evil-magit)
-(require 'git-gutter)
-(git-gutter-mode 1)
+(use-package git-gutter
+  :ensure t
+  :init
+  (git-gutter-mode 1))
 (require 'evil)
   (evil-mode 1)
 (setq evil-search-module 'evil-search
