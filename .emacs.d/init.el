@@ -27,6 +27,7 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+
 (setq ring-bell-function 'ignore)
 
 (when window-system (global-hl-line-mode t))
@@ -44,28 +45,41 @@
 
 (set-frame-font "DejaVu Sans Mono 12" nil t)
 
-(require 'evil-leader)
-(global-evil-leader-mode)
-(require 'magit)
-(require 'evil-magit)
+(use-package evil-leader
+  :ensure t
+  :init
+(global-evil-leader-mode))
+(use-package magit
+  :ensure t)
+(use-package evil-magit
+  :ensure t)
 (use-package git-gutter
   :ensure t
   :init
-  (git-gutter-mode 1))
-(require 'evil)
-  (evil-mode 1)
+(git-gutter-mode 1))
+(use-package evil
+  :ensure t
+  :init
+  (evil-mode 1))
 (setq evil-search-module 'evil-search
       evil-want-C-w-in-emacs-state t)
-(require 'helm)
-  (helm-mode 1)
-(require 'company)
-  (global-company-mode)
+(use-package helm
+  :ensure t
+  :init
+  (helm-mode 1))
+(use-package company
+  :ensure t
+  :init
+  (global-company-mode))
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (load "inertial-scroll")
 (define-key evil-normal-state-map (kbd "C-u") 'inertias-down)
 (define-key evil-normal-state-map (kbd "C-d") 'inertias-up)
 
-(require 'ispell)
+(use-package deferred
+  :ensure t)
+(use-package ispell
+  :ensure t)
 (setq ispell-program-name "aspell")
 (add-to-list 'ispell-local-dictionary-alist '("deutsch-hunspell"
                                               "[[:alpha:]]"
