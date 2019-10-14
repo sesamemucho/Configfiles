@@ -14,3 +14,42 @@
     :config
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode))))
 #+END_SRC
+* FZF
+** Install
+    #+BEGIN_SRC emacs-lisp
+      (use-package fzf
+	:ensure t
+	:config
+    #+END_SRC
+** Search with C-x C-f
+    #+BEGIN_SRC emacs-lisp
+    	(global-set-key (kbd "C-x C-f") 'fzf))
+    #+END_SRC
+* Ripgrep
+  #+BEGIN_SRC emacs-lisp
+    (use-package deadgrep
+    :ensure t)
+  #+END_SRC
+
+* IDO
+** enable ido
+  #+BEGIN_SRC emacs-lisp
+    (setq ido-enable-flex-matching t)
+    (setq ido-everywhere t)
+    (ido-mode 1)
+    (setq ido-use-filename-at-point 'guess)
+    (setq ido-create-new-buffer 'always)
+    (use-package ido-vertical-mode
+      :ensure t
+      :init
+      (ido-vertical-mode 1))
+    (setq ido-vetical-define-keys 'C-n-and-C-p-only)
+  #+END_SRC
+** smex
+    #+BEGIN_SRC emacs-lisp
+      (use-package smex
+	:ensure t
+	:init (smex-initialize)
+	:bind
+	("M-x" . smex))
+    #+END_SRC

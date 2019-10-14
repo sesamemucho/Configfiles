@@ -67,10 +67,6 @@
       evil-want-C-w-in-emacs-state t)
 (use-package all-the-icons
   :ensure t)
-(use-package helm
-  :ensure t
-  :init
-  (helm-mode 1))
 (use-package company
   :ensure t
   :init
@@ -108,7 +104,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (memoize diff-hl org-bullets which-key evil-magit evil-leader magit deferred company org-evil powerline-evil adoc-mode smart-hungry-delete dashboard all-the-icons page-break-lines ranger darcula-theme evil))))
+    (rg fzf memoize diff-hl org-bullets which-key evil-magit evil-leader magit deferred company org-evil powerline-evil adoc-mode smart-hungry-delete dashboard all-the-icons page-break-lines ranger darcula-theme evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
