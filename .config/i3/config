@@ -45,6 +45,7 @@ bindsym $mod+Control+Delete exec sudo reboot
 #steam
 bindsym $mod+g exec steam
 bindsym $mod+a exec anki
+bindsym $mod+x exec emacs
 bindsym $mod+v exec discord
 bindsym $mod+b exec "vivaldi-stable --ignore-certificate-errors"
 bindsym $mod+p exec code
@@ -53,7 +54,7 @@ bindsym $mod+Shift+q kill
 
 bindsym $mod+n exec lutris
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.

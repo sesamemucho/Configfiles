@@ -12,3 +12,6 @@
     pager = true
 [credential]
 	helper = store
+[filesystem "Oracle Corporation|1.8.0_222|/dev/sda4"]
+	timestampResolution = 6001 microseconds
+	minRacyThreshold = 0 nanoseconds
