@@ -1,0 +1,36 @@
+#+STARTUP: overview
+#+TITLE Lesson 1
+#+SEQ_TODO: TODO(t) WAITING(w) | CANCELLED(c) DONE(d)
+
+
+* Monday
+** TODO bla
+** TODO Go to  brunch
+   SCHEDULED: <2019-11-12 Tue 03:30>
+* Tuesday
+** TODO Brush Teeth 
+** TODO bal
+   SCHEDULED: <2019-10-17 Thu 04:40>
+** TODO Eat brakfast
+ 
+    
+
+| Name   | Birthplace |  Age |
+|--------+------------+------|
+| Julius | Landshut   |  111 |
+| Barney | Marzling   | 1111 |
+| Amy    | London     |   21 |
+|--------+------------+------|
+
+* Wednesday
+** TODO Be happy
+   DEADLINE: <2019-10-15 Tue +1w>
+
+   
+* First Week
+** Monday [2/2]
+   - [X] Get up
+   - [X] bla
+** Tuesday [50%]
+   - [ ] more stuff
+   - [X] bla
