@@ -11,6 +11,23 @@
     (electric-pair-mode t)
     (setq electric-pair-delete-adjacent-pairs t)
    #+End_SRC
+** Visual line mode
+#+BEGIN_SRC emacs-lisp
+  (global-visual-line-mode)
+#+END_SRC
+* Dired
+** Dired to shell
+#+BEGIN_SRC emacs-lisp
+  (require 'dired)
+  (define-key dired-mode-map "e" 'shell-instead-dired)
+
+  (defun shell-instead-dired ()
+    (interactive)
+    (let ((dired-buffer (current-buffer)))
+      (eshell (concat default-directory "-shell"))
+      (kill-buffer dired-buffer) ;; remove this line if you don't want to kill the dired buffer
+      (delete-other-windows)))
+#+END_SRC
 * Terminal
 ** Setting default shell to fish
    #+BEGIN_SRC emacs-lisp

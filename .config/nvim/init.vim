@@ -37,6 +37,8 @@ Plug 'stephpy/vim-yaml'
 Plug 'chase/vim-ansible-yaml'
 Plug 'mattn/emmet-vim'
 Plug 'troydm/zoomwintab.vim'
+Plug 'jonsmithers/vim-html-template-literals'
+Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -68,8 +70,7 @@ match ExtraWhitespace /\s\+$\|\t/
 let g:camelcasemotion_key = '<leader>'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1
-
-
+let g:html_indent_style1 = "inc"
 " }}}
 " coc.nvim {{{
 let g:coc_global_extensions = [
