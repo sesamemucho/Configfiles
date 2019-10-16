@@ -187,6 +187,13 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " }}}
 " FZF{{{
 nmap <C-p> : Files <CR>
+command! -bang -nargs=* Rg
+  \ call fzf#vim#files(
+  \   'rg --files --no-ignore --hidden --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
 " }}}
 " Undo Settings {{{
 set undodir=~/.vim/undodir
