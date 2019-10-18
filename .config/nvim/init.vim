@@ -30,6 +30,7 @@ Plug 'konfekt/fastfold' " faster folds
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'jremmen/vim-ripgrep' " use ripgrep
 Plug 'tpope/vim-obsession' " make sessions smarter
 Plug 'bkad/camelcasemotion'
 Plug 'stephpy/vim-yaml'
