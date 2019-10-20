@@ -33,6 +33,7 @@
     - name: Install ease of use packages
       pacman:
         name:
+          - clang
           - ruby
           - etckeeper
           - fzf
