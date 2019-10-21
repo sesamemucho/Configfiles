@@ -215,4 +215,4 @@ exec dunst
 exec feh --randomize --bg-fill --no-xinerama ~/Pictures/*
 exec --no-startup-id ~/.config/i3/startup.sh
 exec --no-startup-id lightscreen -d
-exec --no-startup-id redshift
+exec --no-startup-id redshift -l 48.458510:11.832830
