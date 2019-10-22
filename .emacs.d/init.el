@@ -3,9 +3,11 @@
 (setq package-archives
       '(("GNU ELPA"     . "https://elpa.gnu.org/packages/")
         ("MELPA Stable" . "https://stable.melpa.org/packages/")
+	("ORG"          . "https://orgmode.org/elpa/")
         ("MELPA"        . "https://melpa.org/packages/"))
       package-archive-priorities
-      '(("MELPA Stable" . 10)
+      '(("ORG"          . 10)
+        ("MELPA Stable" . 7)
         ("GNU ELPA"     . 5)
         ("MELPA"        . 0)))
 (package-initialize)
@@ -33,7 +35,7 @@
  '(org-agenda-files (quote ("~/Notebooks/org/gcal.org")))
  '(package-selected-packages
    (quote
-    (vterm org-gcal spaceline rainbow-delimiters sudo-edit hungry-delete rainbow-mode rg fzf memoize diff-hl org-bullets which-key evil-magit evil-leader magit deferred company org-evil powerline-evil adoc-mode dashboard all-the-icons page-break-lines ranger darcula-theme evil))))
+    (org-plus-contrib vterm org-gcal spaceline rainbow-delimiters sudo-edit hungry-delete rainbow-mode rg fzf memoize diff-hl org-bullets which-key evil-magit evil-leader magit deferred company org-evil powerline-evil adoc-mode dashboard all-the-icons page-break-lines ranger darcula-theme evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

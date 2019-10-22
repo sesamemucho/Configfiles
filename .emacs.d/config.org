@@ -144,6 +144,11 @@
   (provide 'evil-collection-vterm)
 #+END_SRC
 * Org
+** org plus contrib
+#+BEGIN_SRC emacs-lisp
+(use-package org
+  :ensure org-plus-contrib)
+#+END_SRC
 ** basic config
    #+BEGIN_SRC emacs-lisp
   (setq org-src-window-setup 'current-window)
@@ -279,10 +284,11 @@
   #+END_SRC
 * Company
   #+BEGIN_SRC emacs-lisp
-  (use-package company
-    :ensure t
-    :init
-    (add-hook 'after-init-hook 'global-company-mode))
+    (use-package company
+      :ensure t
+      :init
+      (add-hook 'after-init-hook 'global-company-mode))
+    (company-dabbrev t)
   #+END_SRC
 * Unsorted
   #+BEGIN_SRC emacs-lisp
