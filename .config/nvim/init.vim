@@ -65,7 +65,7 @@ set tabstop=4       " number of visual spaces per TAB
 set shiftwidth=4
 set softtabstop=4   " number of spaces in tab when editing
 " don't fuck with pasting
-set paste
+set pastetoggle=<F2>
 " Also highlight all tabs and trailing whitespace characters.
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\|\t/
