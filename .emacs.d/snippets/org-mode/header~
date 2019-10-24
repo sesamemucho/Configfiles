@@ -2,9 +2,9 @@
 # name: header
 # key: header
 # --
-#+OPTIONS: num:${0:nil} toc:${1:nil}
-#+REVEAL_TRANS: None/Fade/Slide/Convex/Concave/Zoom
-#+REVEAL_THEME: Black/White/League/Sky/Beige/Simple/Serif/Blood/Night/Moon/Solarized
-#+Title: Title of Your Talk
-#+Author: Your Name
-#+Email: Your Email Address or Twitter Handle
+#+OPTIONS: num:${1:nil} toc:${2:nil}
+#+REVEAL_TRANS: ${3:none}
+#+REVEAL_THEME: ${4:moon}
+#+Title: ${5:title}
+#+Author: ${6:Julius Dehner}
+#+Email: ${7:julius.dehner@gmail.com}

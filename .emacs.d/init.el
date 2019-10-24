@@ -15,10 +15,10 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+(use-package flatland-theme
+:ensure t)
 
-(unless (package-installed-p 'darcula-theme)
-  (package-refresh-contents)
-  (package-install 'darcula-theme))
+
 
 (org-babel-load-file (expand-file-name "~/.emacs.d/config.org"))
 
@@ -27,18 +27,26 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (darcula)))
+ '(custom-enabled-themes (quote (flatland-theme)))
  '(custom-safe-themes
    (quote
-    ("41c8c11f649ba2832347fe16fe85cf66dafe5213ff4d659182e25378f9cfc183" "8eafb06bf98f69bfb86f0bfcbe773b44b465d234d4b95ed7fa882c99d365ebfd" default)))
+    ("9b35c097a5025d5da1c97dba45fed027e4fb92faecbd2f89c2a79d2d80975181" "dcf7154867ba67b250fe2c5cdc15a7d170acd9cbe6707cc36d9dd1462282224d")))
  '(inhibit-startup-screen t)
- '(org-agenda-files (quote ("~/Notebooks/org/gcal.org")))
  '(package-selected-packages
    (quote
-    (yasnippet htmlize vterm org-gcal spaceline rainbow-delimiters sudo-edit hungry-delete rainbow-mode rg fzf memoize diff-hl org-bullets which-key evil-magit evil-leader magit deferred company org-evil powerline-evil adoc-mode dashboard all-the-icons page-break-lines ranger darcula-theme evil))))
+    (ob-kotlin kotlin-mode flatland-theme projectile yasnippet htmlize vterm org-gcal spaceline rainbow-delimiters sudo-edit hungry-delete rainbow-mode rg fzf memoize diff-hl org-bullets which-key evil-magit evil-leader magit deferred company org-evil powerline-evil adoc-mode dashboard all-the-icons page-break-lines ranger evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:foreground "#f8f8f8" :background "#26292c"))))
+ '(org-document-title ((t (:inherit default :weight bold :family "Sans Serif" :height 2.0 :underline nil))))
+ '(org-level-1 ((t (:inherit default :weight bold :family "Sans Serif" :height 1.75))))
+ '(org-level-2 ((t (:inherit default :weight bold :family "Sans Serif" :height 1.5))))
+ '(org-level-3 ((t (:inherit default :weight bold :family "Sans Serif" :height 1.25))))
+ '(org-level-4 ((t (:inherit default :weight bold :family "Sans Serif" :height 1.1))))
+ '(org-level-5 ((t (:inherit default :weight bold :family "Sans Serif"))))
+ '(org-level-6 ((t (:inherit default :weight bold :family "Sans Serif"))))
+ '(org-level-7 ((t (:inherit default :weight bold :family "Sans Serif"))))
+ '(org-level-8 ((t (:inherit default :weight bold :family "Sans Serif")))))

@@ -2,9 +2,10 @@
 # name: header
 # key: header
 # --
-#+OPTIONS: num:${1:nil} toc:${2:nil}
-#+REVEAL_TRANS: ${3:none}
-#+REVEAL_THEME: ${4:moon}
-#+Title: ${5:title}
-#+Author: ${6:Julius Dehner}
-#+Email: ${7:julius.dehner@gmail.com}
+#+REVEAL_ROOT: ${1:file:reveal.js}
+#+OPTIONS: num:${2:nil} toc:${3:nil}
+#+REVEAL_TRANS: ${4:none}
+#+REVEAL_THEME: ${5:moon}
+#+Title: ${6:title}
+#+Author: ${7:Julius Dehner}
+#+Email: ${8:julius.dehner@gmail.com}
