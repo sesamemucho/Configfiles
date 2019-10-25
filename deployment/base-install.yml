@@ -168,3 +168,12 @@
         replace: "[multilib]\nInclude = /etc/pacman.d/mirrorlist"
       become: yes
       become_user: root
+
+    - name: Enable colors
+      replace:
+        path: /etc/pacman.conf
+        regexp: '#Color'
+        replace: "Color"
+      become: yes
+      become_user: root
+

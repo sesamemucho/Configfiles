@@ -3,6 +3,11 @@
 #+BEGIN_SRC emacs-lisp
   (setq evil-want-keybinding nil)
 #+END_SRC
+** separate emacs clipboard and normal clipboard
+#+BEGIN_SRC emacs-lisp
+  (setq save-interprogram-paste-before-kill t)
+  (setq x-select-enable-clipboard nil)
+#+END_SRC
 ** electric
    #+BEGIN_SRC emacs-lisp
 
@@ -41,6 +46,7 @@
 * Projectile
 #+BEGIN_SRC emacs-lisp
   (use-package projectile
+    :ensure t
     :init
     (setq projectile-keymap-prefix (kbd "C-c p"))
     :config
@@ -403,6 +409,13 @@
   (define-key evil-normal-state-map (kbd "C-u") 'inertias-down)
   (define-key evil-normal-state-map (kbd "C-d") 'inertias-up)
 #+END_SRC
+* Dedicated folder for autosave/swap files
+#+BEGIN_SRC emacs-lisp
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+#+END_SRC
 * Unsorted
   #+BEGIN_SRC emacs-lisp
 (use-package which-key
@@ -414,7 +427,6 @@
   :ensure t
   :init
   (beacon-mode 1))
-(setq auto-save-default nil)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
