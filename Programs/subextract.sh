@@ -1,8 +1,10 @@
 #!/bin/sh
 
-episode=$(echo $3|grep -oP '.*S..E..')
-echo $1
-echo $2
-echo $3
-echo $episode
-mkvextract tracks "$3" "$1:$episode.$2"
+track=$1
+extension=$2
+shift
+for i in "$@"
+do
+	episode=$(echo $i|grep -oP '.*S..E..')
+	mkvextract tracks "$i" "$track:$episode.$extension"
+done
