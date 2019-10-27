@@ -24,6 +24,7 @@
           - base-devel
           - ripgrep
           - adobe-source-han-sans-jp-fonts
+          - adobe-source-sans-pro-fonts
           - rofi
           - i3-gaps
         state: present

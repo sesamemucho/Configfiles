@@ -30,6 +30,11 @@
   (use-package highlight-numbers
     :ensure t)
 #+END_SRC
+* Keybindings
+** Ctrl-h as backspace
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-;") 'backward-delete-char)
+#+END_SRC
 * Dired
 ** Dired to shell
 #+BEGIN_SRC emacs-lisp
@@ -415,6 +420,11 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+#+END_SRC
+* Window-management
+** use ctrl-o to switch window
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "M-o") 'other-window)
 #+END_SRC
 * Unsorted
   #+BEGIN_SRC emacs-lisp
