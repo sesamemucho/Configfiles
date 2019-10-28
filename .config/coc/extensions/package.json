@@ -16,6 +16,6 @@
     "coc-yaml": ">=1.0.2",
     "coc-tsserver": ">=1.4.4",
     "coc-prettier": ">=1.1.10",
-    "coc-git": ">=1.6.13"
+    "coc-git": ">=1.6.14"
   }
 }

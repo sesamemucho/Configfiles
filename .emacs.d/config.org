@@ -31,9 +31,10 @@
     :ensure t)
 #+END_SRC
 * Keybindings
-** Ctrl-h as backspace
+** Convenient deletion
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-;") 'backward-delete-char)
+  (global-set-key (kbd "C-:") 'delete-forward-char)
 #+END_SRC
 * Dired
 ** Dired to shell
@@ -322,28 +323,6 @@
     :ensure t)
   #+END_SRC
 
-* IDO
-** enable ido
-   #+BEGIN_SRC emacs-lisp
-    (setq ido-enable-flex-matching t)
-    (setq ido-everywhere t)
-    (ido-mode 1)
-    (setq ido-use-filename-at-point 'guess)
-    (setq ido-create-new-buffer 'always)
-    (use-package ido-vertical-mode
-      :ensure t
-      :init
-      (ido-vertical-mode 1))
-    (setq ido-vetical-define-keys 'C-n-and-C-p-only)
-   #+END_SRC
-** smex
-   #+BEGIN_SRC emacs-lisp
-      (use-package smex
-	:ensure t
-	:init (smex-initialize)
-	:bind
-	("M-x" . smex))
-   #+END_SRC
 * Config edit/reload
 ** edit
    #+BEGIN_SRC emacs-lisp
@@ -389,6 +368,44 @@
     :ensure t
     :bind ("C-x e" . sudo-edit))
   #+END_SRC
+* Counsel
+#+BEGIN_SRC emacs-lisp
+  (use-package counsel
+    :ensure t)
+#+END_SRC
+* Swiper
+#+BEGIN_SRC emacs-lisp
+    (use-package swiper
+      :ensure t
+      :init)
+#+END_SRC
+* Ivy
+#+BEGIN_SRC emacs-lisp
+  (use-package ivy
+    :ensure t
+    :init
+    (ivy-mode 1)
+    (setq ivy-use-virtual-buffers t)
+    (setq enable-recursive-minibuffers t)
+    ;; enable this if you want `swiper' to use it
+    ;; (setq search-default-mode #'char-fold-to-regexp)
+    (global-set-key "\C-s" 'swiper)
+    (global-set-key (kbd "C-c C-r") 'ivy-resume)
+    (global-set-key (kbd "<f6>") 'ivy-resume)
+    (global-set-key (kbd "M-x") 'counsel-M-x)
+    (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+    (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+    (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+    (global-set-key (kbd "<f1> l") 'counsel-find-library)
+    (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+    (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+    (global-set-key (kbd "C-c g") 'counsel-git)
+    (global-set-key (kbd "C-c j") 'counsel-git-grep)
+    (global-set-key (kbd "C-c k") 'counsel-ag)
+    (global-set-key (kbd "C-x l") 'counsel-locate)
+    (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+    (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
+#+END_SRC
 * Dashboard
   #+BEGIN_SRC emacs-lisp
   (use-package dashboard
@@ -425,6 +442,14 @@
 ** use ctrl-o to switch window
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "M-o") 'other-window)
+#+END_SRC
+** Ace-window
+#+BEGIN_SRC emacs-lisp
+  (use-package ace-window
+    :ensure t
+    :init
+    (progn
+      (global-set-key [remap other-window] 'ace-window)))
 #+END_SRC
 * Unsorted
   #+BEGIN_SRC emacs-lisp
