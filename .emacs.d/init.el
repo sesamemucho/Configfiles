@@ -32,9 +32,12 @@
    (quote
     ("9b35c097a5025d5da1c97dba45fed027e4fb92faecbd2f89c2a79d2d80975181" "dcf7154867ba67b250fe2c5cdc15a7d170acd9cbe6707cc36d9dd1462282224d")))
  '(inhibit-startup-screen t)
+ '(org-agenda-files
+   (quote
+    ("~/.emacs.d/config.org" "~/Notebooks/org/gcal.org" "~/Notebooks/org/i.org")))
  '(package-selected-packages
    (quote
-    (ace-window ob-kotlin kotlin-mode flatland-theme projectile yasnippet htmlize vterm org-gcal spaceline rainbow-delimiters sudo-edit hungry-delete rainbow-mode rg fzf memoize diff-hl org-bullets which-key evil-magit evil-leader magit deferred company org-evil powerline-evil adoc-mode dashboard all-the-icons page-break-lines ranger evil))))
+    (atomic-chrome counsel-projectile ace-window ob-kotlin kotlin-mode flatland-theme projectile yasnippet htmlize vterm org-gcal spaceline rainbow-delimiters sudo-edit hungry-delete rainbow-mode rg fzf memoize diff-hl org-bullets which-key evil-magit evil-leader magit deferred company org-evil powerline-evil adoc-mode dashboard all-the-icons page-break-lines ranger evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
