@@ -30,6 +30,10 @@
   (use-package highlight-numbers
     :ensure t)
 #+END_SRC
+** Increase overlap when scrolling by whole screens
+#+BEGIN_SRC emacs-lisp
+  (setq next-screen-context-lines 5)
+#+END_SRC
 * Keybindings
 ** Convenient deletion
 #+BEGIN_SRC emacs-lisp

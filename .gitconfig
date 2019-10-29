@@ -12,6 +12,13 @@
     pager = true
 [credential]
 	helper = store
-[filesystem "Oracle Corporation|1.8.0_222|/dev/sda4"]
-	timestampResolution = 6001 microseconds
-	minRacyThreshold = 0 nanoseconds
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[mergetool]
+	prompt = true
+[mergetool "vimdiff"]
+	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool]
+	prompt = false
