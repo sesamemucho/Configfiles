@@ -445,6 +445,56 @@
 	(define-key company-active-map (kbd "C-n") #'company-select-next)
 	(define-key company-active-map (kbd "C-p") #'company-select-previous)))
   #+END_SRC
+* Emmet
+#+BEGIN_SRC emacs-lisp
+  (use-package emmet-mode
+    :ensure t
+    :config
+    (add-hook 'sgml-mode-hook 'emmet-mode)
+    (add-hook 'css-mode-hook 'emmet-mode))
+#+END_SRC
+* Javascript (js2)
+#+BEGIN_SRC emacs-lisp
+  (use-package js2-mode
+    :ensure t
+    :config)
+
+  (use-package js2-refactor
+    :ensure t)
+  (use-package xref-js2
+    :ensure t)
+#+END_SRC
+* Polymode
+#+BEGIN_SRC emacs-lisp
+  (use-package polymode
+    :ensure t)
+#+END_SRC
+** Polymer-mode
+#+BEGIN_SRC emacs-lisp
+  (require 'polymode)
+  (require 'js2-mode)
+
+  (define-hostmode javascript-hostmode
+    :mode 'js2-mode)
+  (define-innermode lit-html-innermode
+    :mode 'mhtml-mode
+    :head-matcher "html[[:space:]]?`"
+    :tail-matcher "`"
+    :head-mode 'host
+    :tail-mode 'host)
+  (define-polymode polymer-mode
+    :hostmode 'javascript-hostmode
+    :innermodes '(lit-html-innermode))
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . polymer-mode))
+#+END_SRC
+* Indentation
+** Agressive indent
+#+BEGIN_SRC emacs-lisp
+  (use-package aggressive-indent
+    :ensure t
+    :config
+    (global-aggressive-indent-mode 1))
+#+END_SRC
 * Inertial scroll / smooth scrolling
 #+BEGIN_SRC emacs-lisp
   (add-to-list 'load-path "~/.emacs.d/lisp/")

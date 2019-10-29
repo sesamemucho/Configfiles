@@ -37,7 +37,7 @@
     ("~/.emacs.d/config.org" "~/Notebooks/org/gcal.org" "~/Notebooks/org/i.org")))
  '(package-selected-packages
    (quote
-    (atomic-chrome counsel-projectile ace-window ob-kotlin kotlin-mode flatland-theme projectile yasnippet htmlize vterm org-gcal spaceline rainbow-delimiters sudo-edit hungry-delete rainbow-mode rg fzf memoize diff-hl org-bullets which-key evil-magit evil-leader magit deferred company org-evil powerline-evil adoc-mode dashboard all-the-icons page-break-lines ranger evil))))
+    (xref-js2 js2-refactor js2-mode emmet-mode polymode aggressive-indent agressive-indent atomic-chrome counsel-projectile ace-window ob-kotlin kotlin-mode flatland-theme projectile yasnippet htmlize vterm org-gcal spaceline rainbow-delimiters sudo-edit hungry-delete rainbow-mode rg fzf memoize diff-hl org-bullets which-key evil-magit evil-leader magit deferred company org-evil powerline-evil adoc-mode dashboard all-the-icons page-break-lines ranger evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
