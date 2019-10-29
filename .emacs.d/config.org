@@ -477,7 +477,8 @@
   (require 'js2-mode)
 
   (define-hostmode javascript-hostmode
-    :mode 'js2-mode)
+    :mode 'js2-mode
+    :protect-syntax t)
   (define-innermode lit-html-innermode
     :mode 'mhtml-mode
     :head-matcher "html[[:space:]]?`"
