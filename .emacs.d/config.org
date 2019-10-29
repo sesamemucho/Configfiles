@@ -68,7 +68,9 @@
 ** Implement proper terminal in emacs
 #+BEGIN_SRC emacs-lisp
   (use-package vterm
-    :ensure t)
+    :ensure t
+    :config
+    (setq vterm-shell '/bin/fish))
 #+END_SRC
 ** evil settings for vterm
 #+BEGIN_SRC emacs-lisp
@@ -494,6 +496,13 @@
     :ensure t
     :config
     (global-aggressive-indent-mode 1))
+#+END_SRC
+** Use proper amount of spaces for displaying tabs
+#+BEGIN_SRC emacs-lisp
+  ;;from: https://stackoverflow.com/a/1819405/8825153
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 4)
+  ;;(setq indent-line-function 'insert-tab)
 #+END_SRC
 * Inertial scroll / smooth scrolling
 #+BEGIN_SRC emacs-lisp
