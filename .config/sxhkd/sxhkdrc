@@ -7,8 +7,6 @@ super + i
 	$TERMINAL -e htop
 super + t
 	touchpad-toggle.sh
-super + delete
-	sudo shutdown now
 super + g
 	steam
 super + a

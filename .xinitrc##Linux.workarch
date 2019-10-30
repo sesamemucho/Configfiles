@@ -1,3 +1,0 @@
-exec VBoxClient-all
-sxhkd &
-exec i3

@@ -37,4 +37,19 @@
     ("~/.emacs.d/config.org" "~/Notebooks/org/gcal.org" "~/Notebooks/org/i.org")))
  '(package-selected-packages
    (quote
-    (xref-js2 js2-refactor js2-mode emmet-mode polymode aggressive-indent agressive-indent atomic-chrome counsel-projectile ace-window ob-kotlin kotlin-mode flatland-theme projectile yasnippet htmlize vterm org-gcal spaceline rainbow-delimiters sudo-edit hungry-delete rainbow-mode rg fzf memoize diff-hl org-bullets which-key evil-magit evil-leader magit deferred company org-evil powerline-evil adoc-mode dashboard all-the-icons page-break-lines ranger evil))))
+    (exwm-systemtray exwm xref-js2 js2-refactor js2-mode emmet-mode polymode aggressive-indent agressive-indent atomic-chrome counsel-projectile ace-window ob-kotlin kotlin-mode flatland-theme projectile yasnippet htmlize vterm org-gcal spaceline rainbow-delimiters sudo-edit hungry-delete rainbow-mode rg fzf memoize diff-hl org-bullets which-key evil-magit evil-leader magit deferred company org-evil powerline-evil adoc-mode dashboard all-the-icons page-break-lines ranger evil))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:foreground "#f8f8f8" :background "#26292c"))))
+ '(org-document-title ((t (:inherit default :weight bold :font "DejaVu Sans Mono" :height 2.0 :underline nil))))
+ '(org-level-1 ((t (:inherit default :weight bold :height 1.75))))
+ '(org-level-2 ((t (:inherit default :weight bold :height 1.5))))
+ '(org-level-3 ((t (:inherit default :weight bold :height 1.25))))
+ '(org-level-4 ((t (:inherit default :weight bold :height 1.1))))
+ '(org-level-5 ((t (:inherit default :weight bold))))
+ '(org-level-6 ((t (:inherit default :weight bold))))
+ '(org-level-7 ((t (:inherit default :weight bold))))
+ '(org-level-8 ((t (:inherit default :weight bold)))))

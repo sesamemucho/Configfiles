@@ -53,6 +53,15 @@
       (kill-buffer dired-buffer) ;; remove this line if you don't want to kill the dired buffer
       (delete-other-windows)))
 #+END_SRC
+* EXWM
+#+BEGIN_SRC emacs-lisp
+  (use-package exwm
+    :ensure t)
+  (require 'exwm)
+  (require 'exwm-config)
+  (exwm-config-default)
+  (use-package exwm-randr)
+#+END_SRC
 * Projectile
 #+BEGIN_SRC emacs-lisp
   (use-package projectile
@@ -361,7 +370,7 @@
 )
   #+END_SRC
 
-* Rainbow-delimiters
+** Rainbow-delimiters
   #+BEGIN_SRC emacs-lisp
   (use-package rainbow-delimiters
     :ensure t
@@ -535,6 +544,14 @@
     :init
     (progn
       (global-set-key [remap other-window] 'ace-window)))
+#+END_SRC
+** windmove
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "s-h") 'windmove-left)
+  (global-set-key (kbd "s-j") 'windmove-down)
+  (global-set-key (kbd "s-k") 'windmove-up)
+  (global-set-key (kbd "s-l") 'windmove-right)
+
 #+END_SRC
 * Unsorted
   #+BEGIN_SRC emacs-lisp
