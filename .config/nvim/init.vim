@@ -32,12 +32,13 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep' " use ripgrep
 Plug 'tpope/vim-obsession' " make sessions smarter
-Plug 'bkad/camelcasemotion'
 Plug 'stephpy/vim-yaml'
 Plug 'chase/vim-ansible-yaml'
 Plug 'mattn/emmet-vim'
 Plug 'troydm/zoomwintab.vim'
 Plug 'jonsmithers/vim-html-template-literals'
+Plug 'andymass/vim-matchup' " improve % and add text objects i% and a%
+Plug 'chaoren/vim-wordmotion' " camelcasemotion
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
@@ -69,7 +70,7 @@ set pastetoggle=<F2>
 " Also highlight all tabs and trailing whitespace characters.
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\|\t/
-let g:camelcasemotion_key = '<leader>'
+let g:wordmotion_prefix = '<Leader>'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:html_indent_style1 = "inc"

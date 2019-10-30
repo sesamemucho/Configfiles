@@ -7,4 +7,5 @@ export XMODIFIERS=@im='ibus'
 
 #Toolbar for anthy
 ibus-daemon -drx
+sxhkd &
 exec i3
