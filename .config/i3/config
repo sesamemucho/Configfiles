@@ -33,28 +33,9 @@ new_window 1pixel
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec kitty
-
-# toggle touchpad
-bindsym $mod+T exec touchpad-toggle.sh
-
-#shutddown
-bindsym $mod+Delete exec sudo shutdown -h now
-bindsym $mod+Control+Delete exec sudo reboot
-#steam
-bindsym $mod+g exec steam
-bindsym $mod+a exec anki
-bindsym $mod+x exec emacs
-bindsym $mod+v exec discord
-bindsym $mod+b exec "vivaldi-stable --ignore-certificate-errors"
-bindsym $mod+p exec code
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+n exec lutris
-# start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -179,17 +160,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec_always --no-startup-id ~/.config/i3/polybar.sh &
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%; pactl set-sink-volume 1 +5%;pactl set-sink-volume 2 +5%; pactl set-sink-volume 3 +5%"
-bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5%; pactl set-sink-volume 1 -5%; pactl set-sink-volume 2 -5%; pactl set-sink-volume 3 -5%"
-bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle; pactl set-sink-mute 1 toggle; pactl set-sink-mute 2 toggle; pactl set-sink-mute 3 toggle"
-# Sreen brightness controls
-# increase screen brightness with notification
-bindsym XF86MonBrightnessUp exec "sudo light -A 5; notify-send 'brightness up'"
-# decrease screen brightness with notification
-bindsym XF86MonBrightnessDown exec "sudo light -U 5; notify-send 'brightness down'"
-
 # Colors
 set $bg-color 	         #7a3601
 set $inactive-bg-color   #111316
@@ -204,15 +174,4 @@ client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
 
-exec_always compton
-exec_always xbanish &
-
-#Xresources
-exec_always xrdb ~/.Xresources
-exec mpDris2 --port 8008
-exec mpd
-exec dunst
-exec feh --randomize --bg-fill --no-xinerama ~/Pictures/*
 exec --no-startup-id ~/.config/i3/startup.sh
-exec --no-startup-id lightscreen -d
-exec --no-startup-id redshift-gtk -l 48.458510:11.832830 -t 6500K:3800K

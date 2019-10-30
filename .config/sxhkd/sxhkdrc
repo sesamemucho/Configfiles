@@ -1,0 +1,39 @@
+# Basic binds
+super + Return
+	$TERMINAL
+super + d
+	$LAUNCHER -show run
+super + i
+	$TERMINAL -e htop
+super + t
+	touchpad-toggle.sh
+super + delete
+	sudo shutdown now
+super + g
+	steam
+super + a
+	anki
+super + x
+	emacs
+super + v
+	discord
+super + b
+	vivaldi-stable --ignore-certificate-errors
+super + n
+	lutris
+
+# Pulse Audio controls
+XF86AudioRaiseVolume
+	pactl set-sink-volume 0 +5%; pactl set-sink-volume 1 +5%;pactl set-sink-volume 2 +5%; pactl set-sink-volume 3 +5%
+XF86AudioLowerVolume
+	pactl set-sink-volume 0 -5%; pactl set-sink-volume 1 -5%; pactl set-sink-volume 2 -5%; pactl set-sink-volume 3 -5%
+XF86AudioMute
+	pactl set-sink-mute 0 toggle; pactl set-sink-mute 1 toggle; pactl set-sink-mute 2 toggle; pactl set-sink-mute 3 toggle
+# Sreen brightness controls
+# increase screen brightness with notification
+XF86MonBrightnessUp
+	sudo light -A 5; notify-send 'brightness up'
+# decrease screen brightness with notification
+XF86MonBrightnessDown
+	sudo light -U 5; notify-send 'brightness down'
+
