@@ -15,8 +15,6 @@ super + x
 	emacs
 super + v
 	discord
-super + b
-	vivaldi-stable --ignore-certificate-errors
 super + n
 	lutris
 

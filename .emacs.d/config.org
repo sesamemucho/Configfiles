@@ -1,13 +1,4 @@
 * Minor settings
-** evil-want-keybinding
-#+BEGIN_SRC emacs-lisp
-  (setq evil-want-keybinding nil)
-#+END_SRC
-** separate emacs clipboard and normal clipboard
-#+BEGIN_SRC emacs-lisp
-  (setq save-interprogram-paste-before-kill t)
-  (setq x-select-enable-clipboard nil)
-#+END_SRC
 ** electric
    #+BEGIN_SRC emacs-lisp
 
@@ -18,7 +9,7 @@
 				 (?\{ . ?\})
 				 ))
     (electric-pair-mode t)
-    (setq electric-pair-delete-adjacent-pairs t)
+   (setq electric-pair-delete-adjacent-pairs t)
    #+End_SRC
 ** Visual line mode
 #+BEGIN_SRC emacs-lisp
@@ -55,12 +46,91 @@
 #+END_SRC
 * EXWM
 #+BEGIN_SRC emacs-lisp
+  (require 'exwm-randr)
+  (setq exwm-randr-workspace-output-plist
+        '(0 "HDMI-0" 1 "DVI-D-0" 2 "DP-2" 3 "DP-0"))
+  (add-hook 'exwm-randr-screen-change-hook
+            (lambda()
+              (start-process-shell-command
+               "xrandr" nil "xrandr --output HDMI-0 --output DVI-D-0 --output DP-2 --output DP-0 --auto")))
+  (exwm-randr-enable)
+  (require 'exwm-systemtray)
+  (exwm-systemtray-enable)
   (use-package exwm
     :ensure t)
   (require 'exwm)
   (require 'exwm-config)
+  (setq exwm-layout-show-all-buffers 1)
   (exwm-config-default)
-  (use-package exwm-randr)
+(defun exwm-rename-buffer ()
+  (interactive)
+  (exwm-workspace-rename-buffer
+   (concat exwm-class-name ":"
+           (if (<= (length exwm-title) 50) exwm-title
+             (concat (substring exwm-title 0 49) "...")))))
+
+;; Add these hooks in a suitable place (e.g., as done in exwm-config-default)
+(add-hook 'exwm-update-class-hook 'exwm-rename-buffer)
+(add-hook 'exwm-update-title-hook 'exwm-rename-buffer)
+  ;; Global keybindings.
+  (unless (get 'exwm-input-global-keys 'saved-value)
+    (setq exwm-input-global-keys
+          `(
+            ;; 's-r': Reset (to line-mode).
+            ([?\s-r] . exwm-reset)
+            ;; 's-w': Switch workspace.
+            ([?\s-w] . exwm-workspace-switch)
+            ;; 's-b': global switch buffer
+            ([?\s-b] . exwm-workspace-switch-to-buffer)
+            ;; 's-&': Launch application.
+            ([?\s-&] . (lambda (command)
+                         (interactive (list (read-shell-command "$ ")))
+                         (start-process-shell-command command nil command)))
+            ;; 's-N': Switch to certain workspace.
+            ,@(mapcar (lambda (i)
+                        `(,(kbd (format "s-%d" i)) .
+                          (lambda ()
+                            (interactive)
+                            (exwm-workspace-switch-create ,i))))
+                      (number-sequence 0 9)))))
+  ;; Line-editing shortcuts
+  (unless (get 'exwm-input-simulation-keys 'saved-value)
+    (setq exwm-input-simulation-keys
+          '(([?\C-b] . [left])
+            ([?\C-f] . [right])
+            ([?\C-p] . [up])
+            ([?\C-n] . [down])
+            ([?\C-a] . [home])
+            ([?\C-e] . [end])
+            ([?\M-v] . [prior])
+            ([?\C-v] . [next])
+            ([?\C-d] . [delete])
+            ([?\C-k] . [S-end delete]))))
+  ;;;; Enable EXWM
+  ;;(exwm-enable)
+  ;;(fringe-mode 1)
+
+#+END_SRC
+** Startup programs
+#+BEGIN_SRC emacs-lisp
+  (start-process-shell-command
+   "startupfile" nil "~/.config/startup.sh")
+#+END_SRC
+** Add copied text from x11 to killring
+#+BEGIN_SRC emacs-lisp
+  (setq save-interprogram-paste-before-kill t)
+#+END_SRC
+** EXWM-edit
+ #+BEGIN_SRC emacs-lisp
+   (use-package exwm-edit
+     :ensure t)
+ #+END_SRC
+* Dumb-jump
+#+BEGIN_SRC emacs-lisp
+  (use-package dumb-jump
+    :ensure t
+    :config
+    (dumb-jump-mode))
 #+END_SRC
 * Projectile
 #+BEGIN_SRC emacs-lisp
@@ -84,104 +154,6 @@
     :ensure t
     :config
     (setq vterm-shell '/bin/fish))
-#+END_SRC
-** evil settings for vterm
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-collection
-  :ensure t)
-  (require 'vterm nil t)
-
-  (defconst evil-collection-vterm-maps '(vterm-mode-map))
-
-  (defvar vterm--process)
-
-  (defun evil-collection-vterm-escape-stay ()
-    "Go back to normal state but don't move cursor backwards.
-  Moving cursor backwards is the default vim behavior but
-  it is not appropriate in some cases like terminals."
-    (setq-local evil-move-cursor-back nil))
-
-  (defun evil-collection-vterm-exit-function (buffer)
-    "Automatically kill `vterm' buffer on exit."
-    (when buffer
-      (kill-buffer buffer)))
-
-  (defvar-local evil-collection-vterm-send-escape-to-vterm-p nil
-    "Track whether or not we send ESC to `vterm' or `emacs'.")
-
-  (defun evil-collection-vterm-toggle-send-escape ()
-    "Toggle where ESC is sent between `vterm' and `emacs'.
-  This is needed for programs that use ESC, e.g. vim or an ssh'd emacs that
-  also uses `evil-mode'."
-    (interactive)
-    (if evil-collection-vterm-send-escape-to-vterm-p
-	(evil-collection-define-key 'insert 'vterm-mode-map (kbd "<escape>")
-	  (lookup-key evil-insert-state-map (kbd "<escape>")))
-      (evil-collection-define-key 'insert 'vterm-mode-map
-	(kbd "<escape>") 'vterm--self-insert))
-    (setq evil-collection-vterm-send-escape-to-vterm-p
-	  (not evil-collection-vterm-send-escape-to-vterm-p))
-    (message (format "Sending ESC to %s."
-		     (if evil-collection-vterm-send-escape-to-vterm-p
-			 "vterm"
-		       "emacs"))))
-		       
-  (defun evil-collection-vterm-toggle-send-ctrl-bracket ()
-    "Toggle where C-[ (ESC) is sent between `vterm' and `emacs'."
-    (interactive)
-    (if evil-collection-vterm-send-escape-to-vterm-p
-	(evil-collection-define-key 'insert 'vterm-mode-map (kbd "C-[")
-	  (lookup-key evil-insert-state-map (kbd "C-[")))
-      (evil-collection-define-key 'insert 'vterm-mode-map
-	(kbd "C-[") 'vterm--self-insert))
-    (setq evil-collection-vterm-send-escape-to-vterm-p
-	  (not evil-collection-vterm-send-escape-to-vterm-p))
-    (message (format "Sending ESC to %s."
-		     (if evil-collection-vterm-send-escape-to-vterm-p
-			 "vterm"
-		       "emacs"))))
-
-
-  ;;;###autoload
-  (defun evil-collection-vterm-setup ()
-    "Set up `evil' bindings for `vterm'."
-    (evil-set-initial-state 'vterm-mode 'insert)
-
-    (add-hook 'vterm-mode-hook #'evil-collection-vterm-escape-stay)
-    (add-hook 'vterm-exit-functions #'evil-collection-vterm-exit-function)
-
-    ;; Open to a better binding...
-    (evil-collection-define-key '(normal insert) 'vterm-mode-map
-      (kbd "C-c C-z") 'evil-collection-vterm-toggle-send-escape)
-
-    ;; Evil has some "C-" bindings in insert state that shadow regular terminal
-    ;; bindings. Don't raw-send "C-c" (prefix key) nor "C-h" (help prefix).
-    (evil-collection-define-key 'insert 'vterm-mode-map
-      (kbd "C-a") 'vterm--self-insert
-      (kbd "C-b") 'vterm--self-insert     ; Should not be necessary.
-      (kbd "C-d") 'vterm--self-insert
-      (kbd "C-e") 'vterm--self-insert
-      (kbd "C-f") 'vterm--self-insert     ; Should not be necessary.
-      (kbd "C-k") 'vterm--self-insert
-      (kbd "C-l") 'vterm--self-insert     ; Should not be necessary.
-      (kbd "C-n") 'vterm--self-insert
-      (kbd "C-o") 'vterm--self-insert
-      (kbd "C-p") 'vterm--self-insert
-      (kbd "C-q") 'vterm--self-insert     ; Should not be necessary.
-      (kbd "C-r") 'vterm--self-insert
-      (kbd "C-s") 'vterm--self-insert     ; Should not be necessary.
-      (kbd "C-t") 'vterm--self-insert
-      (kbd "C-u") 'vterm--self-insert     ; Should not be necessary.
-      (kbd "C-v") 'vterm--self-insert     ; Should not be necessary.
-      (kbd "C-w") 'vterm--self-insert
-      (kbd "C-y") 'vterm--self-insert
-      (kbd "C-z") 'vterm--self-insert)
-
-    (evil-collection-define-key 'normal 'vterm-mode-map
-      "p" 'vterm-yank
-      "u" 'vterm-undo))
-
-  (provide 'evil-collection-vterm)
 #+END_SRC
 * Org
 ** org plus contrib
@@ -440,13 +412,6 @@
     (setq dashboard-items '((recents . 15)))
     (setq dashboard-set-footer nil))
   #+END_SRC
-* Atomic-Chrome
-#+BEGIN_SRC emacs-lisp
-  (use-package atomic-chrome
-    :ensure t
-    :config
-    (atomic-chrome-start-server))
-#+END_SRC
 * Company
   #+BEGIN_SRC emacs-lisp
     (use-package company
@@ -522,8 +487,8 @@
 #+BEGIN_SRC emacs-lisp
   (add-to-list 'load-path "~/.emacs.d/lisp/")
   (load "inertial-scroll")
-  (define-key evil-normal-state-map (kbd "C-u") 'inertias-down)
-  (define-key evil-normal-state-map (kbd "C-d") 'inertias-up)
+  ;;(define-key evil-normal-state-map (kbd "C-u") 'inertias-down)
+  ;;(define-key evil-normal-state-map (kbd "C-d") 'inertias-up)
 #+END_SRC
 * Dedicated folder for autosave/swap files
 #+BEGIN_SRC emacs-lisp
@@ -553,6 +518,10 @@
   (global-set-key (kbd "s-l") 'windmove-right)
 
 #+END_SRC
+* Set font
+#+BEGIN_SRC emacs-lisp
+  (set-frame-font "DejaVu Sans Mono 14" nil t)
+#+END_SRC
 * Unsorted
   #+BEGIN_SRC emacs-lisp
 (use-package which-key
@@ -578,28 +547,15 @@
   (diff-hl-flydiff-mode))
 
 
-(set-frame-font "DejaVu Sans Mono 12" nil t)
 
 (use-package deferred
   :ensure t)
-(use-package evil-leader
-  :ensure t
-  :init
-(global-evil-leader-mode))
 (use-package magit
-  :ensure t)
-(use-package evil-magit
   :ensure t)
 (use-package git-gutter
   :ensure t
   :init
 (git-gutter-mode 1))
-(use-package evil
-  :ensure t
-  :init
-  (evil-mode 1))
-(setq evil-search-module 'evil-search
-      evil-want-C-w-in-emacs-state t)
 (use-package all-the-icons
   :ensure t)
 
