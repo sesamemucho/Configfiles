@@ -26,11 +26,6 @@
   (setq next-screen-context-lines 5)
 #+END_SRC
 * Keybindings
-** Convenient deletion
-#+BEGIN_SRC emacs-lisp
-  (global-set-key (kbd "C-;") 'backward-delete-char)
-  (global-set-key (kbd "C-:") 'delete-forward-char)
-#+END_SRC
 * Dired
 ** Dired to shell
 #+BEGIN_SRC emacs-lisp
@@ -82,6 +77,8 @@
             ([?\s-w] . exwm-workspace-switch)
             ;; 's-b': global switch buffer
             ([?\s-b] . exwm-workspace-switch-to-buffer)
+            ;; 's-Q': kill current buffer
+            ([?\s-Q] . kill-current-buffer)
             ;; 's-&': Launch application.
             ([?\s-&] . (lambda (command)
                          (interactive (list (read-shell-command "$ ")))
@@ -154,6 +151,13 @@
     :ensure t
     :config
     (setq vterm-shell '/bin/fish))
+#+END_SRC
+* Modeline
+** display time in modeline
+#+BEGIN_SRC emacs-lisp
+  (setq display-time-day-and-date t)
+  (setq display-time-24hr-format t)
+  (display-time-mode)
 #+END_SRC
 * Org
 ** org plus contrib
@@ -297,6 +301,13 @@
   (global-set-key (kbd "C-c a") 'my-increment-number-at-point)
   (global-set-key (kbd "C-c x") 'my-decrement-number-at-point)
 #+END_SRC
+* Dotmode
+#+BEGIN_SRC emacs-lisp
+  (use-package dot-mode
+    :ensure t
+    :config
+    (dot-mode-on))
+#+END_SRC
 * FZF
 ** Install
    #+BEGIN_SRC emacs-lisp
@@ -367,12 +378,18 @@
     (counsel-projectile-mode))
 #+END_SRC
 * Swiper
+
 #+BEGIN_SRC emacs-lisp
     (use-package swiper
       :ensure t
       :init)
 #+END_SRC
 * Ivy
+
+
+  
+  
+  
 ** Install and config
 #+BEGIN_SRC emacs-lisp
   (use-package ivy
@@ -400,6 +417,15 @@
     (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
 #+END_SRC
+* Avy
+#+BEGIN_SRC emacs-lisp
+  (use-package avy
+    :ensure t
+    :config
+    (global-set-key (kbd "C-;") 'avy-goto-char)
+    (global-set-key (kbd "C-:") 'avy-goto-char-2)
+    )
+#+END_SRC
 * Dashboard
   #+BEGIN_SRC emacs-lisp
   (use-package dashboard
@@ -412,6 +438,13 @@
     (setq dashboard-items '((recents . 15)))
     (setq dashboard-set-footer nil))
   #+END_SRC
+* Undohist
+#+BEGIN_SRC emacs-lisp
+  (use-package undohist
+    :ensure t
+    :config
+    (undohist-initialize))
+#+END_SRC
 * Company
   #+BEGIN_SRC emacs-lisp
     (use-package company
@@ -420,10 +453,7 @@
       (global-company-mode)
       :config
       (with-eval-after-load 'company
-	(define-key company-active-map (kbd "M-n") nil)
-	(define-key company-active-map (kbd "M-p") nil)
-	(define-key company-active-map (kbd "C-n") #'company-select-next)
-	(define-key company-active-map (kbd "C-p") #'company-select-previous)))
+        (setq company-minimum-prefix-length 2)))
   #+END_SRC
 * Emmet
 #+BEGIN_SRC emacs-lisp

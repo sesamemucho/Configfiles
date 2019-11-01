@@ -14,9 +14,15 @@ super + a
 super + x
 	emacs
 super + v
-	discord
+      discord
 super + n
-	lutris
+      lutris
+super + c
+      vivaldi-stable --ignore-certificate-errors
+super + m
+      plexmediaplayer
+super + Delete
+      sudo shutdown now
 
 # Pulse Audio controls
 XF86AudioRaiseVolume
