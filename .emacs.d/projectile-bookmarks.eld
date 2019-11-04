@@ -1,1 +1,0 @@
-("~/Projects/makeLispInC/" "~/Notebooks/Notebooks_School/" "~/Notebooks/" "~/Projects/KotlinPresentation/")
