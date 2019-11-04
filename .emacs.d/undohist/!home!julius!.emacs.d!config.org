@@ -1,0 +1,370 @@
+
+((digest . "6d52369b5571ef1d28efa55fb17431e9") (undo-list nil (nil help-echo nil 10363 . 10407) (nil prettify-symbols-start nil 10363 . 10407) (nil prettify-symbols-end nil 10363 . 10407) (nil fontified nil 10363 . 10407) (nil font-lock-fontified t 10363 . 10407) (nil font-lock-multiline t 10363 . 10407) (nil face org-block-begin-line 10363 . 10407) (10363 . 10407) ("  (use-package sudo-edit
+    :ensure t
+    :bind (\"C-x e\" . sudo-edit))
+" . 10363) ((marker . 10363) . -43) ((marker . 10406) . -43) ((marker . 10406) . -43) 10406 nil ("
+" . 2661) nil ("#+END_SRC" . 2661) nil ("
+" . 2478) nil ("#+BEGIN_SRC emacs-lisp" . 2478) nil ("
+" . 2478) nil ("** windmove" . 2478) nil (nil rear-nonsticky nil 2705 . 2706) (nil fontified nil 2705 . 2706) (nil fontified nil 2696 . 2705) (nil fontified nil 2695 . 2696) (nil fontified nil 2677 . 2695) (nil help-echo nil 2672 . 2677) (nil fontified nil 2672 . 2677) (nil help-echo nil 2633 . 2672) (nil fontified nil 2633 . 2672) (nil help-echo nil 2628 . 2633) (nil fontified nil 2628 . 2633) (nil help-echo nil 2587 . 2628) (nil fontified nil 2587 . 2628) (nil help-echo nil 2582 . 2587) (nil fontified nil 2582 . 2587) (nil help-echo nil 2541 . 2582) (nil fontified nil 2541 . 2582) (nil help-echo nil 2536 . 2541) (nil fontified nil 2536 . 2541) (nil help-echo nil 2513 . 2536) (nil fontified nil 2513 . 2536) (nil help-echo nil 2512 . 2513) (nil fontified nil 2512 . 2513) (nil fontified nil 2490 . 2512) (nil fontified nil 2489 . 2490) (nil fontified nil 2481 . 2489) (nil keymap (keymap) 2480 . 2481) (nil fontified nil 2480 . 2481) (nil keymap (keymap) 2479 . 2480) (nil fontified nil 2479 . 2480) (nil keymap (keymap) 2478 . 2479) (nil fontified nil 2478 . 2479) (2478 . 2706) nil ("** windmove
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd \"s-h\") 'windmove-left)
+  (global-set-key (kbd \"s-j\") 'windmove-down)
+  (global-set-key (kbd \"s-k\") 'windmove-up)
+  (global-set-key (kbd \"s-l\") 'windmove-right)
+#+END_SRC
+" . 14583) ((marker . 14738) . -227) ((marker . 10406) . -81) nil (14618 . 14801) nil ("  (global-set-key (kbd \"s-h\") 'windmove-left)
+  (global-set-key (kbd \"s-j\") 'windmove-down)
+  (global-set-key (kbd \"s-k\") 'windmove-up)
+  (global-set-key (kbd \"s-l\") 'windmove-right)
+" . 14618) ((marker . 10406) . -46) nil ("
+" . 14801) nil ("
+" . 14583) nil ("** use ctrl-o to switch window
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd \"M-o\") 'other-window)
+#+END_SRC" . 14583) ((marker . 10406) . -29) (t 24000 11604 760047 526000) nil ("
+" . 14692) nil ("** Ace-window
+#+BEGIN_SRC emacs-lisp
+  (use-package ace-window
+    :ensure t
+    :init
+    (progn
+      (global-set-key [remap other-window] 'ace-window)))
+#+END_SRC" . 14692) (t 23999 55644 827683 467000) nil (nil help-echo nil 1012 . 3579) (nil prettify-symbols-start nil 1012 . 3579) (nil prettify-symbols-end nil 1012 . 3579) (nil fontified nil 1012 . 3579) (nil font-lock-fontified t 1012 . 3579) (nil font-lock-multiline t 1012 . 3579) (nil face org-block-begin-line 1012 . 3579) (1012 . 3579) ("  (setq mouse-autoselect-window t
+        focus-follows-mouse t)
+  (require 'exwm-randr)
+  (setq exwm-randr-workspace-output-plist
+        '(0 \"HDMI-0\" 1 \"DVI-D-0\" 2 \"DP-2\" 3 \"DP-0\"))
+  (add-hook 'exwm-randr-screen-change-hook
+            (lambda()
+              (start-process-shell-command
+               \"xrandr\" nil \"xrandr --output HDMI-0 --output DVI-D-0 --output DP-2 --output DP-0 --auto\")))
+  (exwm-randr-enable)
+  (require 'exwm-systemtray)
+  (exwm-systemtray-enable)
+  (use-package exwm
+    :ensure t)
+  (require 'exwm)
+  (require 'exwm-config)
+  (setq exwm-layout-show-all-buffers 1)
+  (exwm-config-default)
+  (defun exwm-rename-buffer ()
+    (interactive)
+    (exwm-workspace-rename-buffer
+     (concat exwm-class-name \":\"
+             (if (<= (length exwm-title) 50) exwm-title
+               (concat (substring exwm-title 0 49) \"...\")))))
+
+  ;; Add these hooks in a suitable place (e.g., as done in exwm-config-default)
+  (add-hook 'exwm-update-title-hook 'exwm-rename-buffer)
+  ;; Global keybindings.
+  (unless (get 'exwm-input-global-keys 'saved-value)
+    (setq exwm-input-global-keys
+          `(
+            ;; 's-r': Reset (to line-mode).
+            ([?\\s-r] . exwm-reset)
+            ;; 's-w': Switch workspace.
+            ([?\\s-w] . exwm-workspace-switch)
+            ;; 's-b': global switch buffer
+            ([?\\s-b] . exwm-workspace-switch-to-buffer)
+            ;; 's-Q': kill current buffer
+            ([?\\s-Q] . kill-current-buffer)
+            ;; 's-&': Launch application.
+            ([?\\s-&] . (lambda (command)
+                         (interactive (list (read-shell-command \"$ \")))
+                         (start-process-shell-command command nil command)))
+            ;; 's-N': Switch to certain workspace.
+            ,@(mapcar (lambda (i)
+                        `(,(kbd (format \"s-%d\" i)) .
+                          (lambda ()
+                            (interactive)
+                            (exwm-workspace-switch-create ,i))))
+                      (number-sequence 0 9)))))
+  ;; Line-editing shortcuts
+  (unless (get 'exwm-input-simulation-keys 'saved-value)
+    (setq exwm-input-simulation-keys
+          '(([?\\C-b] . [left])
+            ([?\\C-f] . [right])
+            ([?\\C-p] . [up])
+            ([?\\C-n] . [down])
+            ([?\\C-a] . [home])
+            ([?\\C-e] . [end])
+            ([?\\M-v] . [prior])
+            ([?\\C-v] . [next])
+            ([?\\C-d] . [delete])
+            ([?\\C-k] . [S-end delete])
+            ([?\\C-c C-c] . [C-c]))))
+    ;;;; Enable EXWM
+  ;;(exwm-enable)
+  ;;(fringe-mode 1)
+
+" . 1012) 3578 (t 23999 55438 187673 905000) nil (nil help-echo nil 1012 . 3578) (nil prettify-symbols-start nil 1012 . 3578) (nil prettify-symbols-end nil 1012 . 3578) (nil fontified nil 1012 . 3578) (nil font-lock-fontified t 1012 . 3578) (nil font-lock-multiline t 1012 . 3578) (nil face org-block-begin-line 1012 . 3578) (1012 . 3578) ("  (setq mouse-autoselect-window t
+        focus-follows-mouse t)
+  (require 'exwm-randr)
+  (setq exwm-randr-workspace-output-plist
+        '(0 \"HDMI-0\" 1 \"DVI-D-0\" 2 \"DP-2\" 3 \"DP-0\"))
+  (add-hook 'exwm-randr-screen-change-hook
+            (lambda()
+              (start-process-shell-command
+               \"xrandr\" nil \"xrandr --output HDMI-0 --output DVI-D-0 --output DP-2 --output DP-0 --auto\")))
+  (exwm-randr-enable)
+  (require 'exwm-systemtray)
+  (exwm-systemtray-enable)
+  (use-package exwm
+    :ensure t)
+  (require 'exwm)
+  (require 'exwm-config)
+  (setq exwm-layout-show-all-buffers 1)
+  (exwm-config-default)
+  (defun exwm-rename-buffer ()
+    (interactive)
+    (exwm-workspace-rename-buffer
+     (concat exwm-class-name \":\"
+             (if (<= (length exwm-title) 50) exwm-title
+               (concat (substring exwm-title 0 49) \"...\")))))
+
+  (define-key exwm-mode-map (kbd \"C-c\") nil)
+  ;; Add these hooks in a suitable place (e.g., as done in exwm-config-default)
+  (add-hook 'exwm-update-title-hook 'exwm-rename-buffer)
+  ;; Global keybindings.
+  (unless (get 'exwm-input-global-keys 'saved-value)
+    (setq exwm-input-global-keys
+          `(
+            ;; 's-r': Reset (to line-mode).
+            ([?\\s-r] . exwm-reset)
+            ;; 's-w': Switch workspace.
+            ([?\\s-w] . exwm-workspace-switch)
+            ;; 's-b': global switch buffer
+            ([?\\s-b] . exwm-workspace-switch-to-buffer)
+            ;; 's-Q': kill current buffer
+            ([?\\s-Q] . kill-current-buffer)
+            ;; 's-&': Launch application.
+            ([?\\s-&] . (lambda (command)
+                         (interactive (list (read-shell-command \"$ \")))
+                         (start-process-shell-command command nil command)))
+            ;; 's-N': Switch to certain workspace.
+            ,@(mapcar (lambda (i)
+                        `(,(kbd (format \"s-%d\" i)) .
+                          (lambda ()
+                            (interactive)
+                            (exwm-workspace-switch-create ,i))))
+                      (number-sequence 0 9)))))
+  ;; Line-editing shortcuts
+  (unless (get 'exwm-input-simulation-keys 'saved-value)
+    (setq exwm-input-simulation-keys
+          '(([?\\C-b] . [left])
+            ([?\\C-f] . [right])
+            ([?\\C-p] . [up])
+            ([?\\C-n] . [down])
+            ([?\\C-a] . [home])
+            ([?\\C-e] . [end])
+            ([?\\M-v] . [prior])
+            ([?\\C-v] . [next])
+            ([?\\C-d] . [delete])
+            ([?\\C-k] . [S-end delete]))))
+    ;;;; Enable EXWM
+  ;;(exwm-enable)
+  ;;(fringe-mode 1)
+
+" . 1012) 999 (t 23999 55187 90995 597000) nil (nil help-echo nil 1012 . 3589) (nil prettify-symbols-start nil 1012 . 3589) (nil prettify-symbols-end nil 1012 . 3589) (nil fontified nil 1012 . 3589) (nil font-lock-fontified t 1012 . 3589) (nil font-lock-multiline t 1012 . 3589) (nil face org-block-begin-line 1012 . 3589) (1012 . 3589) ("  (setq mouse-autoselect-window t
+        focus-follows-mouse t)
+  (require 'exwm-randr)
+  (setq exwm-randr-workspace-output-plist
+        '(0 \"HDMI-0\" 1 \"DVI-D-0\" 2 \"DP-2\" 3 \"DP-0\"))
+  (add-hook 'exwm-randr-screen-change-hook
+            (lambda()
+              (start-process-shell-command
+               \"xrandr\" nil \"xrandr --output HDMI-0 --output DVI-D-0 --output DP-2 --output DP-0 --auto\")))
+  (exwm-randr-enable)
+  (require 'exwm-systemtray)
+  (exwm-systemtray-enable)
+  (use-package exwm
+    :ensure t)
+  (require 'exwm)
+  (require 'exwm-config)
+  (setq exwm-layout-show-all-buffers 1)
+  (exwm-config-default)
+  (defun exwm-rename-buffer ()
+    (interactive)
+    (exwm-workspace-rename-buffer
+     (concat exwm-class-name \":\"
+             (if (<= (length exwm-title) 50) exwm-title
+               (concat (substring exwm-title 0 49) \"...\")))))
+
+  (define-key exwm-mode-map (kbd \"C-c\") nil)
+  ;; Add these hooks in a suitable place (e.g., as done in exwm-config-default)
+  (add-hook 'exwm-update-title-hook 'exwm-rename-buffer)
+  ;; Global keybindings.
+  (unless (get 'exwm-input-global-keys 'saved-value)
+    (setq exwm-input-global-keys
+          `(
+            ;; 's-r': Reset (to line-mode).
+            ([?\\s-r] . exwm-reset)
+            ;; 's-w': Switch workspace.
+            ([?\\s-w] . exwm-workspace-switch)
+            ;; 's-b': global switch buffer
+            ([?\\s-b] . exwm-workspace-switch-to-buffer)
+            ;; 's-Q': kill current buffer
+            ([?\\s-Q] . kill-current-buffer)
+            ;; 's-&': Launch application.
+            ([?\\s-&] . (lambda (command)
+                         (interactive (list (read-shell-command \"$ \")))
+                         (start-process-shell-command command nil command)))
+            ;; 's-N': Switch to certain workspace.
+            ,@(mapcar (lambda (i)
+                        `(,(kbd (format \"s-%d\" i)) .
+                          (lambda ()
+                            (interactive)
+                            (exwm-workspace-switch-create ,i))))
+                      (number-sequence 0 9)))))
+  ;; Line-editing shortcuts
+  (unless (get 'exwm-input-simulation-keys 'saved-value)
+    (setq exwm-input-simulation-keys
+          '(([?\\C-b] . [left])
+            ([?\\C-f] . [right])
+            ([?\\C-p] . [up])
+            ([?\\C-n] . [down])
+            ([?\\C-a] . [home])
+            ([?\\C-e] . [end])
+            ([?\\M-v] . [prior])
+            ([?\\C-v] . [next])
+            ([?\\C-d] . [delete])
+            ([?\\C-k] . [S-end delete]))))
+    ;;;; Enable EXWM
+  ;;(exwm-enable)
+  ;;(fringe-mode 1)
+
+" . 1012) 3589 (t 23999 55178 734328 541000) nil (nil help-echo nil 1012 . 3589) (nil prettify-symbols-start nil 1012 . 3589) (nil prettify-symbols-end nil 1012 . 3589) (nil fontified nil 1012 . 3589) (nil font-lock-fontified t 1012 . 3589) (nil font-lock-multiline t 1012 . 3589) (nil face org-block-begin-line 1012 . 3589) (1012 . 3589) ("  (setq mouse-autoselect-window t
+        focus-follows-mouse t)
+  (require 'exwm-randr)
+  (setq exwm-randr-workspace-output-plist
+        '(0 \"HDMI-0\" 1 \"DVI-D-0\" 2 \"DP-2\" 3 \"DP-0\"))
+  (add-hook 'exwm-randr-screen-change-hook
+            (lambda()
+              (start-process-shell-command
+               \"xrandr\" nil \"xrandr --output HDMI-0 --output DVI-D-0 --output DP-2 --output DP-0 --auto\")))
+  (exwm-randr-enable)
+  (require 'exwm-systemtray)
+  (exwm-systemtray-enable)
+  (use-package exwm
+    :ensure t)
+  (require 'exwm)
+  (require 'exwm-config)
+  (setq exwm-layout-show-all-buffers 1)
+  (exwm-config-default)
+  (defun exwm-rename-buffer ()
+    (interactive)
+    (exwm-workspace-rename-buffer
+     (concat exwm-class-name \":\"
+             (if (<= (length exwm-title) 50) exwm-title
+               (concat (substring exwm-title 0 49) \"...\")))))
+
+  ;; Add these hooks in a suitable place (e.g., as done in exwm-config-default)
+  (add-hook 'exwm-update-class-hook 'exwm-rename-buffer)
+  (add-hook 'exwm-update-title-hook 'exwm-rename-buffer)
+    ;; Global keybindings.
+    (unless (get 'exwm-input-global-keys 'saved-value)
+      (setq exwm-input-global-keys
+            `(
+              ;; 's-r': Reset (to line-mode).
+              ([?\\s-r] . exwm-reset)
+              ;; 's-w': Switch workspace.
+              ([?\\s-w] . exwm-workspace-switch)
+              ;; 's-b': global switch buffer
+              ([?\\s-b] . exwm-workspace-switch-to-buffer)
+              ;; 's-Q': kill current buffer
+              ([?\\s-Q] . kill-current-buffer)
+              ;; 's-&': Launch application.
+              ([?\\s-&] . (lambda (command)
+                           (interactive (list (read-shell-command \"$ \")))
+                           (start-process-shell-command command nil command)))
+              ;; 's-N': Switch to certain workspace.
+              ,@(mapcar (lambda (i)
+                          `(,(kbd (format \"s-%d\" i)) .
+                            (lambda ()
+                              (interactive)
+                              (exwm-workspace-switch-create ,i))))
+                        (number-sequence 0 9)))))
+    ;; Line-editing shortcuts
+    (unless (get 'exwm-input-simulation-keys 'saved-value)
+      (setq exwm-input-simulation-keys
+            '(([?\\C-b] . [left])
+              ([?\\C-f] . [right])
+              ([?\\C-p] . [up])
+              ([?\\C-n] . [down])
+              ([?\\C-a] . [home])
+              ([?\\C-e] . [end])
+              ([?\\M-v] . [prior])
+              ([?\\C-v] . [next])
+              ([?\\C-d] . [delete])
+              ([?\\C-k] . [S-end delete]))))
+    ;;;; Enable EXWM
+    ;;(exwm-enable)
+    ;;(fringe-mode 1)
+
+" . 1012) 1667 (t 23999 54723 624307 446000) nil (nil help-echo nil 1012 . 3677) (nil prettify-symbols-start nil 1012 . 3677) (nil prettify-symbols-end nil 1012 . 3677) (nil fontified nil 1012 . 3677) (nil font-lock-fontified t 1012 . 3677) (nil font-lock-multiline t 1012 . 3677) (nil face org-block-begin-line 1012 . 3677) (1012 . 3677) ("  (require 'exwm-randr)
+  (setq exwm-randr-workspace-output-plist
+        '(0 \"HDMI-0\" 1 \"DVI-D-0\" 2 \"DP-2\" 3 \"DP-0\"))
+  (add-hook 'exwm-randr-screen-change-hook
+            (lambda()
+              (start-process-shell-command
+               \"xrandr\" nil \"xrandr --output HDMI-0 --output DVI-D-0 --output DP-2 --output DP-0 --auto\")))
+  (exwm-randr-enable)
+  (require 'exwm-systemtray)
+  (exwm-systemtray-enable)
+  (use-package exwm
+    :ensure t)
+  (require 'exwm)
+  (require 'exwm-config)
+  (setq exwm-layout-show-all-buffers 1)
+  (exwm-config-default)
+(defun exwm-rename-buffer ()
+  (interactive)
+  (exwm-workspace-rename-buffer
+   (concat exwm-class-name \":\"
+           (if (<= (length exwm-title) 50) exwm-title
+             (concat (substring exwm-title 0 49) \"...\")))))
+
+;; Add these hooks in a suitable place (e.g., as done in exwm-config-default)
+(add-hook 'exwm-update-class-hook 'exwm-rename-buffer)
+(add-hook 'exwm-update-title-hook 'exwm-rename-buffer)
+  ;; Global keybindings.
+  (unless (get 'exwm-input-global-keys 'saved-value)
+    (setq exwm-input-global-keys
+          `(
+            ;; 's-r': Reset (to line-mode).
+            ([?\\s-r] . exwm-reset)
+            ;; 's-w': Switch workspace.
+            ([?\\s-w] . exwm-workspace-switch)
+            ;; 's-b': global switch buffer
+            ([?\\s-b] . exwm-workspace-switch-to-buffer)
+            ;; 's-Q': kill current buffer
+            ([?\\s-Q] . kill-current-buffer)
+            ;; 's-&': Launch application.
+            ([?\\s-&] . (lambda (command)
+                         (interactive (list (read-shell-command \"$ \")))
+                         (start-process-shell-command command nil command)))
+            ;; 's-N': Switch to certain workspace.
+            ,@(mapcar (lambda (i)
+                        `(,(kbd (format \"s-%d\" i)) .
+                          (lambda ()
+                            (interactive)
+                            (exwm-workspace-switch-create ,i))))
+                      (number-sequence 0 9)))))
+  ;; Line-editing shortcuts
+  (unless (get 'exwm-input-simulation-keys 'saved-value)
+    (setq exwm-input-simulation-keys
+          '(([?\\C-b] . [left])
+            ([?\\C-f] . [right])
+            ([?\\C-p] . [up])
+            ([?\\C-n] . [down])
+            ([?\\C-a] . [home])
+            ([?\\C-e] . [end])
+            ([?\\M-v] . [prior])
+            ([?\\C-v] . [next])
+            ([?\\C-d] . [delete])
+            ([?\\C-k] . [S-end delete]))))
+  ;;;; Enable EXWM
+  ;;(exwm-enable)
+  ;;(fringe-mode 1)
+
+" . 1012) 1022 nil ("j" . -1) ("j" . -2) 3 nil (1 . 3) (t 23998 2322 118256 929000)))

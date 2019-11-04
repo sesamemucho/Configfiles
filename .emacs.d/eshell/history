@@ -1,0 +1,8 @@
+gcc -std=c99 -g -Wall test.c 
+ls
+gcc -std=c99 -g -Wall test.c -o test
+ls
+alias comp 'gcc -std=c99 -g -Wall test.c -o test'
+comp test.c -o test 
+./test 
+find-file .\#kotlin.org

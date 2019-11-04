@@ -14,7 +14,7 @@
     "coc-pairs": ">=1.2.18",
     "coc-yank": ">=1.0.4",
     "coc-yaml": ">=1.0.2",
-    "coc-tsserver": ">=1.4.4",
+    "coc-tsserver": ">=1.4.5",
     "coc-prettier": ">=1.1.10",
     "coc-git": ">=1.6.16"
   }

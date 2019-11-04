@@ -41,6 +41,8 @@
 #+END_SRC
 * EXWM
 #+BEGIN_SRC emacs-lisp
+  (setq mouse-autoselect-window t
+        focus-follows-mouse t)
   (require 'exwm-randr)
   (setq exwm-randr-workspace-output-plist
         '(0 "HDMI-0" 1 "DVI-D-0" 2 "DP-2" 3 "DP-0"))
@@ -57,16 +59,15 @@
   (require 'exwm-config)
   (setq exwm-layout-show-all-buffers 1)
   (exwm-config-default)
-(defun exwm-rename-buffer ()
-  (interactive)
-  (exwm-workspace-rename-buffer
-   (concat exwm-class-name ":"
-           (if (<= (length exwm-title) 50) exwm-title
-             (concat (substring exwm-title 0 49) "...")))))
+  (defun exwm-rename-buffer ()
+    (interactive)
+    (exwm-workspace-rename-buffer
+     (concat exwm-class-name ":"
+             (if (<= (length exwm-title) 50) exwm-title
+               (concat (substring exwm-title 0 49) "...")))))
 
-;; Add these hooks in a suitable place (e.g., as done in exwm-config-default)
-(add-hook 'exwm-update-class-hook 'exwm-rename-buffer)
-(add-hook 'exwm-update-title-hook 'exwm-rename-buffer)
+  ;; Add these hooks in a suitable place (e.g., as done in exwm-config-default)
+  (add-hook 'exwm-update-title-hook 'exwm-rename-buffer)
   ;; Global keybindings.
   (unless (get 'exwm-input-global-keys 'saved-value)
     (setq exwm-input-global-keys
@@ -79,6 +80,10 @@
             ([?\s-b] . exwm-workspace-switch-to-buffer)
             ;; 's-Q': kill current buffer
             ([?\s-Q] . kill-current-buffer)
+  ;;(global-set-key (kbd "s-h") 'windmove-left)
+  ;;(global-set-key (kbd "s-j") 'windmove-down)
+  ;;(global-set-key (kbd "s-k") 'windmove-up)
+  ;;(global-set-key (kbd "s-l") 'windmove-right)
             ;; 's-&': Launch application.
             ([?\s-&] . (lambda (command)
                          (interactive (list (read-shell-command "$ ")))
@@ -102,8 +107,9 @@
             ([?\M-v] . [prior])
             ([?\C-v] . [next])
             ([?\C-d] . [delete])
-            ([?\C-k] . [S-end delete]))))
-  ;;;; Enable EXWM
+            ([?\C-k] . [S-end delete])
+            ([?\C-c?\C-c] . ?\C-c))))
+    ;;;; Enable EXWM
   ;;(exwm-enable)
   ;;(fringe-mode 1)
 
@@ -361,9 +367,8 @@
   #+END_SRC
 * sudo edit
   #+BEGIN_SRC emacs-lisp
-  (use-package sudo-edit
-    :ensure t
-    :bind ("C-x e" . sudo-edit))
+    (use-package sudo-edit
+      :ensure t)
   #+END_SRC
 * Counsel
 #+BEGIN_SRC emacs-lisp
@@ -528,26 +533,6 @@
       `((".*" ,temporary-file-directory t)))
 #+END_SRC
 * Window-management
-** use ctrl-o to switch window
-#+BEGIN_SRC emacs-lisp
-  (global-set-key (kbd "M-o") 'other-window)
-#+END_SRC
-** Ace-window
-#+BEGIN_SRC emacs-lisp
-  (use-package ace-window
-    :ensure t
-    :init
-    (progn
-      (global-set-key [remap other-window] 'ace-window)))
-#+END_SRC
-** windmove
-#+BEGIN_SRC emacs-lisp
-  (global-set-key (kbd "s-h") 'windmove-left)
-  (global-set-key (kbd "s-j") 'windmove-down)
-  (global-set-key (kbd "s-k") 'windmove-up)
-  (global-set-key (kbd "s-l") 'windmove-right)
-
-#+END_SRC
 * Set font
 #+BEGIN_SRC emacs-lisp
   (set-frame-font "DejaVu Sans Mono 14" nil t)

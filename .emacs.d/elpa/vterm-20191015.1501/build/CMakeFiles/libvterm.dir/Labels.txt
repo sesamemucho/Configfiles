@@ -1,0 +1,13 @@
+# Target labels
+ libvterm
+# Source files and their labels
+/home/julius/.emacs.d/elpa/vterm-20191015.1501/build/CMakeFiles/libvterm
+/home/julius/.emacs.d/elpa/vterm-20191015.1501/build/CMakeFiles/libvterm.rule
+/home/julius/.emacs.d/elpa/vterm-20191015.1501/build/CMakeFiles/libvterm-complete.rule
+/home/julius/.emacs.d/elpa/vterm-20191015.1501/build/libvterm-prefix/src/libvterm-stamp/libvterm-install.rule
+/home/julius/.emacs.d/elpa/vterm-20191015.1501/build/libvterm-prefix/src/libvterm-stamp/libvterm-mkdir.rule
+/home/julius/.emacs.d/elpa/vterm-20191015.1501/build/libvterm-prefix/src/libvterm-stamp/libvterm-download.rule
+/home/julius/.emacs.d/elpa/vterm-20191015.1501/build/libvterm-prefix/src/libvterm-stamp/libvterm-update.rule
+/home/julius/.emacs.d/elpa/vterm-20191015.1501/build/libvterm-prefix/src/libvterm-stamp/libvterm-patch.rule
+/home/julius/.emacs.d/elpa/vterm-20191015.1501/build/libvterm-prefix/src/libvterm-stamp/libvterm-configure.rule
+/home/julius/.emacs.d/elpa/vterm-20191015.1501/build/libvterm-prefix/src/libvterm-stamp/libvterm-build.rule
