@@ -122,6 +122,7 @@
       aur:
         name:
           - yadm-git
+          - touchpad-toggle
           - polybar
           - powerline-fonts-git
           - nerd-fonts-dejavu-complete

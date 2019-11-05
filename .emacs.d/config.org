@@ -80,10 +80,10 @@
             ([?\s-b] . exwm-workspace-switch-to-buffer)
             ;; 's-Q': kill current buffer
             ([?\s-Q] . kill-current-buffer)
-  ;;(global-set-key (kbd "s-h") 'windmove-left)
-  ;;(global-set-key (kbd "s-j") 'windmove-down)
-  ;;(global-set-key (kbd "s-k") 'windmove-up)
-  ;;(global-set-key (kbd "s-l") 'windmove-right)
+            ([?\s-h] . windmove-left)
+            ([?\s-j] . windmove-down)
+            ([?\s-k] . windmove-up)
+            ([?\s-l] . windmove-right)
             ;; 's-&': Launch application.
             ([?\s-&] . (lambda (command)
                          (interactive (list (read-shell-command "$ ")))
@@ -97,18 +97,18 @@
                       (number-sequence 0 9)))))
   ;; Line-editing shortcuts
   (unless (get 'exwm-input-simulation-keys 'saved-value)
-    (setq exwm-input-simulation-keys
-          '(([?\C-b] . [left])
-            ([?\C-f] . [right])
-            ([?\C-p] . [up])
-            ([?\C-n] . [down])
-            ([?\C-a] . [home])
-            ([?\C-e] . [end])
-            ([?\M-v] . [prior])
-            ([?\C-v] . [next])
-            ([?\C-d] . [delete])
-            ([?\C-k] . [S-end delete])
-            ([?\C-c?\C-c] . ?\C-c))))
+  (setq exwm-input-simulation-keys
+        '(([?\C-b] . [left])
+          ([?\C-f] . [right])
+          ([?\C-p] . [up])
+          ([?\C-n] . [down])
+          ([?\C-a] . [home])
+          ([?\C-e] . [end])
+          ([?\M-v] . [prior])
+          ([?\C-v] . [next])
+          ([?\C-d] . [delete])
+          ([?\C-k] . [S-end delete])
+          ([?\C-c?\C-c] . ?\C-c))))
     ;;;; Enable EXWM
   ;;(exwm-enable)
   ;;(fringe-mode 1)
@@ -312,7 +312,7 @@
   (use-package dot-mode
     :ensure t
     :config
-    (dot-mode-on))
+    (add-hook 'find-file-hooks 'dot-mode-on))
 #+END_SRC
 * FZF
 ** Install
@@ -351,19 +351,12 @@
   (global-set-key (kbd "C-c w w") 'kill-whole-word)
    #+END_SRC
 * Rainbow
-  #+BEGIN_SRC emacs-lisp
-  (use-package rainbow-mode
-    :ensure t
-    :init
-    (rainbow-mode 1)
-)
-  #+END_SRC
-
 ** Rainbow-delimiters
   #+BEGIN_SRC emacs-lisp
-  (use-package rainbow-delimiters
-    :ensure t
-    :init(rainbow-delimiters-mode 1))
+    (use-package rainbow-delimiters
+      :ensure t
+      :config
+      (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
   #+END_SRC
 * sudo edit
   #+BEGIN_SRC emacs-lisp
