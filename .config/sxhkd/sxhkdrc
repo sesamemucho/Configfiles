@@ -11,8 +11,6 @@ super + g
 	steam
 super + a
 	anki
-super + x
-	emacs
 super + v
       discord
 super + n

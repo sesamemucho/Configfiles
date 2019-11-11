@@ -23,7 +23,12 @@
 #+END_SRC
 ** Increase overlap when scrolling by whole screens
 #+BEGIN_SRC emacs-lisp
-  (setq next-screen-context-lines 5)
+  (setq next-screen-context-lines 3)
+  (use-package golden-ratio-scroll-screen
+    :ensure t
+    :config
+    (global-set-key (kbd "C-v") 'golden-ratio-scroll-screen-up)
+    (global-set-key (kbd "M-v") 'golden-ratio-scroll-screen-down))
 #+END_SRC
 * Hungry-Delete
 #+BEGIN_SRC emacs-lisp
@@ -56,6 +61,15 @@
       (eshell (concat default-directory "-shell"))
       (kill-buffer dired-buffer) ;; remove this line if you don't want to kill the dired buffer
       (delete-other-windows)))
+#+END_SRC
+* Eshell
+** fish completion
+#+BEGIN_SRC emacs-lisp
+  (use-package fish-completion
+    :ensure t
+    :config
+    (when (executable-find "fish")
+      (global-fish-completion-mode)))
 #+END_SRC
 * EXWM
 #+BEGIN_SRC emacs-lisp
@@ -105,6 +119,10 @@
             ([?\s-j] . windmove-down)
             ([?\s-k] . windmove-up)
             ([?\s-l] . windmove-right)
+            ([?\H-h] . [left])
+            ([?\H-l] . [right])
+            ([?\H-k] . [up])
+            ([?\H-j] . [down])
             ;; 's-&': Launch application.
             ([?\s-&] . (lambda (command)
                          (interactive (list (read-shell-command "$ ")))
@@ -123,11 +141,11 @@
             ([?\C-e] . [end])
             ([?\M-v] . [prior])
             ([?\C-v] . [next])
-            ([?\C-k] . [S-end delete])
+            ([?\C-d] . [delete])
             ([?\C-c?\C-c] . ?\C-c))))
   (define-key exwm-mode-map (kbd "C-[") nil)
   (define-key exwm-mode-map (kbd "C-u") nil)
-    ;;;; Enable EXWM
+      ;;;; Enable EXWM
   ;;(exwm-enable)
   ;;(fringe-mode 1)
 
@@ -146,6 +164,10 @@
    (use-package exwm-edit
      :ensure t)
  #+END_SRC
+** Mouse focus
+#+BEGIN_SRC emacs-lisp
+  (setq focus-follows-mouse nil)
+#+END_SRC
 * Dumb-jump
 #+BEGIN_SRC emacs-lisp
   (use-package dumb-jump
@@ -421,7 +443,7 @@
   (use-package avy
     :ensure t
     :config
-    (global-set-key (kbd "C-;") 'avy-goto-char)
+    (global-set-key (kbd "C-;") 'avy-goto-char-timer)
     (global-set-key (kbd "C-:") 'avy-goto-char-2)
     )
 #+END_SRC
@@ -512,6 +534,16 @@
   (setq-default tab-width 4)
   ;;(setq indent-line-function 'insert-tab)
 #+END_SRC
+* Git
+** git-gutter
+#+BEGIN_SRC emacs-lisp
+  (use-package git-gutter
+    :ensure t
+    :config
+    (add-hook 'prog-mode-hook 'git-gutter))
+
+#+END_SRC
+
 * Inertial scroll / smooth scrolling
 #+BEGIN_SRC emacs-lisp
   (add-to-list 'load-path "~/.emacs.d/lisp/")
@@ -557,6 +589,7 @@
 
 
 
+<<<<<<< Updated upstream
     (use-package deferred
       :ensure t)
     (use-package magit
@@ -567,6 +600,14 @@
     (git-gutter-mode 1))
     (use-package all-the-icons
       :ensure t)
+=======
+(use-package deferred
+  :ensure t)
+(use-package magit
+  :ensure t)
+(use-package all-the-icons
+  :ensure t)
+>>>>>>> Stashed changes
 
     (use-package ispell
       :ensure t)
