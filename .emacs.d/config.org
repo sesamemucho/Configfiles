@@ -25,7 +25,20 @@
 #+BEGIN_SRC emacs-lisp
   (setq next-screen-context-lines 5)
 #+END_SRC
-* Keybindings
+* Hungry-Delete
+#+BEGIN_SRC emacs-lisp
+  (use-package hungry-delete
+    :ensure t
+    :config
+    (global-hungry-delete-mode))
+#+END_SRC
+* expand-region
+#+BEGIN_SRC emacs-lisp
+  (use-package expand-region
+    :ensure t
+    :config
+    (global-set-key (kbd "C-=") 'er/expand-region))
+#+END_SRC
 * Dired
 ** Dired to shell
 #+BEGIN_SRC emacs-lisp
@@ -100,18 +113,15 @@
                       (number-sequence 0 9)))))
   ;; Line-editing shortcuts
   (unless (get 'exwm-input-simulation-keys 'saved-value)
-  (setq exwm-input-simulation-keys
-        '(([?\C-b] . [left])
-          ([?\C-f] . [right])
-          ([?\C-p] . [up])
-          ([?\C-n] . [down])
-          ([?\C-a] . [home])
-          ([?\C-e] . [end])
-          ([?\M-v] . [prior])
-          ([?\C-v] . [next])
-          ([?\C-d] . [delete])
-          ([?\C-k] . [S-end delete])
-          ([?\C-c?\C-c] . ?\C-c))))
+    (setq exwm-input-simulation-keys
+          '(([?\C-a] . [home])
+            ([?\C-e] . [end])
+            ([?\M-v] . [prior])
+            ([?\C-v] . [next])
+            ([?\C-k] . [S-end delete])
+            ([?\C-c?\C-c] . ?\C-c))))
+  (define-key exwm-mode-map (kbd "C-[") nil)
+  (define-key exwm-mode-map (kbd "C-u") nil)
     ;;;; Enable EXWM
   ;;(exwm-enable)
   ;;(fringe-mode 1)
@@ -317,18 +327,6 @@
     :config
     (add-hook 'find-file-hooks 'dot-mode-on))
 #+END_SRC
-* FZF
-** Install
-   #+BEGIN_SRC emacs-lisp
-      (use-package fzf
-	:ensure t)
-   #+END_SRC
-* Ripgrep
-  #+BEGIN_SRC emacs-lisp
-    (use-package deadgrep
-    :ensure t)
-  #+END_SRC
-
 * Config edit/reload
 ** edit
    #+BEGIN_SRC emacs-lisp
@@ -386,11 +384,6 @@
       :init)
 #+END_SRC
 * Ivy
-
-
-  
-  
-  
 ** Install and config
 #+BEGIN_SRC emacs-lisp
   (use-package ivy
@@ -535,61 +528,61 @@
 #+END_SRC
 * Unsorted
   #+BEGIN_SRC emacs-lisp
-(use-package which-key
-  :ensure t
-  :init
-  (which-key-mode))
+    (use-package which-key
+      :ensure t
+      :init
+      (which-key-mode))
 
-(use-package beacon
-  :ensure t
-  :init
-  (beacon-mode 1))
+    (use-package beacon
+      :ensure t
+      :init
+      (beacon-mode 1))
 
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-
-(setq ring-bell-function 'ignore)
-
-(when window-system (global-prettify-symbols-mode t)) 
-
-(use-package diff-hl
-  :ensure t
-  :init
-  (diff-hl-flydiff-mode))
+    (defalias 'yes-or-no-p 'y-or-n-p)
 
 
+    (setq ring-bell-function 'ignore)
 
-(use-package deferred
-  :ensure t)
-(use-package magit
-  :ensure t)
-(use-package git-gutter
-  :ensure t
-  :init
-(git-gutter-mode 1))
-(use-package all-the-icons
-  :ensure t)
+    (when window-system (global-prettify-symbols-mode t)) 
 
-(use-package ispell
-  :ensure t)
-(setq ispell-program-name "aspell")
-(add-to-list 'ispell-local-dictionary-alist '("deutsch-hunspell"
-                                              "[[:alpha:]]"
-                                              "[^[:alpha:]]"
-                                              "[']"
-                                              t
-                                              ("-d" "de_DE"); Dictionary file name
-                                              nil
-                                              iso-8859-1))
-(setq ispell-dictionary "de_DE")
-(setq ispell-extra-args '("--sug-mode=ultra" "--lang=de_DE"))
-(setq flyspell-issue-welcome-flag nil)
+    (use-package diff-hl
+      :ensure t
+      :init
+      (diff-hl-flydiff-mode))
 
-(add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
 
-(menu-bar-mode 0)
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
-(setq initial-buffer-choice t)
+
+    (use-package deferred
+      :ensure t)
+    (use-package magit
+      :ensure t)
+    (use-package git-gutter
+      :ensure t
+      :init
+    (git-gutter-mode 1))
+    (use-package all-the-icons
+      :ensure t)
+
+    (use-package ispell
+      :ensure t)
+    (setq ispell-program-name "aspell")
+    (add-to-list 'ispell-local-dictionary-alist '("deutsch-hunspell"
+                                                  "[[:alpha:]]"
+                                                  "[^[:alpha:]]"
+                                                  "[']"
+                                                  t
+                                                  ("-d" "de_DE"); Dictionary file name
+                                                  nil
+                                                  iso-8859-1))
+    (setq ispell-dictionary "de_DE")
+    (setq ispell-extra-args '("--sug-mode=ultra" "--lang=de_DE"))
+    (setq flyspell-issue-welcome-flag nil)
+
+    (add-to-list 'auto-mode-alist (cons "\\.adoc\\'" 'adoc-mode))
+
+    (menu-bar-mode 0)
+    (tool-bar-mode 0)
+    (scroll-bar-mode 0)
+    (setq initial-buffer-choice t)
 
   #+END_SRC
