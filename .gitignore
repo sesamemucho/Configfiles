@@ -13,5 +13,4 @@
 !.config/coc/ultisnips/
 !.config/coc/ultisnips/*
 !.config/nvim/
-!.emacs.d/
-!.emacs.d/**
+*~$
