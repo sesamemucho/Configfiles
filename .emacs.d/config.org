@@ -285,6 +285,12 @@
   (use-package adoc-mode
     :ensure t)
 #+END_SRC
+* Language-modes
+** Yaml
+#+BEGIN_SRC emacs-lisp
+  (use-package yaml-mode
+    :ensure t)
+#+END_SRC
 * Kotlin
 #+BEGIN_SRC emacs-lisp
   (use-package kotlin-mode
