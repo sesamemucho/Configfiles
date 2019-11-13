@@ -63,14 +63,7 @@
       (delete-other-windows)))
 #+END_SRC
 * Eshell
-** fish completion
-#+BEGIN_SRC emacs-lisp
-  (use-package fish-completion
-    :ensure t
-    :config
-    (when (executable-find "fish")
-      (global-fish-completion-mode)))
-#+END_SRC
+
 * EXWM
 #+BEGIN_SRC emacs-lisp
   (setq mouse-autoselect-window t
@@ -595,25 +588,12 @@
 
 
 
-<<<<<<< Updated upstream
-    (use-package deferred
-      :ensure t)
-    (use-package magit
-      :ensure t)
-    (use-package git-gutter
-      :ensure t
-      :init
-    (git-gutter-mode 1))
-    (use-package all-the-icons
-      :ensure t)
-=======
 (use-package deferred
   :ensure t)
 (use-package magit
   :ensure t)
 (use-package all-the-icons
   :ensure t)
->>>>>>> Stashed changes
 
     (use-package ispell
       :ensure t)

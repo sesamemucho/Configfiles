@@ -2,7 +2,7 @@
 super + Return
 	$TERMINAL
 super + d
-	$LAUNCHER -show run
+	rofi -show run
 super + i
 	$TERMINAL -e htop
 super + t
