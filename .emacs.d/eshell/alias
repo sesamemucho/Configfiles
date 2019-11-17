@@ -1,2 +1,2 @@
+alias ls ls
 alias comp gcc -std=c99 -g -Wall test.c -o test
-alias ls lsd
