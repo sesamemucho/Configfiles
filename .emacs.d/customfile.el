@@ -13,8 +13,7 @@
     ("~/.emacs.d/config.org" "~/Notebooks/org/gcal.org" "~/Notebooks/org/i.org")))
  '(package-selected-packages
    (quote
-
-    (use-package-chords yaml-mode wrap-region iedit expand-region exwm-edit dumb-jump exwm-systemtray exwm xref-js2 js2-refactor js2-mode emmet-mode polymode aggressive-indent agressive-indent atomic-chrome counsel-projectile ace-window ob-kotlin kotlin-mode flatland-theme projectile yasnippet htmlize vterm org-gcal spaceline rainbow-delimiters sudo-edit hungry-delete rainbow-mode rg fzf memoize diff-hl org-bullets which-key magit deferred company adoc-mode dashboard all-the-icons page-break-lines ranger))))
+    (command-log-mode golden-ratio-scroll-screen use-package-chords yaml-mode wrap-region iedit expand-region exwm-edit dumb-jump exwm-systemtray exwm xref-js2 js2-refactor js2-mode emmet-mode polymode aggressive-indent agressive-indent atomic-chrome counsel-projectile ace-window ob-kotlin kotlin-mode flatland-theme projectile yasnippet htmlize vterm org-gcal spaceline rainbow-delimiters sudo-edit hungry-delete rainbow-mode rg fzf memoize diff-hl org-bullets which-key magit deferred company adoc-mode dashboard all-the-icons page-break-lines ranger))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

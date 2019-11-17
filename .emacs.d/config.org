@@ -74,8 +74,6 @@
 
 * EXWM
 #+BEGIN_SRC emacs-lisp
-  (setq mouse-autoselect-window t
-        focus-follows-mouse t)
   (require 'exwm-randr)
   (if (string= system-name "workarch")
       (setq exwm-randr-workspace-output-plist
@@ -94,7 +92,7 @@
   (require 'exwm)
   (require 'exwm-config)
   (setq exwm-layout-show-all-buffers 1)
-  (exwm-config-default)
+
   (defun exwm-rename-buffer ()
     (interactive)
     (exwm-workspace-rename-buffer
@@ -144,10 +142,8 @@
             ([?\C-v] . [next])
             ([?\C-d] . [delete])
             ([?\C-c?\C-c] . ?\C-c))))
-  (define-key exwm-mode-map (kbd "C-[") nil)
-  (define-key exwm-mode-map (kbd "C-u") nil)
-      ;;;; Enable EXWM
-  ;;(exwm-enable)
+        ;;;; Enable EXWM
+  (exwm-enable)
   ;;(fringe-mode 1)
 
 #+END_SRC
@@ -175,6 +171,12 @@
     :ensure t
     :config
     (dumb-jump-mode))
+#+END_SRC
+* Pager
+#+BEGIN_SRC emacs-lisp
+  (require 'man)
+  (set-face-attribute 'Man-overstrike nil :inherit font-lock-type-face :bold t)
+  (set-face-attribute 'Man-underline nil :inherit font-lock-keyword-face :underline t)
 #+END_SRC
 * Projectile
 #+BEGIN_SRC emacs-lisp
