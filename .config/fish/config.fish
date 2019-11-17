@@ -2,11 +2,6 @@ fish_default_key_bindings
 # environment variables
 set -gx PATH /home/julius/.gem/ruby/2.6.0/bin  $PATH
 
-set -Ux PAGER "/bin/sh -c \"unset PAGER;col -b -x | \
-    nvim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
-	-c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
-	-c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""
-
 function fish_title;end
 
 # Colors
