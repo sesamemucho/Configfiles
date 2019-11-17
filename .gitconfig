@@ -4,7 +4,6 @@
 	email = julius.dehner@gmail.com
 
 [color]
-    diff = auto
 	status = auto
 	branch = auto
     interactive = auto
@@ -13,12 +12,10 @@
 [credential]
 	helper = store
 [diff]
-	tool = vimdiff
+	tool = ediff
 [merge]
-	tool = vimdiff
+	tool = ediff
 [mergetool]
 	prompt = true
-[mergetool "vimdiff"]
-	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [difftool]
 	prompt = false
