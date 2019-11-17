@@ -11,4 +11,6 @@ lightscreen -d &
 redshift-gtk -l 48.458510:11.832830 -t 6500K:3800K &
 sxhkd &
 VBoxClient-all &
+xmodmap ~/.Xmodmap
 echo "started them all"
+

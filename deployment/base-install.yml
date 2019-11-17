@@ -17,6 +17,7 @@
       pacman:
         name:
           - git
+          - ibus
           - xorg-server
           - xorg-xinit
           - xorg-xinput
