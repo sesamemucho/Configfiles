@@ -11,10 +11,6 @@
     pager = true
 [credential]
 	helper = store
-[diff]
-	tool = ediff
-[merge]
-	tool = ediff
 [mergetool]
 	prompt = true
 [difftool]
