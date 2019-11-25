@@ -16,7 +16,7 @@ Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
 Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
 Plug 'tpope/vim-eunuch' " use unix commands in vim: https://github.com/tpope/vim-eunuch
 Plug 'ekalinin/dockerfile.vim'
-Plug 'yuttie/comfortable-motion.vim' " Smooth scrolling
+Plug 'psliwka/vim-smoothie'
 Plug 'easymotion/vim-easymotion' " like clicking links in the browser: <leader><leader>W
 Plug 'lilydjwg/colorizer' " Colorize colors inline
 Plug 'rhysd/git-messenger.vim'
