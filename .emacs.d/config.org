@@ -6,6 +6,7 @@
     :config
     (key-chord-mode 1))
 #+END_SRC
+
 * Minor settings
 ** electric
    #+BEGIN_SRC emacs-lisp
@@ -72,10 +73,6 @@
 #+END_SRC
 * Eshell
 
-* Mouse focus
-#+BEGIN_SRC emacs-lisp
-  (setq focus-follows-mouse t)
-#+END_SRC
 * EXWM
 #+BEGIN_SRC emacs-lisp
   (require 'exwm-randr)
@@ -254,6 +251,12 @@
 ** don't ask when exporting code
 #+BEGIN_SRC emacs-lisp
   (setq org-confirm-babel-evaluate nil)
+#+END_SRC
+** Babel
+#+BEGIN_SRC emacs-lisp
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((sql . t)))
 #+END_SRC
 ** Org Bullets
    #+BEGIN_SRC emacs-lisp
@@ -533,10 +536,38 @@ Wrap a region with punctuations
     :tail-matcher "`"
     :head-mode 'host
     :tail-mode 'host)
+
+
   (define-polymode polymer-mode
     :hostmode 'javascript-hostmode
     :innermodes '(lit-html-innermode))
   (add-to-list 'auto-mode-alist '("\\.js\\'" . polymer-mode))
+#+END_SRC
+** sql in python
+#+BEGIN_SRC emacs-lisp
+  (use-package polymode
+    :ensure t
+    :mode ("\.py$" . poly-python-sql-mode)
+    :config
+    (setq polymode-prefix-key (kbd "C-c n"))
+    (define-hostmode poly-python-hostmode :mode 'python-mode)
+
+    (define-innermode poly-sql-expr-python-innermode
+      :mode 'sql-mode
+      :head-matcher (rx "r" (= 3 (char "\"'")) (* (any space)))
+      :tail-matcher (rx (= 3 (char "\"'")))
+      :head-mode 'host
+      :tail-mode 'host)
+
+    (defun poly-python-sql-eval-chunk (beg end msg)
+      "Calls out to `sql-send-region' with the polymode chunk region"
+      (sql-send-region beg end))
+
+    (define-polymode poly-python-sql-mode
+      :hostmode 'poly-python-hostmode
+      :innermodes '(poly-sql-expr-python-innermode)
+      (setq polymode-eval-region-function #'poly-python-sql-eval-chunk)
+      (define-key poly-python-sql-mode-map (kbd "C-c C-c") 'polymode-eval-chunk)))
 #+END_SRC
 * Indentation
 ** Agressive indent
@@ -643,3 +674,4 @@ Wrap a region with punctuations
     (scroll-bar-mode 0)
     (setq initial-buffer-choice t)
   #+END_SRC
+'

@@ -15,10 +15,11 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-(use-package flatland-theme
+(use-package doom-themes
   :ensure t)
 
 
 (setq custom-file "~/.emacs.d/customfile.el")
 (load custom-file)
 (org-babel-load-file (expand-file-name "~/.emacs.d/config.org"))
+(put 'erase-buffer 'disabled nil)
