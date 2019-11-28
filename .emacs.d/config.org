@@ -171,6 +171,93 @@
     :config
     (dumb-jump-mode))
 #+END_SRC
+* Treemacs
+#+BEGIN_SRC emacs-lisp
+  (use-package treemacs
+    :ensure t)
+  (use-package treemacs-projectile
+    :ensure t)
+#+END_SRC
+* LaTeX
+** Auctex
+#+BEGIN_SRC emacs-lisp
+  (use-package tex
+    :defer t
+    :ensure auctex
+    :config
+    (setq TeX-auto-save t))
+#+END_SRC
+** company-auctex
+#+BEGIN_SRC emacs-lisp
+  (use-package company-auctex
+    :ensure t
+    :config
+    (company-auctex-init))
+#+END_SRC
+** latexmk
+#+BEGIN_SRC emacs-lisp
+  (use-package auctex-latexmk
+    :ensure t
+    :config
+    (auctex-latexmk-setup)
+
+    (eval-after-load "tex"
+      '(progn
+         (add-to-list 'TeX-expand-list
+                      '("%(-PDF)"
+                        (lambda ()
+                          (cond ((string-match "TeX-engine: pdftex" (buffer-string)) "-pdf")
+                                ((string-match "TeX-engine: luatex" (buffer-string)) "-pdflatex=lualatex -pdf")
+                                ((string-match "TeX-engine: xetex" (buffer-string)) "-pdflatex=xelatex -pdf")
+                                (t "-dvi -pdfps")))))
+       
+         (add-to-list 'TeX-command-list
+                      '("Latexmk" "latexmk %(-PDF) -synctex=1 %s"
+                        TeX-run-TeX nil t
+                        :help "Run Latexmk on file to build everything."))
+
+         (setq TeX-command-default "Latexmk")
+         )
+      )
+
+    ;; org-latex
+    (setq org-latex-to-pdf-process (list "latexmk -f -pdf %t")))
+#+END_SRC
+** PdfTools
+#+BEGIN_SRC emacs-lisp
+  (use-package pdf-tools
+    :ensure t
+    :config
+    (pdf-tools-install)
+    (defun th/pdf-view-revert-buffer-maybe (file)
+      (let ((buf (find-buffer-visiting file)))
+        (when buf 
+          (with-current-buffer buf
+            (when (derived-mode-p 'pdf-view-mode)
+              (pdf-view-revert-buffer nil t))))))
+
+    (add-hook 'TeX-after-TeX-LaTeX-command-finished-hook
+              #'th/pdf-view-revert-buffer-maybe)
+    (add-hook 'TeX-after-compilation-finished-functions  ;; wasn't working after Latexmk command 
+              #'th/pdf-view-revert-buffer-maybe))
+#+END_SRC
+** reftex
+#+BEGIN_SRC emacs-lisp
+  (use-package reftex
+    :ensure t
+    :config
+    ;; Turn on RefTeX in AUCTeX
+    (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+    ;; Activate nice interface between RefTeX and AUCTeX
+    (setq reftex-plug-into-AUCTeX t))
+#+END_SRC
+** latex-magic-buffer
+#+BEGIN_SRC emacs-lisp
+  (use-package magic-latex-buffer
+    :ensure t
+    :config
+    (add-hook 'latex-mode-hook 'magic-latex-buffer))
+#+END_SRC
 * Pager
 #+BEGIN_SRC emacs-lisp
   (require 'man)
@@ -589,10 +676,10 @@ Wrap a region with punctuations
 #+BEGIN_SRC emacs-lisp
   (use-package git-gutter
     :ensure t
-    :bind
+    ;;:bind
     (("H-y g n" . git-gutter:next-hunk)
-     ("H-y g p" . git-gutter:previous-hunk)
-     ("H-y g a" . git-gutter:stage-hunk))
+    ("H-y g p" . git-gutter:previous-hunk)
+    ("H-y g a" . git-gutter:stage-hunk))
     :config
     (add-hook 'prog-mode-hook 'git-gutter-mode))
 #+END_SRC
@@ -600,9 +687,9 @@ Wrap a region with punctuations
 #+BEGIN_SRC emacs-lisp
   (use-package magit
     :ensure t
-    :bind
-    (("H-y g s" . magit-status)
-     ))
+    ;;:bind
+    (("H-y g s" . magit-status))
+	)
 #+END_SRC
 * Inertial scroll / smooth scrolling
 #+BEGIN_SRC emacs-lisp
