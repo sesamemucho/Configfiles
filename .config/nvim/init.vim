@@ -40,6 +40,7 @@ Plug 'jonsmithers/vim-html-template-literals'
 Plug 'andymass/vim-matchup' " improve % and add text objects i% and a%
 Plug 'chaoren/vim-wordmotion' " camelcasemotion
 Plug 'pangloss/vim-javascript'
+Plug 'crusoexia/vim-monokai'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -58,7 +59,6 @@ filetype plugin indent on
 set mouse=a
 set shell=bash
 let $PAGER=''
-syntax enable
 colorscheme darcula
 set splitbelow
 set splitright
@@ -74,6 +74,11 @@ let g:wordmotion_prefix = '<Leader>'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:html_indent_style1 = "inc"
+" }}}
+" Colortheme {{{
+syntax on
+colorscheme monokai
+set termguicolors
 " }}}
 " coc.nvim {{{
 let g:coc_global_extensions = [

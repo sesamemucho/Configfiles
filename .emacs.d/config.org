@@ -294,6 +294,16 @@
   (setq display-time-24hr-format t)
   (display-time-mode)
 #+END_SRC
+** Doom Modeline
+#+BEGIN_SRC emacs-lisp
+  (use-package all-the-icons
+    :ensure t)
+
+  (use-package doom-modeline
+    :ensure t
+    :hook
+    (after-init . doom-modeline-mode))
+#+END_SRC
 * Org
 ** org plus contrib
 (use-package org
@@ -414,15 +424,6 @@ Wrap a region with punctuations
        :config
        (yas-global-mode 1))
    #+END_SRC
-* powerline
-  #+BEGIN_SRC emacs-lisp
-    (use-package powerline
-      :ensure t
-      :config
-      (setq powerline-default-separator (quote arrow))
-      (powerline-default-theme)
-      (powerline-reset))
-  #+END_SRC
 * Increment Numbers
 #+BEGIN_SRC emacs-lisp
   (defun increment-number-at-point ()
@@ -676,7 +677,7 @@ Wrap a region with punctuations
 #+BEGIN_SRC emacs-lisp
   (use-package git-gutter
     :ensure t
-    ;;:bind
+    :bind
     (("H-y g n" . git-gutter:next-hunk)
     ("H-y g p" . git-gutter:previous-hunk)
     ("H-y g a" . git-gutter:stage-hunk))
@@ -687,7 +688,7 @@ Wrap a region with punctuations
 #+BEGIN_SRC emacs-lisp
   (use-package magit
     :ensure t
-    ;;:bind
+    :bind
     (("H-y g s" . magit-status))
 	)
 #+END_SRC
@@ -735,8 +736,6 @@ Wrap a region with punctuations
       (diff-hl-flydiff-mode))
 
     (use-package deferred
-      :ensure t)
-    (use-package all-the-icons
       :ensure t)
 
     (use-package ispell
