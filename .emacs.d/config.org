@@ -73,97 +73,10 @@
 #+END_SRC
 * Eshell
 
-* EXWM
-#+BEGIN_SRC emacs-lisp
-  (require 'exwm-randr)
-  (if (string= system-name "workarch")
-      (setq exwm-randr-workspace-output-plist
-            '(0 "VGA-1" 1 "VGA-2"))
-    (setq exwm-randr-workspace-output-plist
-          '(0 "HDMI-0" 1 "DVI-D-0" 2 "DP-2" 3 "DP-0")))
-  (add-hook 'exwm-randr-screen-change-hook
-            (lambda()
-              (start-process-shell-command
-               "xrandr" nil "xrandr --output HDMI-0 --output DVI-D-0 --output DP-2 --output DP-0 --auto")))
-  (exwm-randr-enable)
-  (require 'exwm-systemtray)
-  (exwm-systemtray-enable)
-  (use-package exwm
-    :ensure t)
-  (require 'exwm)
-  (setq exwm-layout-show-all-buffers 1)
-
-
-  (require 'exwm-config)
-  (exwm-config-default)
-
-  (defun exwm-rename-buffer ()
-    (interactive)
-    (exwm-workspace-rename-buffer
-     (concat exwm-class-name ":"
-             (if (<= (length exwm-title) 50) exwm-title
-               (concat (substring exwm-title 0 49) "...")))))
-
-  ;; Add these hooks in a suitable place (e.g., as done in exwm-config-default)
-  (add-hook 'exwm-update-title-hook 'exwm-rename-buffer)
-  ;; Global keybindings.
-  (unless (get 'exwm-input-global-keys 'saved-value)
-    (setq exwm-input-global-keys
-          `(
-            ;; 's-r': Reset (to line-mode).
-            ([?\s-r] . exwm-reset)
-            ;; 's-w': Switch workspace.
-            ([?\s-w] . exwm-workspace-switch)
-            ;; 's-b': global switch buffer
-            ([?\s-b] . exwm-workspace-switch-to-buffer)
-            ;; 's-Q': kill current buffer
-            ([?\s-Q] . kill-current-buffer)
-            ([?\s-h] . windmove-left)
-            ([?\s-j] . windmove-down)
-            ([?\s-k] . windmove-up)
-            ([?\s-l] . windmove-right)
-            ;;([?\H-h] . [left])
-            ;;([?\H-l] . [right])
-            ;;([?\H-k] . [up])
-            ;;([?\H-j] . [down])
-            ;; 's-&': Launch application.
-            ([?\s-&] . (lambda (command)
-                         (interactive (list (read-shell-command "$ ")))
-                         (start-process-shell-command command nil command)))
-            ;; 's-N': Switch to certain workspace.
-            ,@(mapcar (lambda (i)
-                        `(,(kbd (format "s-%d" i)) .
-                          (lambda ()
-                            (interactive)
-                            (exwm-workspace-switch-create ,i))))
-                      (number-sequence 0 9)))))
-  ;; Line-editing shortcuts
-  (unless (get 'exwm-input-simulation-keys 'saved-value)
-    (setq exwm-input-simulation-keys
-          '(([?\C-a] . [home])
-            ([?\C-e] . [end])
-            ([?\M-v] . [prior])
-            ([?\C-v] . [next])
-            ([?\C-d] . [delete])
-            ([?\C-m] . [return])
-            ([?\C-c?\C-c] . ?\C-c))))
-  ;;(fringe-mode 1)
-
-#+END_SRC
-** Startup programs
-#+BEGIN_SRC emacs-lisp
-  (start-process-shell-command
-   "startupfile" nil "~/.config/startup.sh")
-#+END_SRC
-** Add copied text from x11 to killring
+* Add copied text from x11 to killring
 #+BEGIN_SRC emacs-lisp
   (setq save-interprogram-paste-before-kill t)
 #+END_SRC
-** EXWM-edit
- #+BEGIN_SRC emacs-lisp
-   (use-package exwm-edit
-     :ensure t)
- #+END_SRC
 * Dumb-jump
 #+BEGIN_SRC emacs-lisp
   (use-package dumb-jump
@@ -426,6 +339,7 @@ Wrap a region with punctuations
 ** virtualenvwrapper
 #+BEGIN_SRC emacs-lisp
   (use-package virtualenvwrapper
+    :ensure t
     :config
     (venv-initialize-interactive-shells)
     (venv-initialize-eshell)
