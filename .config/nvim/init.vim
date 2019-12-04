@@ -59,7 +59,6 @@ filetype plugin indent on
 set mouse=a
 set shell=bash
 let $PAGER=''
-colorscheme darcula
 set splitbelow
 set splitright
 set tabstop=4       " number of visual spaces per TAB
