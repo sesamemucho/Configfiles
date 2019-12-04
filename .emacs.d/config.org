@@ -122,10 +122,10 @@
             ([?\s-j] . windmove-down)
             ([?\s-k] . windmove-up)
             ([?\s-l] . windmove-right)
-            ([?\H-h] . [left])
-            ([?\H-l] . [right])
-            ([?\H-k] . [up])
-            ([?\H-j] . [down])
+            ;;([?\H-h] . [left])
+            ;;([?\H-l] . [right])
+            ;;([?\H-k] . [up])
+            ;;([?\H-j] . [down])
             ;; 's-&': Launch application.
             ([?\s-&] . (lambda (command)
                          (interactive (list (read-shell-command "$ ")))
@@ -255,8 +255,8 @@
 #+BEGIN_SRC emacs-lisp
   (use-package magic-latex-buffer
     :ensure t
-    :config
-    (add-hook 'latex-mode-hook 'magic-latex-buffer))
+    :hook
+    (tex-mode-hook . magic-latex-buffer))
 #+END_SRC
 * Pager
 #+BEGIN_SRC emacs-lisp
@@ -677,10 +677,12 @@ Wrap a region with punctuations
 #+BEGIN_SRC emacs-lisp
   (use-package git-gutter
     :ensure t
-    :bind
-    (("H-y g n" . git-gutter:next-hunk)
-    ("H-y g p" . git-gutter:previous-hunk)
-    ("H-y g a" . git-gutter:stage-hunk))
+
+    ;;:bind
+    ;;(("H-y g n" . git-gutter:next-hunk)
+     ;;("H-y g p" . git-gutter:previous-hunk)
+     ;;("H-y g a" . git-gutter:stage-hunk))
+
     :config
     (add-hook 'prog-mode-hook 'git-gutter-mode))
 #+END_SRC
@@ -688,8 +690,8 @@ Wrap a region with punctuations
 #+BEGIN_SRC emacs-lisp
   (use-package magit
     :ensure t
-    :bind
-    (("H-y g s" . magit-status))
+    ;;:bind
+    ;;(("H-y g s" . magit-status))
 	)
 #+END_SRC
 * Inertial scroll / smooth scrolling
@@ -736,6 +738,9 @@ Wrap a region with punctuations
       (diff-hl-flydiff-mode))
 
     (use-package deferred
+      :ensure t)
+
+    (use-package all-the-icons
       :ensure t)
 
     (use-package ispell
