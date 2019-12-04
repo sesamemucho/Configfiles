@@ -28,8 +28,7 @@ Plug 'cespare/vim-toml'
 Plug 'tmhedberg/simpylfold' " fold python easily
 Plug 'konfekt/fastfold' " faster folds
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'jremmen/vim-ripgrep' " use ripgrep
 Plug 'tpope/vim-obsession' " make sessions smarter
 Plug 'stephpy/vim-yaml'
@@ -193,8 +192,24 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
  set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " }}}
-" FZF{{{
-nmap <C-p> : Files <CR>
+" LeaderF{{{
+let g:Lf_UseCache = 0
+let g:Lf_UseVersionControlTool = 0
+let g:Lf_IgnoreCurrentBufferName = 1
+let g:Lf_ShowHidden = 1
+let g:Lf_RecursSubmodules = 1
+
+let g:LfDiscardEmptyBuffer = 1
+
+let g:Lf_RgConfig = [
+		\ "-uu",
+	\ ]
+
+" popup mode
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
+let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
+let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
 " }}}
 " Undo Settings {{{
 set undodir=~/.vim/undodir
@@ -262,7 +277,7 @@ nnoremap <leader>u :UndotreeToggle<CR>
 " Use Q to execute default register.
 nnoremap Q @q
 " Nerdtree
-nnoremap <leader>f :NERDTreeToggle<CR>
+nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>r :NERDTreeFind<cr>
 
 " List buffers and select by number
