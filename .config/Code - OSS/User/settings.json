@@ -83,5 +83,7 @@
     },
     "files.exclude": {
         "**/dist": true
-    }
+    },
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vscode-neovim.neovimPath": "/usr/bin/nvim"
 }
