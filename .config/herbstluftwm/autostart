@@ -140,9 +140,6 @@ hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
 
-for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-	hc pad $monitor 23 0 0 0
-done
 
 # rules
 hc unrule -F
@@ -173,4 +170,8 @@ panel=~/.config/herbstluftwm/panel.sh
 for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
     # start it on each monitor
     "$panel" $monitor &
+done
+
+for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
+	hc pad $monitor 23 0 0 0
 done
