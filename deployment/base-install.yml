@@ -27,7 +27,7 @@
           - adobe-source-han-sans-jp-fonts
           - sxhkd
           - rofi
-          - i3-gaps
+          - herbstluftwm
         state: present
       become: true
       become_user: root
@@ -35,6 +35,8 @@
     - name: Install ease of use packages
       pacman:
         name:
+          - anki
+          - neovim
           - clang
           - ruby
           - etckeeper
@@ -66,7 +68,6 @@
           - ttf-font-awesome
           - libreoffice-fresh
           - unclutter
-          - vim
           - xclip
           - xsel
           - xorg-fonts-misc
@@ -129,7 +130,6 @@
           - nerd-fonts-dejavu-complete
           - siji-git
           - vivaldi
-          - neovim-nightly
           - nerd-fonts-complete
           - nvm
           - xbanish
@@ -149,7 +149,7 @@
       ignore_errors: yes
 
     - name: set keymap
-      command: localectl --no-convert set-x11-keymap us "" altgr-intl caps:ctrl_modifier
+      command: localectl --no-convert set-x11-keymap us "" altgr-intl
       become: yes
       become_user: root
 

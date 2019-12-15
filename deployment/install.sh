@@ -33,10 +33,19 @@ fi
 if [ -z "$4" ]
 then
 	lsblk
-	echo "Enter partiton to instll on(i.e /dev/sda)"
+	echo "Enter partiton to instll on(i.e /dev/sda):"
     read partition
 else
     partition=$4
+fi
+
+
+if [ -z "$5" ]
+then
+	echo "Enter Hostname:"
+    read hostname
+else
+    hostname=$5
 fi
 
 # set time
@@ -58,8 +67,8 @@ pacstrap /mnt base base-devel
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # chroot
-wget https://raw.githubusercontent.com/abrochard/spartan-arch/master/chroot-install.sh -O /mnt/chroot-install.sh
-arch-chroot /mnt /bin/bash ./chroot-install.sh $user $password $fast
+wget https://raw.githubusercontent.com/juligreen/Configfiles/master/deployment/chroot-install.sh -O /mnt/chroot-install.sh
+arch-chroot /mnt /bin/bash ./chroot-install.sh $user $password $fast $partition $hostname
 
 # reboot
 umount /mnt
