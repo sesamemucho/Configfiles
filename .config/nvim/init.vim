@@ -40,6 +40,7 @@ Plug 'andymass/vim-matchup' " improve % and add text objects i% and a%
 Plug 'chaoren/vim-wordmotion' " camelcasemotion
 Plug 'pangloss/vim-javascript'
 Plug 'crusoexia/vim-monokai'
+Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac, ic, af, if
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
