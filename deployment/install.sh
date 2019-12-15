@@ -52,7 +52,7 @@ fi
 timedatectl set-ntp true
 
 #partiton disk
-parted --script $partiton mklabel gpt mkpart primary ext4 0% 90% mkpart primary linux-swap 90% 100%
+parted --script $partition mklabel gpt mkpart primary ext4 0% 90% mkpart primary linux-swap 90% 100%
 mkfs.ext4 ${partition}1
 mkswap ${partition}2
 swapon ${partition}2
