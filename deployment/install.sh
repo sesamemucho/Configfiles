@@ -52,13 +52,13 @@ fi
 timedatectl set-ntp true
 
 #partiton disk
-parted --script $partiton mklabel boot mkpart primary ext4 0 200M mklabel main mkpart primary ext4 200M 90% mkpart primary linux-swap 90% 100%
+parted --script $partiton mklabel gpt mkpart primary ext4 0% 90% mkpart primary linux-swap 90% 100%
 mkfs.ext4 ${partition}1
-mkfs.ext4 ${partition}2
-mkswap ${partition}3
-swapon ${partition}3
-mount ${partition}2 /mnt
-mount ${partition}1 /mnt/boot
+mkswap ${partition}2
+swapon ${partition}2
+mount ${partition}1 /mnt
+
+mkdir /mnt/boot/
 
 # pacstrap
 pacstrap /mnt base base-devel
