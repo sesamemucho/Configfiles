@@ -43,7 +43,7 @@ mkinitcpio -p linux
 # install bootloader
 echo 'Installing bootloader'
 pacman -S grub --noconfirm
-grub-install --target=i386-pc ${partition}
+grub-install --target=i386-pc --force ${partition}
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # install networkmanager
@@ -53,6 +53,10 @@ systemctl enable NetworkManager
 # install Xorg
 echo 'Installing Xorg'
 pacman -S --noconfirm xorg xorg-xinit xterm
+
+# install git
+echo 'Installing git'
+pacman -S --noconfirm git
 
 # user management
 echo 'Setting up user'
