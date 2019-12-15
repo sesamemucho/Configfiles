@@ -17,6 +17,7 @@
       pacman:
         name:
           - git
+          - linux
           - ibus
           - xorg-server
           - xorg-xinit
@@ -147,11 +148,6 @@
       become: yes
       become_user: julius
       ignore_errors: yes
-
-    - name: set keymap
-      command: localectl --no-convert set-x11-keymap us "" altgr-intl
-      become: yes
-      become_user: root
 
     - name: install vim-plug
       command: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

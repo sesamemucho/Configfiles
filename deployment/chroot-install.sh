@@ -43,7 +43,7 @@ mkinitcpio -p linux
 # install bootloader
 echo 'Installing bootloader'
 pacman -S grub --noconfirm
-grub-install --target=i386-pc --force ${partition}
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # install networkmanager

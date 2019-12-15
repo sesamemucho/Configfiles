@@ -52,12 +52,15 @@ fi
 timedatectl set-ntp true
 
 #partiton disk
-parted --script $partition mklabel gpt mkpart primary ext4 0% 90% mkpart primary linux-swap 90% 100%
-mkfs.ext4 ${partition}1
-mkswap ${partition}2
-swapon ${partition}2
-mount ${partition}1 /mnt
-
+parted --script $partition mklabel gpt mkpart primary fat32 1MiB 513MiB mkpart primary ext4 513MiB 95% mkpart primary linux-swap 95% 100%
+mkfs.vfat ${partition}1
+mkfs.ext4 ${partition}2
+mkswap ${partition}3
+swapon ${partition}3
+mkdir /mnt
+mount ${partition}2 /mnt
+mkdir /mnt/efi
+mount ${partition}1 /mnt/efi
 mkdir /mnt/boot/
 
 # pacstrap
@@ -65,6 +68,9 @@ pacstrap /mnt base base-devel
 
 # fstab
 genfstab -U /mnt >> /mnt/etc/fstab
+
+# enable efivarfs
+modprobe efivarfs
 
 # chroot
 wget https://raw.githubusercontent.com/juligreen/Configfiles/master/deployment/chroot-install.sh -O /mnt/chroot-install.sh
