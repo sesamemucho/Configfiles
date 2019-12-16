@@ -4,7 +4,6 @@
   become_user: julius
 
   tasks:
-
     - name: pacman packages
       pacman:
         update_cache: yes
@@ -12,12 +11,13 @@
           - steam
           - discord
           - lutris
-          - wine
-          - xboxdrv
+          - wine-staging
           - nvidia
           - nvidia-utils
           - nvidia-settings
           - lib32-nvidia-utils
+          - vulkan-icd-loader
+          - lib32-vulkan-icd-loader
           - vagrant
           - ppsspp
           - picard
@@ -29,4 +29,4 @@
         name:
           - huestacean
           - steam-fonts
-          - vivaldi-widevine
+          - xboxdrv

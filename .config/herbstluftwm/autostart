@@ -211,3 +211,6 @@ done
 for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
 	hc pad $monitor 23 0 0 0
 done
+
+~/.config/polybar/polybar.sh &
+
