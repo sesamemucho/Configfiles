@@ -41,6 +41,8 @@ Plug 'chaoren/vim-wordmotion' " camelcasemotion
 Plug 'pangloss/vim-javascript'
 Plug 'crusoexia/vim-monokai'
 Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac, ic, af, if
+Plug 'paroxayte/vwm.vim' "Manage Window layouts
+Plug 'liuchengxu/vista.vim' " Symbol outline
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -192,9 +194,9 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " }}}
 " LeaderF{{{
 let g:Lf_UseCache = 0
-let g:Lf_UseVersionControlTool = 0
+let g:Lf_UseVersionControlTool = 1
 let g:Lf_IgnoreCurrentBufferName = 1
-let g:Lf_ShowHidden = 1
+let g:Lf_ShowHidden = 0
 let g:Lf_RecursSubmodules = 1
 
 let g:LfDiscardEmptyBuffer = 1
@@ -208,6 +210,38 @@ let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
 let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
 let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
+" }}}
+" VWM{{{
+" Default config for bot terminal
+let s:def_layt = {
+      \  'name': 'default',
+      \  'set_all': ['nonu', 'nornu'],
+      \  'bot':
+      \  {
+      \    'h_sz': 12,
+      \    'init': ['term fish']
+      \  }
+      \}
+
+if !exists('g:vwm#layouts')
+  let g:vwm#layouts = [s:def_layt]
+endif
+" terminal bottom with split
+let s:def_split_layt = {
+      \  'name': 'defaultsplit',
+      \  'set_all': ['nonu', 'nornu'],
+	  \  'right':
+	  \  {
+	  \  'init': []
+	  \	 },
+      \  'bot':
+      \  {
+      \    'h_sz': 12,
+      \    'init': ['term fish']
+      \  }
+      \}
+
+let g:vwm#layouts += [ s:def_split_layt]
 " }}}
 " Undo Settings {{{
 set undodir=~/.vim/undodir
@@ -283,6 +317,9 @@ nnoremap gb :ls<CR>:b<Space>
 
 " ZoomWinTab
 nnoremap <C-w>o :ZoomWinTabToggle<CR>
+
+" Use Ctrl D to delete the next char
+imap <C-d> <Del>
 
 
 " Disable Scrolling{{{
