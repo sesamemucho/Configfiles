@@ -9,6 +9,8 @@ sudo pacman --noconfirm -S ansible
 # Execute base install
 ansible-playbook ~/deployment/base-install.yml
 
+HOSTNAME=$(hostname)
+
 if [ "$HOSTNAME" = "Cellaris" ]
 then
 	ansible-playbook ~/deployment/home-install.yml
