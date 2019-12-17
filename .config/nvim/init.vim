@@ -40,6 +40,8 @@ Plug 'andymass/vim-matchup' " improve % and add text objects i% and a%
 Plug 'chaoren/vim-wordmotion' " camelcasemotion
 Plug 'pangloss/vim-javascript'
 Plug 'crusoexia/vim-monokai'
+Plug 'kana/vim-textobj-user' " Add new textobjects easily
+Plug 'kana/vim-textobj-entire' " textobj: ae entire buffer, ie buffer without leading and trailing empty lines
 Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac, ic, af, if
 Plug 'paroxayte/vwm.vim' "Manage Window layouts
 Plug 'liuchengxu/vista.vim' " Symbol outline

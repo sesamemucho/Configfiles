@@ -1,4 +1,4 @@
-fish_default_key_bindings
+fish_vi_key_bindings
 # environment variables
 set -gx PATH /home/julius/.gem/ruby/2.6.0/bin  $PATH
 set -gx PATH /home/julius/.local/bin $PATH
