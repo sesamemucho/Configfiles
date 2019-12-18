@@ -38,6 +38,12 @@
         name:
           - anki
           - neovim
+          - entr
+          - fd
+          - rustup
+          - shellcheck
+          - rust
+          - rust-racer
           - clang
           - ruby
           - etckeeper
@@ -125,6 +131,7 @@
       aur:
         name:
           - yadm-git
+          - ktlint
           - touchpad-toggle
           - polybar
           - powerline-fonts-git
@@ -176,3 +183,7 @@
       become: yes
       become_user: root
 
+    - name: install doom-emacs
+      command: /home/julius/.emacs.d/bin/doom install
+      become: yes
+      become_user: root
