@@ -72,6 +72,6 @@ systemctl enable ntpdate.service
 # Install YADM
 curl -fLo /usr/local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && chmod a+x /usr/local/bin/yadm
 # clone and bootstrap
-yadm clone --bootstrap https://github.com/juligreen/Configfiles
+yadm clone --bootstrap --recurse-submodules -j8 https://github.com/juligreen/Configfiles
 
 echo 'Done'
