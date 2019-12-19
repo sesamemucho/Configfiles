@@ -53,7 +53,7 @@
           - light
           - fish
           - flatpak
-          - compton
+          - picom
           - code
           - docker
           - feh
