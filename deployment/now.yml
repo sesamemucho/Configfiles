@@ -4,7 +4,8 @@
   become_user: julius
   tasks:
 
-    - name: set keymap
-      command: localectl --no-convert set-x11-keymap us "" altgr-intl caps:ctrl_modifier 
-      become: yes
-      become_user: root
+        - name: install doom-emacs
+          command: /home/julius/.emacs.d/bin/doom -y install
+          become: yes
+          become_user: root
+
