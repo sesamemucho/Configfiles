@@ -42,6 +42,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'crusoexia/vim-monokai'
 Plug 'kana/vim-textobj-user' " Add new textobjects easily
 Plug 'kana/vim-textobj-entire' " textobj: ae entire buffer, ie buffer without leading and trailing empty lines
+Plug 'wellle/context.vim' " show context of buffers
 Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac, ic, af, if
 Plug 'paroxayte/vwm.vim' "Manage Window layouts
 Plug 'liuchengxu/vista.vim' " Symbol outline
