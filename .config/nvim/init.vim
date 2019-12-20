@@ -54,8 +54,6 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " }}}
 call plug#end()
 " }}}
-(test(moretest) ) test
-test, test
 " Misc {{{
 filetype plugin indent on
 set mouse=a
