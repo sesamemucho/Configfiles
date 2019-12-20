@@ -39,6 +39,7 @@
           - anki
           - neovim
           - entr
+          - emacs
           - fd
           - shellcheck
           - rust
