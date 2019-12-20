@@ -7,16 +7,12 @@
 " vim-plug  {{{
 call plug#begin('~/.vim/plugged')
 Plug 'mbbill/undotree'
-Plug 'matcatc/vim-asciidoc-folding'
 Plug 'tpope/vim-surround' " change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
-Plug 'tpope/vim-commentary' " gc-motion to comment/uncomment lines
 Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
 Plug 'vim-airline/vim-airline' " shows buffers for files
 Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
 Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
-Plug 'tpope/vim-eunuch' " use unix commands in vim: https://github.com/tpope/vim-eunuch
-Plug 'ekalinin/dockerfile.vim'
-Plug 'psliwka/vim-smoothie'
+Plug 'psliwka/vim-smoothie' " smooth scrolling
 Plug 'easymotion/vim-easymotion' " like clicking links in the browser: <leader><leader>W
 Plug 'lilydjwg/colorizer' " Colorize colors inline
 Plug 'rhysd/git-messenger.vim'
@@ -35,14 +31,14 @@ Plug 'stephpy/vim-yaml'
 Plug 'chase/vim-ansible-yaml'
 Plug 'mattn/emmet-vim'
 Plug 'troydm/zoomwintab.vim'
-Plug 'jonsmithers/vim-html-template-literals'
+Plug 'jonsmithers/vim-html-template-literals' " lit-html
 Plug 'andymass/vim-matchup' " improve % and add text objects i% and a%
 Plug 'chaoren/vim-wordmotion' " camelcasemotion
-Plug 'pangloss/vim-javascript'
 Plug 'crusoexia/vim-monokai'
 Plug 'kana/vim-textobj-user' " Add new textobjects easily
 Plug 'kana/vim-textobj-entire' " textobj: ae entire buffer, ie buffer without leading and trailing empty lines
 Plug 'wellle/context.vim' " show context of buffers
+Plug 'wellle/targets.vim' " more text objects
 Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac, ic, af, if
 Plug 'paroxayte/vwm.vim' "Manage Window layouts
 Plug 'liuchengxu/vista.vim' " Symbol outline
@@ -51,7 +47,6 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " ReplaceWithRegister - make replacing repeatable
 " Titlecase - change casing of a line/ a word
 " Sortmotion sort stuff alphabetically
-" Textobjects - https://github.com/kana/vim-textobj-user/wiki
 " twig highlight - syntax highlighting
 " Color preview
 " sideways.vim
@@ -59,6 +54,8 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " }}}
 call plug#end()
 " }}}
+(test(moretest) ) test
+test, test
 " Misc {{{
 filetype plugin indent on
 set mouse=a
