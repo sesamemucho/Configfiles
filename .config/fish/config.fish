@@ -2,8 +2,7 @@ fish_vi_key_bindings
 # environment variables
 set -gx PATH /home/julius/.gem/ruby/2.6.0/bin  $PATH
 set -gx PATH /home/julius/.local/bin $PATH
-set -gx PAGER most
-
+set -gx MANPAGER "nvim -c 'set ft=man' -"
 set -gx LESS_TERMCAP_mb \e\[1\;32m
 set -gx LESS_TERMCAP_md \e\[1\;32m
 set -gx LESS_TERMCAP_me \e\[0m
