@@ -8,6 +8,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-surround' " change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
+Plug 'tpope/vim-repeat' " make surround actions repeatable
 Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
 Plug 'vim-airline/vim-airline' " shows buffers for files
 Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
