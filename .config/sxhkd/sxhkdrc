@@ -3,6 +3,8 @@ super + Return
 	$TERMINAL
 super + d
 	rofi -show run
+super + b
+	rofi -show window
 super + i
 	$TERMINAL -e htop
 super + t
