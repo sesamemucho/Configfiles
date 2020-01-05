@@ -45,6 +45,8 @@
           - rust
           - rust-racer
           - clang
+          - redshift
+          - plasma5-applets-redshift-control
           - ruby
           - etckeeper
           - fzf

@@ -12,6 +12,7 @@
           - discord
           - lutris
           - wine-staging
+          - lib32-libpulse
           - nvidia
           - nvidia-utils
           - nvidia-settings

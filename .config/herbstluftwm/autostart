@@ -113,6 +113,8 @@ lock_tag_to_monitor() {
 # lock the tag 8 to the monitor with index 1 (i.e. the second monitor)
 lock_tag_to_monitor 1 0
 lock_tag_to_monitor 2 1
+lock_tag_to_monitor 3 2
+lock_tag_to_monitor 4 3
 
 # cycle through tags
 hc keybind $Mod-period use_index +1 --skip-visible
