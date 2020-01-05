@@ -310,6 +310,8 @@ nnoremap Q @q
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>r :NERDTreeFind<cr>
 
+nnoremap <leader>b :LeaderfBuffer<cr>
+
 " List buffers and select by number
 nnoremap gb :ls<CR>:b<Space>
 
