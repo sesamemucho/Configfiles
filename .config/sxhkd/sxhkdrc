@@ -23,6 +23,8 @@ super + m
       plexmediaplayer
 super + Delete
       sudo shutdown now
+super + shift + Delete
+      sudo reboot now
 
 # Pulse Audio controls
 XF86AudioRaiseVolume
