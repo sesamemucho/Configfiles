@@ -8,4 +8,4 @@ export XMODIFIERS=@im='ibus'
 #Toolbar for anthy
 ibus-daemon -drx
 exec ~/.config/startup.sh &
-exec i3
+exec stumpwm
