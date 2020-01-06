@@ -6,5 +6,5 @@ shift
 for i in "$@"
 do
 	episode=$(echo $i|grep -oP '.*S..E..')
-	mkvextract tracks "$i" "$track:$episode.$extension"
+	mkvextract tracks "$i" "$track:$episode.en.$extension"
 done
