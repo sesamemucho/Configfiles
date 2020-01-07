@@ -11,7 +11,6 @@ set -gx LESS_TERMCAP_so \e\[01\;33m
 set -gx LESS_TERMCAP_ue \e\[0m
 set -gx LESS_TERMCAP_us \e\[1\;4\;31m
 
-function fish_title;end
 
 # Colors
 set fish_color_normal a9b7c6

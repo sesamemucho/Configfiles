@@ -58,6 +58,7 @@ call plug#end()
 filetype plugin indent on
 set mouse=a
 set shell=bash
+set title " vim controls the title of the terminal
 let $PAGER=''
 set splitbelow
 set splitright

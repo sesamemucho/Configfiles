@@ -1,1 +1,4 @@
 (run-shell-command "xsetroot -cursor_name left_ptr")
+(setf mouse-focus-policy :ignore)
+(setf message-window-gravity :center)
+(setf input-window-gravity :center)

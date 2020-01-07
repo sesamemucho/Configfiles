@@ -2,9 +2,9 @@
 super + Return
 	$TERMINAL
 super + d
-	rofi -show run
+	rofi -show run -monitor -2
 super + b
-	rofi -show window
+	rofi -show window -monitor -2
 super + i
 	$TERMINAL -e htop
 super + t
