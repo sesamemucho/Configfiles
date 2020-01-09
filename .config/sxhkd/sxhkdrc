@@ -6,7 +6,7 @@ super + d
 super + b
 	rofi -show window -monitor -2
 super + i
-	$TERMINAL -e htop
+	~/Programs/notify-battery.sh
 super + t
 	touchpad-toggle.sh
 super + g
