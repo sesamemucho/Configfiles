@@ -26,9 +26,10 @@
           - base-devel
           - ripgrep
           - adobe-source-han-sans-jp-fonts
+          - otf-fira-code
           - sxhkd
           - rofi
-          - herbstluftwm
+          - i3
         state: present
       become: true
       become_user: root
@@ -74,13 +75,10 @@
           - ranger
           - ttf-dejavu
           - ttf-liberation
-          - ttf-font-awesome
           - libreoffice-fresh
           - unclutter
           - xclip
           - xsel
-          - xorg-fonts-misc
-          - bdf-unifont
           - yarn
           - zathura
           - zathura-pdf-mupdf
@@ -132,12 +130,9 @@
     - name: Install aur-packages
       aur:
         name:
+          - stumpwm-git
           - yadm-git
           - touchpad-toggle
-          - polybar
-          - powerline-fonts-git
-          - nerd-fonts-dejavu-complete
-          - siji-git
           - vivaldi
           - nvm
           - xbanish
