@@ -10,8 +10,8 @@ feh --randomize --bg-fill --no-xinerama ~/Pictures/* &
 lightscreen -d &
 sxhkd &
 # VBoxClient-all &
-sudo setxkbmap -layout us -variant altgr-intl &
-# xmodmap ~/.Xmodmap &
+/bin/su -c setxkbmap -layout us -variant altgr-intl - julius
+/bin/su -c xmodmap ~/.Xmodmap - julius
 riot-desktop &
 sudo sh -c 'sysctl -w abi.vsyscall32=0' &
 # rg --files ~/.doom.d/ | entr ~/.emacs.d/bin/doom refresh
