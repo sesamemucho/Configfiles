@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 picom &
 xbanish &
@@ -11,8 +11,8 @@ lightscreen -d &
 sxhkd &
 ~/Programs/notify-low-battery.sh &
 # VBoxClient-all &
-/bin/su -c setxkbmap -layout us -variant altgr-intl - julius
-/bin/su -c xmodmap ~/.Xmodmap - julius
+# setxkbmap -layout us -variant altgr-intl
+# xmodmap ~/.Xmodmap
 riot-desktop &
 sudo sh -c 'sysctl -w abi.vsyscall32=0' &
 # rg --files ~/.doom.d/ | entr ~/.emacs.d/bin/doom refresh
