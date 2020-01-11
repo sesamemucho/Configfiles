@@ -9,6 +9,7 @@ dunst &
 feh --randomize --bg-fill --no-xinerama ~/Pictures/* &
 lightscreen -d &
 sxhkd &
+~/Programs/notify-low-battery.sh &
 # VBoxClient-all &
 /bin/su -c setxkbmap -layout us -variant altgr-intl - julius
 /bin/su -c xmodmap ~/.Xmodmap - julius
