@@ -41,6 +41,7 @@
           - neovim
           - entr
           - emacs
+          - beep
           - fd
           - shellcheck
           - rust
