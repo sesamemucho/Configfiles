@@ -67,7 +67,7 @@ set shiftwidth=4
 set softtabstop=4   " number of spaces in tab when editing
 " don't fuck with pasting
 set pastetoggle=<F2>
-let g:wordmotion_prefix = '<Leader>'
+let g:wordmotion_prefix = '\'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:html_indent_style1 = "inc"
@@ -88,7 +88,7 @@ let g:coc_global_extensions = [
             \'coc-html',
             \'coc-eslint',
             \'coc-tsserver',
-				    \'coc-angular',
+			\'coc-angular',
             \'coc-yaml',
             \'coc-ccls'
             \]
@@ -157,10 +157,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
-
-" Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -312,6 +308,7 @@ nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>r :NERDTreeFind<cr>
 
 nnoremap <leader>b :LeaderfBuffer<cr>
+nnoremap <leader>c :Leaderf command<cr>
 
 " List buffers and select by number
 nnoremap gb :ls<CR>:b<Space>
@@ -414,14 +411,6 @@ if !&scrolloff
     if !&sidescrolloff
         set sidescrolloff=5   " Show next 5 columns while side-scrolling.
     endif
-" }}}
-" Snippets {{{
-" }}}
-" Language specific {{{
-" YAML{{{
-au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-" }}}
 " }}}
 " Most stuff from here: https://dougblack.io/words/a-good-vimrc.html
 " vim:foldmethod=marker:foldlevel=0

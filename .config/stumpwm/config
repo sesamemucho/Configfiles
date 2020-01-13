@@ -37,6 +37,7 @@
 	("C-M"   . "S-Return")
 	("C-h"   . "DEL")
 	("C-w"   . "C-DEL")
+	("C-M-w"   . "C-w")
 	("C-d"   . "Delete")
 	("C-M-d" . "C-d")
 	("C-a"   . "Home")
