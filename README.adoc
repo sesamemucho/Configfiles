@@ -4,3 +4,7 @@
 wget http://tiny.cc/e66ohz -O install.sh
 bash install.sh [user] [passoword] [fast] [partition] [hostname]
 ----
+
+= Neofetch of current system
+
+image::neofetch.jpg[]
