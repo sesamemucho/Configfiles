@@ -1,15 +1,12 @@
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Get color support for 'less'
+export LESS="--RAW-CONTROL-CHARS"
 
-export LESS_TERMCAP_mb=$'\e[1;32m'
-export LESS_TERMCAP_md=$'\e[1;32m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[01;33m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[1;4;31m'
-
+# Use colors for less, man, etc.
+[[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
 export TERMINAL=kitty
 export LAUNCHER=rofi
+export SHELL="/bin/fish"
 force_color_prompt=yes
 
 # The next line updates PATH for the Google Cloud SDK.
