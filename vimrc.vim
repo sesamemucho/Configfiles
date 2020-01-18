@@ -10,3 +10,9 @@ set mouse=a
 " don't fuck with pasting
 set pastetoggle=<F2>
 
+
+
+" Use Ctrl D to delete the next char
+imap <C-d> <Del>
+
+
