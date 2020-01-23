@@ -194,9 +194,7 @@ nnoremap <leader>r :NERDTreeFind<cr>
 
 nnoremap <leader>b :LeaderfBuffer<cr>
 nnoremap <leader>c :Leaderf command<cr>
-
-" List buffers and select by number
-nnoremap gb :ls<CR>:b<Space>
+nnoremap <leader>h :Leaderf cmdHistory<cr>
 
 " ZoomWinTab
 nnoremap <C-w>o :ZoomWinTabToggle<CR>
