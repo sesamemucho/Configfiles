@@ -22,8 +22,8 @@ foreground = "#149cdc"
 timeout = 5
 
 [urgency_normal]
-background = "#282828"
-foreground = "#1079aa"
+background = "#375E97"
+foreground = "#FFBB00"
 timeout = 10
 
 [urgency_critical]

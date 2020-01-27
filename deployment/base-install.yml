@@ -29,7 +29,7 @@
           - otf-fira-code
           - sxhkd
           - rofi
-          - i3
+          - i3-gaps
         state: present
       become: true
       become_user: root
@@ -53,7 +53,7 @@
           - etckeeper
           - fzf
           - neomutt
-          - dunst
+          - xfce4-notifyd
           - light
           - fish
           - flatpak

@@ -5,7 +5,6 @@ xbanish &
 
 #Xresources
 # xrdb ~/.Xresources &
-dunst &
 feh --randomize --bg-fill --no-xinerama ~/Pictures/* &
 lightscreen -d &
 sxhkd &
