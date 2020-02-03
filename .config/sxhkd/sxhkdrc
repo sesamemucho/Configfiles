@@ -18,7 +18,7 @@ super + v
 super + n
       lutris
 super + c
-      vivaldi-stable --ignore-certificate-errors
+      brave --ignore-certificate-errors
 super + m
       plexmediaplayer
 super + k
