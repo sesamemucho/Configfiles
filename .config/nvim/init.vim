@@ -36,7 +36,6 @@ Plug 'kana/vim-textobj-entire' " textobj: ae entire buffer, ie buffer without le
 Plug 'wellle/targets.vim' " more text objects, enables stuff like ci, or ci/
 Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac (around class), ic, af, if (inner function)
 Plug 'paroxayte/vwm.vim' " Manage Window layouts
-Plug 'liuchengxu/vista.vim' " Symbol outline, needs ctags
 Plug 'cespare/vim-toml' " toml support
 Plug 'stephpy/vim-yaml' " yaml support
 Plug 'chase/vim-ansible-yaml' " improve yaml for ansible files
