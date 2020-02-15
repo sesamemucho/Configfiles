@@ -1,6 +1,6 @@
 # Basic binds
 super + Return
-	$TERMINAL
+	kitty
 super + d
 	rofi -show run -monitor -2
 super + b
@@ -18,7 +18,7 @@ super + v
 super + n
       lutris
 super + c
-      brave --ignore-certificate-errors
+      brave
 super + m
       plexmediaplayer
 super + k
