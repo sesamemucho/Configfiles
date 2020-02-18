@@ -83,7 +83,7 @@ function ranger-cd {
 bindkey -s '^o' 'ranger-cd\n'
 
 function bettercd {
-	builtin cd "$1"
+	builtin cd "$@"
 	ls
 }
 
