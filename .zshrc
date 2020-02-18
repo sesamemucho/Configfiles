@@ -32,6 +32,11 @@ alias lsa="lsd -a"
 alias vim=nvim
 alias shutdown="sudo shutdown now"
 alias vimrc="nvim ~/.config/nvim/init.vim"
+alias k=kubectl
+alias cdd="cd ~/Downloads/"
+alias cdp="cd ~/Projects/"
+alias gs="git status"
+alias cd="bettercd"
 
 # User configuration
 source ~/.zplug/init.zsh
@@ -77,6 +82,10 @@ function ranger-cd {
 
 bindkey -s '^o' 'ranger-cd\n'
 
+function bettercd {
+	command cd "$1"
+	ls
+}
 
 function backup {
 	yadm pull
