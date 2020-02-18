@@ -55,7 +55,7 @@
           - neomutt
           - xfce4-notifyd
           - light
-          - fish
+          - zsh
           - flatpak
           - picom
           - code
@@ -110,18 +110,15 @@
         path: "/home/julius/.local/share/omf"
       register: omf
 
-    - name: clone omf
-      git:
-        repo: "https://github.com/oh-my-fish/oh-my-fish"
-        dest: "/tmp/omf"
-        clone: yes
-      when: not omf.stat.exists
-
-    - name: Install oh-my-fish
+    - name: Install zplug
       become: true
       become_user: julius
-      command: /tmp/omf/bin/install -y --offline --noninteractive
-      when: not omf.stat.exists
+      command: curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
+    - name: Install zplug plugins
+      become: true
+      become_user: julius
+      command: zplug install
 
     - name: Install yay
       aur:
