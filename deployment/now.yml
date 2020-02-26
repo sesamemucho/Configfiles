@@ -4,8 +4,8 @@
   become_user: julius
   tasks:
 
-        - name: install doom-emacs
-          command: /home/julius/.emacs.d/bin/doom -y install
-          become: yes
-          become_user: root
+    - name: Install zplug
+      become: true
+      become_user: julius
+      shell: curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
