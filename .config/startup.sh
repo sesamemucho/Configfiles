@@ -6,6 +6,8 @@ xbanish &
 #Xresources
 xrdb -merge ~/.Xresources &
 
+../.screenlayout/layout.sh &
+
 feh --randomize --bg-fill --no-xinerama ~/Pictures/* &
 lightscreen -d &
 export SXHKD_SHELL="/usr/bin/sh"
