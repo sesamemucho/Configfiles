@@ -21,7 +21,7 @@
 
 ;;remapped keys
 (define-remapped-keys
- '(("(Vivaldi-stable|Brave-browser|Riot|discord|Anki)"
+ '(("(Vivaldi-stable|Brave-browser|Riot|discord|Slack|Anki)"
 	("C-n"   . "Down")
 	("C-p"   . "Up")
 	("C-f"   . "Right")
