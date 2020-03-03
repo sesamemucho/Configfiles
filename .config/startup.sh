@@ -4,9 +4,11 @@ picom &
 xbanish &
 
 #Xresources
-# xrdb ~/.Xresources &
+xrdb -merge ~/.Xresources &
+
 feh --randomize --bg-fill --no-xinerama ~/Pictures/* &
 lightscreen -d &
+export SXHKD_SHELL="/usr/bin/sh"
 sxhkd &
 ~/Programs/notify-low-battery.sh &
 # VBoxClient-all &
