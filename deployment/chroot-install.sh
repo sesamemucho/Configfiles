@@ -38,7 +38,8 @@ echo $hostname > /etc/hostname
 
 # build
 echo 'Building'
-mkinitcpio -p linux
+pacman -S mkinitcpio --noconfirm
+mkinitcpio -P
 
 # install bootloader
 echo 'Installing bootloader'
@@ -57,6 +58,8 @@ pacman -S --noconfirm xorg xorg-xinit xterm
 # install git
 echo 'Installing git'
 pacman -S --noconfirm git
+# install wifi-menu
+pacman -S --noconfirm wifi-menu dialog
 
 # user management
 echo 'Setting up user'
@@ -72,6 +75,6 @@ systemctl enable ntpdate.service
 # Install YADM
 curl -fLo /usr/local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && chmod a+x /usr/local/bin/yadm
 # clone and bootstrap
-yadm clone --bootstrap --recurse-submodules -j8 https://github.com/juligreen/Configfiles
+yadm clone --bootstrap https://github.com/juligreen/Configfiles
 
 echo 'Done'
