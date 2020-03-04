@@ -65,6 +65,9 @@
           - dolphin
           - openssh
           - p7zip
+          - unzip
+          - unrar
+          - physlock
           - pulseaudio
           - pavucontrol-qt
           - python-pillow
@@ -143,14 +146,6 @@
       become: yes
       become_user: julius
       ignore_errors: yes
-
-    - name: install vim-plug
-      command: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-      become: yes
-      become_user: julius
-
-    - name: install vim plugins
-      command: nvim PlugInstall +qall > /dev/null
 
     - name: install coc extensions
       command: nvim +CocUpdateSync +qall > /dev/null

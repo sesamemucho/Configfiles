@@ -5,6 +5,11 @@
 " /_/  /_/_/_/ /_/_/ /_/ /_/\____/ /____/     |___/_/_/ /_/ /_/_/   \___/
 
 " vim-plug  {{{
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 call plug#begin('~/.vim/plugged')
 Plug 'mbbill/undotree' " Navigate undos
 Plug 'tpope/vim-surround' " change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
