@@ -6,7 +6,7 @@ xbanish &
 #Xresources
 xrdb -merge ~/.Xresources &
 
-../.screenlayout/layout.sh &
+../.screenlayout/layout.sh
 
 feh --randomize --bg-fill --no-xinerama ~/Pictures/* &
 lightscreen -d &
@@ -14,7 +14,7 @@ export SXHKD_SHELL="/usr/bin/sh"
 sxhkd &
 ~/Programs/notify-low-battery.sh &
 # VBoxClient-all &
-setxkbmap -layout us -variant altgr-intl
+# setxkbmap -layout us -variant altgr-intl
 # xmodmap ~/.Xmodmap
 riot-desktop &
 sudo sh -c 'sysctl -w abi.vsyscall32=0' &

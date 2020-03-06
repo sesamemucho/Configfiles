@@ -8,6 +8,8 @@ super + b
 super + i
 	~/Programs/notify-battery.sh
 super + t
+	~/Programs/notify-time-date.sh
+super + t
 	touchpad-toggle.sh
 super + g
 	steam

@@ -21,13 +21,14 @@
 
 ;;remapped keys
 (define-remapped-keys
- '(("(Vivaldi-stable|Brave-browser|Riot|discord|Slack|Anki)"
+ '(("(Vivaldi-stable|Brave-browser|Riot|discord|Slack|Anki|plexmediaplayer|Kodi)"
 	("C-n"   . "Down")
 	("C-p"   . "Up")
 	("C-f"   . "Right")
 	("C-M-f"   . "C-f")
 	("C-F"   . "S-Right")
 	("C-b"   . "Left")
+	("C-M-b"   . "C-b")
 	("C-B"   . "S-Left")
 	("M-b"   . "C-Left")
 	("C-M-b"   . "M-b")

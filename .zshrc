@@ -5,6 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+path+=('/home/julius/.local/bin')
+export PATH
+
+
 
 # The following lines were added by compinstall
 
@@ -22,6 +26,7 @@ setopt appendhistory nomatch
 setopt inc_append_history
 setopt share_history
 unsetopt autocd beep
+setopt globdots
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
