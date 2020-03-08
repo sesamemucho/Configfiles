@@ -112,12 +112,6 @@
       shell: curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
       ignore_errors: yes
 
-    - name: Install zplug plugins
-      become: true
-      become_user: julius
-      command: zplug install
-      ignore_errors: yes
-
     - name: Install yay
       aur:
         name:
@@ -146,9 +140,6 @@
       become: yes
       become_user: julius
       ignore_errors: yes
-
-    - name: install coc extensions
-      command: nvim +CocUpdateSync +qall > /dev/null
 
     - name: Enable multilib repos
       replace:

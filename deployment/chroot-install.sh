@@ -43,7 +43,7 @@ mkinitcpio -P
 
 # install bootloader
 echo 'Installing bootloader'
-pacman -S grub --noconfirm
+pacman -S grub efibootmgr --noconfirm
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -59,7 +59,7 @@ pacman -S --noconfirm xorg xorg-xinit xterm
 echo 'Installing git'
 pacman -S --noconfirm git
 # install wifi-menu
-pacman -S --noconfirm wifi-menu dialog
+pacman -S --noconfirm netctl dialog
 
 # user management
 echo 'Setting up user'
