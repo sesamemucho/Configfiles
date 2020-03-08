@@ -15,6 +15,7 @@ sxhkd &
 ~/Programs/notify-low-battery.sh &
 # VBoxClient-all &
 # setxkbmap -layout us -variant altgr-intl
+systemctl --user start xfce4-notifyd
 # xmodmap ~/.Xmodmap
 riot-desktop &
 sudo sh -c 'sysctl -w abi.vsyscall32=0' &
