@@ -2,9 +2,9 @@
 super + Return
 	kitty
 super + d
-	rofi -show run -monitor -2
+	rofi -show run -monitor -2 -fullscreen
 super + b
-	rofi -show window -monitor -2
+	rofi -show window -monitor -2 -fullscreen
 super + i
 	~/Programs/notify-battery.sh
 super + t

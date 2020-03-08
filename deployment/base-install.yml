@@ -89,23 +89,6 @@
       become: true
       become_user: root
 
-    - name: install asciidoctor
-      gem:
-        name: asciidoctor-pdf
-        state: present
-        pre_release: yes
-
-    - name: install rouge - asciidoc synstax highlighter
-      gem:
-        name: rouge
-        state: present
-        pre_release: yes
-
-    - name: check for omf
-      stat:
-        path: "/home/julius/.local/share/omf"
-      register: omf
-
     - name: Install zplug
       become: true
       become_user: julius
@@ -124,9 +107,7 @@
           - yadm-git
           - touchpad-toggle
           - brave-bin
-          - nvm
           - xbanish
-          - xfce-theme-greybird
           - lightscreen
 
     - name: Install pip-packages
