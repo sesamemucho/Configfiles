@@ -12,6 +12,8 @@ super + t
 super + c
 	~/Programs/cpu-usage.sh
 super + m
+	~/Programs/memory-usage.sh
+super + m
 	touchpad-toggle.sh
 super + g
 	steam
