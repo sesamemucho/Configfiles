@@ -40,10 +40,12 @@ alias vim=nvim
 alias shutdown="sudo shutdown now"
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias k=kubectl
+alias t='terraform'
 alias cdd="cd ~/Downloads/"
 alias cdp="cd ~/Projects/"
 alias gs="git status"
 alias cd="bettercd"
+alias ssp="ssh -X plexus"
 
 # User configuration
 source ~/.zplug/init.zsh

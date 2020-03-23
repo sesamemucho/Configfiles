@@ -12,11 +12,6 @@
 ;; Go to last focused
 (define-key *root-map* (kbd "M-r") "fother")
 
-(define-key *root-map* (kbd "M-b") "exec rofi -show window -monitor -1 -sidebar-mode -auto-select")
-(define-key *root-map* (kbd "b") "exec rofi -show window -monitor -1 -sidebar-mode -auto-select")
-(define-key *root-map* (kbd "M-d") "exec rofi -show run -monitor -1 -sidebar-mode")
-(define-key *root-map* (kbd "d") "exec rofi -show run -monitor -1 -sidebar-mode")
-
 (define-key *root-map* (kbd "M-m") "mode-line")
 
 ;;remapped keys

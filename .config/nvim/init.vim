@@ -46,6 +46,7 @@ Plug 'stephpy/vim-yaml' " yaml support
 Plug 'chase/vim-ansible-yaml' " improve yaml for ansible files
 Plug 'markonm/traces.vim' "Preview substitutions
 Plug 'pechorin/any-jump.nvim' " Use regex to 'go to definition' anywhere (<leader>j)
+Plug 'hashivim/vim-terraform'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " Intellisense engine. This does loads of stuff, but is a language server client foremost. I will replace it for the native nvim language server, since coc.nvim has a node dependency
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
