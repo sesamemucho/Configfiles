@@ -28,6 +28,8 @@ setopt share_history
 unsetopt autocd beep
 setopt globdots
 bindkey -v
+bindkey "^?" backward-delete-char
+bindkey "" backward-delete-word
 # End of lines configured by zsh-newuser-install
 
 
@@ -46,6 +48,8 @@ alias cdp="cd ~/Projects/"
 alias gs="git status"
 alias cd="bettercd"
 alias ssp="ssh -X plexus"
+alias cdcp="cd ~/Projects/currentproject/"
+alias rangerrc="vim ~/.config/ranger/rc.conf"
 
 # User configuration
 source ~/.zplug/init.zsh
@@ -106,6 +110,7 @@ function backup {
 
 export MANPAGER="nvim -c 'set ft=man' -"
 export EDITOR=nvim
+export SHELL=/bin/zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

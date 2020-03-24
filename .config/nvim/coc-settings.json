@@ -1,22 +1,16 @@
 {
+  "yaml.schemas": {
+    "kubernetes": "/*.yaml"
+  },
   "languageserver": {
     "python": {
-      "args": [
-        "-mpyls",
-        "-vv",
-        "--log-file",
-        "/tmp/lsp_python.log"
-      ],
+      "args": ["-mpyls", "-vv", "--log-file", "/tmp/lsp_python.log"],
       "command": "python",
-      "filetypes": [
-        "python"
-      ],
+      "filetypes": ["python"],
       "settings": {
         "pyls": {
           "commandPath": "",
-          "configurationSources": [
-            "pycodestyle"
-          ],
+          "configurationSources": ["pycodestyle"],
           "enable": true,
           "plugins": {
             "jedi_completion": {
@@ -68,12 +62,17 @@
       "trace.server": "verbose"
     }
   },
-	"python.jediPath": "/usr/lib/python3.8/site-packages/jedi",
-	"suggest.echodocSupport": true,
-	"suggest.maxCompleteItemCount": 20,
-	"eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
-	"diagnostic.errorSign": "•",
-	"diagnostic.warningSign": "•",
-	"diagnostic.infoSign": "•",
-	"suggest.triggerAfterInsertEnter": true
+  "python.jediPath": "/usr/lib/python3.8/site-packages/jedi",
+  "suggest.echodocSupport": true,
+  "suggest.maxCompleteItemCount": 20,
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact"
+  ],
+  "diagnostic.errorSign": "•",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•",
+  "suggest.triggerAfterInsertEnter": true
 }
