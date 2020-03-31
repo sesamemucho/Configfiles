@@ -64,7 +64,7 @@ mount ${partition}1 /mnt/efi
 mkdir /mnt/boot/
 
 # pacstrap
-pacstrap /mnt base base-devel linux linux-firmware
+pacstrap /mnt base base-devel linux linux-firmware linux-headers
 
 # fstab
 genfstab -U /mnt >> /mnt/etc/fstab

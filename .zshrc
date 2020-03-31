@@ -7,6 +7,9 @@ fi
 
 path+=('/home/julius/.local/bin')
 export PATH
+export MANPAGER="nvim -c 'set ft=man' -"
+export EDITOR=nvim
+export SHELL=/bin/zsh
 
 
 
@@ -50,6 +53,7 @@ alias cd="bettercd"
 alias ssp="ssh -X plexus"
 alias cdcp="cd ~/Projects/currentproject/"
 alias rangerrc="vim ~/.config/ranger/rc.conf"
+alias sxhkdrc="vim ~/.config/sxhkd/sxhkdrc"
 
 # User configuration
 source ~/.zplug/init.zsh
@@ -108,10 +112,8 @@ function backup {
 	yadm push
 }
 
-export MANPAGER="nvim -c 'set ft=man' -"
-export EDITOR=nvim
-export SHELL=/bin/zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+eval "$(direnv hook zsh)"

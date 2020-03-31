@@ -47,6 +47,8 @@ Plug 'chase/vim-ansible-yaml' " improve yaml for ansible files
 Plug 'markonm/traces.vim' "Preview substitutions
 Plug 'pechorin/any-jump.nvim' " Use regex to 'go to definition' anywhere (<leader>j)
 Plug 'hashivim/vim-terraform'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'francoiscabrol/ranger.vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " Intellisense engine. This does loads of stuff, but is a language server client foremost. I will replace it for the native nvim language server, since coc.nvim has a node dependency
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -111,6 +113,10 @@ let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
 let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
 let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
+" }}}
+" Ranger {{{
+let g:ranger_map_keys = 0
+map <leader>t :Ranger<CR>
 " }}}
 " VWM{{{
 " Default config for bot terminal
