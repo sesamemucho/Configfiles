@@ -1,5 +1,4 @@
 #!/bin/sh
 
-status=$(nmcli connection down "Scandio VPN")
-
-notify-send "$status"
+STATUS=$(nmcli connection down "Scandio VPN")
+[ -n "$STATUS" ] && notify-send "$STATUS" || notify-send "Error... Alrady down?"
