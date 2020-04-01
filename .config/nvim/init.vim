@@ -47,9 +47,10 @@ Plug 'stephpy/vim-yaml' " yaml support
 Plug 'chase/vim-ansible-yaml' " improve yaml for ansible files
 Plug 'markonm/traces.vim' "Preview substitutions
 Plug 'pechorin/any-jump.nvim' " Use regex to 'go to definition' anywhere (<leader>j)
-Plug 'hashivim/vim-terraform'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'francoiscabrol/ranger.vim'
+Plug 'hashivim/vim-terraform' "terraform syntax highlighting
+Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
+Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
+Plug 'unblevable/quick-scope' " Improve f key
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " Intellisense engine. This does loads of stuff, but is a language server client foremost. I will replace it for the native nvim language server, since coc.nvim has a node dependency
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -117,9 +118,23 @@ let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
 " }}}
 " Ranger {{{
 let g:ranger_map_keys = 0
-map <leader>t :Ranger<CR>
 let g:NERDTreeHijackNetrw = 0
 let g:ranger_replace_netrw = 1
+" }}}
+" quick-scope{{{
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+" }}}
+" vim-asterisk {{{
+map *   <Plug>(asterisk-*)
+map #   <Plug>(asterisk-#)
+map g*  <Plug>(asterisk-g*)
+map g#  <Plug>(asterisk-g#)
+map z*  <Plug>(asterisk-z*)
+map gz* <Plug>(asterisk-gz*)
+map z#  <Plug>(asterisk-z#)
+map gz# <Plug>(asterisk-gz#)
 " }}}
 " VWM{{{
 " Default config for bot terminal
