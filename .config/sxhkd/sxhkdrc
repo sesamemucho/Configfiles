@@ -43,6 +43,10 @@ super + meta + l
 super + ctrl + r
 	pkill -SIGUSR1 sxhkd
 
+XF86Calculator
+	~/Programs/vpnup.sh
+shift + XF86Calculator
+	~/Programs/vpndown.sh
 
 super + shift + j
 	xdotool mousemove_relative -- 0 10
