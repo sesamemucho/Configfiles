@@ -18,6 +18,7 @@ Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag int
 Plug 'vim-airline/vim-airline' " shows buffers for files
 Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
 Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
+Plug 'haya14busa/vim-asterisk' " * for visual mode, z* higlights words, but does not jump
 Plug 'psliwka/vim-smoothie' " smooth scrolling
 Plug 'easymotion/vim-easymotion' " like clicking links in the browser: <leader><leader>W
 Plug 'lilydjwg/colorizer' " Colorize colors inline
@@ -117,6 +118,8 @@ let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
 " Ranger {{{
 let g:ranger_map_keys = 0
 map <leader>t :Ranger<CR>
+let g:NERDTreeHijackNetrw = 0
+let g:ranger_replace_netrw = 1
 " }}}
 " VWM{{{
 " Default config for bot terminal
