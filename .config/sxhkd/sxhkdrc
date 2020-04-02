@@ -15,14 +15,16 @@ super + u
 	~/Programs/cpu-usage.sh
 super + m
 	~/Programs/memory-usage.sh
-super + m
+super + ctrl + t
 	touchpad-toggle.sh
 super + g
 	steam
+XF86Favorites
+	xdotool search --classname plexmediaplayer windowactivate || plexmediaplayer
 super + a
 	anki &
 super + v
-	discord
+	xdotool search ".* Discord" windowactivate || discord
 super + n
 	lutris
 super + c
@@ -42,6 +44,9 @@ super + meta + l
 
 super + ctrl + r
 	pkill -SIGUSR1 sxhkd
+
+XF86Launch5
+	xdotool search "Slack .*" windowactivate || slack
 
 XF86Calculator
 	~/Programs/vpnup.sh
