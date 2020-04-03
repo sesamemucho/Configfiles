@@ -13,5 +13,11 @@
 	helper = store
 [mergetool]
 	prompt = true
-[difftool]
-	prompt = false
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[mergetool "vimdiff"]
+	path = nvim
+[difftool "vimdiff"]
+	path = nvim

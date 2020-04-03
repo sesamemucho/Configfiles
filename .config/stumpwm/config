@@ -35,6 +35,7 @@
 	("C-w"   . "C-DEL")
 	("C-M-w"   . "C-w")
 	("C-d"   . "Delete")
+	("M-d"   . "C-Delete")
 	("C-M-d" . "C-d")
 	("C-a"   . "Home")
 	("C-M-a"   . "C-a")
@@ -51,7 +52,7 @@
 	("M-w"   . "C-c")
 	("M-<"   . "Home")
 	("M->"   . "End")
-	("C-k"   . ("S-End" "C-x"))
+	("C-k"   . ("S-End" "DEL"))
 	("C-M-k" . ("C-k")
 	))))
 

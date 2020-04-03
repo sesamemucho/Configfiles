@@ -17,7 +17,6 @@ sxhkd &
 # setxkbmap -layout us -variant altgr-intl
 systemctl --user start xfce4-notifyd
 # xmodmap ~/.Xmodmap
-riot-desktop &
 sudo sh -c 'sysctl -w abi.vsyscall32=0' &
 export GDK_CORE_DEVICE_EVENTS=1
 # rg --files ~/.doom.d/ | entr ~/.emacs.d/bin/doom refresh
