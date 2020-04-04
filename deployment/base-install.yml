@@ -39,6 +39,7 @@
         name:
           - anki
           - neovim
+          - wmctrl
           - entr
           - emacs
           - beep

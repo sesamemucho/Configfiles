@@ -52,7 +52,6 @@ Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
 Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
 Plug 'unblevable/quick-scope' " Improve f key
 Plug 'tpope/vim-sleuth' " Autodetect indentation rules
-Plug 'wellle/context.vim' " Show context
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " Intellisense engine. This does loads of stuff, but is a language server client foremost. I will replace it for the native nvim language server, since coc.nvim has a node dependency
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable

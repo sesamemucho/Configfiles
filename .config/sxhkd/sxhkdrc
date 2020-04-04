@@ -1,6 +1,6 @@
 # Basic binds
 super + Return
-	kitty
+	xdotool search --classname kitty windowactivate || kitty
 super + d
 	rofi -show run -monitor -1
 super + e; super + d
@@ -22,23 +22,25 @@ super + g
 XF86Favorites
 	xdotool search --classname plexmediaplayer windowactivate || plexmediaplayer
 super + a
-	xdotool search --classname Anki | tail -1 | xargs xdotool windowactivate || anki
+	wmctrl -a anki || anki
 super + v
 	xdotool search ".* Discord" windowactivate || discord
 XF86HomePage
 	xdotool search "Meet.*Brave" windowactivate || notify-send "No window available"
 super + n
-	xdotool search --class Lutris windowactivate || lutris
+	wmctrl -a lutris || lutris
 super + c
-	brave
+	wmctrl -a brave || brave
 XF86Mail
-	xdotool search --class Riot windowactivate || riot-desktop
+	wmctrl -a riot || riot-desktop
 super + k
 	screenkey --scr 2
 super + shift + Delete
 	sudo shutdown now
-super + meta + l
+super + ctrl + l
 	physlock
+super + XF86Favorites
+	systemctl suspend
 
 ~XF86AudioPlay
 	xdotool search --classname plexmediaplayer key --clearmodifiers XF86AudioPlay
@@ -54,9 +56,9 @@ super + r
 	xdotool key --delay 100 super+b ctrl+n ctrl+n Return
 
 XF86Launch5
-	xdotool search "Slack .*" windowactivate || slack
+	wmctrl -a slack || slack
 XF86Launch6
-	xdotool search --classname TogglDesktop | tail -1 | xargs xdotool windowactivate || TogglDesktop
+	wmctrl -a toggl || TogglDesktop
 
 XF86Calculator
 	~/Programs/vpnup.sh

@@ -32,6 +32,7 @@ unsetopt autocd beep
 setopt globdots
 bindkey -v
 bindkey "^?" backward-delete-char
+bindkey "" backward-delete-char
 bindkey "" backward-delete-word
 # End of lines configured by zsh-newuser-install
 
