@@ -33,7 +33,9 @@ super + c
 	wmctrl -a brave || brave
 XF86Mail
 	wmctrl -a riot || riot-desktop
-super + k
+XF86Search
+	wmctrl -a League || notify-send "No window available"
+super + ctrl + k
 	screenkey --scr 2
 super + shift + Delete
 	sudo shutdown now

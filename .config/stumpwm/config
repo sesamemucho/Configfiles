@@ -20,6 +20,8 @@
 	("C-n"   . "Down")
 	("C-p"   . "Up")
 	("C-f"   . "Right")
+	("C->"   . "C-TAB")
+	("C-<"   . "C-S-TAB")
 	("C-M-f"   . "C-f")
 	("C-F"   . "S-Right")
 	("C-b"   . "Left")
