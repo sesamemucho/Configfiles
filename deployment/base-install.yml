@@ -105,6 +105,7 @@
       aur:
         name:
           - stumpwm-git
+          - xkeysnail
           - yadm-git
           - touchpad-toggle
           - brave-bin
