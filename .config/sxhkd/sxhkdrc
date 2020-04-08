@@ -43,6 +43,10 @@ super + ctrl + l
 	physlock
 super + XF86Favorites
 	systemctl suspend
+super + XF86Launch5
+	sudo xkeysnail ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log
+super + XF86Launch6
+	~/.screenlayout/layout.sh
 
 ~XF86AudioPlay
 	xdotool search --classname plexmediaplayer key --clearmodifiers XF86AudioPlay

@@ -5,7 +5,7 @@ from xkeysnail.transform import *
 
 # [Global modemap] Change modifier keys as in xmodmap
 define_modmap({
-    Key.CAPSLOCK: Key.LEFT_CTRL
+    Key.CAPSLOCK: Key.LEFT_CTRL,
 })
 
 # [Conditional modmap] Change modifier keys in certain applications
@@ -27,7 +27,7 @@ define_multipurpose_modmap(
 
 
 # Keybindings for Firefox/Chrome
-define_keymap(re.compile("Firefox|Google-chrome"), {
+define_keymap(re.compile("Brave-browser|Firefox|Google-chrome"), {
     # Ctrl+Alt+j/k to switch next/previous tab
     K("C-M-j"): K("C-TAB"),
     K("C-M-k"): K("C-Shift-TAB"),
@@ -44,7 +44,7 @@ define_keymap(re.compile("Zeal"), {
 }, "Zeal")
 
 # Emacs-like keybindings in non-Emacs applications
-define_keymap(lambda wm_class: wm_class not in ("Emacs", "URxvt"), {
+define_keymap(lambda wm_class: wm_class not in ("Emacs", "kitty"), {
     # Cursor
     K("C-b"): with_mark(K("left")),
     K("C-f"): with_mark(K("right")),
@@ -68,7 +68,8 @@ define_keymap(lambda wm_class: wm_class not in ("Emacs", "URxvt"), {
     K("C-j"): K("enter"),
     K("C-o"): [K("enter"), K("left")],
     # Copy
-    K("C-w"): [K("C-x"), set_mark(False)],
+    K("C-w"): [K("C-backspace"), set_mark(False)],
+    K("C-M-w"): K("C-w"),
     K("M-w"): [K("C-c"), set_mark(False)],
     K("C-y"): [K("C-v"), set_mark(False)],
     # Delete
