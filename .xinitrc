@@ -7,4 +7,4 @@ export XMODIFIERS=@im='ibus'
 #Toolbar for anthy
 ibus-daemon -drx
 exec /home/julius/.config/startup.sh &
-exec stumpwm
+exec bspwm

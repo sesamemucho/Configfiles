@@ -30,10 +30,13 @@ setopt inc_append_history
 setopt share_history
 unsetopt autocd beep
 setopt globdots
+
+# Vim bindings
 bindkey -v
 bindkey "^?" backward-delete-char
 bindkey "" backward-delete-char
 bindkey "" backward-delete-word
+
 # End of lines configured by zsh-newuser-install
 
 

@@ -6,6 +6,16 @@ from typing import List  # noqa: F401
 
 mod = "mod4"
 
+def hide_show_bar(qtile):
+    bar = qtile.currentScreen.top
+    if bar.size == 0:
+        bar.size = 30
+        bar.window.unhide()
+    else:
+        bar.size = 0
+        bar.window.hide()
+        qtile.currentGroup.layoutAll()
+
 keys = [
     # Switch between windows in current stack pane
     Key([mod], "j", lazy.layout.down()),
@@ -31,6 +41,7 @@ keys = [
     Key([mod], "Tab", lazy.next_layout()),
     Key([mod, "shift"], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
+    Key([mod, "shift"], "x", lazy.function(hide_show_bar))
 ]
 
 groups = [Group(i) for i in "12345678"]
@@ -55,6 +66,7 @@ widget_defaults = dict(
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
+
 
 # Drag floating layouts.
 mouse = [
