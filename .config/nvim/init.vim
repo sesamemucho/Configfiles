@@ -1,14 +1,8 @@
-"     __  ____                      _          _    ___
-"    /  |/  (_)___  ____ ___  ____ ( )_____   | |  / (_)___ ___  __________
-"   / /|_/ / / __ \/ __ `__ \/ __ \|// ___/   | | / / / __ `__ \/ ___/ ___/
-"  / /  / / / / / / / / / / / /_/ / (__  )    | |/ / / / / / / / /  / /__
-" /_/  /_/_/_/ /_/_/ /_/ /_/\____/ /____/     |___/_/_/ /_/ /_/_/   \___/
-
-" vim-plug  {{{
+" vim-plug	{{{
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source /home/julius/.config/nvim/init.vim
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source /home/julius/.config/nvim/init.vim
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'mbbill/undotree' " Navigate undos
@@ -25,7 +19,6 @@ Plug 'lilydjwg/colorizer' " Colorize colors inline
 Plug 'rhysd/git-messenger.vim' " <leader>gm show last git commit for current line (similar to gitlens)
 Plug 'airblade/vim-gitgutter' " show diff in the sign column. Also use <leader>gn to go to next git hunk
 Plug 'tpope/vim-fugitive' " :Gstatus to open a new pane to stage, diff and commit. This is really awesome!
-Plug 'tmhedberg/simpylfold' " fold python easily
 Plug 'konfekt/fastfold' " faster folds
 Plug 'scrooloose/nerdtree' " :NERDTreeToggle to open file explorer (then press ? to look at options)
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " THE best fuzzy finder. fuzzy find anything from files to buffers or commands.
@@ -59,23 +52,23 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " Intellisense engine
 " twig highlight - syntax highlighting
 " sideways.vim
 " Plug 'idanarye/vim-merginal': use fugitive for branches
-" vigoux/completion-treesitter 
+" vigoux/completion-treesitter
 " haorenW1025/completion-nvim - use native neovim language server
 " }}}
 call plug#end()
 " }}}
 " UI {{{
 set number relativenumber " show hybrid line numbers
-set cursorline          " highlight current line
-set showmatch           " highlight matching [{()}]
-set incsearch           " search as characters are entered
+set cursorline		" highlight current line
+set showmatch		" highlight matching [{()}]
+set incsearch		" search as characters are entered
 " allows cursor change in tmux mode
 if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+	let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+	let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+	let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+	let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 " }}}
 " Misc {{{
@@ -85,9 +78,10 @@ set shell=bash
 set title " vim controls the title of the terminal
 set splitbelow
 set splitright
-set tabstop=4       " number of visual spaces per TAB
+set noexpandtab
+set tabstop=4		" number of visual spaces per TAB
 set shiftwidth=4
-set softtabstop=4   " number of spaces in tab when editing
+set softtabstop=4	" number of spaces in tab when editing
 " don't fuck with pasting
 set pastetoggle=<F2>
 let g:wordmotion_prefix = '\'
@@ -109,10 +103,6 @@ let g:Lf_RecursSubmodules = 1
 
 let g:LfDiscardEmptyBuffer = 1
 
-let g:Lf_RgConfig = [
-		\ "-uu",
-	\ ]
-
 " popup mode
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
@@ -130,46 +120,14 @@ highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=unde
 highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 " }}}
 " vim-asterisk {{{
-map *   <Plug>(asterisk-*)
-map #   <Plug>(asterisk-#)
-map g*  <Plug>(asterisk-g*)
-map g#  <Plug>(asterisk-g#)
-map z*  <Plug>(asterisk-z*)
+map *	<Plug>(asterisk-*)
+map #	<Plug>(asterisk-#)
+map g*	<Plug>(asterisk-g*)
+map g#	<Plug>(asterisk-g#)
+map z*	<Plug>(asterisk-z*)
 map gz* <Plug>(asterisk-gz*)
-map z#  <Plug>(asterisk-z#)
+map z#	<Plug>(asterisk-z#)
 map gz# <Plug>(asterisk-gz#)
-" }}}
-" VWM{{{
-" Default config for bot terminal
-let s:def_layt = {
-      \  'name': 'default',
-      \  'set_all': ['nonu', 'nornu'],
-      \  'bot':
-      \  {
-      \    'h_sz': 12,
-      \    'init': ['term fish']
-      \  }
-      \}
-
-if !exists('g:vwm#layouts')
-  let g:vwm#layouts = [s:def_layt]
-endif
-" terminal bottom with split
-let s:def_split_layt = {
-      \  'name': 'defaultsplit',
-      \  'set_all': ['nonu', 'nornu'],
-	  \  'right':
-	  \  {
-	  \  'init': []
-	  \	 },
-      \  'bot':
-      \  {
-      \    'h_sz': 12,
-      \    'init': ['term fish']
-      \  }
-      \}
-
-let g:vwm#layouts += [ s:def_split_layt]
 " }}}
 " Undo Settings {{{
 set undodir=~/.vim/undodir
@@ -178,9 +136,9 @@ set undolevels=1000
 set undoreload=10000
 " }}}
 " Search {{{
-set ignorecase          " Make searching case insensitive
-set smartcase           " ... unless the query has capital letters.
-set hlsearch            " highlight matches
+set ignorecase		" Make searching case insensitive
+set smartcase		" ... unless the query has capital letters.
+set hlsearch		" highlight matches
 set path +=**
 set wildmenu
 " }}}
@@ -197,13 +155,14 @@ let g:rustfmt_autosave = 1 " format rust on saving a buffer
 autocmd FileType json syntax match Comment +\/\/.\+$+
 " }}}
 " Folding {{{
-set foldenable          " enable folding
-set foldlevelstart=10   " open most folds by default
-set foldnestmax=10      " 10 nested fold max
+set foldenable		" enable folding
+set foldlevelstart=10	" open most folds by default
+set foldnestmax=10	" 10 nested fold max
 " comma open/closes folds
 nnoremap , za
-set foldmethod=expr   " fold based on specified expression
-set foldmethod=marker
+set foldmethod=indent	" fold based on specified expression
+autocmd FileType vim setlocal foldmethod=marker
+autocmd FileType python setlocal foldmethod=indent
 set foldlevel=0
 set modelines=1
 " }}}
@@ -230,6 +189,8 @@ nnoremap <leader>b :LeaderfBuffer<cr>
 nnoremap <leader>c :Leaderf command<cr>
 nnoremap <leader>h :Leaderf cmdHistory<cr>
 nnoremap <leader>g :Leaderf rg<cr>
+
+nnoremap <leader>6 :b term<cr>
 
 
 " ZoomWinTab
@@ -281,7 +242,7 @@ highlight SignColumn ctermbg=bg
 " Update sign column every quarter second
 set updatetime=250
 " }}}
-highlight GitGutterAdd    guifg=#009900 guibg=<X> ctermfg=2
+highlight GitGutterAdd	  guifg=#009900 guibg=<X> ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 guibg=<X> ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 guibg=<X> ctermfg=1
 " Use fontawesome icons as signs
@@ -294,8 +255,8 @@ let g:gitgutter_sign_modified_removed = '<'
 nmap <Leader>gn <Plug>(GitGutterNextHunk)  " git next
 nmap <Leader>gp <Plug>(GitGutterPrevHunk)  " git previous
 " Hunk-add and hunk-revert for chunk staging
-nmap <Leader>ga <Plug>(GitGutterStageHunk)  " git add (chunk)
-nmap <Leader>gu <Plug>(GitGutterUndoHunk)   " git undo (chunk)
+nmap <Leader>ga <Plug>(GitGutterStageHunk)	" git add (chunk)
+nmap <Leader>gu <Plug>(GitGutterUndoHunk)	" git undo (chunk)
 
 " Open Git status pane
 nnoremap <leader>gs :Gstatus<CR>
@@ -323,27 +284,27 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 " }}}
 " Scrolling {{{
 if !&scrolloff
-        set scrolloff=5       " Show next 5 lines while scrolling.
-    endif
-    if !&sidescrolloff
-        set sidescrolloff=5   " Show next 5 columns while side-scrolling.
-    endif
+	set scrolloff=5 " Show next 5 lines while scrolling.
+	endif
+	if !&sidescrolloff
+	set sidescrolloff=5 " Show next 5 columns while side-scrolling.
+	endif
 " }}}
 " coc.nvim {{{
 let g:coc_global_extensions = [
-            \'coc-yank',
-            \'coc-highlight',
-            \'coc-prettier',
-            \'coc-pairs',
-            \'coc-json',
-            \'coc-css',
-            \'coc-html',
-            \'coc-eslint',
-            \'coc-tsserver',
-			\'coc-angular',
-            \'coc-yaml',
-            \'coc-ccls'
-            \]
+		\'coc-yank',
+		\'coc-highlight',
+		\'coc-prettier',
+		\'coc-pairs',
+		\'coc-json',
+		\'coc-css',
+		\'coc-html',
+		\'coc-eslint',
+		\'coc-tsserver',
+		\'coc-angular',
+		\'coc-yaml',
+		\'coc-ccls'
+		\]
 " if hidden is not set, TextEdit might fail.
 set hidden
 
@@ -366,14 +327,14 @@ set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+		\ pumvisible() ? "\<C-n>" :
+		\ <SID>check_back_space() ? "\<TAB>" :
+		\ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]	=~# '\s'
 endfunction
 
 " Use <c-space> to trigger completion.
@@ -393,11 +354,11 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	else
+		call CocAction('doHover')
+	endif
 endfunction
 
 " Highlight symbol under cursor on CursorHold
@@ -407,16 +368,16 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  "" autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+	autocmd!
+	" Setup formatexpr specified filetype(s).
+	"" autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+	" Update signature help on jump placeholder
+	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <leader>a	<Plug>(coc-codeaction-selected)
+nmap <leader>a	<Plug>(coc-codeaction-selected)
 
 " Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)
@@ -427,13 +388,13 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 command! -nargs=0 Format :call CocAction('format')
 
 " Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call	 CocAction('fold', <f-args>)
 
 " use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR   :call	 CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
- set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+let g:airline#extensions#coc#enabled = 1
 " }}}
 " Most stuff from here: https://dougblack.io/words/a-good-vimrc.html
 " vim:foldmethod=marker:foldlevel=0

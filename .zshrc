@@ -75,6 +75,8 @@ zplug "lib/clipboard", from:oh-my-zsh
 zplug "b4b4r07/enhancd", at:v1
 zplug "mollifier/anyframe", at:4c23cb60
 
+zplug "plugins/poetry",   from:oh-my-zsh
+
 
 # Note: To specify the order in which packages should be loaded, use the defer
 #       tag described in the next section

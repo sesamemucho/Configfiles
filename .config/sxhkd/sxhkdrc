@@ -19,8 +19,8 @@ super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest node
-super + g
-	bspc node -s biggest
+# super + g
+	# bspc node -s biggest
 
 #
 # state/flags
@@ -47,12 +47,12 @@ super + {_,shift + }{h,j,k,l}
 	# bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
-# super + {_,shift + }c
-	# bspc node -f {next,prev}.local
+super + {comma,period}
+	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
-# super + bracket{left,right}
-	# bspc desktop -f {prev,next}.local
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
@@ -124,13 +124,13 @@ super + U
 super + ctrl + t
 	touchpad-toggle.sh
 super + g
-	xdotool search --classname Steam | tail -1 | xargs xdotool windowactivate || steam
+	xdotool search steam windowactivate | xdotool search --classname Steam | tail -1 | xargs xdotool windowactivate || steam
 XF86Favorites
 	xdotool search --classname plexmediaplayer windowactivate || plexmediaplayer
 super + a
 	wmctrl -a anki || anki
 super + v
-	xdotool search ".* Discord" windowactivate || discord
+	wmctrl -a discord || while true; do discord; done
 XF86HomePage
 	xdotool search "Meet.*Brave" windowactivate || notify-send "No window available"
 super + n
@@ -150,9 +150,11 @@ super + ctrl + l
 super + XF86Favorites
 	systemctl suspend
 super + XF86Launch5
-	sudo xkeysnail ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log
+	sudo xkeysnail --watch ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log
 super + XF86Launch6
 	~/.screenlayout/layout.sh
+ctrl + super + b
+	pkill tint2 && bspc config left_padding 0 || tint2 &
 
 ~XF86AudioPlay
 	xdotool search --classname plexmediaplayer key --clearmodifiers XF86AudioPlay
@@ -191,6 +193,9 @@ super + shift + space
 	xdotool click --delay 100 --clearmodifiers 1
 super + shift + Menu
 	xdotool click 3
+
+super + shift + XF86Favorites
+	xrandr -s 1920x1080
 
 # Pulse Audio controls
 XF86AudioRaiseVolume
