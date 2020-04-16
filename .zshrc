@@ -68,6 +68,8 @@ zplug "zsh-users/zsh-history-substring-search"
 # Supports oh-my-zsh plugins and the like
 zplug "plugins/git",   from:oh-my-zsh
 
+zplug "plugins/fzf",   from:oh-my-zsh
+
 # Load if "if" tag returns true
 zplug "lib/clipboard", from:oh-my-zsh
 

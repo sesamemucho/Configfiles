@@ -1,6 +1,0 @@
-[submodule "/home/julius/.emacs.d"]
-	path = /home/julius/.emacs.d
-	url = https://github.com/hlissner/doom-emacs
-[submodule ".emacs.d"]
-	path = .emacs.d
-	url = https://github.com/hlissner/doom-emacs.git

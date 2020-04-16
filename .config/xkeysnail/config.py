@@ -9,9 +9,9 @@ define_modmap({
 })
 
 # [Conditional modmap] Change modifier keys in certain applications
-define_conditional_modmap(re.compile(r'Emacs'), {
-    Key.RIGHT_CTRL: Key.ESC,
-})
+# define_conditional_modmap(re.compile(r'Emacs'), {
+#     Key.RIGHT_CTRL: Key.ESC,
+# })
 
 # [Multipurpose modmap] Give a key two meanings. A normal key when pressed and
 # released, and a modifier key when held down with another key. See Xcape,
@@ -44,7 +44,7 @@ define_keymap(re.compile("Zeal"), {
 }, "Zeal")
 
 # Emacs-like keybindings in non-Emacs applications
-define_keymap(lambda wm_class: wm_class not in ("Emacs", "kitty"), {
+define_keymap(lambda wm_class: wm_class not in ("Emacs", "Zathura", "kitty"), {
     # Cursor
     K("C-b"): with_mark(K("left")),
     K("C-f"): with_mark(K("right")),

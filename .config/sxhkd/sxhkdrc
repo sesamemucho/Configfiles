@@ -109,8 +109,6 @@ super + Return
 	xdotool search --classname kitty windowactivate || kitty
 super + d
 	rofi -show run -monitor -1
-super + e; super + d
-	rofi -show run -monitor -1
 super + b
 	rofi -show window -monitor -1 -auto-select
 super + i
@@ -137,6 +135,8 @@ super + n
 	wmctrl -a lutris || lutris
 super + c
 	wmctrl -a brave || brave
+super + e
+	xdotool search --classname emacs windowactivate || emacs
 XF86Mail
 	wmctrl -a riot || riot-desktop
 XF86Search
@@ -153,6 +153,8 @@ super + XF86Launch5
 	sudo xkeysnail --watch ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log
 super + XF86Launch6
 	~/.screenlayout/layout.sh
+XF86Launch7
+	wmctrl -a thunderbird || thunderbird
 ctrl + super + b
 	pkill tint2 && bspc config left_padding 0 || tint2 &
 
@@ -173,6 +175,11 @@ XF86Launch5
 	wmctrl -a slack || slack
 XF86Launch6
 	wmctrl -a toggl || TogglDesktop
+
+shift + XF86Launch5
+	xdotool search --classname Zathura windowactivate
+shift + XF86Launch6
+	wmctrl -a okular
 
 XF86Calculator
 	~/Programs/vpnup.sh
@@ -196,6 +203,12 @@ super + shift + Menu
 
 super + shift + XF86Favorites
 	xrandr -s 1920x1080
+
+super + XF86Calculator
+	xdotool key Caps_Lock
+
+super + ctrl + XF86Calculator
+	xdotool key Caps_Lock
 
 # Pulse Audio controls
 XF86AudioRaiseVolume

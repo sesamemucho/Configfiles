@@ -4,7 +4,7 @@
 ;; refresh' after modifying this file!
 
 
-;; These are used for a number of things, particularly for GPG configuration,
+
 ;; some email clients, file templates and snippets.
 (setq user-full-name "Julius Dehner"
       user-mail-address "julius.dehner@gmail.com")
