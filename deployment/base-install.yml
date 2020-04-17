@@ -40,6 +40,7 @@
       pacman:
         name:
           - anki
+          - bat
           - neovim
           - wmctrl
           - entr

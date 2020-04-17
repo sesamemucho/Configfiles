@@ -38,7 +38,6 @@ Plug 'paroxayte/vwm.vim' " Manage Window layouts
 Plug 'cespare/vim-toml' " toml support
 Plug 'stephpy/vim-yaml' " yaml support
 Plug 'chase/vim-ansible-yaml' " improve yaml for ansible files
-Plug 'markonm/traces.vim' "Preview substitutions
 Plug 'pechorin/any-jump.nvim' " Use regex to 'go to definition' anywhere (<leader>j)
 Plug 'hashivim/vim-terraform' "terraform syntax highlighting
 Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
@@ -62,6 +61,7 @@ set number relativenumber " show hybrid line numbers
 set cursorline		" highlight current line
 set showmatch		" highlight matching [{()}]
 set incsearch		" search as characters are entered
+set icm=split       " preview substitutions in split
 " allows cursor change in tmux mode
 if exists('$TMUX')
 	let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -261,7 +261,7 @@ nmap <Leader>gu <Plug>(GitGutterUndoHunk)	" git undo (chunk)
 " Open Git status pane
 nnoremap <leader>gs :Gstatus<CR>
 " Push to remote
-nnoremap <leader>gP :Git-push<CR>
+nnoremap <leader>gP :Gpush<CR>
 " }}}
 " commands {{{
 command! Install :w | :source % | :PlugInstall

@@ -124,7 +124,7 @@ super + ctrl + t
 super + g
 	xdotool search steam windowactivate | xdotool search --classname Steam | tail -1 | xargs xdotool windowactivate || steam
 XF86Favorites
-	xdotool search --classname plexmediaplayer windowactivate || plexmediaplayer
+	~/Programs/Plexamp.sh
 super + a
 	wmctrl -a anki || anki
 super + v
@@ -158,12 +158,18 @@ XF86Launch7
 ctrl + super + b
 	pkill tint2 && bspc config left_padding 0 || tint2 &
 
-~XF86AudioPlay
-	xdotool search --classname plexmediaplayer key --clearmodifiers XF86AudioPlay
-~shift + XF86AudioRaiseVolume
-	xdotool search --classname plexmediaplayer key --clearmodifiers XF86AudioNext
+# ~XF86AudioPlay
+# 	xdotool search --classname Plexamp key --clearmodifiers XF86AudioPlay
 ~shift + XF86AudioLowerVolume
-	xdotool search --classname plexmediaplayer key --clearmodifiers XF86AudioPrev
+	xdotool search --classname plexamp | head -1 | xargs xdotool key --clearmodifiers XF86AudioPrev
+~shift + XF86AudioRaiseVolume
+	xdotool search --classname plexamp | head -1 | xargs xdotool key --clearmodifiers XF86AudioNext
+
+ctrl + XF86AudioLowerVolume
+	~/Programs/plexamp_volume_down.sh
+ctrl + XF86AudioRaiseVolume
+	~/Programs/plexamp_volume_up.sh
+
 
 super + ctrl + r
 	pkill -SIGUSR1 sxhkd
