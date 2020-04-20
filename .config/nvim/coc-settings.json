@@ -65,6 +65,7 @@
   "python.jediPath": "/usr/lib/python3.8/site-packages/jedi",
   "python.jediEnabled": false,
   "suggest.echodocSupport": true,
+  "python.formatting.provider": "black",
   "suggest.maxCompleteItemCount": 20,
   "eslint.filetypes": [
     "javascript",

@@ -52,6 +52,7 @@
           - rust-racer
           - clang
           - ruby
+          - trash-cli
           - pwgen
           - etckeeper
           - fzf
@@ -89,6 +90,7 @@
           - cronie
           - hub
           - make
+          - unclutter
           - neofetch
           - tldr
       become: true
@@ -112,7 +114,6 @@
           - yadm-git
           - touchpad-toggle
           - brave-bin
-          - xbanish
           - lightscreen
 
     - name: Install pip-packages

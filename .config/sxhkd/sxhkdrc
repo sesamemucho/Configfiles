@@ -128,6 +128,8 @@ super + g
 	xdotool search steam windowactivate | xdotool search --classname Steam | tail -1 | xargs xdotool windowactivate || steam
 XF86Favorites
 	~/Programs/Plexamp.sh
+super + space
+	xdotool search --classname plexmediaplayer windowactivate || plexmediaplayer
 super + a
 	wmctrl -a anki || anki
 super + v

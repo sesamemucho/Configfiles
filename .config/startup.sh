@@ -1,7 +1,7 @@
 #!/bin/sh
 
 picom &
-xbanish &
+unclutter &
 
 #Xresources
 xrdb -merge ~/.Xresources &
