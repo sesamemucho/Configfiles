@@ -52,6 +52,7 @@
           - rust-racer
           - clang
           - ruby
+          - pwgen
           - etckeeper
           - fzf
           - neomutt

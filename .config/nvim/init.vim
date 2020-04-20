@@ -53,6 +53,7 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " Intellisense engine
 " Plug 'idanarye/vim-merginal': use fugitive for branches
 " vigoux/completion-treesitter
 " haorenW1025/completion-nvim - use native neovim language server
+" rbong/vim-flog more fugitive branches
 " }}}
 call plug#end()
 " }}}

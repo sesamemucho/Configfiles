@@ -59,6 +59,7 @@ alias cdcp="cd ~/Projects/currentproject/"
 alias rangerrc="vim ~/.config/ranger/rc.conf"
 alias sxhkdrc="vim ~/.config/sxhkd/sxhkdrc"
 alias cat=bat
+alias bspwmrc="vim .config/bspwm/bspwmrc"
 
 # User configuration
 source ~/.zplug/init.zsh

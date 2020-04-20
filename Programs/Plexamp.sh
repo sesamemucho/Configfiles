@@ -1,6 +1,6 @@
 #!/bin/sh
 
-xdotool search --classname Plexamp windowactivate || Plexamp.AppImage&
-sleep 4
+wmctrl -a Plexamp || Plexamp.AppImage&
+sleep 8
 wmctrl -r Plexamp -t 1
 
