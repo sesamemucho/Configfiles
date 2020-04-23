@@ -52,6 +52,7 @@
           - rust-racer
           - clang
           - ruby
+          - scrot
           - trash-cli
           - pwgen
           - etckeeper
@@ -114,7 +115,6 @@
           - yadm-git
           - touchpad-toggle
           - brave-bin
-          - lightscreen
 
     - name: Install pip-packages
       pip:

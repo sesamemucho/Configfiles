@@ -31,6 +31,7 @@ define_keymap(re.compile("Brave-browser|Firefox|Google-chrome"), {
     # Ctrl+Alt+j/k to switch next/previous tab
     K("C-Shift-dot"): K("C-TAB"),
     K("C-Shift-comma"): K("C-Shift-TAB"),
+    K("C-Shift-w"): K("C-w"),
     # Type C-j to focus to the content
     K("C-j"): K("C-f6"),
     # very naive "Edit in editor" feature (just an example)
