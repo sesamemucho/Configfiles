@@ -5,7 +5,7 @@ image=~/Documents/ocr.png
 output=~/Documents/ocr
 
 sleep 0.3
-scrot --overwrite --select --quality 100 ${image}
+maim --select ${image}
 mogrify -modulate 100,0 -resize 400% ${image}
 convert ${image} -channel RGB -negate ${image}
 

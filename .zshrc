@@ -33,6 +33,7 @@ setopt globdots
 
 # Vim bindings
 bindkey -v
+KEYTIMEOUT=1
 bindkey "^?" backward-delete-char
 bindkey "" backward-delete-char
 bindkey "" backward-delete-word
@@ -60,6 +61,7 @@ alias rangerrc="vim ~/.config/ranger/rc.conf"
 alias sxhkdrc="vim ~/.config/sxhkd/sxhkdrc"
 alias cat=bat
 alias bspwmrc="vim .config/bspwm/bspwmrc"
+alias ipa="ip -br -color a"
 
 # User configuration
 source ~/.zplug/init.zsh
@@ -75,11 +77,10 @@ zplug "plugins/fzf",   from:oh-my-zsh
 # Load if "if" tag returns true
 zplug "lib/clipboard", from:oh-my-zsh
 
-# Supports checking out a specific branch/tag/commit
-zplug "b4b4r07/enhancd", at:v1
-zplug "mollifier/anyframe", at:4c23cb60
 
 zplug "plugins/poetry",   from:oh-my-zsh
+
+zplug "modules/completion", from:prezto
 
 
 # Note: To specify the order in which packages should be loaded, use the defer

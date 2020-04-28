@@ -58,6 +58,7 @@ define_keymap(lambda wm_class: wm_class not in ("Emacs", "Zathura", "kitty"), {
     K("M-f"): with_mark(K("C-right")),
     # Beginning/End of line
     K("C-a"): with_mark(K("home")),
+    K("C-M-a"): with_mark(K("C-a")),
     K("C-e"): with_mark(K("end")),
     # Page up/down
     # K("M-v"): with_mark(K("page_up")),

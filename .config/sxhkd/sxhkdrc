@@ -128,8 +128,8 @@ super + g
 	xdotool search steam windowactivate | xdotool search --classname Steam | tail -1 | xargs xdotool windowactivate || steam
 XF86Favorites
 	~/Programs/Plexamp.sh
-super + space
-	xdotool search --classname plexmediaplayer windowactivate || plexmediaplayer&
+super + alt + 1
+	xdotool search --classname plexmediaplayer windowactivate || plexmediaplayer
 super + a
 	wmctrl -a anki || anki
 super + v
@@ -224,12 +224,12 @@ super + ctrl + XF86Calculator
 	xdotool key Caps_Lock
 
 ctrl + Print
-	sleep 0.3 && scrot --select
+	sleep 0.3 && maim -s | tee ~/Documents/$(date +%s).png | xclip -selection clipboard -t image/png
 
 super + grave
-	~/Programs/ocr_word.sh
+	~/Programs/ocr_direct_no_invert.sh
 super + shift + grave
-	~/Programs/ocr.sh
+	~/Programs/ocr_direct_invert.sh
 
 super + BackSpace
 	pwgen -1 -B 20 | xclip -selection clipboard

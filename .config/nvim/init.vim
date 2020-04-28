@@ -14,8 +14,8 @@ Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
 Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
 Plug 'haya14busa/vim-asterisk' " * for visual mode, z* higlights words, but does not jump
 Plug 'psliwka/vim-smoothie' " smooth scrolling
-Plug 'easymotion/vim-easymotion' " like clicking links in the browser: <leader><leader>W
-Plug 'lilydjwg/colorizer' " Colorize colors inline
+Plug 'justinmk/vim-sneak' " move faster
+Plug 'norcalli/nvim-colorizer.lua' " Colorize colors inline
 Plug 'rhysd/git-messenger.vim' " <leader>gm show last git commit for current line (similar to gitlens)
 Plug 'airblade/vim-gitgutter' " show diff in the sign column. Also use <leader>gn to go to next git hunk
 Plug 'tpope/vim-fugitive' " :Gstatus to open a new pane to stage, diff and commit. This is really awesome!
@@ -45,7 +45,9 @@ Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
 Plug 'unblevable/quick-scope' " Improve f key
 Plug 'tpope/vim-sleuth' " Autodetect indentation rules
 Plug 'tpope/vim-unimpaired' " quick actions with [ ]q goes to next entry in quickfix
+Plug 'liuchengxu/vim-which-key'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
+Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multiple cursors
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " Intellisense engine. This does loads of stuff, but is a language server client foremost. I will replace it for the native nvim language server, since coc.nvim has a node dependency
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -102,6 +104,7 @@ syntax on
 colorscheme monokai
 set termguicolors
 " }}}
+" Plugin Configuration {{{
 " LeaderF{{{
 let g:Lf_UseCache = 0
 let g:Lf_UseVersionControlTool = 1
@@ -117,15 +120,24 @@ let g:Lf_PreviewInPopup = 1
 let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
 let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
 " }}}
+" vim-which-key {{{
+let g:mapleader = "\<Space>"
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+
+" }}}
+" vim-sneak {{{
+nmap <C-x> <Plug>Sneak_s
+nmap <M-C-x> <Plug>Sneak_S
+" }}}
 " Ranger {{{
 let g:ranger_map_keys = 0
 let g:NERDTreeHijackNetrw = 0
 let g:ranger_replace_netrw = 1
 " }}}
 " quick-scope{{{
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
-highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+"let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+"highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+"highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 " }}}
 " vim-asterisk {{{
 map *	<Plug>(asterisk-*)
@@ -136,6 +148,7 @@ map z*	<Plug>(asterisk-z*)
 map gz* <Plug>(asterisk-gz*)
 map z#	<Plug>(asterisk-z#)
 map gz# <Plug>(asterisk-gz#)
+" }}}
 " }}}
 " Undo Settings {{{
 set undodir=~/.vim/undodir
@@ -166,8 +179,6 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 set foldenable		" enable folding
 set foldlevelstart=10	" open most folds by default
 set foldnestmax=10	" 10 nested fold max
-" comma open/closes folds
-nnoremap , za
 set foldmethod=indent	" fold based on specified expression
 autocmd FileType vim setlocal foldmethod=marker
 autocmd FileType python setlocal foldmethod=indent
@@ -184,7 +195,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " }}}
 " Map the leader key to SPACE
-let mapleader="\<SPACE>"
+" let mapleader="\<SPACE>"
 " toggle undotree
 nnoremap <leader>u :UndotreeToggle<CR>
 " Use Q to execute default register.
