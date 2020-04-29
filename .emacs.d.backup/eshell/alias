@@ -1,3 +1,0 @@
-alias k kubectl
-alias comp gcc -std=c99 -g -Wall test.c -o test
-alias ls ls

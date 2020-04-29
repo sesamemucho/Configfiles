@@ -68,6 +68,7 @@ define_keymap(lambda wm_class: wm_class not in ("Emacs", "Zathura", "kitty"), {
     K("M-Shift-dot"): with_mark(K("C-end")),
     # Newline
     K("C-m"): K("enter"),
+    K("C-M-m"): K("C-m"),
     K("C-Shift-m"): K("Shift-enter"),
     K("C-j"): K("enter"),
     K("C-o"): [K("enter"), K("left")],
