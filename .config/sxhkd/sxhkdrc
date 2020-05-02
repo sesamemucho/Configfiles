@@ -133,7 +133,7 @@ super + alt + 1
 super + a
 	wmctrl -a anki || anki
 super + v
-	wmctrl -a discord || while true; do discord; done
+	wmctrl -a discord || com.discordapp.Discord
 XF86HomePage
 	xdotool search "Meet.*Brave" windowactivate || notify-send "No window available"
 super + n

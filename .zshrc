@@ -62,6 +62,7 @@ alias sxhkdrc="vim ~/.config/sxhkd/sxhkdrc"
 alias cat=bat
 alias bspwmrc="vim .config/bspwm/bspwmrc"
 alias ipa="ip -br -color a"
+alias cpwd="pwd | xclip -selection clipboard"
 
 # User configuration
 source ~/.zplug/init.zsh

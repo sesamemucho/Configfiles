@@ -45,7 +45,10 @@ Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
 Plug 'unblevable/quick-scope' " Improve f key
 Plug 'tpope/vim-sleuth' " Autodetect indentation rules
 Plug 'tpope/vim-unimpaired' " quick actions with [ ]q goes to next entry in quickfix
+Plug 'Chiel92/vim-autoformat' " Add formatting Action
 Plug 'liuchengxu/vim-which-key'
+Plug 'tpope/vim-commentary' " Comment stuff
+Plug 'jiangmiao/auto-pairs'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multiple cursors
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " Intellisense engine. This does loads of stuff, but is a language server client foremost. I will replace it for the native nvim language server, since coc.nvim has a node dependency
@@ -126,8 +129,8 @@ nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 
 " }}}
 " vim-sneak {{{
-nmap <C-x> <Plug>Sneak_s
-nmap <M-C-x> <Plug>Sneak_S
+nmap <C-f> <Plug>Sneak_s
+nmap <M-C-f> <Plug>Sneak_S
 " }}}
 " Ranger {{{
 let g:ranger_map_keys = 0
@@ -194,8 +197,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " }}}
-" Map the leader key to SPACE
-" let mapleader="\<SPACE>"
 " toggle undotree
 nnoremap <leader>u :UndotreeToggle<CR>
 " Use Q to execute default register.
@@ -218,6 +219,8 @@ nnoremap <C-w>o :ZoomWinTabToggle<CR>
 " Use Ctrl D to delete the next char
 imap <C-d> <Del>
 
+
+nnoremap <Leader>w :w<cr>
 
 " Disable Scrolling{{{
 :nmap <ScrollWheelUp> <nop>
