@@ -20,7 +20,7 @@ no_retry = true
 #run_in_tmux = true
 
 # List of remote machines with Topgrade installed on them
-remote_topgrades = ["plexiglas.xyz"]
+#remote_topgrades = ["plexiglas.xyz"]
 
 # Arguments to pass SSH when upgrading remote systems
 #ssh_arguments = "-o ConnectTimeout=2"
@@ -41,7 +41,7 @@ remote_topgrades = ["plexiglas.xyz"]
 #set_title = false
 
 # Cleanup temporary or old files
-cleanup = true
+# cleanup = true
 
 [composer]
 self_update = true

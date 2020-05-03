@@ -33,6 +33,8 @@
 ;; `nil' to disable it:
 (setq display-line-numbers-type 'relative)
 
+(define-key key-translation-map [?\C-h] [?\C-?])
+
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
