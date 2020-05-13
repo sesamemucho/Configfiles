@@ -8,6 +8,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'mbbill/undotree' " Navigate undos
 Plug 'tpope/vim-surround' " change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
 Plug 'tpope/vim-repeat' " make surround actions repeatable
+Plug 'tpope/vim-fugitive' " :Gstatus to open a new pane to stage, diff and commit. This is really awesome!
+Plug 'tpope/vim-obsession' " make sessions smarter => auto save session when closing. Quick info about sessions: https://hackernoon.com/sessions-the-vim-feature-no-one-talks-about-1c9cfa4d52d7
+Plug 'tpope/vim-sleuth' " Autodetect indentation rules
+Plug 'tpope/vim-unimpaired' " quick actions with ]q goes to next entry in quickfix
+Plug 'tpope/vim-commentary' " Comment stuff
+Plug 'tpope/vim-abolish' " just read the documentation, it's complicated
 Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
 Plug 'vim-airline/vim-airline' " shows buffers for files
 Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
@@ -18,12 +24,10 @@ Plug 'justinmk/vim-sneak' " move faster
 Plug 'norcalli/nvim-colorizer.lua' " Colorize colors inline
 Plug 'rhysd/git-messenger.vim' " <leader>gm show last git commit for current line (similar to gitlens)
 Plug 'airblade/vim-gitgutter' " show diff in the sign column. Also use <leader>gn to go to next git hunk
-Plug 'tpope/vim-fugitive' " :Gstatus to open a new pane to stage, diff and commit. This is really awesome!
 Plug 'konfekt/fastfold' " faster folds
 Plug 'scrooloose/nerdtree' " :NERDTreeToggle to open file explorer (then press ? to look at options)
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " THE best fuzzy finder. fuzzy find anything from files to buffers or commands.
 Plug 'jremmen/vim-ripgrep' " :Rg to use ripgrep and open results in quickfix buffer (:cw to open manually)
-Plug 'tpope/vim-obsession' " make sessions smarter => auto save session when closing. Quick info about sessions: https://hackernoon.com/sessions-the-vim-feature-no-one-talks-about-1c9cfa4d52d7
 Plug 'mattn/emmet-vim' " enable emmet expressions: tagname -> press <C-y>, -> <tagname></tagname>
 Plug 'troydm/zoomwintab.vim' " <C-w>o to temporarily open current split in fullscreen
 Plug 'jonsmithers/vim-html-template-literals' " lit-html, support for polymer files
@@ -43,11 +47,8 @@ Plug 'hashivim/vim-terraform' "terraform syntax highlighting
 Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
 Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
 Plug 'unblevable/quick-scope' " Improve f key
-Plug 'tpope/vim-sleuth' " Autodetect indentation rules
-Plug 'tpope/vim-unimpaired' " quick actions with [ ]q goes to next entry in quickfix
 Plug 'Chiel92/vim-autoformat' " Add formatting Action
 Plug 'liuchengxu/vim-which-key'
-Plug 'tpope/vim-commentary' " Comment stuff
 Plug 'jiangmiao/auto-pairs'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multiple cursors

@@ -30,8 +30,9 @@ super + y
 #
 
 # set the window state
-super + {shift + t,s,f}
-	bspc node -t {tiled,floating,fullscreen}
+super + {shift + t,shift + alt + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -97,11 +98,11 @@ super + ctrl + shift + space
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+	bspc node -z {left -10 0,bottom 0 10,top 0 -10,right 10 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+	bspc node -z {right -10 0,top 0 10,bottom 0 -10,left 10 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
@@ -125,7 +126,7 @@ super + U
 super + ctrl + t
 	touchpad-toggle.sh
 super + g
-	xdotool search steam windowactivate | xdotool search --classname Steam | tail -1 | xargs xdotool windowactivate || steam
+	xdotool search --classname steam windowactivate | xdotool search --classname Steam | tail -1 | xargs xdotool windowactivate || steam
 XF86Favorites
 	~/Programs/Plexamp.sh
 super + alt + 1
@@ -133,7 +134,7 @@ super + alt + 1
 super + a
 	wmctrl -a anki || anki
 super + v
-	wmctrl -a discord || com.discordapp.Discord
+	xdotool search --classname discord windowactivate || com.discordapp.Discord
 XF86HomePage
 	xdotool search "Meet.*Brave" windowactivate || notify-send "No window available"
 super + n
@@ -145,7 +146,7 @@ super + e
 XF86Mail
 	wmctrl -a riot || riot-desktop
 XF86Search
-	wmctrl -a League || notify-send "No window available"
+	xdotool search --name "League of Legends Client" windowactivate || xdotool search --name "League of Legends" windowactivate || notify-send "No window available"
 super + ctrl + k
 	screenkey --scr 2
 super + shift + Delete
@@ -198,7 +199,9 @@ shift + XF86Calculator
 	~/Programs/vpndown.sh
 
 super + ctrl + p
-	gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass show -c
+	gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass -C
+super + ctrl + alt + p
+	gopass ls --flat | rofi -dmenu | xargs -I _ --no-run-if-empty gopass -C _ username
 
 super + shift + j
 	xdotool mousemove_relative -- 0 10
@@ -214,6 +217,9 @@ super + shift + space
 	xdotool click --delay 100 --clearmodifiers 1
 super + shift + Menu
 	xdotool click 3
+
+super + alt + 2
+	xdotool search --classname streaming_client windowactivate
 
 super + shift + XF86Favorites
 	xrandr -s 1920x1080

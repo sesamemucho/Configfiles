@@ -7,9 +7,11 @@ fi
 
 path+=('/home/julius/.local/bin')
 export PATH
-export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
 export EDITOR=nvim
 export SHELL=/bin/zsh
+export LC_TIME="de_DE.UTF-8"
 
 
 
@@ -55,7 +57,7 @@ alias cdd="cd ~/Downloads/"
 alias cdp="cd ~/Projects/"
 alias gs="git status"
 alias cd="bettercd"
-alias ssp="ssh -X plexiglas.xyz"
+alias ssp="ssh -X plexus || ssh -X plexiglas.xyz"
 alias cdcp="cd ~/Projects/currentproject/"
 alias rangerrc="vim ~/.config/ranger/rc.conf"
 alias sxhkdrc="vim ~/.config/sxhkd/sxhkdrc"
@@ -63,6 +65,7 @@ alias cat=bat
 alias bspwmrc="vim .config/bspwm/bspwmrc"
 alias ipa="ip -br -color a"
 alias cpwd="pwd | xclip -selection clipboard"
+alias anki="/home/julius/.cache/yay/anki-git/src/anki-git/run"
 
 # User configuration
 source ~/.zplug/init.zsh
