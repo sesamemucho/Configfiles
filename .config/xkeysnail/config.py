@@ -90,8 +90,6 @@ define_keymap(lambda wm_class: wm_class not in ("Emacs", "Zathura", "kitty", "sc
     # Mark
     K("C-space"): set_mark(True),
     K("C-M-space"): with_or_set_mark(K("C-right")),
-    # Search
-    K("C-s"): K("F3"),
     K("M-Shift-key_5"): K("C-h"),
     # Cancel
     K("C-g"): [K("esc"), set_mark(False)],

@@ -123,6 +123,8 @@ super + u
 	~/Programs/cpu-usage.sh
 super + U
 	~/Programs/memory-usage.sh
+super + alt + u
+	gpustat | tail -1 | awk -F '|' '{print "Temp, Utilization: "$2; print "Memory:"$3}' | xargs -0 notify-send
 super + ctrl + t
 	touchpad-toggle.sh
 super + g
@@ -132,7 +134,7 @@ XF86Favorites
 super + alt + 1
 	xdotool search --classname plexmediaplayer windowactivate || plexmediaplayer
 super + a
-	wmctrl -a anki || anki
+	xdotool search --classname anki windowactivate || anki
 super + v
 	xdotool search --classname discord windowactivate || com.discordapp.Discord
 XF86HomePage
@@ -146,7 +148,7 @@ super + e
 XF86Mail
 	wmctrl -a riot || riot-desktop
 XF86Search
-	xdotool search --name "League of Legends Client" windowactivate || xdotool search --name "League of Legends" windowactivate || notify-send "No window available"
+	xdotool search --name "League of Legends \(TM\) Client" windowactivate || xdotool search --name "League of Legends" windowactivate || notify-send "No window available"
 super + ctrl + k
 	screenkey --scr 2
 super + shift + Delete
