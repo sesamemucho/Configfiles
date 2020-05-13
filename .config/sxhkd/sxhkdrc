@@ -123,8 +123,8 @@ super + u
 	~/Programs/cpu-usage.sh
 super + U
 	~/Programs/memory-usage.sh
-super + alt + u
-	gpustat | tail -1 | awk -F '|' '{print "Temp, Utilization: "$2; print "Memory:"$3}' | xargs -0 notify-send
+super + ctrl + u
+	~/Programs/gpu-usage.sh
 super + ctrl + t
 	touchpad-toggle.sh
 super + g
