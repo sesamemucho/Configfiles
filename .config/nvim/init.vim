@@ -14,6 +14,7 @@ Plug 'tpope/vim-sleuth' " Autodetect indentation rules
 Plug 'tpope/vim-unimpaired' " quick actions with ]q goes to next entry in quickfix
 Plug 'tpope/vim-commentary' " Comment stuff
 Plug 'tpope/vim-abolish' " just read the documentation, it's complicated
+Plug 'tpope/vim-speeddating' " Allows you to increment dates with <ctrl-a>
 Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
 Plug 'vim-airline/vim-airline' " shows buffers for files
 Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
@@ -50,8 +51,10 @@ Plug 'unblevable/quick-scope' " Improve f key
 Plug 'Chiel92/vim-autoformat' " Add formatting Action
 Plug 'liuchengxu/vim-which-key'
 Plug 'jiangmiao/auto-pairs'
+Plug 'svermeulen/vim-yoink' " cycle through yanks after a paste with <ctrl-n> and <ctrl-p>
+Plug 'Konfekt/vim-CtrlXA'
+Plug 'machakann/vim-highlightedyank' " highlight yanked text
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
-Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multiple cursors
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " Intellisense engine. This does loads of stuff, but is a language server client foremost. I will replace it for the native nvim language server, since coc.nvim has a node dependency
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
@@ -102,6 +105,9 @@ let g:wordmotion_prefix = '\'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:html_indent_style1 = "inc"
+set virtualedit=block
+nmap <Plug>SpeedDatingFallbackUp   <Plug>(CtrlXA-CtrlA)
+nmap <Plug>SpeedDatingFallbackDown <Plug>(CtrlXA-CtrlX)
 " }}}
 " Colortheme {{{
 syntax on
@@ -152,6 +158,13 @@ map z*	<Plug>(asterisk-z*)
 map gz* <Plug>(asterisk-gz*)
 map z#	<Plug>(asterisk-z#)
 map gz# <Plug>(asterisk-gz#)
+" }}}
+" vim-yoink {{{
+nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
 " }}}
 " }}}
 " Undo Settings {{{

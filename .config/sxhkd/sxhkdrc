@@ -2,6 +2,9 @@
 # bspwm hotkeys
 #
 
+super + alt + x
+	~/Programs/anki_paste.sh
+
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
@@ -136,7 +139,7 @@ super + alt + 1
 super + a
 	xdotool search --classname anki windowactivate || anki
 super + v
-	xdotool search --classname discord windowactivate || com.discordapp.Discord
+	~/Programs/focus-discord.sh && com.discordapp.Discord
 XF86HomePage
 	xdotool search "Meet.*Brave" windowactivate || notify-send "No window available"
 super + n

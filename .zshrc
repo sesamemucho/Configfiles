@@ -19,6 +19,7 @@ export LC_TIME="de_DE.UTF-8"
 
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/julius/.zshrc'
+zstyle ':completion:*:ssh:*' hosts off
 
 autoload -Uz compinit
 compinit
@@ -65,7 +66,6 @@ alias cat=bat
 alias bspwmrc="vim .config/bspwm/bspwmrc"
 alias ipa="ip -br -color a"
 alias cpwd="pwd | xclip -selection clipboard"
-alias anki="/home/julius/.cache/yay/anki-git/src/anki-git/run"
 
 # User configuration
 source ~/.zplug/init.zsh
