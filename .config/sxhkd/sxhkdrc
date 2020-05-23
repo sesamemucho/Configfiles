@@ -189,7 +189,7 @@ super + ctrl + r
 	# xdotool key --delay 100 super+b ctrl+n ctrl+n Return
 
 XF86Launch5
-	wmctrl -a slack || slack
+	xdotool search --classname slack windowactivate || slack
 XF86Launch6
 	wmctrl -a toggl || TogglDesktop
 

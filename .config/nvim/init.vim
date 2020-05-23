@@ -54,8 +54,10 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'svermeulen/vim-yoink' " cycle through yanks after a paste with <ctrl-n> and <ctrl-p>
 Plug 'Konfekt/vim-CtrlXA'
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
+Plug 'tyru/eskk.vim' " Japanese support
+Plug 'tyru/skkdict.vim'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " Intellisense engine. This does loads of stuff, but is a language server client foremost. I will replace it for the native nvim language server, since coc.nvim has a node dependency
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine. This does loads of stuff, but is a language server client foremost. I will replace it for the native nvim language server, since coc.nvim has a node dependency
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
 " Sortmotion sort stuff alphabetically
@@ -165,6 +167,17 @@ nmap <c-p> <plug>(YoinkPostPasteSwapForward)
 
 nmap p <plug>(YoinkPaste_p)
 nmap P <plug>(YoinkPaste_P)
+" }}}
+" SKK {{{
+let g:eskk#large_dictionary = {
+\   'path': '/usr/share/skk/SKK-JISYO.L',
+\   'sorted': 1,
+\   'encoding': 'euc-jp',
+\ }
+
+imap <C-k> <Plug>(eskk:toggle)
+cmap <C-k> <Plug>(eskk:toggle)
+lmap <C-k> <Plug>(eskk:toggle)
 " }}}
 " }}}
 " Undo Settings {{{
@@ -328,10 +341,7 @@ if !&scrolloff
 " }}}
 " coc.nvim {{{
 let g:coc_global_extensions = [
-		\'coc-yank',
-		\'coc-highlight',
 		\'coc-prettier',
-		\'coc-pairs',
 		\'coc-json',
 		\'coc-css',
 		\'coc-html',
@@ -339,7 +349,6 @@ let g:coc_global_extensions = [
 		\'coc-tsserver',
 		\'coc-angular',
 		\'coc-yaml',
-		\'coc-ccls'
 		\]
 " if hidden is not set, TextEdit might fail.
 set hidden
