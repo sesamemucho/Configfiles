@@ -137,7 +137,7 @@ XF86Favorites
 super + alt + 1
 	xdotool search --classname plexmediaplayer windowactivate || plexmediaplayer
 super + a
-	xdotool search --classname anki windowactivate || anki
+	wmctrl -a anki || anki
 super + v
 	~/Programs/focus-discord.sh && com.discordapp.Discord
 XF86HomePage
@@ -180,6 +180,9 @@ ctrl + XF86AudioLowerVolume
 	~/Programs/plexamp_volume_down.sh
 ctrl + XF86AudioRaiseVolume
 	~/Programs/plexamp_volume_up.sh
+
+super + F12
+	sxiv ~/Documents/kana_layout.jpg
 
 
 super + ctrl + r

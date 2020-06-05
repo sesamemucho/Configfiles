@@ -50,7 +50,6 @@ Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
 Plug 'unblevable/quick-scope' " Improve f key
 Plug 'Chiel92/vim-autoformat' " Add formatting Action
 Plug 'liuchengxu/vim-which-key'
-Plug 'jiangmiao/auto-pairs'
 Plug 'svermeulen/vim-yoink' " cycle through yanks after a paste with <ctrl-n> and <ctrl-p>
 Plug 'Konfekt/vim-CtrlXA'
 Plug 'machakann/vim-highlightedyank' " highlight yanked text

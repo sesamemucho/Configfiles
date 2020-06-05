@@ -44,3 +44,4 @@
 
 (package! adoc-mode)
 (package! pandoc-mode)
+(package! ox-reveal)

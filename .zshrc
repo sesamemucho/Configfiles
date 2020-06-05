@@ -19,7 +19,6 @@ export LC_TIME="de_DE.UTF-8"
 
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/julius/.zshrc'
-zstyle ':completion:*:ssh:*' hosts off
 
 autoload -Uz compinit
 compinit
@@ -131,4 +130,5 @@ function backup {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+zstyle ':completion:*:ssh:*' hosts off
 eval "$(direnv hook zsh)"
