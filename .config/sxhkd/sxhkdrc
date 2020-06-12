@@ -166,6 +166,8 @@ super + XF86Launch6
 	~/.screenlayout/layout.sh
 XF86Launch7
 	wmctrl -a thunderbird || thunderbird
+XF86Launch8
+	wmctrl -a korganizer || korganizer
 ctrl + super + b
 	pkill tint2 && bspc config left_padding 0 || tint2 &
 

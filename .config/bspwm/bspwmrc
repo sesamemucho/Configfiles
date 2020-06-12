@@ -26,6 +26,7 @@ bspc rule -a Riot desktop=^3
 bspc rule -a Slack desktop=^3
 bspc rule -a "Toggl Desktop" desktop=^3
 bspc rule -a Thunderbird desktop=^3
+bspc rule -a korganizer desktop=^3
 bspc rule -a plexmediaplayer desktop=^2
 bspc rule -a Plexamp desktop=^3 state=floating rectangle=300x1024+1620+-1
 bspc rule -a Steam desktop=^2
