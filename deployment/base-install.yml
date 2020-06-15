@@ -39,6 +39,10 @@
     - name: Install ease of use packages
       pacman:
         name:
+          - atool
+          - elinks
+          - highlight
+          - mediainfo
           - anki
           - bat
           - neovim
