@@ -194,7 +194,7 @@ super + ctrl + r
 	# xdotool key --delay 100 super+b ctrl+n ctrl+n Return
 
 XF86Launch5
-	xdotool search --classname slack windowactivate || slack
+	wmctrl -a slack || slack
 XF86Launch6
 	wmctrl -a toggl || TogglDesktop
 
@@ -243,9 +243,9 @@ ctrl + Print
 	sleep 0.3 && maim -s | tee ~/Documents/$(date +%s).png | xclip -selection clipboard -t image/png
 
 super + grave
-	~/Programs/ocr_direct_no_invert.sh
+	~/Programs/ocr.sh
 super + shift + grave
-	~/Programs/ocr_direct_invert.sh
+	~/Programs/ocr.sh -i
 
 super + BackSpace
 	pwgen -1 -B 20 | xclip -selection clipboard
