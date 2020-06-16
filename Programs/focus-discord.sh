@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 IFS=$'\n\t'
 
 uids=$(xdotool search --classname discord)
