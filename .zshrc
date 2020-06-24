@@ -6,6 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 path+=('/home/julius/.local/bin')
+path+=('/home/julius/go/bin')
 export PATH
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
@@ -62,7 +63,7 @@ alias cdcp="cd ~/Projects/currentproject/"
 alias rangerrc="vim ~/.config/ranger/rc.conf"
 alias sxhkdrc="vim ~/.config/sxhkd/sxhkdrc"
 alias cat=bat
-alias bspwmrc="vim .config/bspwm/bspwmrc"
+alias bspwmrc="vim ~/.config/bspwm/bspwmrc"
 alias ipa="ip -br -color a"
 alias cpwd="pwd | xclip -selection clipboard"
 

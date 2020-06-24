@@ -21,3 +21,5 @@
 	path = nvim
 [difftool "vimdiff"]
 	path = nvim
+[submodule]
+	recurse = true

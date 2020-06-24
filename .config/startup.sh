@@ -12,7 +12,7 @@ sxhkd &
 ~/Programs/notify-low-battery.sh &
 # VBoxClient-all &
 # setxkbmap -layout us -variant altgr-intl
-systemctl --user start xfce4-notifyd
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
 # xmodmap ~/.Xmodmap
 sudo sh -c 'sysctl -w abi.vsyscall32=0' &
 export GDK_CORE_DEVICE_EVENTS=1

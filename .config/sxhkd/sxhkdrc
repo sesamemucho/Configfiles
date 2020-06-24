@@ -1,10 +1,6 @@
 #
 # bspwm hotkeys
 #
-
-super + alt + x
-	~/Programs/anki_paste.sh
-
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
@@ -139,7 +135,7 @@ super + alt + 1
 super + a
 	wmctrl -a anki || anki
 super + v
-	~/Programs/focus-discord.sh && com.discordapp.Discord
+	~/Programs/focus-discord.sh && PULSE_LATENCY_MSEC=90 discord
 XF86HomePage
 	xdotool search "Meet.*Brave" windowactivate || notify-send "No window available"
 super + n
@@ -189,6 +185,9 @@ super + F12
 
 super + ctrl + r
 	pkill -SIGUSR1 sxhkd
+
+super + shift + F6
+	sudo pkill xkeysnail
 
 # super + r
 	# xdotool key --delay 100 super+b ctrl+n ctrl+n Return
@@ -246,6 +245,8 @@ super + grave
 	~/Programs/ocr.sh
 super + shift + grave
 	~/Programs/ocr.sh -i
+super + z
+	~/Programs/translate.sh
 
 super + BackSpace
 	pwgen -1 -B 20 | xclip -selection clipboard

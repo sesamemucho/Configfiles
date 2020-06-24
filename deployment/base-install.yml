@@ -45,6 +45,7 @@
           - mediainfo
           - anki
           - bat
+          - dash
           - neovim
           - wmctrl
           - entr
