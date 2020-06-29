@@ -2,6 +2,7 @@
 
 picom &
 unclutter &
+nyrna &
 
 #Xresources
 xrdb -merge ~/.Xresources &
