@@ -109,6 +109,8 @@ let g:html_indent_style1 = "inc"
 set virtualedit=block
 nmap <Plug>SpeedDatingFallbackUp   <Plug>(CtrlXA-CtrlA)
 nmap <Plug>SpeedDatingFallbackDown <Plug>(CtrlXA-CtrlX)
+
+set scrollback=100000
 " }}}
 " Colortheme {{{
 syntax on

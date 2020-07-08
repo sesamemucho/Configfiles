@@ -40,9 +40,12 @@
       pacman:
         name:
           - atool
+          - gopass
+          - pandoc
           - elinks
           - highlight
           - mediainfo
+          - xdotool
           - anki
           - bat
           - dash
@@ -68,6 +71,7 @@
           - light
           - zsh
           - flatpak
+          - fish
           - picom
           - docker
           - feh

@@ -130,6 +130,8 @@ super + g
 	xdotool search --classname steam windowactivate | xdotool search --classname Steam | tail -1 | xargs xdotool windowactivate || steam
 XF86Favorites
 	~/Programs/Plexamp.sh
+super + F2
+	~/Programs/Plexamp.sh
 super + alt + 1
 	xdotool search --classname plexmediaplayer windowactivate || plexmediaplayer
 super + a
@@ -157,6 +159,8 @@ super + ctrl + l
 super + XF86Favorites
 	systemctl suspend
 super + XF86Launch5
+	sudo xkeysnail --watch ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log
+super + shift + F1
 	sudo xkeysnail --watch ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log
 super + XF86Launch6
 	~/.screenlayout/layout.sh
@@ -206,6 +210,10 @@ XF86Calculator
 	~/Programs/vpnup.sh
 shift + XF86Calculator
 	~/Programs/vpndown.sh
+super + Prior
+	~/Programs/vpnup.sh
+super + Next
+	~/Programs/vpndown.sh
 
 super + ctrl + p
 	gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass -C
@@ -247,6 +255,9 @@ super + shift + grave
 	~/Programs/ocr.sh -i
 super + z
 	~/Programs/translate.sh
+
+ctrl + super + o
+	clipmenu
 
 super + BackSpace
 	pwgen -1 -B 20 | xclip -selection clipboard

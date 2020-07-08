@@ -21,7 +21,7 @@ define_multipurpose_modmap(
     {Key.ENTER: [Key.ENTER, Key.RIGHT_CTRL]}
 
     # Capslock is escape when pressed and released. Control when held down.
-    # {Key.CAPSLOCK: [Key.ESC, Key.LEFT_CTRL]
+    # Key.CAPSLOCK: [Key.ESC, Key.LEFT_CTRL]}
     # To use this example, you can't remap capslock with define_modmap.
 )
 
@@ -38,12 +38,6 @@ define_keymap(re.compile("Brave-browser|Firefox|Google-chrome"), {
     # very naive "Edit in editor" feature (just an example)
     K("C-o"): [K("C-a"), K("C-c"), launch(["gedit"]), sleep(0.5), K("C-v")]
 }, "Firefox and Chrome")
-
-# Keybindings for Zeal https://github.com/zealdocs/zeal/
-define_keymap(re.compile("Zeal"), {
-    # Ctrl+s to focus search area
-    K("C-s"): K("C-k"),
-}, "Zeal")
 
 # Emacs-like keybindings in non-Emacs applications
 define_keymap(lambda wm_class: wm_class not in ("Emacs", "Zathura", "kitty", "scrcpy", "moonlight"), {

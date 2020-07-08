@@ -13,6 +13,7 @@ export MANWIDTH=999
 export EDITOR=nvim
 export SHELL=/bin/zsh
 export LC_TIME="de_DE.UTF-8"
+export CF_COLOR=true
 
 
 
