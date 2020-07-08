@@ -42,7 +42,6 @@ Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac (around class
 Plug 'paroxayte/vwm.vim' " Manage Window layouts
 Plug 'cespare/vim-toml' " toml support
 Plug 'stephpy/vim-yaml' " yaml support
-Plug 'chase/vim-ansible-yaml' " improve yaml for ansible files
 Plug 'pechorin/any-jump.nvim' " Use regex to 'go to definition' anywhere (<leader>j)
 Plug 'hashivim/vim-terraform' "terraform syntax highlighting
 Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
