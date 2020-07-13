@@ -25,6 +25,7 @@
           - xorg-xrandr
           - base-devel
           - ripgrep
+          - wget
           - adobe-source-han-sans-jp-fonts
           - otf-fira-code
           - sxhkd
