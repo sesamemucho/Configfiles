@@ -68,6 +68,10 @@ alias bspwmrc="vim ~/.config/bspwm/bspwmrc"
 alias ipa="ip -br -color a"
 alias cpwd="pwd | xclip -selection clipboard"
 
+if [ $commands[helm] ]; then
+  source <(helm completion zsh)
+fi
+
 # User configuration
 source ~/.zplug/init.zsh
 
