@@ -83,6 +83,8 @@
           - dolphin
           - openssh
           - p7zip
+          - zip
+          - rar
           - unzip
           - unrar
           - physlock
@@ -125,6 +127,7 @@
         name:
           - xkeysnail
           - lnav
+          - dragon-drag-and-drop
           - radeontop
           - yadm-git
           - nyrna

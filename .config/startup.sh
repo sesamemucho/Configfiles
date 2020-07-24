@@ -4,6 +4,7 @@ picom &
 unclutter &
 nyrna &
 clipmenud &
+keynav &
 
 #Xresources
 xrdb -merge ~/.Xresources &

@@ -251,7 +251,11 @@ ctrl + Print
 
 super + grave
 	~/Programs/ocr.sh
+KP_Add
+	~/Programs/ocr.sh
 super + shift + grave
+	~/Programs/ocr.sh -i
+KP_Enter
 	~/Programs/ocr.sh -i
 super + z
 	~/Programs/translate.sh

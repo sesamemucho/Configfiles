@@ -21,7 +21,6 @@ Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
 Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
 Plug 'haya14busa/vim-asterisk' " * for visual mode, z* higlights words, but does not jump
 Plug 'psliwka/vim-smoothie' " smooth scrolling
-Plug 'justinmk/vim-sneak' " move faster
 Plug 'norcalli/nvim-colorizer.lua' " Colorize colors inline
 Plug 'rhysd/git-messenger.vim' " <leader>gm show last git commit for current line (similar to gitlens)
 Plug 'airblade/vim-gitgutter' " show diff in the sign column. Also use <leader>gn to go to next git hunk
@@ -342,6 +341,9 @@ if !&scrolloff
 " coc.nvim {{{
 let g:coc_global_extensions = [
 		\'coc-prettier',
+		\'coc-python',
+		\'coc-go',
+		\'coc-sh',
 		\'coc-json',
 		\'coc-css',
 		\'coc-html',
