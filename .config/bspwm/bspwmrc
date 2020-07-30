@@ -30,7 +30,7 @@ bspc rule -a Screenkey manage=off
 bspc rule -a Brave-browser desktop=^1
 bspc rule -a kitty desktop=^2
 bspc rule -a discord state=tiled desktop=^4
-bspc rule -a Riot desktop=^4
+bspc rule -a Element desktop=^4
 bspc rule -a Slack desktop=^4
 bspc rule -a "Toggl Desktop" desktop=^4
 bspc rule -a Thunderbird desktop=^4

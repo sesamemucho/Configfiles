@@ -147,7 +147,7 @@ super + c
 super + e
 	xdotool search --classname emacs windowactivate || emacs
 XF86Mail
-	wmctrl -a riot || riot-desktop
+	wmctrl -a element || element-desktop
 XF86Search
 	xdotool search --name "League of Legends \(TM\) Client" windowactivate || xdotool search --name "League of Legends" windowactivate || notify-send "No window available"
 super + ctrl + k
@@ -259,6 +259,12 @@ KP_Enter
 	~/Programs/ocr.sh -i
 super + z
 	~/Programs/translate.sh
+super + x
+	~/Programs/clip_translate.sh
+ctrl + alt + c
+	~/Programs/clip_translate.sh
+super + alt + z
+	~/Programs/clip_translate.sh
 
 ctrl + super + o
 	clipmenu
