@@ -7,3 +7,4 @@ pronounciation=$(echo $text | iconv -f utf8 -t shift-jis | kakasi -JH -KH -Ea -s
 notify-send "$text
 $pronounciation
 $translated_text"
+echo $text | trans -speak -brief ja:en
