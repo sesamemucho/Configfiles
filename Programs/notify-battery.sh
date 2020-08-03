@@ -1,3 +1,6 @@
 #!/bin/sh
 
-upower -i /org/freedesktop/UPower/devices/DisplayDevice | rg "percentage|time to empty" | xargs -d '\t' notify-send
+capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+status=$(cat /sys/class/power_supply/BAT0/status)
+echo "${capacity}%
+$status" | xargs notify-send

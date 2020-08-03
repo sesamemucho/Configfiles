@@ -1,12 +1,12 @@
 #! /bin/bash
 
-bspc monitor DVI-D-0 -d 1 2 3
-bspc monitor DisplayPort-0 -d 4 5 6
-# if [[ $(hostname) == 'Cellaris' ]]; then
-# elif [[ $(hostname) == 'workarch' ]]; then
-# 	bspc monitor DP-1 -d 1 2 3
-# 	bspc monitor eDP-1 -d 4 5 6
-# fi
+if [[ $(hostname) == 'Cellaris' ]]; then
+	bspc monitor DVI-D-0 -d 1 2 3
+	bspc monitor DisplayPort-0 -d 4 5 6
+elif [[ $(hostname) == 'workarch' ]]; then
+	bspc monitor DP-1 -d 1 2 3
+	bspc monitor eDP-1 -d 4 5 6
+fi
 
 bspc config pointer_follows_monitor true
 

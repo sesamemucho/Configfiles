@@ -7,6 +7,7 @@ fi
 
 path+=('/home/julius/.local/bin')
 path+=('/home/julius/go/bin')
+path+=('/home/julius/.gem/ruby/2.7.0/bin')
 export PATH
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999

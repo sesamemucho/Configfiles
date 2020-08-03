@@ -2,7 +2,7 @@
 
 while true
 do
-	POWER_PERCENT=$(upower -i /org/freedesktop/UPower/devices/DisplayDevice | rg "percentage" | awk '{print $2}' | sed 's/\%//g')
+	POWER_PERCENT=$(cat /sys/class/power_supply/BAT0/capacity)
 	if [ ! -z "$POWER_PERCENT" ] && [ "$POWER_PERCENT" -lt 20 ]
 	then
 		if type beep >/dev/null 2>&1

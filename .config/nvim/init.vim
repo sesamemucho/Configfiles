@@ -52,6 +52,7 @@ Plug 'svermeulen/vim-yoink' " cycle through yanks after a paste with <ctrl-n> an
 Plug 'Konfekt/vim-CtrlXA'
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
 Plug 'junegunn/vim-peekaboo' " preview registers
+Plug 'christianrondeau/vim-base64' " Encodes/decodes base64 strings
 Plug 'tyru/eskk.vim' " Japanese support
 Plug 'tyru/skkdict.vim'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }

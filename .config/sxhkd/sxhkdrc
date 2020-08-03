@@ -109,12 +109,12 @@ super + {Left,Down,Up,Right}
 
 # Basic binds
 super + Return
-	xdotool search --classname kitty windowactivate || kitty
+	xdotool search --classname kitty windowactivate || kitty && xdotool search --classname kitty windowactivate
 super + d
 	rofi -show run -monitor -1
 super + b
 	rofi -show window -monitor -1 -auto-select
-super + i
+super + shift + i
 	~/Programs/notify-battery.sh
 super + t
 	~/Programs/notify-time-date.sh
