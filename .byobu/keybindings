@@ -1,0 +1,4 @@
+source $BYOBU_PREFIX/share/byobu/keybindings/common
+
+bind-key C-S-, next-window
+bind-key C-S-. previous-window

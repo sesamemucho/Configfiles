@@ -94,6 +94,7 @@
           - python-pillow
           - python-pip
           - ranger
+          - w3m
           - ttf-dejavu
           - ttf-liberation
           - xclip

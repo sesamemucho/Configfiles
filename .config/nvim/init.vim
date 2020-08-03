@@ -14,7 +14,6 @@ Plug 'tpope/vim-sleuth' " Autodetect indentation rules
 Plug 'tpope/vim-unimpaired' " quick actions with ]q goes to next entry in quickfix
 Plug 'tpope/vim-commentary' " Comment stuff
 Plug 'tpope/vim-abolish' " just read the documentation, it's complicated
-Plug 'tpope/vim-speeddating' " Allows you to increment dates with <ctrl-a>
 Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
 Plug 'vim-airline/vim-airline' " shows buffers for files
 Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
@@ -49,7 +48,6 @@ Plug 'unblevable/quick-scope' " Improve f key
 Plug 'Chiel92/vim-autoformat' " Add formatting Action
 Plug 'liuchengxu/vim-which-key'
 Plug 'svermeulen/vim-yoink' " cycle through yanks after a paste with <ctrl-n> and <ctrl-p>
-Plug 'Konfekt/vim-CtrlXA'
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
 Plug 'junegunn/vim-peekaboo' " preview registers
 Plug 'christianrondeau/vim-base64' " Encodes/decodes base64 strings
@@ -81,13 +79,13 @@ noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
 
 " allows cursor change in tmux mode
-if exists('$TMUX')
-	let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-	let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-	let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-	let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
+" if exists('$TMUX')
+"     let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
+"     let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
+" else
+"     let &t_SI = "\e[5 q"
+"     let &t_EI = "\e[2 q"
+" endif
 " }}}
 " Misc {{{
 filetype plugin indent on
@@ -101,14 +99,12 @@ set tabstop=4		" number of visual spaces per TAB
 set shiftwidth=4
 set softtabstop=4	" number of spaces in tab when editing
 " don't fuck with pasting
-set pastetoggle=<F2>
+set pastetoggle=<C-v>
 let g:wordmotion_prefix = '\'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:html_indent_style1 = "inc"
 set virtualedit=block
-nmap <Plug>SpeedDatingFallbackUp   <Plug>(CtrlXA-CtrlA)
-nmap <Plug>SpeedDatingFallbackDown <Plug>(CtrlXA-CtrlX)
 
 set scrollback=100000
 " }}}
@@ -232,6 +228,7 @@ nnoremap Q @q
 " Nerdtree
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>r :NERDTreeFind<cr>
+nnoremap <leader>t :RangerWorkingDirectory<cr>
 
 nnoremap <leader>b :LeaderfBuffer<cr>
 nnoremap <leader>c :Leaderf command<cr>

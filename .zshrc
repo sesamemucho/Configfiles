@@ -16,6 +16,39 @@ export SHELL=/bin/zsh
 export LC_TIME="de_DE.UTF-8"
 export CF_COLOR=true
 
+zshrc_restore_x11_vars()
+{
+  if [[ -z $TMUX ]]
+  then
+    return 0
+  fi
+
+  local tmux_env="$(tmux show-environment)"
+
+  for var_line in ${(f)tmux_env}
+  do
+    if [[ $var_line == -[A-Za-z_]* ]]
+    then
+      local var=${var_line#-}
+      unset $var
+
+    elif [[ $var_line == [A-Za-z_]*'='* ]]
+    then
+      export $var_line
+
+    fi
+  done
+}
+
+precmd()
+{
+  zshrc_restore_x11_vars
+}
+
+preexec()
+{
+  zshrc_restore_x11_vars
+}
 
 
 # The following lines were added by compinstall
@@ -60,7 +93,7 @@ alias cdd="cd ~/Downloads/"
 alias cdp="cd ~/Projects/"
 alias gs="git status"
 alias cd="bettercd"
-alias ssp="ssh -X ubuntu || ssh -X plexiglas.xyz"
+alias ssp="ssh -YC ubuntu || ssh -YC plexiglas.xyz"
 alias cdcp="cd ~/Projects/currentproject/"
 alias rangerrc="vim ~/.config/ranger/rc.conf"
 alias sxhkdrc="vim ~/.config/sxhkd/sxhkdrc"
