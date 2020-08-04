@@ -190,14 +190,6 @@ set hlsearch		" highlight matches
 set path +=**
 set wildmenu
 " }}}
-" Formatting {{{
-" Rust {{{
-let g:rustfmt_autosave = 1 " format rust on saving a buffer
-" }}}
-" JSON {{{
-
-" }}}
-" }}}
 " Syntax Checking {{{
 " json syntax highlighting
 autocmd FileType json syntax match Comment +\/\/.\+$+
@@ -431,7 +423,7 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
+" command! -nargs=0 Format :call CocAction('format')
 
 " Use `:Fold` to fold current buffer
 command! -nargs=? Fold :call	 CocAction('fold', <f-args>)
