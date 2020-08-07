@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 path+=('/home/julius/.local/bin')
 path+=('/home/julius/go/bin')
@@ -136,7 +136,7 @@ zplug "modules/completion", from:prezto
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
 
-zplug romkatv/powerlevel10k, as:theme, depth:1
+# zplug romkatv/powerlevel10k, as:theme, depth:1
 
 # Then, source plugins and add commands to $PATH
 zplug load
@@ -168,10 +168,12 @@ function backup {
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(zoxide init zsh)"
 
 zstyle ':completion:*:ssh:*' hosts off
 eval "$(direnv hook zsh)"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /var/lib/tfenv/versions/0.12.28/terraform terraform
+eval "$(starship init zsh)"

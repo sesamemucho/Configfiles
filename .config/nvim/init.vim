@@ -16,6 +16,7 @@ Plug 'tpope/vim-commentary' " Comment stuff
 Plug 'tpope/vim-abolish' " just read the documentation, it's complicated
 Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
 Plug 'vim-airline/vim-airline' " shows buffers for files
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
 Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
 Plug 'haya14busa/vim-asterisk' " * for visual mode, z* higlights words, but does not jump
@@ -24,7 +25,8 @@ Plug 'norcalli/nvim-colorizer.lua' " Colorize colors inline
 Plug 'rhysd/git-messenger.vim' " <leader>gm show last git commit for current line (similar to gitlens)
 Plug 'airblade/vim-gitgutter' " show diff in the sign column. Also use <leader>gn to go to next git hunk
 Plug 'konfekt/fastfold' " faster folds
-Plug 'scrooloose/nerdtree' " :NERDTreeToggle to open file explorer (then press ? to look at options)
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua' " :LuaTreeToggle to open file explorer (then press ? to look at options)
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' } " THE best fuzzy finder. fuzzy find anything from files to buffers or commands.
 Plug 'jremmen/vim-ripgrep' " :Rg to use ripgrep and open results in quickfix buffer (:cw to open manually)
 Plug 'mattn/emmet-vim' " enable emmet expressions: tagname -> press <C-y>, -> <tagname></tagname>
@@ -33,6 +35,7 @@ Plug 'jonsmithers/vim-html-template-literals' " lit-html, support for polymer fi
 Plug 'andymass/vim-matchup' " improve % and add text objects i% and a%
 Plug 'chaoren/vim-wordmotion' " camelcasemotion
 Plug 'crusoexia/vim-monokai' " Colorscheme
+Plug 'ku-s-h/summerfruit256.vim'
 Plug 'kana/vim-textobj-user' " Add new textobjects easily
 Plug 'kana/vim-textobj-entire' " textobj: ae entire buffer, ie buffer without leading and trailing empty lines
 Plug 'wellle/targets.vim' " more text objects, enables stuff like ci, or ci/
@@ -50,6 +53,7 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'svermeulen/vim-yoink' " cycle through yanks after a paste with <ctrl-n> and <ctrl-p>
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
 Plug 'junegunn/vim-peekaboo' " preview registers
+Plug 'lpinilla/vim-codepainter' " highlight code
 Plug 'christianrondeau/vim-base64' " Encodes/decodes base64 strings
 Plug 'tyru/eskk.vim' " Japanese support
 Plug 'tyru/skkdict.vim'
@@ -106,11 +110,16 @@ let g:airline#extensions#tabline#enabled = 1
 let g:html_indent_style1 = "inc"
 set virtualedit=block
 
+vnoremap <C-b> :<c-u>call codepainter#paintText(visualmode())<cr>
+nnoremap <C-b> :<c-u>call codepainter#paintText('')<cr>
+
 set scrollback=100000
 " }}}
 " Colortheme {{{
 syntax on
 colorscheme monokai
+" colorscheme summerfruit256
+let g:airline_theme='ayu_light'
 set termguicolors
 " }}}
 " Plugin Configuration {{{
@@ -217,10 +226,9 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>u :UndotreeToggle<CR>
 " Use Q to execute default register.
 nnoremap Q @q
-" Nerdtree
-nnoremap <leader>d :NERDTreeToggle<CR>
-nnoremap <leader>r :NERDTreeFind<cr>
-nnoremap <leader>t :RangerWorkingDirectory<cr>
+" nvim-tree
+nnoremap <leader>d :LuaTreeToggle<CR>
+nnoremap <leader>r :LuaTreeFindFile<cr>
 
 nnoremap <leader>b :LeaderfBuffer<cr>
 nnoremap <leader>c :Leaderf command<cr>

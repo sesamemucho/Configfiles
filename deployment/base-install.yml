@@ -44,13 +44,13 @@
           - gopass
           - pandoc
           - elinks
+          - noto-fonts-emoji
           - highlight
           - mediainfo
           - xdotool
           - anki
           - bat
           - dash
-          - neovim
           - wmctrl
           - entr
           - translate-shell
@@ -108,7 +108,6 @@
           - make
           - unclutter
           - neofetch
-          - tldr
       become: true
       become_user: root
 
@@ -127,7 +126,12 @@
       aur:
         name:
           - xkeysnail
+          - neovim-git
           - lnav
+          - tealdeer
+          - starship
+          - nushell
+          - nerd-fonts-jetbrains-mono
           - dragon-drag-and-drop
           - radeontop
           - yadm-git
