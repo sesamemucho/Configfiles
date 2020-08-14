@@ -84,7 +84,6 @@
           - openssh
           - p7zip
           - zip
-          - rar
           - unzip
           - unrar
           - physlock
@@ -142,7 +141,7 @@
           - yadm-git
           - nyrna
           - touchpad-toggle
-          - brave-bin
+          - brave-nightly-bin
 
     - name: Install pip-packages
       pip:

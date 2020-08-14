@@ -40,6 +40,7 @@ Plug 'kana/vim-textobj-user' " Add new textobjects easily
 Plug 'kana/vim-textobj-entire' " textobj: ae entire buffer, ie buffer without leading and trailing empty lines
 Plug 'wellle/targets.vim' " more text objects, enables stuff like ci, or ci/
 Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac (around class), ic, af, if (inner function)
+Plug 'Vimjas/vim-python-pep8-indent' " Manges python indentation
 Plug 'paroxayte/vwm.vim' " Manage Window layouts
 Plug 'cespare/vim-toml' " toml support
 Plug 'stephpy/vim-yaml' " yaml support
@@ -55,6 +56,7 @@ Plug 'machakann/vim-highlightedyank' " highlight yanked text
 Plug 'junegunn/vim-peekaboo' " preview registers
 Plug 'lpinilla/vim-codepainter' " highlight code
 Plug 'christianrondeau/vim-base64' " Encodes/decodes base64 strings
+Plug 'liuchengxu/vista.vim'
 Plug 'tyru/eskk.vim' " Japanese support
 Plug 'tyru/skkdict.vim'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
@@ -143,10 +145,6 @@ let g:mapleader = "\<Space>"
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 
 " }}}
-" vim-sneak {{{
-nmap <C-f> <Plug>Sneak_s
-nmap <M-C-f> <Plug>Sneak_S
-" }}}
 " Ranger {{{
 let g:ranger_map_keys = 0
 let g:NERDTreeHijackNetrw = 0
@@ -184,6 +182,9 @@ let g:eskk#large_dictionary = {
 imap <C-k> <Plug>(eskk:toggle)
 cmap <C-k> <Plug>(eskk:toggle)
 lmap <C-k> <Plug>(eskk:toggle)
+" }}}
+" Vista {{{
+let g:vista_default_executive = 'coc'
 " }}}
 " }}}
 " Undo Settings {{{
@@ -243,7 +244,13 @@ nnoremap <C-w>o :ZoomWinTabToggle<CR>
 
 " Use Ctrl D to delete the next char
 imap <C-d> <Del>
+" Dedent with C-M-d instead
+inoremap <C-M-d> <C-d>
 
+" Break undo chain on backspace and now lines
+inoremap <C-H> <C-G>u<BS>
+inoremap <BS> <C-G>u<BS>
+inoremap <CR> <C-]><C-G>u<CR>
 
 nnoremap <Leader>w :w<cr>
 
