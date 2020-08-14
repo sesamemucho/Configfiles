@@ -6,5 +6,5 @@ shift
 for i in "$@"
 do
 	episode=$(echo $i|grep -oP '.*E\d\d')
-	subsync "$i" -i "$episode.jpn.$extension" --overwrite-input --max-offset-seconds 3 --vad webrtc
+	subsync "$i" -i "$episode.jpn.$extension" --overwrite-input --max-offset-seconds 20 --vad webrtc
 done

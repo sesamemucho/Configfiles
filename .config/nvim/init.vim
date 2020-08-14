@@ -119,7 +119,7 @@ set scrollback=100000
 syntax on
 colorscheme monokai
 " colorscheme summerfruit256
-let g:airline_theme='ayu_light'
+" let g:airline_theme='ayu_light'
 set termguicolors
 " }}}
 " Plugin Configuration {{{
