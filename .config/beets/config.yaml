@@ -1,0 +1,25 @@
+directory: /hdd/Audio/New_Music
+library: /hdd/other_data/musiclibrary_normal.db
+# directory: /hdd/Audio/Vocaloid
+# library: /hdd/other_data/musiclibrary.db
+# directory: /hdd/Audio/Japanese_Music
+# library: /hdd/other_data/japanese_musiclibrary.db
+# directory: /hdd/Audio/OST
+# library: /hdd/other_data/ost_musiclibrary.db
+import:
+    move: yes
+pluginpath:
+    - ~/Programs/beets-vocadb/
+    - ~/Programs/VGMdb-BeetsPlug/beetsplug
+plugins: vocadb edit fetchart # vgmdb
+edit:
+    itemfields: track title artist album albumartist
+paths:
+    default: $albumartist/$album%aunique{}/$track $title
+    singleton: Non-Album/$artist/$title
+    comp: $albumartist/$album%aunique{}/$track $title
+languages: en
+
+convert:
+    format: opus
+    never_convert_lossy_files: yes
