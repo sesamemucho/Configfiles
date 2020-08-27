@@ -247,7 +247,7 @@ super + ctrl + XF86Calculator
 	xdotool key Caps_Lock
 
 ctrl + Print
-	sleep 0.3 && maim -s | tee ~/Documents/$(date +%s).png | xclip -selection clipboard -t image/png
+	sleep 0.3 && maim -s | tee ~/Documents/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
 
 super + grave
 	~/Programs/ocr.sh

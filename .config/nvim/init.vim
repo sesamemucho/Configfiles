@@ -41,6 +41,7 @@ Plug 'kana/vim-textobj-entire' " textobj: ae entire buffer, ie buffer without le
 Plug 'wellle/targets.vim' " more text objects, enables stuff like ci, or ci/
 Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac (around class), ic, af, if (inner function)
 Plug 'Vimjas/vim-python-pep8-indent' " Manges python indentation
+Plug 'dag/vim-fish' " fish support
 Plug 'paroxayte/vwm.vim' " Manage Window layouts
 Plug 'cespare/vim-toml' " toml support
 Plug 'stephpy/vim-yaml' " yaml support

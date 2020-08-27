@@ -77,7 +77,7 @@ define_keymap(lambda wm_class: wm_class not in ("Emacs", "Zathura", "kitty", "sc
     K("C-M-d"): [K("C-d"), set_mark(False)],
     K("M-d"): [K("C-delete"), set_mark(False)],
     # Kill line
-    K("C-k"): [K("Shift-end"), K("C-x"), set_mark(False)],
+    K("C-k"): [K("Shift-end"), K("delete"), set_mark(False)],
     K("C-Super-k"): K("C-k"),
     # Undo
     K("C-slash"): [K("C-z"), set_mark(False)],
