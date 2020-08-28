@@ -27,7 +27,7 @@
           - ripgrep
           - wget
           - adobe-source-han-sans-jp-fonts
-          - otf-fira-code
+          - ttf-fira-code
           - sxhkd
           - rofi
           - bspwm

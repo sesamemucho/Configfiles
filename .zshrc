@@ -5,18 +5,6 @@
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
-path+=('/home/julius/.local/bin')
-path+=('/home/julius/go/bin')
-path+=('/home/julius/.gem/ruby/2.7.0/bin')
-path+=('/home/julius/.cargo/bin')
-export PATH
-export MANPAGER='nvim +Man!'
-export MANWIDTH=999
-export EDITOR=nvim
-export SHELL=/bin/zsh
-export LC_TIME="de_DE.UTF-8"
-export CF_COLOR=true
-
 zshrc_restore_x11_vars()
 {
   if [[ -z $TMUX ]]
@@ -56,6 +44,10 @@ preexec()
 
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/julius/.zshrc'
+
+# From https://unix.stackexchange.com/questions/2179/rebuild-auto-complete-index-or-whatever-its-called-and-binaries-in-path-cach
+zstyle ":completion:*:commands" rehash 1
+
 
 autoload -Uz compinit
 compinit
