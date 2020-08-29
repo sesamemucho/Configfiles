@@ -17,13 +17,14 @@
       pacman:
         name:
           - git
-          - linux
           - ibus
           - xorg-server
           - xorg-xinit
           - xorg-xinput
           - xorg-xrandr
           - base-devel
+          - tmux
+          - byobu
           - ripgrep
           - wget
           - adobe-source-han-sans-jp-fonts
@@ -127,6 +128,7 @@
           - xkeysnail
           - neovim-git
           - lnav
+          - direnv
           - tealdeer
           - starship
           - nushell
