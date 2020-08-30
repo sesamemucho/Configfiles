@@ -143,7 +143,7 @@ XF86HomePage
 super + n
 	wmctrl -a lutris || lutris
 super + c
-	wmctrl -a brave || brave-nightly
+	wmctrl -a brave || brave
 super + e
 	xdotool search --classname emacs windowactivate || emacs
 XF86Mail

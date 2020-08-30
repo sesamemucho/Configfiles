@@ -45,6 +45,7 @@
           - gopass
           - pandoc
           - elinks
+          - nextcloud-client
           - noto-fonts-emoji
           - highlight
           - mediainfo
