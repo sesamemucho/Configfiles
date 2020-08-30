@@ -224,6 +224,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " }}}
+" buffer navigation
+nnoremap <A-l> :bnext<CR>
+nnoremap <A-h> :bprevious<CR>
 " toggle undotree
 nnoremap <leader>u :UndotreeToggle<CR>
 " Use Q to execute default register.
