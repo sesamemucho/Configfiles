@@ -58,6 +58,7 @@
           - emacs
           - beep
           - fd
+          - sshfs
           - shellcheck
           - rust
           - rust-racer
@@ -94,7 +95,7 @@
           - python-pillow
           - python-pip
           - ranger
-          - w3m
+          - ueberzug
           - ttf-dejavu
           - ttf-liberation
           - xclip

@@ -106,7 +106,7 @@ set tabstop=4		" number of visual spaces per TAB
 set shiftwidth=4
 set softtabstop=4	" number of spaces in tab when editing
 " don't fuck with pasting
-set pastetoggle=<C-v>
+set pastetoggle=<C-A-v>
 let g:wordmotion_prefix = '\'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1

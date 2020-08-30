@@ -55,6 +55,7 @@ define_keymap(lambda wm_class: wm_class not in ("Emacs", "Zathura", "kitty", "sc
     K("C-a"): with_mark(K("home")),
     K("C-M-a"): with_mark(K("C-a")),
     K("C-e"): with_mark(K("end")),
+    K("C-M-e"): K("C-e"),
     # Page up/down
     # K("M-v"): with_mark(K("page_up")),
     # K("C-v"): with_mark(K("page_down")),
@@ -71,7 +72,6 @@ define_keymap(lambda wm_class: wm_class not in ("Emacs", "Zathura", "kitty", "sc
     K("C-w"): [K("C-backspace"), set_mark(False)],
     K("C-M-w"): K("C-w"),
     K("M-w"): [K("C-c"), set_mark(False)],
-    K("C-y"): [K("C-v"), set_mark(False)],
     # Delete
     K("C-d"): [K("delete"), set_mark(False)],
     K("C-M-d"): [K("C-d"), set_mark(False)],
