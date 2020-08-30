@@ -11,3 +11,4 @@ bspc desktop 1 --to-monitor HDMI-0
 bspc monitor HDMI-0 -d 1 2 3 4 5 6
 bspc wm -r
 
+while true; do mpg123 ~/.screenlayout/1-hour-of-silence.mp3 ; done
