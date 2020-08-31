@@ -232,8 +232,12 @@ nnoremap <leader>u :UndotreeToggle<CR>
 " Use Q to execute default register.
 nnoremap Q @q
 " nvim-tree
-nnoremap <leader>d :LuaTreeToggle<CR>
-nnoremap <leader>r :LuaTreeFindFile<cr>
+" nnoremap <leader>d :LuaTreeToggle<CR>
+" nnoremap <leader>r :LuaTreeFindFile<cr>
+" Ranger
+nnoremap <leader>d :RangerWorkingDirectory<CR>
+nnoremap <leader>r :RangerCurrentFile<cr>
+
 
 nnoremap <leader>b :LeaderfBuffer<cr>
 nnoremap <leader>c :Leaderf command<cr>
