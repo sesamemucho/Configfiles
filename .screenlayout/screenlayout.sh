@@ -14,4 +14,4 @@ bspc monitor DP-0 -d 1 2
 bspc monitor DVI-D-0 -d 3 4
 bspc monitor DP-4 -d 5 6
 bspc wm -r
-
+pkill mpg123

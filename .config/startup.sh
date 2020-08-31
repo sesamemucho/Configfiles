@@ -10,19 +10,10 @@ sxhkd &
 ~/Programs/notify-low-battery.sh &
 nextcloud &
 
-#Xresources
-xrdb -merge ~/.Xresources &
-
-<<<<<<< Updated upstream
-feh --randomize --bg-fill --no-xinerama ~/Pictures/* &
-
-
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/go/bin
 export PATH=$PATH:~/.gem/ruby/2.7.0/bin
 export PATH=$PATH:~/.cargo/bin
-=======
->>>>>>> Stashed changes
 
 export SXHKD_SHELL="/usr/bin/sh"
 export CM_LAUNCHER=rofi
@@ -39,6 +30,10 @@ export LS_COLORS
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 # sudo sh -c 'sysctl -w abi.vsyscall32=0' &
 export GDK_CORE_DEVICE_EVENTS=1
+
+# screen blanks after 2 hours instead of 10 min
+xset s 7200 7200
+
 # rg --files ~/.doom.d/ | entr ~/.emacs.d/bin/doom refresh
 # notify-send (.emacs.d/bin/doom doctor | tail -2 | sed 's/\x1b\[[0-9;]*m//g')
 

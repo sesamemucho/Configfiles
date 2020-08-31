@@ -1,5 +1,5 @@
 #!/bin/sh
-xrandr --output HDMI-0 --primary --mode 1920x1080
+xrandr --dpi 140 --output HDMI-0 --primary --mode 1920x1080
 # xrandr --dpi 96 --output HDMI-0 --primary --mode 1920x1080
 xrandr --output DVI-D-0 --off --output DP-4 --off --output DP-0 --off
 bspc desktop 6 --to-monitor HDMI-0
