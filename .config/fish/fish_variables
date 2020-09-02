@@ -1,6 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR EDITOR:nvim
 SETUVAR MANPAGER:nvim\x20\x2bMan\x21
+SETUVAR VISUAL:nvim
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_bspwmrc:nvim\x20\x7e/\x2econfig/bspwm/bspwmrc
 SETUVAR _fish_abbr_cdp:cd\x20\x7e/Projects
