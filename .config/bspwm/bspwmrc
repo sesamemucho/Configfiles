@@ -29,6 +29,7 @@ bspc rule -a Thunderbird desktop=^4
 bspc rule -a korganizer desktop=^4
 bspc rule -a plexmediaplayer desktop=^1
 bspc rule -a Plexamp desktop=^5 state=tiled # rectangle=300x1024+1620+-1
+bspc rule -a Emacs state=tiled
 bspc rule -a Steam desktop=^3
 bspc rule -a Lutris desktop=^3
 bspc rule -a "Wine" state=tiled desktop=^3
