@@ -3,7 +3,6 @@ PATH=$PATH:~/go/bin
 PATH=$PATH:~/.gem/ruby/2.7.0/bin
 PATH=$PATH:~/.cargo/bin
 
-SXHKD_SHELL="/usr/bin/sh"
 CM_LAUNCHER=rofi
 MANPAGER='nvim +Man!'
 MANWIDTH=999
