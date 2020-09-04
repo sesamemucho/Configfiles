@@ -1,9 +1,9 @@
-directory: /hdd/Audio/Music
-library: /hdd/other_data/musiclibrary_normal.db
+# directory: /hdd/Audio/Music
+# library: /hdd/other_data/musiclibrary_normal.db
 # directory: /hdd/Audio/Vocaloid
 # library: /hdd/other_data/musiclibrary.db
-# directory: /hdd/Audio/Japanese_Music
-# library: /hdd/other_data/japanese_musiclibrary.db
+directory: /hdd/Audio/Japanese_Music
+library: /hdd/other_data/japanese_musiclibrary.db
 # directory: /hdd/Audio/OST
 # library: /hdd/other_data/ost_musiclibrary.db
 import:
