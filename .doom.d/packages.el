@@ -43,5 +43,4 @@
 ;(package! builtin-package :recipe (:branch "develop"))
 
 (package! adoc-mode)
-(package! pandoc-mode)
-(package! ox-reveal)
+(package! nov)

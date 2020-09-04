@@ -35,6 +35,8 @@
 
 (define-key key-translation-map [?\C-h] [?\C-?])
 
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
