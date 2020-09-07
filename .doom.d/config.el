@@ -37,6 +37,15 @@
 
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
+(add-hook 'nov-mode-hook
+          (lambda () (message "nov-mode toggled")))
+(add-hook 'nov-mode-hook
+          (lambda () ((add-to-list 'emulation-mode-map-alists '(*-mode *-mode-map)))))
+;; (after! no)
+
+(message "config loaded")
+
+
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;

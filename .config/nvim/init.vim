@@ -444,6 +444,9 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
+
+nmap <silent> ge <Plug>(coc-diagnostic-prev)
+nmap <silent> gl <Plug>(coc-diagnostic-next)
 " Use `:Format` to format current buffer
 " command! -nargs=0 Format :call CocAction('format')
 
