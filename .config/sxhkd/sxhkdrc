@@ -135,7 +135,7 @@ super + F2
 super + alt + 1
 	xdotool search --classname plexmediaplayer windowactivate || plexmediaplayer
 super + a
-	wmctrl -a anki || anki
+	wmctrl -a anki || bash -c 'ANKI_WEBSCALE=1 anki'
 super + v
 	~/Programs/focus-discord.sh && PULSE_LATENCY_MSEC=90 discord
 XF86HomePage
@@ -246,7 +246,7 @@ super + XF86Calculator
 super + ctrl + XF86Calculator
 	xdotool key Caps_Lock
 
-Print
+super + F10
 	sleep 0.3 && maim -s | tee ~/Documents/Screenshots/(date +%s).png | xclip -selection clipboard -t image/png
 
 super + grave

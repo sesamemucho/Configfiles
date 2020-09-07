@@ -6,7 +6,6 @@ nyrna &
 clipmenud &
 keynav &
 feh --randomize --bg-fill --no-xinerama ~/Pictures/* &
-sxhkd &
 ~/Programs/notify-low-battery.sh &
 nextcloud &
 
@@ -25,3 +24,6 @@ xset s 7200 7200
 # rg --files ~/.doom.d/ | entr ~/.emacs.d/bin/doom refresh
 # notify-send (.emacs.d/bin/doom doctor | tail -2 | sed 's/\x1b\[[0-9;]*m//g')
 
+export ANKI_NOHIGHDPI=1
+export ANKI_WEBSCALE=1
+sxhkd &

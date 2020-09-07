@@ -133,9 +133,6 @@
           - direnv
           - tealdeer
           - starship
-          - nushell
-          - procs
-          - ytop
           - zoxide
           - downgrade
           - ffsend-bin

@@ -1,9 +1,9 @@
-# directory: /hdd/Audio/Music
-# library: /hdd/other_data/musiclibrary_normal.db
+directory: /hdd/Audio/Music
+library: /cache/musiclibrary_normal.db
 # directory: /hdd/Audio/Vocaloid
 # library: /hdd/other_data/musiclibrary.db
-directory: /hdd/Audio/Japanese_Music
-library: /hdd/other_data/japanese_musiclibrary.db
+# directory: /hdd/Audio/Japanese_Music
+# library: /hdd/other_data/japanese_musiclibrary.db
 # directory: /hdd/Audio/OST
 # library: /hdd/other_data/ost_musiclibrary.db
 import:
@@ -11,7 +11,7 @@ import:
 pluginpath:
     - ~/Programs/beets-vocadb/
     - ~/Programs/VGMdb-BeetsPlug/beetsplug
-plugins: vocadb edit fetchart # vgmdb
+plugins: vocadb edit fetchart convert
 edit:
     itemfields: track title artist album albumartist
 paths:
@@ -21,5 +21,12 @@ paths:
 languages: en
 
 convert:
+    auto: no
+    dest: /hdd/Audio/temp/
     format: opus
     never_convert_lossy_files: yes
+    no_convert: format:mp3
+    formats:
+        opus:
+            command: ffmpeg -i $source -y -vn -acodec libopus -ab 128k $dest
+            extension: opus
