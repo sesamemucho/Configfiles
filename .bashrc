@@ -1,5 +1,3 @@
-eval "$(starship init bash)"
-
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/go/bin
 export PATH=$PATH:~/.gem/ruby/2.7.0/bin
