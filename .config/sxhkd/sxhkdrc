@@ -246,7 +246,7 @@ super + XF86Calculator
 super + ctrl + XF86Calculator
 	xdotool key Caps_Lock
 
-super + F10
+Print
 	sleep 0.3 && maim -s | tee ~/Documents/Screenshots/(date +%s).png | xclip -selection clipboard -t image/png
 
 super + grave

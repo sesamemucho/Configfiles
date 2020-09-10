@@ -1,6 +1,6 @@
 #!/bin/sh
 
-picom &
+# picom &
 unclutter &
 nyrna &
 clipmenud &

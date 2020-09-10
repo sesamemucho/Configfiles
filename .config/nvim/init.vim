@@ -58,7 +58,6 @@ Plug 'junegunn/vim-peekaboo' " preview registers
 Plug 'lpinilla/vim-codepainter' " highlight code
 Plug 'christianrondeau/vim-base64' " Encodes/decodes base64 strings
 Plug 'liuchengxu/vista.vim'
-Plug 'terryma/vim-expand-region' " expand visual selections
 Plug 'tyru/eskk.vim' " Japanese support
 Plug 'tyru/skkdict.vim'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
@@ -127,21 +126,6 @@ colorscheme monokai
 set termguicolors
 " }}}
 " Plugin Configuration {{{
-" expand-selection {{{
-map v <Plug>(expand_region_expand)
-map <C-A-x> <Plug>(expand_region_shrink)
-
-let g:expand_region_text_objects = {
-      \ 'iw'  :1,
-      \ 'iW'  :1,
-      \ 'i"'  :1,
-      \ 'i''' :1,
-      \ 'i]'  :1,
-      \ 'ib'  :1,
-      \ 'iB'  :1,
-      \ 'ip'  :1,
-      \ }
-" }}}
 " LeaderF{{{
 let g:Lf_UseCache = 0
 let g:Lf_UseVersionControlTool = 1

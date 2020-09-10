@@ -13,3 +13,5 @@ export CF_COLOR=true
 export ANKI_NOHIGHDPI=1
 export ANKI_WEBSCALE=1
 
+
+complete -C /usr/bin/packer packer

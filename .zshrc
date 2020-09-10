@@ -170,3 +170,5 @@ eval "$(direnv hook zsh)"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /var/lib/tfenv/versions/0.12.28/terraform terraform
 eval "$(starship init zsh)"
+
+complete -o nospace -C /usr/bin/packer packer
