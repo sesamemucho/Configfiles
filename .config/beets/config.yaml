@@ -1,10 +1,11 @@
-directory: /hdd/Audio/Music
-library: /cache/musiclibrary_normal.db
+# directory: /hdd/Audio/Music
+# library: /cache/musiclibrary_normal.db
 # directory: /hdd/Audio/Vocaloid
 # library: /hdd/other_data/musiclibrary.db
 # directory: /hdd/Audio/Japanese_Music
 # library: /hdd/other_data/japanese_musiclibrary.db
-# directory: /hdd/Audio/OST
+directory: /rclone/Audio/OST
+library: /rclone/Audio/libraries/ost_musiclibrary.db
 # library: /hdd/other_data/ost_musiclibrary.db
 import:
     move: yes
@@ -21,7 +22,7 @@ paths:
 languages: en
 
 convert:
-    auto: no
+    auto: yes
     dest: /hdd/Audio/temp/
     format: opus
     never_convert_lossy_files: yes

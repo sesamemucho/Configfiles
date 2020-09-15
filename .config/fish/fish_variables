@@ -13,8 +13,10 @@ SETUVAR _fish_abbr_k:kubectl
 SETUVAR _fish_abbr_rangerrc:nvim\x20\x7e/\x2econfig/ranger/rc\x2econf
 SETUVAR _fish_abbr_ssc:ssh\x20173\x2e212\x2e244\x2e131\x20\x2dt\x20byobu
 SETUVAR _fish_abbr_ssp:ssh\x20\x2dYC\x20Cellaris\x20\x2dt\x20byobu\x20\x7c\x7c\x20ssh\x20\x2dYC\x20plexiglas\x2exyz\x20\x2dt\x20byobu
+SETUVAR _fish_abbr_ssr:ssh\x20raspberry\x20\x2dt\x20byobu
 SETUVAR _fish_abbr_sxhkdrc:nvim\x20\x7e/\x2econfig/sxhkd/sxhkdrc
 SETUVAR _fish_abbr_t:terraform
+SETUVAR _fish_abbr_tg:terragrunt
 SETUVAR _fish_abbr_vim:nvim
 SETUVAR _fish_abbr_vimrc:nvim\x20\x7e/\x2econfig/nvim/init\x2evim
 SETUVAR _fish_abbr_ys:yadm\x20status

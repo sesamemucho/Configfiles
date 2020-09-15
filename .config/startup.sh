@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# picom &
+[ `hostname` = "Cellaris" ]; picom &
 unclutter &
 nyrna &
 clipmenud &

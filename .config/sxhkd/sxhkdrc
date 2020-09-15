@@ -216,9 +216,9 @@ super + Next
 	~/Programs/vpndown.sh
 
 super + ctrl + p
-	gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass -C
+	gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass show -c
 super + ctrl + alt + p
-	gopass ls --flat | rofi -dmenu | xargs -I _ --no-run-if-empty gopass -C _ username
+	gopass ls --flat | rofi -dmenu | xargs -I _ --no-run-if-empty gopass show -c _ username
 
 super + shift + j
 	xdotool mousemove_relative -- 0 10
@@ -247,7 +247,7 @@ super + ctrl + XF86Calculator
 	xdotool key Caps_Lock
 
 Print
-	sleep 0.3 && maim -s | tee ~/Documents/Screenshots/(date +%s).png | xclip -selection clipboard -t image/png
+	sleep 0.3 && maim -s | tee ~/Documents/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
 
 super + grave
 	~/Programs/ocr.sh
@@ -265,6 +265,8 @@ ctrl + alt + c
 	~/Programs/clip_translate.sh
 super + alt + z
 	~/Programs/clip_translate.sh
+super + ctrl + s
+	~/Programs/sanseido_wrapper.sh
 
 ctrl + super + o
 	clipmenu
