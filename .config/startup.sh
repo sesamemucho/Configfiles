@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ `hostname` = "Cellaris" ]; picom &
+picom --backend glx -b -c --vsync --no-fading-openclose --use-ewmh-active-win
 unclutter &
 nyrna &
 clipmenud &
