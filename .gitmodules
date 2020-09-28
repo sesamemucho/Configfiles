@@ -1,0 +1,3 @@
+[submodule "/home/julius/.config/mpv/scripts/subs2srs"]
+	path = /home/julius/.config/mpv/scripts/subs2srs
+	url = https://github.com/Ajatt-Tools/mpvacious.git
