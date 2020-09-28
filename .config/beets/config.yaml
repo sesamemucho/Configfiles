@@ -11,7 +11,7 @@ import:
 pluginpath:
     - ~/Programs/beets-vocadb/
     - ~/Programs/VGMdb-BeetsPlug/beetsplug
-plugins: vocadb edit fetchart convert
+plugins: vocadb edit fetchart convert bandcamp
 edit:
     itemfields: track title artist album albumartist
 paths:

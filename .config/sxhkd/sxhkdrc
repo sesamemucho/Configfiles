@@ -127,27 +127,25 @@ super + ctrl + u
 super + ctrl + t
 	touchpad-toggle.sh
 super + g
-	xdotool search --classname steam windowactivate | xdotool search --classname Steam | tail -1 | xargs xdotool windowactivate || steam
+	jumpapp steam
 XF86Favorites
 	~/Programs/Plexamp.sh
 super + F2
 	~/Programs/Plexamp.sh
 super + alt + 1
-	xdotool search --classname plexmediaplayer windowactivate || plexmediaplayer
+	jumpapp plexmediaplayer
 super + a
-	wmctrl -a anki || bash -c 'ANKI_WEBSCALE=1 anki'
+	jumpapp anki
 super + v
-	~/Programs/focus-discord.sh && PULSE_LATENCY_MSEC=90 discord
-XF86HomePage
-	xdotool search "Meet.*Brave" windowactivate || notify-send "No window available"
+	jumpapp discord
 super + n
-	wmctrl -a lutris || lutris
+	jumpapp lutris
 super + c
-	wmctrl -a brave || brave
+	jumpapp brave
 super + e
-	xdotool search --classname emacs windowactivate || emacs
+	jumpapp emacs
 XF86Mail
-	wmctrl -a element || element-desktop
+	jumpapp element-desktop
 XF86Search
 	xdotool search --name "League of Legends \(TM\) Client" windowactivate || xdotool search --name "League of Legends" windowactivate || notify-send "No window available"
 super + ctrl + k

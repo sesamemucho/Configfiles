@@ -36,3 +36,5 @@ bspc rule -a Lutris desktop=^1
 bspc rule -a "Wine" state=tiled desktop=^1
 bspc rule -a Zathura state=tiled desktop=^2
 bspc rule -a okular desktop=^2
+
+sudo xkeysnail --watch ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log

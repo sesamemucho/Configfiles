@@ -9,6 +9,7 @@ Plug 'mbbill/undotree' " Navigate undos
 Plug 'tpope/vim-surround' " change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
 Plug 'tpope/vim-repeat' " make surround actions repeatable
 Plug 'tpope/vim-fugitive' " :Gstatus to open a new pane to stage, diff and commit. This is really awesome!
+Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-obsession' " make sessions smarter => auto save session when closing. Quick info about sessions: https://hackernoon.com/sessions-the-vim-feature-no-one-talks-about-1c9cfa4d52d7
 Plug 'tpope/vim-sleuth' " Autodetect indentation rules
 Plug 'tpope/vim-unimpaired' " quick actions with ]q goes to next entry in quickfix

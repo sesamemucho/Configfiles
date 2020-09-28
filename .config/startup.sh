@@ -1,10 +1,10 @@
 #!/bin/sh
 
-picom --backend glx -b -c --vsync --no-fading-openclose --use-ewmh-active-win
 unclutter &
 nyrna &
 clipmenud &
 keynav &
+picom --backend xr_glx_hybrid --daemon --shadow --vsync --no-fading-openclose --use-ewmh-active-win
 feh --randomize --bg-fill --no-xinerama ~/Pictures/* &
 ~/Programs/notify-low-battery.sh &
 nextcloud &
