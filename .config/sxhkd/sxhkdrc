@@ -1,6 +1,9 @@
 #
 # bspwm hotkeys
 #
+
+super + alt + ctrl + m
+	_query_nodes '.marked' -d 0 --follow
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
