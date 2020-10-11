@@ -7,5 +7,8 @@ bspc desktop 2 --to-monitor HDMI-0
 bspc desktop 1 --to-monitor HDMI-0
 bspc monitor HDMI-0 -d 1
 bspc wm -r
+killall tv_mode.sh
+killall mpg123
+
 
 while true; do mpg123 ~/.screenlayout/1-hour-of-silence.mp3 ; done

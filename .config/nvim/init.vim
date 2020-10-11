@@ -240,11 +240,10 @@ nnoremap <leader>d :RangerWorkingDirectory<CR>
 nnoremap <leader>r :RangerCurrentFile<cr>
 
 
-nnoremap <leader>b :LeaderfBuffer<cr>
-nnoremap <leader>c :Leaderf command<cr>
-nnoremap <leader>h :Leaderf cmdHistory<cr>
-nnoremap <leader>g :Leaderf rg<cr>
-
+let g:Lf_ShortcutF = "<leader>ff"
+noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+noremap <leader>fc :<C-U><C-R>=printf("Leaderf command %s", "")<CR><CR>
+noremap <leader>fc :<C-U><C-R>=printf("Leaderf rg %s", "")<CR><CR>
 nnoremap <leader>6 :b term<cr>
 
 
@@ -322,7 +321,8 @@ nmap <Leader>ga <Plug>(GitGutterStageHunk)	" git add (chunk)
 nmap <Leader>gu <Plug>(GitGutterUndoHunk)	" git undo (chunk)
 
 " Open Git status pane
-nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gs :LazyGit<CR>
+" nnoremap <leader>gs :Gstatus<CR>
 " Push to remote
 nnoremap <leader>gP :Gpush<CR>
 " }}}

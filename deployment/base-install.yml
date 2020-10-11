@@ -53,6 +53,7 @@
           - anki
           - bat
           - dash
+          - playerctl
           - wmctrl
           - entr
           - translate-shell

@@ -6,4 +6,5 @@ xrandr \
 bspc monitor DVI-D-0 -d 1
 bspc monitor DP-4 -d 2
 bspc wm -r
-pkill mpg123
+killall tv_mode.sh
+killall mpg123
