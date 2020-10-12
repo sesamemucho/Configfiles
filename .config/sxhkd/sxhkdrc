@@ -166,7 +166,7 @@ super + shift + F1
 super + XF86Launch6
 	~/.screenlayout/layout.sh
 XF86Launch7
-	wmctrl -a thunderbird || thunderbird
+	wmctrl -a -x thunderbird || thunderbird
 XF86Launch8
 	wmctrl -a korganizer || korganizer
 ctrl + super + b

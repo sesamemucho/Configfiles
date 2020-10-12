@@ -33,6 +33,8 @@
 ;; `nil' to disable it:
 (setq display-line-numbers-type 'relative)
 
+(evil-snipe-mode -1)
+
 (define-key key-translation-map [?\C-h] [?\C-?])
 
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))

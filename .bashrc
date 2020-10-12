@@ -15,3 +15,4 @@ export ANKI_WEBSCALE=1
 
 
 complete -C /usr/bin/packer packer
+complete -C /home/julius/go/bin/bitcomplete bit

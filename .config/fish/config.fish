@@ -5,4 +5,4 @@ eval (direnv hook fish)
 zoxide init fish | source
 starship init fish | source
 
-fenv source ~/.bashrc
+# fenv source ~/.bashrc
