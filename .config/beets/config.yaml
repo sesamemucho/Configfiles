@@ -1,9 +1,9 @@
 # directory: /hdd/Audio/Music
 # library: /cache/musiclibrary_normal.db
-# directory: /rclone/Audio/Vocaloid
-# library: /rclone/Audio/libraries/musiclibrary.db
-directory: /rclone/Audio/Japanese_Music
-library: /rclone/Audio/libraries/japanese_musiclibrary.db
+directory: /rclone/Audio/Vocaloid
+library: /rclone/Audio/libraries/musiclibrary.db
+# directory: /rclone/Audio/Japanese_Music
+# library: /rclone/Audio/libraries/japanese_musiclibrary.db
 # directory: /rclone/Audio/OST
 # library: /rclone/Audio/libraries/ost_musiclibrary.db
 import:

@@ -10,5 +10,5 @@ bspc wm -r
 killall tv_mode.sh
 killall mpg123
 
-
+sleep 1
 while true; do mpg123 ~/.screenlayout/1-hour-of-silence.mp3 ; done
