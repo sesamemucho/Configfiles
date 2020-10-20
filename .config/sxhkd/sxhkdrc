@@ -45,8 +45,8 @@ super + ctrl + {m,x,y,z}
 #
 
 # focus the node in the given direction
-super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+# super + {_,shift + }{h,j,k,l}
+# 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
 # super + {p,b,comma,period}
@@ -112,7 +112,7 @@ super + {Left,Down,Up,Right}
 
 # Basic binds
 super + Return
-	xdotool search --classname kitty windowactivate || kitty && xdotool search --classname kitty windowactivate
+	jumpapp kitty
 super + d
 	rofi -show run -monitor -1
 super + b
@@ -140,7 +140,7 @@ super + alt + 1
 super + a
 	jumpapp anki
 super + v
-	jumpapp discord
+	jumpapp -f discord
 super + n
 	jumpapp lutris
 super + c
@@ -149,8 +149,6 @@ super + e
 	jumpapp emacs
 XF86Mail
 	jumpapp element-desktop
-XF86Search
-	xdotool search --name "League of Legends \(TM\) Client" windowactivate || xdotool search --name "League of Legends" windowactivate || notify-send "No window available"
 super + ctrl + k
 	screenkey --scr 2
 super + shift + Delete
@@ -165,10 +163,8 @@ super + shift + F1
 	sudo xkeysnail --watch ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log
 super + XF86Launch6
 	~/.screenlayout/layout.sh
-XF86Launch7
-	wmctrl -a -x thunderbird || thunderbird
-XF86Launch8
-	wmctrl -a korganizer || korganizer
+super + j
+	jumpapp thunderbird
 ctrl + super + b
 	pkill tint2 && bspc config left_padding 0 || tint2 &
 
@@ -197,15 +193,14 @@ super + shift + F6
 # super + r
 	# xdotool key --delay 100 super+b ctrl+n ctrl+n Return
 
-XF86Launch5
-	wmctrl -a slack || slack
+super + h
+	jumpapp -f slack
+super + k
+	jumpapp -f zoom
+super + l
+	jumpapp sxiv
 XF86Launch6
-	wmctrl -a toggl || TogglDesktop
-
-shift + XF86Launch5
-	xdotool search --classname Zathura windowactivate || zathura
-shift + XF86Launch6
-	wmctrl -a okular || okular
+	jumpapp -f TogglDesktop
 
 XF86Calculator
 	~/Programs/vpnup.sh
@@ -235,9 +230,6 @@ super + shift + space
 	xdotool click --delay 100 --clearmodifiers 1
 super + shift + Menu
 	xdotool click 3
-
-super + alt + 2
-	xdotool search --classname streaming_client windowactivate
 
 super + shift + XF86Favorites
 	xrandr -s 1920x1080

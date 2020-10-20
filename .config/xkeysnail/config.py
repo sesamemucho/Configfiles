@@ -47,6 +47,7 @@ define_keymap(lambda wm_class: wm_class not in ("Emacs", "Zathura", "kitty", "sc
     # Forward/Backward word
     K("M-b"): with_mark(K("C-left")),
     K("M-f"): with_mark(K("C-right")),
+    K("M-Shift-f"): K("M-f"),
     # Beginning/End of line
     K("C-a"): with_mark(K("home")),
     K("C-M-a"): with_mark(K("C-a")),

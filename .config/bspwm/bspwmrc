@@ -24,6 +24,7 @@ if [[ $(hostname) == 'Cellaris' ]]; then
 elif [[ $(hostname) == 'workarch' ]]; then
 	bspc monitor eDP-1 -d 1 10
 	bspc rule -a Screenkey manage=off
+	bspc rule -a zoom state=tiled layer=normal
 	bspc rule -a Brave-browser desktop=^1
 	bspc rule -a kitty desktop=^1
 	bspc rule -a discord state=tiled desktop=^1

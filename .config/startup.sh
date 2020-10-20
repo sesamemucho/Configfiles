@@ -4,7 +4,7 @@ unclutter &
 nyrna &
 clipmenud &
 keynav &
-picom --backend xr_glx_hybrid --daemon --shadow --vsync --no-fading-openclose --use-ewmh-active-win
+picom --backend xr_glx_hybrid --daemon --shadow --vsync --no-fading-openclose --use-ewmh-active-win --vsync-use-glfinish
 feh --randomize --bg-fill --no-xinerama ~/Pictures/* &
 ~/Programs/notify-low-battery.sh &
 nextcloud &

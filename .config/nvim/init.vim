@@ -59,6 +59,7 @@ Plug 'junegunn/vim-peekaboo' " preview registers
 Plug 'lpinilla/vim-codepainter' " highlight code
 Plug 'christianrondeau/vim-base64' " Encodes/decodes base64 strings
 Plug 'liuchengxu/vista.vim'
+Plug 'aklt/plantuml-syntax'
 Plug 'tyru/eskk.vim' " Japanese support
 Plug 'tyru/skkdict.vim'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
