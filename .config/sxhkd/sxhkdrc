@@ -20,8 +20,8 @@ super + slash
 	bspc node @/ -R 90
 
 # send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
+# super + y
+# 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest node
 # super + g
@@ -147,8 +147,8 @@ super + c
 	jumpapp brave
 super + e
 	jumpapp emacs
-XF86Mail
-	jumpapp element-desktop
+super + y
+	jumpapp -c Element -f element-desktop
 super + ctrl + k
 	screenkey --scr 2
 super + shift + Delete
