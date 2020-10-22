@@ -47,6 +47,8 @@ space warp,click 1,end
 ctrl+space warp,click 3,end
 semicolon warp,end
 alt+space warp
+shift+1 click 1+shift
+ctrl+1 click 1+ctrl
 1 click 1
 2 click 2
 3 click 3
@@ -103,9 +105,9 @@ shift+at playback
 
 ### Drag examples
 # Start drag holding the left mouse button
-#q drag 1
+d drag 1
 # Start drag holding middle mouse + control and shift
-#w drag 2 ctrl+shift
+w drag 2 ctrl+shift
 # Dragging with modifiers
 #q drag 1
 #ctrl+q drag 1 ctrl
