@@ -144,7 +144,7 @@ super + v
 super + n
 	jumpapp lutris
 super + c
-	jumpapp brave
+	jumpapp -c "Brave-browser" brave
 super + e
 	jumpapp emacs
 super + y

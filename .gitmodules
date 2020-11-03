@@ -4,3 +4,12 @@
 [submodule ".emacs.d"]
 	path = .emacs.d
 	url = https://github.com/hlissner/doom-emacs
+[submodule "Programs/beets-vocadb"]
+	path = Programs/beets-vocadb
+	url = git@github.com:juligreen/beets-vocadb.git
+[submodule "Programs/beets-fetchartist"]
+	path = Programs/beets-fetchartist
+	url = https://github.com/dkanada/beets-fetchartist.git
+[submodule "Programs/VGMdb-BeetsPlug"]
+	path = Programs/VGMdb-BeetsPlug
+	url = git@github.com:RaitoBezarius/VGMdb-BeetsPlug.git

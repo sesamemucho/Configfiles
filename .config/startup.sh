@@ -17,14 +17,14 @@ export LS_COLORS
 # setxkbmap -layout us -variant altgr-intl
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 # sudo sh -c 'sysctl -w abi.vsyscall32=0' &
-export GDK_CORE_DEVICE_EVENTS=1
+# export GDK_CORE_DEVICE_EVENTS=1
 
 # screen blanks after 2 hours instead of 10 min
-xset s 7200 7200
+# xset s 7200 7200
 
 # rg --files ~/.doom.d/ | entr ~/.emacs.d/bin/doom refresh
 # notify-send (.emacs.d/bin/doom doctor | tail -2 | sed 's/\x1b\[[0-9;]*m//g')
 
-export ANKI_NOHIGHDPI=1
-export ANKI_WEBSCALE=1
+# export ANKI_NOHIGHDPI=1
+# export ANKI_WEBSCALE=1
 sxhkd &
