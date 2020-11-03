@@ -3,7 +3,6 @@
 if [[ $(hostname) == 'Cellaris' ]]; then
 	bspc monitor DVI-D-0 -d 1
 	bspc monitor DP-4 -d 2
-	bspc rule -a Screenkey manage=off
 	bspc rule -a Brave-browser desktop=^1
 	bspc rule -a kitty desktop=^1
 	bspc rule -a discord state=tiled desktop=^2
@@ -23,8 +22,6 @@ if [[ $(hostname) == 'Cellaris' ]]; then
 	bspc rule -a okular desktop=^2
 elif [[ $(hostname) == 'workarch' ]]; then
 	bspc monitor eDP-1 -d 1 10
-	bspc rule -a Screenkey manage=off
-	bspc rule -a zoom state=tiled layer=normal
 	bspc rule -a Brave-browser desktop=^1
 	bspc rule -a kitty desktop=^1
 	bspc rule -a discord state=tiled desktop=^1
@@ -44,6 +41,10 @@ elif [[ $(hostname) == 'workarch' ]]; then
 	bspc rule -a okular desktop=^1
 fi
 
+bspc rule -a zoom state=tiled layer=normal
+bspc rule -a pavucontrol-qt state=tiled
+bspc rule -a Screenkey manage=off
+
 bspc config pointer_follows_monitor true
 
 bspc config border_width         1
@@ -55,6 +56,8 @@ bspc desktop --layout monocle
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config ignore_ewmh_focus true
+wmname LG3D
+
 
 
 sudo xkeysnail --watch ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log
