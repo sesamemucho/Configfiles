@@ -1,0 +1,100 @@
+(in-package :stumpwm)
+
+;; change the prefix key to something else
+(set-prefix-key (kbd "M-e"))
+
+;; Read some doc
+(define-key *root-map* (kbd "d") "exec gv")
+
+;; Go to last focused in frame
+(define-key *root-map* (kbd "M-e") "other-in-frame")
+
+;; Go to last focused
+(define-key *root-map* (kbd "M-r") "fother")
+
+(define-key *root-map* (kbd "M-m") "mode-line")
+
+;;remapped keys
+(define-remapped-keys
+ '(("(Vivaldi-stable|Brave-browser|Riot|discord|Slack|Anki|plexmediaplayer|Kodi)"
+	("C-n"   . "Down")
+	("C-p"   . "Up")
+	("C-f"   . "Right")
+	("C-M-f"   . "C-f")
+	("C-F"   . "S-Right")
+	("C-b"   . "Left")
+	("C-M-b"   . "C-b")
+	("C-B"   . "S-Left")
+	("M-b"   . "C-Left")
+	("C-M-b"   . "M-b")
+	("M-f"   . "C-Right")
+	("C-m"   . "Return")
+	("C-M-m"   . "C-m")
+	("C-M"   . "S-Return")
+	("C-h"   . "DEL")
+	("C-w"   . "C-DEL")
+	("C-M-w"   . "C-w")
+	("C-d"   . "Delete")
+	("C-M-d" . "C-d")
+	("C-a"   . "Home")
+	("C-M-a"   . "C-a")
+	("C-A"   . "S-Home")
+	("C-M-a" . "C-a")
+	("C-["   . "ESC")
+	("C-e"   . "End")
+	("C-E"   . "S-End")
+	("H-j"   . "Down")
+	("H-k"   . "Up")
+	("H-l"   . "Right")
+	("H-h"   . "Left")
+	("C-w"   . "C-x")
+	("M-w"   . "C-c")
+	("M-<"   . "Home")
+	("M->"   . "End")
+	("C-k"   . ("S-End" "C-x"))
+	("C-M-k" . ("C-k")
+	))))
+
+(define-key *root-map* (kbd "M-q") "send-raw-key")
+
+(loop for (vi-key name) in '(("h" "left")
+			     ("l" "right"))
+     do (let ((key-combo (format nil "~A" vi-key))
+	      (shifted-key-combo (format nil "M-~A" vi-key)))
+	  (define-key *root-map* (kbd key-combo)
+	    (format nil "move-focus ~A" name))
+	  (define-key *root-map* (kbd shifted-key-combo)
+	    (format nil "move-window ~A" name))))
+
+
+(defvar color1 "#ff92d0")
+(defvar color2 "#282a36")
+
+(setf
+ stumpwm:*mode-line-background-color* color2
+ stumpwm:*mode-line-foreground-color* color1
+ stumpwm:*mode-line-border-color* "#333333"
+ stumpwm:*screen-mode-line-format* (list "^>^7"    "| %d ")
+ stumpwm:*mode-line-border-width* 1
+ stumpwm:*mode-line-pad-x* 6
+ stumpwm:*mode-line-pad-y* 1
+ stumpwm:*mode-line-timeout* 5
+ stumpwm:*mouse-focus-policy* :click
+ stumpwm:*group-format* "%n·%t"
+ stumpwm:*time-modeline-string* "%a, %b %d, %Y %l:%M%p"
+ stumpwm:*window-format* "^b^(:fg \"#9aedfe\")<%25t>"
+ stumpwm:*window-border-style* :tight
+ stumpwm:*normal-border-width* 1
+ )
+(stumpwm:set-focus-color "#7799CC")
+(stumpwm:grename "Alpha")
+(stumpwm:gnewbg "Beta")
+(stumpwm:gnewbg "Tau")
+(stumpwm:gnewbg "Pi")
+(stumpwm:gnewbg "Zeta")
+(stumpwm:gnewbg "Teta")
+(stumpwm:gnewbg "Phi")
+(stumpwm:gnewbg "Rho")
+
+(run-shell-command "xsetroot -cursor_name left_ptr")
+

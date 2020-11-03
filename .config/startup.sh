@@ -15,6 +15,7 @@ export LS_COLORS
 # VBoxClient-all &
 # sudo localectl set-x11-keymap us _ altgr-intl ctrl:swapcaps_hyper
 # setxkbmap -layout us -variant altgr-intl
+<<<<<<< Updated upstream
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 # sudo sh -c 'sysctl -w abi.vsyscall32=0' &
 # export GDK_CORE_DEVICE_EVENTS=1
@@ -22,6 +23,13 @@ export LS_COLORS
 # screen blanks after 2 hours instead of 10 min
 # xset s 7200 7200
 
+=======
+systemctl --user start xfce4-notifyd
+# xmodmap ~/.Xmodmap
+riot-desktop &
+sudo sh -c 'sysctl -w abi.vsyscall32=0' &
+export GDK_CORE_DEVICE_EVENTS=1
+>>>>>>> Stashed changes
 # rg --files ~/.doom.d/ | entr ~/.emacs.d/bin/doom refresh
 # notify-send (.emacs.d/bin/doom doctor | tail -2 | sed 's/\x1b\[[0-9;]*m//g')
 

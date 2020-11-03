@@ -47,6 +47,7 @@ Plug 'paroxayte/vwm.vim' " Manage Window layouts
 Plug 'cespare/vim-toml' " toml support
 Plug 'stephpy/vim-yaml' " yaml support
 Plug 'pechorin/any-jump.nvim' " Use regex to 'go to definition' anywhere (<leader>j)
+<<<<<<< Updated upstream
 Plug 'hashivim/vim-terraform' "terraform syntax highlighting
 Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
 Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
@@ -64,6 +65,10 @@ Plug 'tyru/eskk.vim' " Japanese support
 Plug 'tyru/skkdict.vim'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense engine. This does loads of stuff, but is a language server client foremost. I will replace it for the native nvim language server, since coc.nvim has a node dependency
+=======
+Plug 'hashivim/vim-terraform'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} " Intellisense engine. This does loads of stuff, but is a language server client foremost. I will replace it for the native nvim language server, since coc.nvim has a node dependency
+>>>>>>> Stashed changes
 " Stuff to check out {{{
 " ReplaceWithRegister - make replacing repeatable
 " Sortmotion sort stuff alphabetically

@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "coc-angular": ">=0.1000.2",
+    "coc-css": ">=1.2.4",
+    "coc-eslint": ">=1.2.7",
+    "coc-go": ">=0.8.0",
+    "coc-html": ">=1.2.4",
+    "coc-json": ">=1.2.6",
+    "coc-prettier": ">=1.1.15",
+    "coc-python": ">=1.2.12",
+    "coc-sh": ">=0.5.1",
+    "coc-tsserver": ">=1.5.2",
+    "coc-yaml": ">=1.0.4"
+  }
+}

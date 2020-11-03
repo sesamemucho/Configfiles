@@ -86,6 +86,7 @@ alias cdd="cd ~/Downloads/"
 alias cdp="cd ~/Projects/"
 alias gs="git status"
 alias cd="bettercd"
+<<<<<<< Updated upstream
 alias ssp="ssh -YC ubuntu || ssh -YC plexiglas.xyz"
 alias cdcp="cd ~/Projects/currentproject/"
 alias rangerrc="vim ~/.config/ranger/rc.conf"
@@ -98,6 +99,9 @@ alias cpwd="pwd | xclip -selection clipboard"
 if [ $commands[helm] ]; then
   source <(helm completion zsh)
 fi
+=======
+alias ssp="ssh -X plexus"
+>>>>>>> Stashed changes
 
 # User configuration
 source ~/.zplug/init.zsh
