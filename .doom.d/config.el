@@ -37,6 +37,11 @@
 
 (define-key key-translation-map [?\C-h] [?\C-?])
 
+(use-package emms
+        :config
+        (emms-all)
+        (emms-default-players))
+
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
 ;; (setq org-caldav-url "https://nextcloud.plexiglas.xyz/remote.php/dav/calendars/juligreen")

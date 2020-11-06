@@ -115,17 +115,9 @@ super + Return
 	jumpapp kitty
 super + d
 	rofi -show run -monitor -1
-<<<<<<< Updated upstream
 super + b
 	rofi -show window -monitor -1 -auto-select
 super + shift + i
-=======
-super + e; super + d
-	rofi -show run -monitor -1
-super + b
-	rofi -show window -monitor -1 -auto-select
-super + i
->>>>>>> Stashed changes
 	~/Programs/notify-battery.sh
 super + t
 	~/Programs/notify-time-date.sh
@@ -148,7 +140,6 @@ super + alt + 1
 super + a
 	jumpapp anki
 super + v
-<<<<<<< Updated upstream
 	jumpapp -f discord
 super + n
 	jumpapp lutris
@@ -280,30 +271,6 @@ super + F6
 	~/.screenlayout/screenlayout.sh
 super + F7
 	~/.screenlayout/tv_mode.sh
-=======
-	discord
-super + n
-	lutris
-super + c
-	brave
-super + k
-	screenkey --scr 2
-super + shift + Delete
-	sudo shutdown now
-super + l
-	physlock
-~XF86AudioPlay
-	xdotool search --classname plexmediaplayer key XF86AudioPlay
-~XF86Launch9
-	xdotool search --classname plexmediaplayer key XF86AudioNext
-~XF86Launch8
-	xdotool search --classname plexmediaplayer key XF86AudioPrev
-
-XF86Calculator
-	CW=$(xdotool getactivewindow); xdotool search --name ".* Discord" windowactivate --sync mousemove 280 1000 click 1 mousemove restore; xdotool windowactivate $CW
-super + ctrl + r
-	pkill -SIGUSR1 sxhkd
->>>>>>> Stashed changes
 
 # Pulse Audio controls
 XF86AudioRaiseVolume
