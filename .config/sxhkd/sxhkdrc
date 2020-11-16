@@ -195,6 +195,8 @@ super + shift + F6
 
 super + h
 	jumpapp -f slack
+super + p
+	jumpapp -f -c "Toggl Desktop" TogglDesktop
 super + k
 	jumpapp -f zoom
 super + l
