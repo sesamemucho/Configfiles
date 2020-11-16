@@ -44,6 +44,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
+(add-hook 'org-mode-hook (lambda () (electric-indent-local-mode -1)))
 ;; (setq org-caldav-url "https://nextcloud.plexiglas.xyz/remote.php/dav/calendars/juligreen")
 ;; (setq org-caldav-calendar-id "org-calendar")
 ;; (setq org-caldav-inbox "~/orgfiles/caldav-inbox.org")

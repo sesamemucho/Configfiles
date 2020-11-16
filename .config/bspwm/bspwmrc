@@ -60,5 +60,5 @@ wmname LG3D
 
 
 
-kitty
+kitty &
 sudo xkeysnail --watch ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log
