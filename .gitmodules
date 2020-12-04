@@ -16,3 +16,6 @@
 [submodule "Programs/grasp"]
 	path = Programs/grasp
 	url = https://github.com/karlicoss/grasp.git
+[submodule "Programs/git-sync"]
+	path = Programs/git-sync
+	url = https://github.com/simonthum/git-sync.git

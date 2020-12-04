@@ -2,7 +2,7 @@
 
 if [[ $(hostname) == 'Cellaris' ]]; then
 	bspc monitor DVI-D-0 -d 1
-	bspc monitor DP-4 -d 2
+	bspc monitor DP-0 -d 2
 	bspc rule -a Brave-browser desktop=^1
 	bspc rule -a kitty desktop=^1
 	bspc rule -a discord state=tiled desktop=^2
@@ -18,7 +18,6 @@ if [[ $(hostname) == 'Cellaris' ]]; then
 	bspc rule -a Steam desktop=^1
 	bspc rule -a Lutris desktop=^1
 	bspc rule -a "Wine" state=tiled desktop=^1
-	bspc rule -a Zathura state=tiled desktop=^2
 	bspc rule -a okular desktop=^2
 elif [[ $(hostname) == 'workarch' ]]; then
 	bspc monitor eDP-1 -d 1 10
@@ -37,13 +36,13 @@ elif [[ $(hostname) == 'workarch' ]]; then
 	bspc rule -a Steam desktop=^1
 	bspc rule -a Lutris desktop=^1
 	bspc rule -a "Wine" state=tiled desktop=^1
-	bspc rule -a Zathura state=tiled desktop=^1
 	bspc rule -a okular desktop=^1
 fi
 
 bspc rule -a zoom state=tiled layer=normal
 bspc rule -a pavucontrol-qt state=tiled
 bspc rule -a Screenkey manage=off
+bspc rule -a Zathura state=tiled
 
 bspc config pointer_follows_monitor true
 

@@ -142,7 +142,7 @@ super + a
 super + v
 	jumpapp -f discord
 super + n
-	jumpapp lutris
+	jumpapp blender
 super + c
 	jumpapp -c "Brave-browser" brave
 super + e
@@ -181,7 +181,7 @@ ctrl + XF86AudioRaiseVolume
 	~/Programs/plexamp_volume_up.sh
 
 super + F12
-	sxiv ~/Documents/kana_layout.jpg
+	display ~/Documents/kana_layout.svg
 
 
 super + ctrl + r
@@ -201,6 +201,8 @@ super + k
 	jumpapp -f zoom
 super + l
 	jumpapp sxiv
+super + semicolon
+	jumpapp mpv
 XF86Launch6
 	jumpapp -f TogglDesktop
 

@@ -10,8 +10,6 @@ export MANWIDTH=999
 export EDITOR=nvim
 export LC_TIME="de_DE.UTF-8"
 export CF_COLOR=true
-export ANKI_NOHIGHDPI=1
-export ANKI_WEBSCALE=1
 
 
 complete -C /usr/bin/packer packer
