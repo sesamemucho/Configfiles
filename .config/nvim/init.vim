@@ -103,7 +103,7 @@ set shell=bash
 set title " vim controls the title of the terminal
 set splitbelow
 set splitright
-set noexpandtab
+set expandtab
 set tabstop=4		" number of visual spaces per TAB
 set shiftwidth=4
 set softtabstop=4	" number of spaces in tab when editing

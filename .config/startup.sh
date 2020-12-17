@@ -10,6 +10,7 @@ feh --randomize --bg-fill --no-xinerama ~/Pictures/* &
 ~/Programs/notify-low-battery.sh &
 nextcloud &
 libinput-gestures-setup start &
+jellyfin-mpv-shim &
 
 # ~/Programs/grasp/server/setup --path ~/orgfiles/capture.org
 

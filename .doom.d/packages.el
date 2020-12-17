@@ -44,5 +44,6 @@
 
 (package! adoc-mode)
 (package! nov)
-(package! org-caldav)
-(package! emms)
+;; (package! org-caldav)
+;; (package! emms)
+(package! mpv)

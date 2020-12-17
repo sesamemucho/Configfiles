@@ -135,8 +135,6 @@ XF86Favorites
 	~/Programs/Plexamp.sh
 super + F2
 	~/Programs/Plexamp.sh
-super + alt + 1
-	jumpapp plexmediaplayer
 super + a
 	jumpapp anki
 super + v
@@ -168,12 +166,16 @@ super + j
 ctrl + super + b
 	pkill tint2 && bspc config left_padding 0 || tint2 &
 
-# ~XF86AudioPlay
-# 	xdotool search --classname Plexamp key --clearmodifiers XF86AudioPlay
-~shift + XF86AudioLowerVolume
-	xdotool search --classname plexamp | head -1 | xargs xdotool key --clearmodifiers XF86AudioPrev
-~shift + XF86AudioRaiseVolume
-	xdotool search --classname plexamp | head -1 | xargs xdotool key --clearmodifiers XF86AudioNext
+XF86AudioPlay
+	playerctl play-pause
+shift + XF86AudioPlay
+	playerctl -a pause
+ctrl + XF86AudioPlay
+	playerctl -p mpv play-pause
+shift + XF86AudioLowerVolume
+	playerctl previous
+shift + XF86AudioRaiseVolume
+	playerctl next
 
 ctrl + XF86AudioLowerVolume
 	~/Programs/plexamp_volume_down.sh
@@ -190,8 +192,8 @@ super + ctrl + r
 super + shift + F6
 	sudo pkill xkeysnail
 
-# super + r
-	# xdotool key --delay 100 super+b ctrl+n ctrl+n Return
+super + r
+	jumpapp xournalpp
 
 super + h
 	jumpapp -f slack
@@ -201,7 +203,7 @@ super + k
 	jumpapp -f zoom
 super + l
 	jumpapp sxiv
-super + semicolon
+super + q
 	jumpapp mpv
 XF86Launch6
 	jumpapp -f TogglDesktop

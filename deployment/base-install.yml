@@ -42,6 +42,7 @@
       pacman:
         name:
           - atool
+          - astyle
           - gopass
           - pandoc
           - elinks

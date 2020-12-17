@@ -37,14 +37,36 @@
 
 (define-key key-translation-map [?\C-h] [?\C-?])
 
-(use-package emms
-        :config
-        (emms-all)
-        (emms-default-players))
+;; (use-package emms
+;;         :config
+;;         (emms-all)
+;;         (emms-default-players))
 
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
 (add-hook 'org-mode-hook (lambda () (electric-indent-local-mode -1)))
+
+(after!
+(org-add-link-type "mpv" #'mpv-play)
+(defun org-mpv-complete-link (&optional arg)
+  (replace-regexp-in-string
+   "file:" "mpv:"
+   (org-file-complete-link arg)
+   t t))
+
+(defun org-timer-item--mpv-insert-playback-position (fun &rest args)
+  "When no org timer is running but mpv is alive, insert playback position."
+  (if (and
+       (not org-timer-start-time)
+       (mpv-live-p))
+      (mpv-insert-playback-position t)
+    (apply fun args)))
+(advice-add 'org-timer-item :around
+            #'org-timer-item--mpv-insert-playback-position)
+
+(add-hook 'org-open-at-point-functions #'mpv-seek-to-position-at-point)
+)
+
 ;; (setq org-caldav-url "https://nextcloud.plexiglas.xyz/remote.php/dav/calendars/juligreen")
 ;; (setq org-caldav-calendar-id "org-calendar")
 ;; (setq org-caldav-inbox "~/orgfiles/caldav-inbox.org")
