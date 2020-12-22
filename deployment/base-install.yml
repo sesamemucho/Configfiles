@@ -54,6 +54,7 @@
           - anki
           - bat
           - dash
+          - socat
           - playerctl
           - wmctrl
           - entr

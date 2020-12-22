@@ -11,6 +11,7 @@ feh --randomize --bg-fill --no-xinerama ~/Pictures/* &
 nextcloud &
 libinput-gestures-setup start &
 jellyfin-mpv-shim &
+playerctld daemon &
 
 # ~/Programs/grasp/server/setup --path ~/orgfiles/capture.org
 
