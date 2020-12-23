@@ -53,7 +53,6 @@ Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
 Plug 'unblevable/quick-scope' " Improve f key
 Plug 'Chiel92/vim-autoformat' " Add formatting Action
 Plug 'liuchengxu/vim-which-key'
-Plug 'svermeulen/vim-yoink' " cycle through yanks after a paste with <ctrl-n> and <ctrl-p>
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
 Plug 'junegunn/vim-peekaboo' " preview registers
 Plug 'lpinilla/vim-codepainter' " highlight code
@@ -173,13 +172,6 @@ map z*	<Plug>(asterisk-z*)
 map gz* <Plug>(asterisk-gz*)
 map z#	<Plug>(asterisk-z#)
 map gz# <Plug>(asterisk-gz#)
-" }}}
-" vim-yoink {{{
-nmap <c-n> <plug>(YoinkPostPasteSwapBack)
-nmap <c-p> <plug>(YoinkPostPasteSwapForward)
-
-nmap p <plug>(YoinkPaste_p)
-nmap P <plug>(YoinkPaste_P)
 " }}}
 " SKK {{{
 let g:eskk#large_dictionary = {

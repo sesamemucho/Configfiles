@@ -10,6 +10,7 @@ export MANWIDTH=999
 export EDITOR=nvim
 export LC_TIME="de_DE.UTF-8"
 export CF_COLOR=true
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 
 complete -C /usr/bin/packer packer

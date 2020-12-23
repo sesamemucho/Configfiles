@@ -1,9 +1,19 @@
 source ~/.config/nvim/init.vim
-set surround
-set multiple-cursors
 set commentary
+set highlightedyank
 let mapleader = " "
-nmap <leader>p :action ParameterInfo<CR>
-nmap <leader>b :action GotoDeclaration<CR>
-nmap <leader>f :action Find<CR>
-nmap <leader>i :action GotoImplementation<CR>
+inoremap <BS> <BS>
+inoremap <C-H> <C-H>
+inoremap <CR> <CR>
+inoremap <C-M> <CR>
+
+vnoremap cp "+y
+nnoremap cp "+y
+
+
+nnoremap <leader>f :action SearchEverywhere<CR>
+nnoremap <leader>rn :action RenameElement<CR>
+nnoremap <leader>p :action ParameterInfo<CR>
+nnoremap <leader>h :action ContextHelp<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap <leader>i :action GotoImplementation<CR>
