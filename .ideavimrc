@@ -1,0 +1,9 @@
+source ~/.config/nvim/init.vim
+set surround
+set multiple-cursors
+set commentary
+let mapleader = " "
+nmap <leader>p :action ParameterInfo<CR>
+nmap <leader>b :action GotoDeclaration<CR>
+nmap <leader>f :action Find<CR>
+nmap <leader>i :action GotoImplementation<CR>
